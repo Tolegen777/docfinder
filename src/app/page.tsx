@@ -1,5 +1,9 @@
+import Reaception from "@/components/reception/Reaception";
+
 export default function Home() {
   return (
-    <main className=""></main>
+    <main>
+      <Reaception />
+    </main>
   );
 }
