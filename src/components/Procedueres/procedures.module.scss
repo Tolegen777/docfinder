@@ -1,0 +1,44 @@
+.procedure {
+  .content {
+    padding: 15px;
+    .procedures {
+      max-width: 100%;
+      padding: 10px;
+
+      .cards {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        align-items: center;
+
+        .card {
+          display: flex;
+          align-items: center;
+          width: 250px;
+          top: 668px;
+          border-radius: 10px;
+          background: #ffff;
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 30.26px;
+          padding: 10px 16px;
+          .image {
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .procedure {
+    .content {
+      .procedures {
+        .cards {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
