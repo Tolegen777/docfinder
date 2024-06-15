@@ -1,14 +1,5 @@
 .reception {
   .content {
-    .title {
-      font-size: 38px;
-      font-weight: 400;
-      line-height: 45.51px;
-      text-align: center;
-      color: #000000;
-      padding: 40px 0 100px 0;
-    }
-
     .dostors {
       max-width: 100%;
       background: #fff;
@@ -40,34 +31,6 @@
             }
           }
         }
-      }
-    }
-  }
-}
-
-@media (max-width: 559px) {
-  .reception {
-    .content {
-      .title {
-        font-size: 26px;
-      }
-    }
-  }
-}
-@media (max-width: 425px) {
-  .reception {
-    .content {
-      .title {
-        font-size: 21px;
-      }
-    }
-  }
-}
-@media (max-width: 425px) {
-  .reception {
-    .content {
-      .title {
-        font-size: 16px;
       }
     }
   }

@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "./reception.module.scss";
-function Reaception() {
+import ReceptionNav from "@/components/reseptionNav/ReceptionNav";
+function Reception() {
   return (
     <>
       <section className={styles.reception}>
         <div className="container">
           <div className={styles.content}>
-            <h1 className={styles.title}>Круглосуточная запись на прием</h1>
+            <ReceptionNav />
             <div className={styles.dostors}>
               <div className={styles.cards}>
                 <div className={styles.specialties}>
@@ -108,4 +109,4 @@ function Reaception() {
   );
 }
 
-export default Reaception;
+export default Reception;
