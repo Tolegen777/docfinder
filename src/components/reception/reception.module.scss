@@ -1,0 +1,74 @@
+.reception {
+  .content {
+    .title {
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 45.51px;
+      text-align: center;
+      color: #000000;
+      padding: 40px 0 100px 0;
+    }
+
+    .dostors {
+      max-width: 100%;
+      background: #fff;
+      padding: 10px;
+
+      .cards {
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        .specialties {
+          display: flex;
+          flex-direction: column;
+          padding-bottom: 25px;
+          gap: 5px;
+          .letter {
+            font-size: 20px;
+            font-weight: 800;
+          }
+
+          .speciality {
+            color: #ff6200;
+            font-size: 18px;
+            font-weight: 500;
+            .quantity {
+              color: #d9d9d9;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 559px) {
+  .reception {
+    .content {
+      .title {
+        font-size: 26px;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .reception {
+    .content {
+      .title {
+        font-size: 21px;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  .reception {
+    .content {
+      .title {
+        font-size: 16px;
+      }
+    }
+  }
+}
