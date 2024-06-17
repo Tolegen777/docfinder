@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react'
 import styles from './DoctorInformation.module.scss'
+import './CalendarInput.css'
+import MonthCalendar from './MonthCalendar'
 
 const DoctorInformation: React.FC = ({ modalFunction }) => {
 	const dateSchedule = [
@@ -11,6 +13,7 @@ const DoctorInformation: React.FC = ({ modalFunction }) => {
 		{ number: 13, ned: 'чт' },
 		{ number: 14, ned: 'пт' }
 	]
+	const currentDate = new Date()
 	const dataClock = [
 		{ clock: '11:30' },
 		{ clock: '12:30' },
@@ -111,9 +114,9 @@ const DoctorInformation: React.FC = ({ modalFunction }) => {
 							<div className={styles.doctorInformationDate}>
 								<div className={styles.doctorInformationMonths}>
 									<h4 className={styles.doctorInformationMonthAp}>Апрель</h4>
-									<select className={styles.doctorInformationMonthsSelect}>
-										<option>Май</option>
-									</select>
+									<div className='mianClock'>
+										<MonthCalendar date={currentDate} />
+									</div>
 									<h4 className={styles.doctorInformationMonthsIn}>Июнь</h4>
 								</div>
 								<div className={styles.doctorInformationWeeks}>
