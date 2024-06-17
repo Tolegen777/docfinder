@@ -1,7 +1,12 @@
+import DoctorsNavs from "@/components/DoctorNavs/DoctorsNavs";
 import React from "react";
 
 function Doctor() {
-  return <div>Doctor</div>;
+  return (
+    <div>
+      <DoctorsNavs />
+    </div>
+  );
 }
 
 export default Doctor;
