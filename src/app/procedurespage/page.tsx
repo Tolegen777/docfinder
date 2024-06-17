@@ -1,12 +1,11 @@
-import Procedures from "@/components/Procedueres/Procedures";
-import React from "react";
+import Procedures from '@/components/Procedueres/Procedures'
 
 function Procedurespage() {
-  return (
-    <>
-      <Procedures />
-    </>
-  );
+	return (
+		<>
+			<Procedures />
+		</>
+	)
 }
 
-export default Procedurespage;
+export default Procedurespage
