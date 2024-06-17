@@ -1,234 +1,305 @@
 #hero {
-  background: linear-gradient(180deg, #d05509 0%, #ff6200 100%);
-  color: white;
+	background: linear-gradient(180deg, #d05509 0%, #ff6200 100%);
+	color: white;
 
-  .hero {
-    display: flex;
-    padding-top: 1pc;
-    align-items: center;
-    margin: 0 auto;
-    justify-content: space-between;
-    .heroTexth2 {
-      font-family: Inter;
-      font-size: 35px;
-      font-weight: 800;
-      line-height: 42.36px;
-      text-align: left;
-    }
-    .heroTexth4 {
-      font-family: Inter;
-      font-size: 25px;
-      font-weight: 600;
-      margin: 1pc 0;
-      line-height: 30.26px;
-      text-align: left;
-    }
-    .heroTextP {
-      font-family: Inter;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 24.2px;
-      text-align: left;
-      width: 510px;
-    }
-    .heroImg {
-      width: 406px;
-      height: 362px;
-      border-radius: 10px 10px 0 0;
-    }
-    .heroTextInput {
-      display: flex;
-      margin-top: 3pc;
-      align-items: center;
-      gap: 20px;
-    }
-    .heroTextInputMain {
-      width: 305px;
-      height: 32px;
-      padding-left: 1pc;
-      border-radius: 7px;
-    }
-    .heroTextButton {
-      background: #754a00;
-      width: 100px;
-      height: 32px;
-      border-radius: 7px;
-    }
-  }
+	.hero {
+		display: flex;
+		padding-top: 1pc;
+		align-items: center;
+		margin: 0 auto;
+		justify-content: space-between;
+		.heroTexth2 {
+			font-family: Inter;
+			font-size: 35px;
+			font-weight: 800;
+			line-height: 42.36px;
+			text-align: left;
+		}
+		.heroTexth4 {
+			font-family: Inter;
+			font-size: 25px;
+			font-weight: 600;
+			margin: 1pc 0;
+			line-height: 30.26px;
+			text-align: left;
+		}
+		.heroTextP {
+			font-family: Inter;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 24.2px;
+			text-align: left;
+			width: 510px;
+		}
+		.heroImg {
+			width: 406px;
+			height: 362px;
+			border-radius: 10px 10px 0 0;
+		}
+		.heroTextInput {
+			display: flex;
+			margin-top: 3pc;
+			align-items: center;
+			gap: 20px;
+		}
+		.heroTextInputMain {
+			width: 305px;
+			height: 32px;
+			padding-left: 1pc;
+			border-radius: 7px;
+		}
+		.heroTextButton {
+			background: #754a00;
+			width: 100px;
+			height: 32px;
+			border-radius: 7px;
+		}
+	}
 }
-
 @media (max-width: 1200px) {
-  #hero {
-    width: 100%;
-    padding: 0 20px;
-    .hero {
-      width: 100%;
-    }
-  }
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			width: 100%;
+		}
+	}
 }
 @media (max-width: 1014px) {
-  #hero {
-    width: 100%;
-    padding: 0 20px;
-    .hero {
-      width: 100%;
-    }
-  }
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			width: 100%;
+		}
+	}
 }
 @media (max-width: 960px) {
-  #hero {
-    width: 100%;
-    padding: 0 20px;
-    .hero {
-      width: 100%;
-      .heroTextP {
-        width: 445px;
-      }
-      .heroTextInput {
-        margin-top: 2pc;
-      }
-      .heroImg {
-        width: 339px;
-      }
-    }
-  }
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			width: 100%;
+			.heroTextP {
+				width: 445px;
+			}
+			.heroTextInput {
+				margin-top: 2pc;
+			}
+			.heroImg {
+				width: 339px;
+			}
+		}
+	}
 }
 @media (max-width: 860px) {
-  #hero {
-    width: 100%;
-    padding: 0 20px;
-    .hero {
-      width: 100%;
-      .heroTextP {
-        width: 445px;
-      }
-      .heroTextInput {
-        margin-top: 2pc;
-      }
-      .heroImg {
-        width: 310px;
-      }
-      .heroTexth2 {
-        font-size: 30px;
-      }
-      .heroTexth4 {
-        font-size: 21px;
-      }
-      .heroTextP {
-        font-size: 18px;
-      }
-    }
-  }
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			width: 100%;
+			.heroTextP {
+				width: 445px;
+			}
+			.heroTextInput {
+				margin-top: 2pc;
+			}
+			.heroImg {
+				width: 310px;
+			}
+			.heroTexth2 {
+				font-size: 30px;
+			}
+			.heroTexth4 {
+				font-size: 21px;
+			}
+			.heroTextP {
+				font-size: 18px;
+			}
+		}
+	}
 }
 @media (max-width: 812px) {
-  #hero {
-    width: 100%;
+	#hero {
+		width: 100%;
 
-    padding: 0 20px;
-    .hero {
-      display: flex;
-      align-items: center;
-      flex-direction: column-reverse;
-      width: 100%;
-      padding-bottom: 1pc;
-      .heroTextP {
-        width: 445px;
-        text-align: center;
-      }
-      .heroTextInput {
-        margin-top: 2pc;
-      }
-      .heroImg {
-        width: 310px;
-      }
-      .heroTexth2 {
-        text-align: center;
+		padding: 0 20px;
+		.hero {
+			display: flex;
+			align-items: center;
+			flex-direction: column-reverse;
+			width: 100%;
+			padding-bottom: 1pc;
+			.heroTextP {
+				width: 445px;
+				text-align: center;
+			}
+			.heroTextInput {
+				margin-top: 2pc;
+			}
+			.heroImg {
+				width: 310px;
+			}
+			.heroTexth2 {
+				text-align: center;
 
-        font-size: 30px;
-      }
-      .heroTexth4 {
-        text-align: center;
+				font-size: 30px;
+			}
+			.heroTexth4 {
+				text-align: center;
 
-        font-size: 21px;
-      }
-      .heroTextP {
-        font-size: 18px;
-      }
-    }
-  }
+				font-size: 21px;
+			}
+			.heroTextP {
+				font-size: 18px;
+			}
+		}
+	}
 }
 @media (max-width: 484px) {
-  #hero {
-    width: 100%;
-    padding: 0 20px;
-    .hero {
-      display: flex;
-      align-items: center;
-      flex-direction: column-reverse;
-      justify-content: center;
-      width: 100%;
-      padding-bottom: 1pc;
-      .heroTextP {
-        width: 445px;
-        text-align: center;
-      }
-      .heroTextInput {
-        margin-top: 2pc;
-      }
-      .heroImg {
-        width: 290px;
-      }
-      .heroTexth2 {
-        text-align: center;
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			display: flex;
+			align-items: center;
+			flex-direction: column-reverse;
+			justify-content: center;
+			width: 100%;
+			padding-bottom: 1pc;
+			.heroTextP {
+				width: 445px;
+				text-align: center;
+			}
+			.heroTextInput {
+				margin-top: 2pc;
+			}
+			.heroImg {
+				width: 290px;
+			}
+			.heroTexth2 {
+				text-align: center;
 
-        font-size: 26px;
-      }
-      .heroTexth4 {
-        text-align: center;
+				font-size: 26px;
+			}
+			.heroTexth4 {
+				text-align: center;
 
-        font-size: 18px;
-      }
-      .heroTextP {
-        font-size: 16px;
-        width: 100%;
-      }
-    }
-  }
+				font-size: 18px;
+			}
+			.heroTextP {
+				font-size: 16px;
+				width: 100%;
+			}
+		}
+	}
 }
-
 @media (max-width: 445px) {
-  #hero {
-    width: 100%;
-    padding: 0 20px;
-    .hero {
-      display: flex;
-      align-items: center;
-      flex-direction: column-reverse;
-      justify-content: center;
-      width: 100%;
-      padding-bottom: 1pc;
-      .heroTextP {
-        text-align: center;
-      }
-      .heroTextInput {
-        width: 350px;
-        margin-top: 2pc;
-      }
-      .heroImg {
-        width: 290px;
-      }
-      .heroTexth2 {
-        text-align: center;
-        font-size: 26px;
-      }
-      .heroTexth4 {
-        text-align: center;
-        font-size: 18px;
-      }
-      .heroTextP {
-        font-size: 16px;
-        width: 420px;
-      }
-    }
-  }
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			display: flex;
+			align-items: center;
+			flex-direction: column-reverse;
+			justify-content: center;
+			width: 100%;
+			padding-bottom: 1pc;
+			.heroTextP {
+				text-align: center;
+			}
+			.heroTextInput {
+				width: 350px;
+				margin-top: 2pc;
+			}
+			.heroImg {
+				width: 290px;
+			}
+			.heroTexth2 {
+				text-align: center;
+				font-size: 26px;
+			}
+			.heroTexth4 {
+				text-align: center;
+				font-size: 18px;
+			}
+			.heroTextP {
+				font-size: 16px;
+				width: 420px;
+			}
+		}
+	}
+}
+@media (max-width: 424px) {
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			display: flex;
+			align-items: center;
+			flex-direction: column-reverse;
+			justify-content: center;
+			width: 100%;
+			padding-bottom: 1pc;
+			.heroTextP {
+				text-align: center;
+			}
+			.heroTextInput {
+				width: 350px;
+				margin-top: 2pc;
+			}
+			.heroImg {
+				width: 290px;
+			}
+			.heroTexth2 {
+				text-align: center;
+				font-size: 26px;
+			}
+			.heroTexth4 {
+				text-align: center;
+				font-size: 18px;
+			}
+			.heroTextP {
+				font-size: 13px;
+				width: 370px;
+			}
+		}
+	}
+}
+@media (max-width: 371px) {
+	#hero {
+		width: 100%;
+		padding: 0 20px;
+		.hero {
+			display: flex;
+			align-items: center;
+			flex-direction: column-reverse;
+			justify-content: center;
+			width: 100%;
+			padding-bottom: 1pc;
+			.heroTextP {
+				text-align: center;
+			}
+			.heroTextInput {
+				width: 310px;
+				margin-left: 2pc;
+				margin-top: 2pc;
+			}
+			.heroImg {
+				width: 270px;
+			}
+			.heroTexth2 {
+				text-align: center;
+				font-size: 23px;
+			}
+			.heroTexth4 {
+				text-align: center;
+				font-size: 16px;
+			}
+			.heroTextP {
+				font-size: 11px;
+				width: 350px;
+			}
+		}
+	}
 }
