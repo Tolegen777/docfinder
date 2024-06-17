@@ -15,7 +15,7 @@ function ReceptionNav() {
             <Link href="/procedurespage" className={styles.link}>
               процедуры
             </Link>
-            <Link href="/" className={styles.link}>
+            <Link href="/clinics" className={styles.link}>
               Клиники
             </Link>
           </div>
