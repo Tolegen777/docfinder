@@ -1,4 +1,7 @@
 .footer {
+  padding-top: 3pc;
+
+  padding: 0 15px;
   background-color: #593c02;
   height: 600px;
   width: 100%;
@@ -60,4 +63,44 @@
       }
     }
   }
+}
+@media (max-width:790px) {
+  .footer__content{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 3pc;
+    padding-top: 5pc;
+  }
+  .footer{
+    height: auto;
+    padding-bottom: 15px;
+  }
+}
+@media (max-width:450px) {
+  .footer__content__left{
+    h1{
+
+      font-size: 24px;
+    }
+    h2{
+      font-size: 17px;
+    }
+    p{
+      font-size: 15px;
+    }
+  }
+}
+@media (max-width:380px) {  
+ .footer__content__left{
+  img{
+    width: 90%;
+  }
+ } 
+ .footer__content__right div{
+  gap: 10px;
+ }
+ .footer__content__right div input{
+  padding: 7px 6px 7px 6px;
+ }
 }
