@@ -1,8 +1,8 @@
-// Import statements for components and hooks
+"use client"
+import React, { useState } from "react";
 import DoctorInformation from "@/components/DoctorInformation/DoctorInformation";
 import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import Specializations from "@/components/Specializations/Specializations";
-import React, { useState } from "react";
 
 // Define Page component as a function component
 const Page: React.FC = () => {

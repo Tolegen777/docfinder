@@ -6,9 +6,9 @@ import "./CalendarInput.css";
 import MonthCalendar from "./MonthCalendar";
 import Image from "next/image";
 
-interface DoctorInformationProps {
+type DoctorInformationProps = Partial<{
   modalFunction: () => void;
-}
+}>;
 const DoctorInformation: React.FC<DoctorInformationProps> = ({
   modalFunction,
 }: any) => {
