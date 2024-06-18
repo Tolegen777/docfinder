@@ -1,12 +1,13 @@
-import Procedures from "@/components/Procedueres/Procedures";
-import React from "react";
+import Procedures from '@/components/Procedueres/Procedures'
+import Hero from '@/components/hero/Hero'
 
 function Procedurespage() {
-  return (
-    <>
-      <Procedures />
-    </>
-  );
+	return (
+		<>
+		<Hero/>
+			<Procedures />
+		</>
+	)
 }
 
-export default Procedurespage;
+export default Procedurespage
