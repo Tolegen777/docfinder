@@ -1,14 +1,12 @@
-import Clinics from '@/components/Clinics/Clinics'
-import Hero from '@/components/hero/Hero'
-import ReceptionNav from '@/components/reseptionNav/ReceptionNav'
+import Clinics from "@/components/Clinics/Clinics";
+import Hero from "@/components/hero/Hero";
 const Clinics1 = () => {
-	return (
-		<div>
-			<Hero />
-			<ReceptionNav/>
-			<Clinics />
-		</div>
-	)
-}
+  return (
+    <div>
+      <Hero />
+      <Clinics />
+    </div>
+  );
+};
 
-export default Clinics1
+export default Clinics1;

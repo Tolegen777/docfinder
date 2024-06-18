@@ -11,7 +11,7 @@ const Clinics: React.FC = () => {
             <div className={styles.clinicsBlock}>
               <div className={styles.clinicsImg}>
                 <Image
-                height={100}
+                  height={100}
                   width={100}
                   src="https://s3-alpha-sig.figma.com/img/0021/7d71/999888070ee68dde4c77397a4d00081c?Expires=1719792000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=H40yEjIyMgqsdbWZof9-vRbiCrLksyapakg4llLJc8y7tu4WGEs7LLj1emHjoPeVlCXOjNE1mVFF422U8sN8E2jKwXmjXFkbB98MmIGqVwNayvuPjJJALaB2S67HUV85ztU-XBa5SeMNb~obXrfnAhp8yHT5nB~XXmO-tUB6-fMQSngaZ5EyV2Nyz4b-ye3CVkefLfvH2nx04JxNfUetoRwOozOjPL0A~gFZx0h6QuoNGDaA1JDR83QQyNgrGcUTXq5xQlTc8Xvfl7WJZRfK8R82vaOrOLLyrX6xYBDPunpRdYxzcfbc55HxNvaAlfOOQFoqxztgGbIeA5mrXlszfg__"
                   alt="image"
