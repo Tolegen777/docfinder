@@ -1,9 +1,10 @@
-"use client";
+// Import statements for components and hooks
 import DoctorInformation from "@/components/DoctorInformation/DoctorInformation";
 import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import Specializations from "@/components/Specializations/Specializations";
 import React, { useState } from "react";
 
+// Define Page component as a function component
 const Page: React.FC = () => {
   const [modal, setModal] = useState<boolean>(false);
 
@@ -36,4 +37,3 @@ const Page: React.FC = () => {
 };
 
 export default Page;
-//epvjwkpv[wekvp[ew]]
