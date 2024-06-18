@@ -19,7 +19,6 @@ function Hero() {
         onSlideChange={() => console.log("slide change")}
       >
         <SwiperSlide>
-          {" "}
           <section id={styles.hero}>
             <div className="container">
               <div className={styles.hero}>
@@ -45,8 +44,8 @@ function Hero() {
                 </div>
                 <div className={styles.heroImgs}>
                   <Image
-                  height={100}
-                  width={100}
+                    height={100}
+                    width={100}
                     className={styles.heroImg}
                     src="https://s3-alpha-sig.figma.com/img/e1cd/5cc4/a83bcfbfa93ea89b4a00a7e8f31faa86?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Umg28d-Aodjez3L84iiik-ssX-grqkeclkIbzLHvaHbxImPZC7X0XEdRIHQmX3ffMkW8RX0fLasYT7n03EfvgmBQutnSau1GQCW9ZsLdysi1mwUPpL59ytV62CdjaFlyr47RWohqTgmnbVAX13UrLdMW5OoKlPJu4KvH1oH9IXzcmVCdy0nWcUzXrzhIjfa-2AgZG7Qy8vN-rpWZfX5cuycMd~hetlDi91JsIc7RCL3A~kdWj7RMMTsSgQOWI4ceIopvfx3xa6K6bfC17Ax6ixiq0fQEDTMvvmuqpq0Y4WOQwMqSI~9ZZPBaeJlpKaYCtBX5FkWkkDh7wCxPb6hmAA__"
                     alt="image photo"
@@ -83,8 +82,8 @@ function Hero() {
                 </div>
                 <div className={styles.heroImgs}>
                   <Image
-                  height={100}
-                  width={100}
+                    height={100}
+                    width={100}
                     className={styles.heroImg}
                     src="https://s3-alpha-sig.figma.com/img/e1cd/5cc4/a83bcfbfa93ea89b4a00a7e8f31faa86?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Umg28d-Aodjez3L84iiik-ssX-grqkeclkIbzLHvaHbxImPZC7X0XEdRIHQmX3ffMkW8RX0fLasYT7n03EfvgmBQutnSau1GQCW9ZsLdysi1mwUPpL59ytV62CdjaFlyr47RWohqTgmnbVAX13UrLdMW5OoKlPJu4KvH1oH9IXzcmVCdy0nWcUzXrzhIjfa-2AgZG7Qy8vN-rpWZfX5cuycMd~hetlDi91JsIc7RCL3A~kdWj7RMMTsSgQOWI4ceIopvfx3xa6K6bfC17Ax6ixiq0fQEDTMvvmuqpq0Y4WOQwMqSI~9ZZPBaeJlpKaYCtBX5FkWkkDh7wCxPb6hmAA__"
                     alt=""
@@ -121,8 +120,8 @@ function Hero() {
                 </div>
                 <div className={styles.heroImgs}>
                   <Image
-                  height={100}
-                  width={100}
+                    height={100}
+                    width={100}
                     className={styles.heroImg}
                     src="https://s3-alpha-sig.figma.com/img/e1cd/5cc4/a83bcfbfa93ea89b4a00a7e8f31faa86?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Umg28d-Aodjez3L84iiik-ssX-grqkeclkIbzLHvaHbxImPZC7X0XEdRIHQmX3ffMkW8RX0fLasYT7n03EfvgmBQutnSau1GQCW9ZsLdysi1mwUPpL59ytV62CdjaFlyr47RWohqTgmnbVAX13UrLdMW5OoKlPJu4KvH1oH9IXzcmVCdy0nWcUzXrzhIjfa-2AgZG7Qy8vN-rpWZfX5cuycMd~hetlDi91JsIc7RCL3A~kdWj7RMMTsSgQOWI4ceIopvfx3xa6K6bfC17Ax6ixiq0fQEDTMvvmuqpq0Y4WOQwMqSI~9ZZPBaeJlpKaYCtBX5FkWkkDh7wCxPb6hmAA__"
                     alt="image"
@@ -159,8 +158,8 @@ function Hero() {
                 </div>
                 <div className={styles.heroImgs}>
                   <Image
-                  height={100}
-                  width={100}
+                    height={100}
+                    width={100}
                     className={styles.heroImg}
                     src="https://s3-alpha-sig.figma.com/img/e1cd/5cc4/a83bcfbfa93ea89b4a00a7e8f31faa86?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Umg28d-Aodjez3L84iiik-ssX-grqkeclkIbzLHvaHbxImPZC7X0XEdRIHQmX3ffMkW8RX0fLasYT7n03EfvgmBQutnSau1GQCW9ZsLdysi1mwUPpL59ytV62CdjaFlyr47RWohqTgmnbVAX13UrLdMW5OoKlPJu4KvH1oH9IXzcmVCdy0nWcUzXrzhIjfa-2AgZG7Qy8vN-rpWZfX5cuycMd~hetlDi91JsIc7RCL3A~kdWj7RMMTsSgQOWI4ceIopvfx3xa6K6bfC17Ax6ixiq0fQEDTMvvmuqpq0Y4WOQwMqSI~9ZZPBaeJlpKaYCtBX5FkWkkDh7wCxPb6hmAA__"
                     alt="image"
