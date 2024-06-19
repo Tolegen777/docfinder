@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import React from 'react'
+import vector from '../svg/Vector (1).svg'
 import styles from './CanceledCom.module.scss'
 
 const CanceledCom: React.FC = () => {
@@ -7,21 +9,15 @@ const CanceledCom: React.FC = () => {
 			<section id={styles.successfullyCom}>
 				<div className='container'>
 					<div className={styles.successfullyCom}>
-						<svg
-							width='60'
-							height='60'
+						<Image
 							style={{
-								margin: '30px 0 20px 0'
+								margin: '30px 0 20px 0',
+								width: '60',
+								height: '60'
 							}}
-							viewBox='0 0 70 70'
-							fill='none'
-							xmlns='http://www.w3.org/2000/svg'
-						>
-							<path
-								d='M35 0C15.68 0 0 15.68 0 35C0 54.32 15.68 70 35 70C54.32 70 70 54.32 70 35C70 15.68 54.32 0 35 0ZM35 63C19.53 63 7 50.47 7 35C7 28.525 9.205 22.575 12.915 17.85L52.15 57.085C47.425 60.795 41.475 63 35 63ZM57.085 52.15L17.85 12.915C22.575 9.205 28.525 7 35 7C50.47 7 63 19.53 63 35C63 41.475 60.795 47.425 57.085 52.15Z'
-								fill='#E80000'
-							/>
-						</svg>
+							src={vector}
+							alt=''
+						/>
 
 						<h3 className={styles.successfullyComH3}>Ваша запись отменена</h3>
 
