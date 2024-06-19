@@ -1,0 +1,38 @@
+.swiper-button-next,
+.swiper-button-prev {
+	color: #fff;
+}
+
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+	content: 'next';
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	color: #fff;
+	display: flex;
+	border: 3px solid white;
+	align-items: center;
+	justify-content: center;
+	padding-left: 0.1pc;
+
+	margin-left: -4pc;
+	font-size: 21px;
+	font-weight: 900;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after {
+	content: 'prev';
+	border-radius: 50%;
+	color: #fff;
+	display: flex;
+	border: 3px solid white;
+	align-items: center;
+	justify-content: center;
+	padding: 0.4pc 0.8pc 0.4pc 0.6pc;
+	position: relative;
+	margin-left: 5pc;
+	font-size: 21px;
+	font-weight: 900;
+}
