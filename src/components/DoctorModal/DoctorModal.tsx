@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import styles from './DoctorModal.module.scss'
 
 interface DoctorModalProps {
@@ -8,7 +8,11 @@ interface DoctorModalProps {
 	setModal: () => void
 }
 
-const DoctorModal: React.FC<DoctorModalProps> = ({ setModal }) => {
+type DoctorInformationProps = {
+	setModal: () => void
+}
+
+const DoctorModal = ({ setModal }: DoctorInformationProps) => {
 	const [patientName, setPatientName] = useState('')
 	const [phone, setPhone] = useState('')
 

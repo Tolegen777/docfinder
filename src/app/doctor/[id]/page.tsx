@@ -4,16 +4,13 @@ import DoctorModal from '@/components/DoctorModal/DoctorModal'
 import Specializations from '@/components/Specializations/Specializations'
 import React, { useState } from 'react'
 
-function page() {
+function Page() { 
 	const [modal, setModal] = useState<boolean>(false)
 
-	function modalFunction() {
-		if (modal) {
-			setModal(false)
-		} else {
-			setModal(true)
-		}
+	function toggleModal() {  
+		setModal(prevModal => !prevModal);  
 	}
+
 	return (
 		<div>
 			<div
@@ -23,7 +20,7 @@ function page() {
 				}}
 			>
 				<div>
-					<DoctorInformation modalFunction={modalFunction} />
+					<DoctorInformation modalFunction={toggleModal} />
 				</div>
 				<Specializations />
 			</div>
@@ -32,10 +29,10 @@ function page() {
 					display: modal ? 'block' : 'none'
 				}}
 			>
-				<DoctorModal setModal={modalFunction} />
+				<DoctorModal setModal={toggleModal} />
 			</div>
 		</div>
 	)
 }
 
-export default page
+export default Page; // Export with uppercase name

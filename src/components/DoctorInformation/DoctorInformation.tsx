@@ -5,7 +5,11 @@ import styles from './DoctorInformation.module.scss'
 import './CalendarInput.css'
 import MonthCalendar from './MonthCalendar'
 
-const DoctorInformation: React.FC = ({ modalFunction }) => {
+type DoctorInformationProps = {
+	modalFunction: () => void
+}
+
+const DoctorInformation = ({ modalFunction }: DoctorInformationProps) => {
 	const dateSchedule = [
 		{ number: 10, ned: 'пн' },
 		{ number: 11, ned: 'вт' },
@@ -14,6 +18,7 @@ const DoctorInformation: React.FC = ({ modalFunction }) => {
 		{ number: 14, ned: 'пт' }
 	]
 	const currentDate = new Date()
+	
 	const dataClock = [
 		{ clock: '11:30' },
 		{ clock: '12:30' },

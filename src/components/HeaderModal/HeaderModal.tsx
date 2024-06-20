@@ -1,19 +1,12 @@
+"use client"
 import React, { useState } from 'react'
 import styles from './HeaderModal.module.scss'
 
-interface DoctorModalProps {
-	img: string
-	name: string
-	description: string
+type DoctorModalProps = {
 	setModal: () => void
 }
 
-const HeaderModal: React.FC<DoctorModalProps> = ({
-	img,
-	name,
-	description,
-	setModal
-}) => {
+const HeaderModal = ({ setModal }: DoctorModalProps) => {
 	const [patientName, setPatientName] = useState('')
 	const [phone, setPhone] = useState('')
 
@@ -27,9 +20,8 @@ const HeaderModal: React.FC<DoctorModalProps> = ({
 				<button className={styles.closeButton} onClick={setModal}>
 					×
 				</button>
-				<h4></h4>
+				<h4>Modal Title</h4>
 				<h2 className={styles.doctorName}>Войти в профиль пользователя</h2>
-				<p className={styles.doctorDescription}>{description}</p>
 				<input
 					type='text'
 					className={styles.input}
