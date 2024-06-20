@@ -24,11 +24,11 @@ const DoctorModal = ({ setModal }: DoctorModalProps) => {
           <Image
             height={100}
             width={100}
-            style={{
-              width: "100px",
-              height: "100px",
-              borderRadius: "50%",
-            }}
+            // style={{
+            //   width: "100px",
+            //   height: "100px",
+            //   borderRadius: "50%",
+            // }}
             src="https://s3-alpha-sig.figma.com/img/71c5/f5cf/fcf47990608a7c3d3922eeee844bd872?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZoT6yrjy~zJ5jgyIN0IPrfnMwYPUDZfwuH~p-kGoQnbhpWoq0FM6Zjp10hCRsKRCKT06KnPCrj-jHobyYBvytew9cQM-NV9ZyTAuT6IzzNTjl1g8BcvQCf-XF3u15xqE8CrkgM46lSjIddivx8~wWpbUHOGBilCreqajyaNC6IKy10cA7LXfBzDSOiOhR~Sc3z~~HAbbxnvCx4DeASuLefEVxZOGdiCGU-mcRpNcDTI1mI6erlE3kJCBua4540fW9B~bPmeKGXwrAxSH-sJZrw6mqGPgq2tfzYYAUcROpml1H4Hk1lmWGUKbIf6lCDrXMlYmhjJ2DVTGUhp5yUpmFw__"
             alt="kajsdn"
             className={styles.doctorImage}
