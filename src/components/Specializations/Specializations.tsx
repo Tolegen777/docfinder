@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import React, { useState } from 'react'
 import styles from './Specializations.module.scss'
 import StarRating from './StarRating'
@@ -121,7 +122,13 @@ const Specializations: React.FC = () => {
 					<div className={styles.reviewArray}>
 						{reviewArray.map((el, key) => (
 							<div className={styles.reviewArrayDev} key={key}>
-								<img className={styles.reviewArrayImg} src={el.img} alt='' />
+								<Image
+									width={100}
+									height={100}
+									className={styles.reviewArrayImg}
+									src={el.img}
+									alt=''
+								/>
 								<div className={styles.reviewArrayText}>
 									<h3 className={styles.reviewArrayH3}>{el.name}</h3>
 									<p className={styles.reviewArrayP}>

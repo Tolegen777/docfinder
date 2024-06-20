@@ -1,431 +1,411 @@
 #successfullyCom {
-	.successfullyCom {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-	}
-	.successfullyComH3 {
-		font-family: Inter;
-		font-size: 40px;
-		font-weight: 400;
-		line-height: 48.41px;
-		text-align: center;
-	}
-	.successfullyComH4 {
-		font-family: Inter;
-		font-size: 25px;
-		font-weight: 400;
-		line-height: 30.26px;
-		text-align: center;
-		color: #00000099;
-	}
-	.successfullyComP {
-		background: #ff620099;
-		font-family: Inter;
-		font-size: 13px;
-		font-weight: 400;
-		padding: 10px;
-		color: white;
-		margin: 20px 0;
-		line-height: 18.15px;
-		text-align: left;
-		width: 624px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 88px;
-		border-radius: 5px;
-	}
-	.successfullyComFlex {
-		display: flex;
-		margin: 13px 0;
-		gap: 20px;
-		align-items: flex-start;
-		width: 630px;
-		justify-content: space-between;
-	}
-	.successfullyComFlexH3 {
-		font-family: Inter;
-		font-size: 22px;
-		font-weight: 500;
-		line-height: 30.26px;
-		text-align: left;
-		color: #000000;
-		width: 204px;
-	}
-	.successfullyComFlexH4 {
-		font-family: Inter;
-		font-size: 21px;
-		font-weight: 500;
-		line-height: 30.26px;
-		text-align: left;
-		width: 380px;
-		color: #000000;
-	}
-	.successfullyComFlexSpan {
-		font-family: Inter;
-		font-size: 17px;
-		font-weight: 400;
-		line-height: 24.2px;
-		text-align: left;
-	}
-	.successfullyComFlexButton1 {
-		border: 1px solid #ff6200;
-		width: 357px;
-		height: 38px;
-		color: #ff6200;
-		border-radius: 6px;
-	}
-	.successfullyComFlexButton2 {
-		background: #ff6200;
-		width: 357px;
-		height: 38px;
-		border-radius: 6px;
-		color: white;
-	}
-	.successfullyComFlexSpanMinus {
-		text-decoration: line-through;
-		margin-right: 10px;
-		color: black;
-	}
-	.successfullyComFlexSpanSale {
-		background: #ff6200;
-		color: white;
-		padding: 2px 10px;
-		font-family: Inter;
-		font-size: 20px;
-		font-weight: 400;
-		margin-left: 1pc;
-		line-height: 24.2px;
-		text-align: left;
+  .successfullyCom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .successfullyComH3 {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48.41px;
+    text-align: center;
+  }
+  .successfullyComH4 {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30.26px;
+    text-align: center;
+    color: #00000099;
+  }
+  .successfullyComP {
+    background: #ff620099;
 
-		border-radius: 19.5px;
-	}
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px;
+    color: white;
+    margin: 20px 0;
+    line-height: 18.15px;
+    text-align: left;
+    width: 624px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88px;
+    border-radius: 5px;
+  }
+  .successfullyComFlex {
+    display: flex;
+    margin: 13px 0;
+    gap: 20px;
+    align-items: flex-start;
+    width: 630px;
+    justify-content: space-between;
+  }
+  .successfullyComFlexH3 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 30.26px;
+    text-align: left;
+    color: #000000;
+    width: 204px;
+  }
+  .successfullyComFlexH4 {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 30.26px;
+    text-align: left;
+    width: 380px;
+    color: #000000;
+  }
+  .successfullyComFlexSpan {
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 24.2px;
+    text-align: left;
+  }
+  .successfullyComFlexButton1 {
+    border: 1px solid #ff6200;
+    width: 357px;
+    height: 38px;
+    color: #ff6200;
+    border-radius: 6px;
+  }
+  .successfullyComFlexButton2 {
+    background: #ff6200;
+    width: 357px;
+    height: 38px;
+    border-radius: 6px;
+    color: white;
+  }
+  .successfullyComFlexSpanMinus {
+    text-decoration: line-through;
+    margin-right: 10px;
+    color: black;
+  }
+  .successfullyComFlexSpanSale {
+    background: #ff6200;
+    color: white;
+    padding: 2px 10px;
+
+    font-size: 20px;
+    font-weight: 400;
+    margin-left: 1pc;
+    line-height: 24.2px;
+    text-align: left;
+
+    border-radius: 19.5px;
+  }
 }
 
 @media (max-width: 680px) {
-	#successfullyCom {
-		padding: 0px 20px;
-		.successfullyCom {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.successfullyComH3 {
-			font-family: Inter;
-			font-size: 30px;
-			font-weight: 400;
-			line-height: 48.41px;
-			text-align: center;
-		}
-		.successfullyComH4 {
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 30.26px;
-			text-align: center;
-			color: #00000099;
-		}
-		.successfullyComP {
-			background: #ff620099;
-			font-family: Inter;
-			font-size: 13px;
-			font-weight: 400;
-			padding: 10px;
-			color: white;
-			margin: 20px 0;
-			line-height: 18.15px;
-			text-align: left;
-			width: 524px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 88px;
-			border-radius: 5px;
-		}
-		.successfullyComFlex {
-			display: flex;
-			margin: 13px 0;
-			gap: 20px;
-			align-items: flex-start;
-			width: 530px;
-			justify-content: space-between;
-		}
-		.successfullyComFlexH3 {
-			font-family: Inter;
-			font-size: 22px;
-			font-weight: 500;
-			line-height: 30.26px;
-			text-align: left;
-			color: #000000;
-			width: 204px;
-		}
-		.successfullyComFlexH4 {
-			font-family: Inter;
-			font-size: 21px;
-			font-weight: 500;
-			line-height: 30.26px;
-			text-align: left;
-			width: 380px;
-			color: #000000;
-		}
-		.successfullyComFlexSpan {
-			font-family: Inter;
-			font-size: 17px;
-			font-weight: 400;
-			line-height: 24.2px;
-			text-align: left;
-		}
-		.successfullyComFlexButton1 {
-			border: 1px solid #ff6200;
-			width: 357px;
-			height: 38px;
-			color: #ff6200;
-			border-radius: 6px;
-		}
-		.successfullyComFlexButton2 {
-			background: #ff6200;
-			width: 357px;
-			height: 38px;
-			border-radius: 6px;
-			color: white;
-		}
-		.successfullyComFlexSpanMinus {
-			text-decoration: line-through;
-			margin-right: 10px;
-			color: black;
-		}
-		.successfullyComFlexSpanSale {
-			background: #ff6200;
-			color: white;
-			padding: 2px 10px;
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			margin-left: 1pc;
-			line-height: 24.2px;
-			text-align: left;
+  #successfullyCom {
+    padding: 0px 20px;
+    .successfullyCom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .successfullyComH3 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 48.41px;
+      text-align: center;
+    }
+    .successfullyComH4 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30.26px;
+      text-align: center;
+      color: #00000099;
+    }
+    .successfullyComP {
+      background: #ff620099;
 
-			border-radius: 19.5px;
-		}
-	}
+      font-size: 13px;
+      font-weight: 400;
+      padding: 10px;
+      color: white;
+      margin: 20px 0;
+      line-height: 18.15px;
+      text-align: left;
+      width: 524px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 88px;
+      border-radius: 5px;
+    }
+    .successfullyComFlex {
+      display: flex;
+      margin: 13px 0;
+      gap: 20px;
+      align-items: flex-start;
+      width: 530px;
+      justify-content: space-between;
+    }
+    .successfullyComFlexH3 {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 30.26px;
+      text-align: left;
+      color: #000000;
+      width: 204px;
+    }
+    .successfullyComFlexH4 {
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 30.26px;
+      text-align: left;
+      width: 380px;
+      color: #000000;
+    }
+    .successfullyComFlexSpan {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+    }
+    .successfullyComFlexButton1 {
+      border: 1px solid #ff6200;
+      width: 357px;
+      height: 38px;
+      color: #ff6200;
+      border-radius: 6px;
+    }
+    .successfullyComFlexButton2 {
+      background: #ff6200;
+      width: 357px;
+      height: 38px;
+      border-radius: 6px;
+      color: white;
+    }
+    .successfullyComFlexSpanMinus {
+      text-decoration: line-through;
+      margin-right: 10px;
+      color: black;
+    }
+    .successfullyComFlexSpanSale {
+      background: #ff6200;
+      color: white;
+      padding: 2px 10px;
+
+      font-size: 20px;
+      font-weight: 400;
+      margin-left: 1pc;
+      line-height: 24.2px;
+      text-align: left;
+
+      border-radius: 19.5px;
+    }
+  }
 }
 @media (max-width: 565px) {
-	#successfullyCom {
-		padding: 0px 20px;
-		.successfullyCom {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.successfullyComH3 {
-			font-family: Inter;
-			font-size: 25px;
-			font-weight: 400;
-			line-height: 48.41px;
-			text-align: center;
-		}
-		.successfullyComH4 {
-			font-family: Inter;
-			font-size: 15px;
-			font-weight: 400;
-			line-height: 30.26px;
-			text-align: center;
-			color: #00000099;
-		}
-		.successfullyComP {
-			background: #ff620099;
-			font-family: Inter;
-			font-size: 13px;
-			font-weight: 400;
-			padding: 15px;
-			color: white;
-			margin: 20px 0;
-			line-height: 18.15px;
-			text-align: left;
-			width: 424px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 98px;
-			border-radius: 5px;
-		}
-		.successfullyComFlex {
-			display: flex;
-			margin: 13px 0;
-			gap: 20px;
-			align-items: flex-start;
-			width: 430px;
-			justify-content: space-between;
-		}
-		.successfullyComFlexH3 {
-			font-family: Inter;
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 30.26px;
-			text-align: left;
-			color: #000000;
-			width: 204px;
-		}
-		.successfullyComFlexH4 {
-			font-family: Inter;
-			font-size: 18px;
-			font-weight: 500;
-			line-height: 30.26px;
-			text-align: left;
-			width: 380px;
-			color: #000000;
-		}
-		.successfullyComFlexSpan {
-			font-family: Inter;
-			font-size: 15px;
-			font-weight: 400;
-			line-height: 24.2px;
-			text-align: left;
-		}
-		.successfullyComFlexButton1 {
-			border: 1px solid #ff6200;
-			width: 357px;
-			height: 38px;
-			color: #ff6200;
-			border-radius: 6px;
-		}
-		.successfullyComFlexButton2 {
-			background: #ff6200;
-			width: 357px;
-			height: 38px;
-			border-radius: 6px;
-			color: white;
-		}
-		.successfullyComFlexSpanMinus {
-			text-decoration: line-through;
-			margin-right: 10px;
-			color: black;
-		}
-		.successfullyComFlexSpanSale {
-			background: #ff6200;
-			color: white;
-			padding: 2px 10px;
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			margin-left: 1pc;
-			line-height: 24.2px;
-			text-align: left;
+  #successfullyCom {
+    padding: 0px 20px;
+    .successfullyCom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .successfullyComH3 {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 48.41px;
+      text-align: center;
+    }
+    .successfullyComH4 {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 30.26px;
+      text-align: center;
+      color: #00000099;
+    }
+    .successfullyComP {
+      background: #ff620099;
 
-			border-radius: 19.5px;
-		}
-	}
+      font-size: 13px;
+      font-weight: 400;
+      padding: 15px;
+      color: white;
+      margin: 20px 0;
+      line-height: 18.15px;
+      text-align: left;
+      width: 424px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 98px;
+      border-radius: 5px;
+    }
+    .successfullyComFlex {
+      display: flex;
+      margin: 13px 0;
+      gap: 20px;
+      align-items: flex-start;
+      width: 430px;
+      justify-content: space-between;
+    }
+    .successfullyComFlexH3 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 30.26px;
+      text-align: left;
+      color: #000000;
+      width: 204px;
+    }
+    .successfullyComFlexH4 {
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 30.26px;
+      text-align: left;
+      width: 380px;
+      color: #000000;
+    }
+    .successfullyComFlexSpan {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+    }
+    .successfullyComFlexButton1 {
+      border: 1px solid #ff6200;
+      width: 357px;
+      height: 38px;
+      color: #ff6200;
+      border-radius: 6px;
+    }
+    .successfullyComFlexButton2 {
+      background: #ff6200;
+      width: 357px;
+      height: 38px;
+      border-radius: 6px;
+      color: white;
+    }
+    .successfullyComFlexSpanMinus {
+      text-decoration: line-through;
+      margin-right: 10px;
+      color: black;
+    }
+    .successfullyComFlexSpanSale {
+      background: #ff6200;
+      color: white;
+      padding: 2px 10px;
+
+      font-size: 20px;
+      font-weight: 400;
+      margin-left: 1pc;
+      line-height: 24.2px;
+      text-align: left;
+
+      border-radius: 19.5px;
+    }
+  }
 }
 @media (max-width: 465px) {
-	#successfullyCom {
-		padding: 0px 20px;
-		.successfullyCom {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.successfullyComH3 {
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 48.41px;
-			text-align: center;
-		}
-		.successfullyComH4 {
-			font-family: Inter;
-			font-size: 13px;
-			font-weight: 400;
-			line-height: 30.26px;
-			text-align: center;
-			color: #00000099;
-		}
-		.successfullyComP {
-			background: #ff620099;
-			font-family: Inter;
-			font-size: 11px;
-			font-weight: 400;
-			padding: 15px;
-			color: white;
-			margin: 20px 0;
-			line-height: 18.15px;
-			text-align: left;
-			width: 304px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			height: 110px;
-			border-radius: 5px;
-		}
-		.successfullyComFlex {
-			display: flex;
-			margin: 5px 0;
-			gap: 20px;
-			align-items: flex-start;
-			width: 280px;
-			justify-content: space-between;
-		}
-		.successfullyComFlexH3 {
-			font-family: Inter;
-			font-size: 13px;
-			font-weight: 500;
-			line-height: 30.26px;
-			text-align: left;
-			color: #000000;
-			width: 134px;
-		}
-		.successfullyComFlexH4 {
-			font-family: Inter;
-			font-size: 12px;
-			font-weight: 500;
-			line-height: 30.26px;
-			text-align: left;
-			width: 300px;
-			color: #000000;
-		}
-		.successfullyComFlexSpan {
-			font-family: Inter;
-			font-size: 13px;
-			font-weight: 400;
-			line-height: 24.2px;
-			text-align: left;
-		}
-		.successfullyComFlexButton1 {
-			border: 1px solid #ff6200;
-			width: 307px;
-			height: 38px;
-			font-size: 13px;
-			color: #ff6200;
-			border-radius: 6px;
-		}
-		.successfullyComFlexButton2 {
-			background: #ff6200;
-			width: 307px;
-			height: 38px;
-			font-size: 13px;
-			border-radius: 6px;
-			color: white;
-		}
-		.successfullyComFlexSpanMinus {
-			text-decoration: line-through;
-			margin-right: 10px;
-			color: black;
-		}
-		.successfullyComFlexSpanSale {
-			background: #ff6200;
-			color: white;
-			padding: 2px 10px;
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			margin-left: 1pc;
-			line-height: 24.2px;
-			text-align: left;
-			border-radius: 19.5px;
-		}
-	}
+  #successfullyCom {
+    padding: 0px 20px;
+    .successfullyCom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .successfullyComH3 {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 48.41px;
+      text-align: center;
+    }
+    .successfullyComH4 {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 30.26px;
+      text-align: center;
+      color: #00000099;
+    }
+    .successfullyComP {
+      background: #ff620099;
+
+      font-size: 11px;
+      font-weight: 400;
+      padding: 15px;
+      color: white;
+      margin: 20px 0;
+      line-height: 18.15px;
+      text-align: left;
+      width: 304px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 110px;
+      border-radius: 5px;
+    }
+    .successfullyComFlex {
+      display: flex;
+      margin: 5px 0;
+      gap: 20px;
+      align-items: flex-start;
+      width: 280px;
+      justify-content: space-between;
+    }
+    .successfullyComFlexH3 {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 30.26px;
+      text-align: left;
+      color: #000000;
+      width: 134px;
+    }
+    .successfullyComFlexH4 {
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 30.26px;
+      text-align: left;
+      width: 300px;
+      color: #000000;
+    }
+    .successfullyComFlexSpan {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+    }
+    .successfullyComFlexButton1 {
+      border: 1px solid #ff6200;
+      width: 307px;
+      height: 38px;
+      font-size: 13px;
+      color: #ff6200;
+      border-radius: 6px;
+    }
+    .successfullyComFlexButton2 {
+      background: #ff6200;
+      width: 307px;
+      height: 38px;
+      font-size: 13px;
+      border-radius: 6px;
+      color: white;
+    }
+    .successfullyComFlexSpanMinus {
+      text-decoration: line-through;
+      margin-right: 10px;
+      color: black;
+    }
+    .successfullyComFlexSpanSale {
+      background: #ff6200;
+      color: white;
+      padding: 2px 10px;
+
+      font-size: 20px;
+      font-weight: 400;
+      margin-left: 1pc;
+      line-height: 24.2px;
+      text-align: left;
+      border-radius: 19.5px;
+    }
+  }
 }

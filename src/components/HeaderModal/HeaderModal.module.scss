@@ -1,111 +1,115 @@
 .modalOverlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	display: flex;
-	z-index: 99;
-	justify-content: center;
-	align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  z-index: 99;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalContent {
-	background: white;
-	padding: 20px;
-	border-radius: 10px;
-	text-align: center;
-	position: relative;
-	width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 400px;
 }
 
 .closeButton {
-	font-size: 24px;
-	width: 100%;
-	display: flex;
-	align-items: end;
-	justify-content: end;
-	cursor: pointer;
+  font-size: 24px;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  cursor: pointer;
 }
 
 .doctorImg {
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
 }
 
 .doctorName {
-	font-family: Inter;
-	font-size: 20px;
-	width: 350px;
-	font-weight: 600;
-	line-height: 30.26px;
-	color: #ff6200;
+  font-size: 20px;
+  width: 350px;
+  font-weight: 600;
+  line-height: 30.26px;
+  color: #ff6200;
 
-	text-align: center;
+  text-align: center;
 }
 
 .doctorDescription {
-	font-size: 16px;
-	margin-bottom: 20px;
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .input {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
 .bookButton {
-	padding: 10px;
-	width: 100px;
-	background: #ff7f50;
-	border: none;
-	border-radius: 5px;
-	color: white;
-	font-size: 16px;
-	cursor: pointer;
+  padding: 10px;
+  width: 100px;
+  background: #ff7f50;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .bookButton:hover {
-	background-color: #ff6347;
+  background-color: #ff6347;
 }
 .closeButon1 {
-	display: flex;
+  display: flex;
 }
 
 .closeButton1 {
-	text-align-last: left;
-	padding: 6px;
-	border-radius: 5px;
-	margin-top: 10px;
-	width: 100%;
-	margin: 2px 0;
-	border: 0.5px solid #ff6200;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align-last: left;
+  padding: 6px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  margin: 2px 0;
+  border: 0.5px solid #ff6200;
 }
 .closeButton2 {
-	width: 100%;
-	padding: 6px;
-	margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
 
-	border-radius: 5px;
-	margin: 2px 0;
-	margin-bottom: 10px;
-	border: 0.5px solid #ff6200;
-	text-align-last: left;
+  border-radius: 5px;
+  margin: 2px 0;
+  margin-bottom: 10px;
+  border: 0.5px solid #ff6200;
+  text-align-last: left;
 }
 
 .doctorP {
-	font-family: Inter;
-	font-size: 10px;
-	margin-top: 10px;
-	font-weight: 600;
-	line-height: 14.52px;
-	text-align: left;
+  font-size: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+  line-height: 14.52px;
+  text-align: left;
 }
 
 @media (max-width: 466px) {
