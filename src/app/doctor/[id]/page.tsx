@@ -1,41 +1,39 @@
-'use client'
-import DoctorInformation from '@/components/DoctorInformation/DoctorInformation'
-import DoctorModal from '@/components/DoctorModal/DoctorModal'
-import Specializations from '@/components/Specializations/Specializations'
-import React, { useState } from 'react'
+"use client"
+import React, { useState } from "react";
+import DoctorInformation from "@/components/DoctorInformation/DoctorInformation";
+import DoctorModal from "@/components/DoctorModal/DoctorModal";
+import Specializations from "@/components/Specializations/Specializations";
 
-function page() {
-	const [modal, setModal] = useState<boolean>(false)
+// Define Page component as a function component
+const Page: React.FC = () => {
+  const [modal, setModal] = useState<boolean>(false);
 
-	function modalFunction() {
-		if (modal) {
-			setModal(false)
-		} else {
-			setModal(true)
-		}
-	}
-	return (
-		<div>
-			<div
-				style={{
-					background: 'white',
-					width: '100%'
-				}}
-			>
-				<div>
-					<DoctorInformation modalFunction={modalFunction} />
-				</div>
-				<Specializations />
-			</div>
-			<div
-				style={{
-					display: modal ? 'block' : 'none'
-				}}
-			>
-				<DoctorModal setModal={modalFunction} />
-			</div>
-		</div>
-	)
-}
+  const modalFunction = (): void => {
+    setModal((prevModal) => !prevModal);
+  };
 
-export default page
+  return (
+    <div>
+      <div
+        style={{
+          background: "white",
+          width: "100%",
+        }}
+      >
+        <div>
+          <DoctorInformation modalFunction={modalFunction} />
+        </div>
+        <Specializations />
+      </div>
+      <div
+        style={{
+          display: modal ? "block" : "none",
+        }}
+      >
+        <DoctorModal setModal={modalFunction} />
+      </div>
+    </div>
+  );
+};
+
+export default Page;

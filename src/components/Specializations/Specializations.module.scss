@@ -1,1288 +1,1224 @@
 #specializations {
-	.specializations {
-		.specialMain {
-			display: flex;
-			flex-direction: column;
-			gap: 15px;
-		}
+  .specializations {
+    .specialMain {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-		.special {
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-			width: 990px;
-			gap: 20px;
-		}
-		.specialH3 {
-			background: #ff6200;
-			border-radius: 15px;
-			padding: 5px 20px;
-			color: white;
-		}
+    .special {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 990px;
+      gap: 20px;
+    }
+    .specialH3 {
+      background: #ff6200;
+      border-radius: 15px;
+      padding: 5px 20px;
+      color: white;
+    }
 
-		.servicesMain {
-			display: flex;
-			flex-direction: column;
-			gap: 15px;
-		}
+    .servicesMain {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-		.services {
-			display: flex;
-			align-items: center;
-			flex-wrap: wrap;
-			width: 980px;
-			gap: 20px;
-		}
-		.servicesH3 {
-			background: #ff6200;
-			border-radius: 15px;
-			padding: 5px 20px;
-			color: white;
-		}
-		.servicesMainH4 {
-			font-family: Inter;
-			font-size: 30px;
-			font-weight: 600;
-			margin-top: 3pc;
-			line-height: 36.31px;
-			text-align: left;
-		}
-		.specialMainH4 {
-			font-family: Inter;
-			font-size: 30px;
-			font-weight: 600;
-			line-height: 36.31px;
-			text-align: left;
-		}
-		.servicesDescrP {
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 24.2px;
-			text-align: left;
-			width: 915px;
-		}
-		.reviewReiting {
-			margin-top: 2pc;
-			margin-bottom: 2pc;
-		}
-		.reviewReitingH4 {
-			font-family: Inter;
-			font-size: 30px;
-			font-weight: 400;
-			line-height: 36.31px;
-			text-align: left;
-		}
-		.reviewReitingSpan {
-			font-family: Inter;
-			font-size: 30px;
-			font-weight: 400;
-			line-height: 36.31px;
-			text-align: left;
-		}
+    .services {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 980px;
+      gap: 20px;
+    }
+    .servicesH3 {
+      background: #ff6200;
+      border-radius: 15px;
+      padding: 5px 20px;
+      color: white;
+    }
+    .servicesMainH4 {
+      font-size: 30px;
+      font-weight: 600;
+      margin-top: 3pc;
+      line-height: 36.31px;
+      text-align: left;
+    }
+    .specialMainH4 {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 36.31px;
+      text-align: left;
+    }
+    .servicesDescrP {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+      width: 915px;
+    }
+    .reviewReiting {
+      margin-top: 2pc;
+      margin-bottom: 2pc;
+    }
+    .reviewReitingH4 {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 36.31px;
+      text-align: left;
+    }
+    .reviewReitingSpan {
+      font-size: 30px;
+      font-weight: 400;
+      line-height: 36.31px;
+      text-align: left;
+    }
 
-		.reviewYouH4 {
-			font-family: Inter;
-			font-size: 30px;
-			font-weight: 600;
-			line-height: 36.31px;
-			text-align: left;
-		}
-		.reviewYouText {
-			border: 1px solid black;
-			width: 100%;
-			height: 185px;
-		}
-		.reviewYouDiv {
-			display: flex;
-			margin-top: 1pc;
-			align-items: center;
-			justify-content: end;
-		}
-		.reviewYouButton {
-			width: 218px;
-			height: 38px;
-			border-radius: 6px;
-			background: #ff6200;
-			color: white;
-		}
-		.reviewArray {
-			display: flex;
-			flex-direction: column;
-			gap: 40px;
-			margin-top: 2pc;
-		}
-		.reviewArrayDev {
-			display: flex;
-			padding-right: 1pc;
-			padding-bottom: 2pc;
-			gap: 20px;
-			padding-left: 1pc;
-			padding-top: 1pc;
-			align-items: flex-start;
-			justify-content: space-between;
-			border: 1.5px solid #efefef;
-		}
-		.reviewArrayImg {
-			width: 80px;
-			height: 80px;
-			border-radius: 50%;
-		}
-		.reviewArrayText {
-			display: flex;
-			flex-direction: column;
-			gap: 10px;
-		}
-		.reviewArrayH3 {
-			font-family: Inter;
-			font-size: 30px;
-			font-weight: 600;
-			line-height: 36.31px;
-			text-align: left;
-		}
-		.reviewArrayP {
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 24.2px;
-			text-align: left;
-			width: 882px;
-		}
-		.readMoreButton {
-			color: #459bff;
-			text-decoration: underline;
-		}
-	}
+    .reviewYouH4 {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 36.31px;
+      text-align: left;
+    }
+    .reviewYouText {
+      border: 1px solid black;
+      width: 100%;
+      height: 185px;
+    }
+    .reviewYouDiv {
+      display: flex;
+      margin-top: 1pc;
+      align-items: center;
+      justify-content: end;
+    }
+    .reviewYouButton {
+      width: 218px;
+      height: 38px;
+      border-radius: 6px;
+      background: #ff6200;
+      color: white;
+    }
+    .reviewArray {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 2pc;
+    }
+    .reviewArrayDev {
+      display: flex;
+      padding-right: 1pc;
+      padding-bottom: 2pc;
+      gap: 20px;
+      padding-left: 1pc;
+      padding-top: 1pc;
+      align-items: flex-start;
+      justify-content: space-between;
+      border: 1.5px solid #efefef;
+    }
+    .reviewArrayImg {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+    .reviewArrayText {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .reviewArrayH3 {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 36.31px;
+      text-align: left;
+    }
+    .reviewArrayP {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+      width: 882px;
+    }
+    .readMoreButton {
+      color: #459bff;
+      text-decoration: underline;
+    }
+  }
 }
 @media (max-width: 1200px) {
-	#specializations {
-		padding: 0px 20px;
-		.specializations {
-			.specialMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+  #specializations {
+    padding: 0px 20px;
+    .specializations {
+      .specialMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.special {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 990px;
-				gap: 20px;
-			}
-			.specialH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
+      .special {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 990px;
+        gap: 20px;
+      }
+      .specialH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
 
-			.servicesMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+      .servicesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.services {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 980px;
-				gap: 20px;
-			}
-			.servicesH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
-			.servicesMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				margin-top: 3pc;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.specialMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.servicesDescrP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 915px;
-			}
-			.reviewReiting {
-				margin-top: 2pc;
-				margin-bottom: 2pc;
-			}
-			.reviewReitingH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewReitingSpan {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
+      .services {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 980px;
+        gap: 20px;
+      }
+      .servicesH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
+      .servicesMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 3pc;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .specialMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .servicesDescrP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 915px;
+      }
+      .reviewReiting {
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+      }
+      .reviewReitingH4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewReitingSpan {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
 
-			.reviewYouH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewYouText {
-				border: 1px solid black;
-				width: 100%;
-				height: 185px;
-			}
-			.reviewYouDiv {
-				display: flex;
-				margin-top: 1pc;
-				align-items: center;
-				justify-content: end;
-			}
-			.reviewYouButton {
-				width: 218px;
-				height: 38px;
-				border-radius: 6px;
-				background: #ff6200;
-				color: white;
-			}
-			.reviewArray {
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-				margin-top: 2pc;
-			}
-			.reviewArrayDev {
-				display: flex;
-				padding-right: 1pc;
-				padding-bottom: 2pc;
-				gap: 20px;
-				padding-left: 1pc;
-				padding-top: 1pc;
-				align-items: flex-start;
-				justify-content: space-between;
-				border: 1.5px solid #efefef;
-			}
-			.reviewArrayImg {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-			}
-			.reviewArrayText {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-			.reviewArrayH3 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewArrayP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 882px;
-			}
-			.readMoreButton {
-				color: #459bff;
-				text-decoration: underline;
-			}
-		}
-	}
+      .reviewYouH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewYouText {
+        border: 1px solid black;
+        width: 100%;
+        height: 185px;
+      }
+      .reviewYouDiv {
+        display: flex;
+        margin-top: 1pc;
+        align-items: center;
+        justify-content: end;
+      }
+      .reviewYouButton {
+        width: 218px;
+        height: 38px;
+        border-radius: 6px;
+        background: #ff6200;
+        color: white;
+      }
+      .reviewArray {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 2pc;
+      }
+      .reviewArrayDev {
+        display: flex;
+        padding-right: 1pc;
+        padding-bottom: 2pc;
+        gap: 20px;
+        padding-left: 1pc;
+        padding-top: 1pc;
+        align-items: flex-start;
+        justify-content: space-between;
+        border: 1.5px solid #efefef;
+      }
+      .reviewArrayImg {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .reviewArrayText {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .reviewArrayH3 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewArrayP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 882px;
+      }
+      .readMoreButton {
+        color: #459bff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 @media (max-width: 1127px) {
-	#specializations {
-		padding: 0px 20px;
-		.specializations {
-			.specialMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+  #specializations {
+    padding: 0px 20px;
+    .specializations {
+      .specialMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.special {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 800px;
-				gap: 20px;
-			}
-			.specialH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
+      .special {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 800px;
+        gap: 20px;
+      }
+      .specialH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
 
-			.servicesMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+      .servicesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.services {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 800px;
-				gap: 20px;
-			}
-			.servicesH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
-			.servicesMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				margin-top: 3pc;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.specialMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.servicesDescrP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 715px;
-			}
-			.reviewReiting {
-				margin-top: 2pc;
-				margin-bottom: 2pc;
-			}
-			.reviewReitingH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewReitingSpan {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
+      .services {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 800px;
+        gap: 20px;
+      }
+      .servicesH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
+      .servicesMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 3pc;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .specialMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .servicesDescrP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 715px;
+      }
+      .reviewReiting {
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+      }
+      .reviewReitingH4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewReitingSpan {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
 
-			.reviewYouH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewYouText {
-				border: 1px solid black;
-				width: 100%;
-				height: 185px;
-			}
-			.reviewYouDiv {
-				display: flex;
-				margin-top: 1pc;
-				align-items: center;
-				justify-content: end;
-			}
-			.reviewYouButton {
-				width: 218px;
-				height: 38px;
-				border-radius: 6px;
-				background: #ff6200;
-				color: white;
-			}
-			.reviewArray {
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-				margin-top: 2pc;
-			}
-			.reviewArrayDev {
-				display: flex;
-				padding-right: 1pc;
-				padding-bottom: 2pc;
-				gap: 20px;
-				flex-wrap: wrap;
-				padding-left: 1pc;
-				padding-top: 1pc;
-				align-items: flex-start;
-				width: 100%;
-				justify-content: space-between;
-				border: 1.5px solid #efefef;
-			}
-			.reviewArrayImg {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-			}
-			.reviewArrayText {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-			.reviewArrayH3 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewArrayP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 702px;
-			}
-			.readMoreButton {
-				color: #459bff;
-				text-decoration: underline;
-			}
-		}
-	}
+      .reviewYouH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewYouText {
+        border: 1px solid black;
+        width: 100%;
+        height: 185px;
+      }
+      .reviewYouDiv {
+        display: flex;
+        margin-top: 1pc;
+        align-items: center;
+        justify-content: end;
+      }
+      .reviewYouButton {
+        width: 218px;
+        height: 38px;
+        border-radius: 6px;
+        background: #ff6200;
+        color: white;
+      }
+      .reviewArray {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 2pc;
+      }
+      .reviewArrayDev {
+        display: flex;
+        padding-right: 1pc;
+        padding-bottom: 2pc;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-left: 1pc;
+        padding-top: 1pc;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        border: 1.5px solid #efefef;
+      }
+      .reviewArrayImg {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .reviewArrayText {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .reviewArrayH3 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewArrayP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 702px;
+      }
+      .readMoreButton {
+        color: #459bff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 @media (max-width: 944px) {
-	#specializations {
-		padding: 0px 20px;
-		.specializations {
-			.specialMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+  #specializations {
+    padding: 0px 20px;
+    .specializations {
+      .specialMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.special {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 600px;
-				gap: 20px;
-			}
-			.specialH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
+      .special {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 600px;
+        gap: 20px;
+      }
+      .specialH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
 
-			.servicesMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+      .servicesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.services {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 700px;
-				gap: 20px;
-			}
-			.servicesH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
-			.servicesMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				margin-top: 3pc;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.specialMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.servicesDescrP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 715px;
-			}
-			.reviewReiting {
-				margin-top: 2pc;
-				margin-bottom: 2pc;
-			}
-			.reviewReitingH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewReitingSpan {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
+      .services {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 700px;
+        gap: 20px;
+      }
+      .servicesH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
+      .servicesMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 3pc;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .specialMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .servicesDescrP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 715px;
+      }
+      .reviewReiting {
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+      }
+      .reviewReitingH4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewReitingSpan {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
 
-			.reviewYouH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewYouText {
-				border: 1px solid black;
-				width: 100%;
-				height: 185px;
-			}
-			.reviewYouDiv {
-				display: flex;
-				margin-top: 1pc;
-				align-items: center;
-				justify-content: end;
-			}
-			.reviewYouButton {
-				width: 218px;
-				height: 38px;
-				border-radius: 6px;
-				background: #ff6200;
-				color: white;
-			}
-			.reviewArray {
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-				margin-top: 2pc;
-			}
-			.reviewArrayDev {
-				display: flex;
-				padding-right: 1pc;
-				padding-bottom: 2pc;
-				gap: 20px;
-				flex-wrap: wrap;
-				padding-left: 1pc;
-				padding-top: 1pc;
-				align-items: flex-start;
-				width: 100%;
-				justify-content: space-between;
-				border: 1.5px solid #efefef;
-			}
-			.reviewArrayImg {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-			}
-			.reviewArrayText {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-			.reviewArrayH3 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewArrayP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 722px;
-			}
-			.readMoreButton {
-				color: #459bff;
-				text-decoration: underline;
-			}
-		}
-	}
+      .reviewYouH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewYouText {
+        border: 1px solid black;
+        width: 100%;
+        height: 185px;
+      }
+      .reviewYouDiv {
+        display: flex;
+        margin-top: 1pc;
+        align-items: center;
+        justify-content: end;
+      }
+      .reviewYouButton {
+        width: 218px;
+        height: 38px;
+        border-radius: 6px;
+        background: #ff6200;
+        color: white;
+      }
+      .reviewArray {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 2pc;
+      }
+      .reviewArrayDev {
+        display: flex;
+        padding-right: 1pc;
+        padding-bottom: 2pc;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-left: 1pc;
+        padding-top: 1pc;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        border: 1.5px solid #efefef;
+      }
+      .reviewArrayImg {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .reviewArrayText {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .reviewArrayH3 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewArrayP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 722px;
+      }
+      .readMoreButton {
+        color: #459bff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 @media (max-width: 840px) {
-	#specializations {
-		padding: 0px 20px;
-		.specializations {
-			.specialMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+  #specializations {
+    padding: 0px 20px;
+    .specializations {
+      .specialMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.special {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 600px;
-				gap: 20px;
-			}
-			.specialH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
+      .special {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 600px;
+        gap: 20px;
+      }
+      .specialH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
 
-			.servicesMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+      .servicesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.services {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 700px;
-				gap: 20px;
-			}
-			.servicesH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
-			.servicesMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				margin-top: 3pc;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.specialMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.servicesDescrP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 615px;
-			}
-			.reviewReiting {
-				margin-top: 2pc;
-				margin-bottom: 2pc;
-			}
-			.reviewReitingH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewReitingSpan {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
+      .services {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 700px;
+        gap: 20px;
+      }
+      .servicesH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
+      .servicesMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 3pc;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .specialMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .servicesDescrP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 615px;
+      }
+      .reviewReiting {
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+      }
+      .reviewReitingH4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewReitingSpan {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
 
-			.reviewYouH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewYouText {
-				border: 1px solid black;
-				width: 100%;
-				height: 185px;
-			}
-			.reviewYouDiv {
-				display: flex;
-				margin-top: 1pc;
-				margin-left: -4pc;
-				align-items: center;
-				justify-content: end;
-			}
-			.reviewYouButton {
-				width: 218px;
-				height: 38px;
-				border-radius: 6px;
-				background: #ff6200;
-				color: white;
-			}
-			.reviewArray {
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-				margin-top: 2pc;
-			}
-			.reviewArrayDev {
-				display: flex;
-				padding-right: 1pc;
-				padding-bottom: 2pc;
-				gap: 20px;
-				flex-wrap: wrap;
-				padding-left: 1pc;
-				padding-top: 1pc;
-				align-items: flex-start;
-				width: 100%;
-				justify-content: space-between;
-				border: 1.5px solid #efefef;
-			}
-			.reviewArrayImg {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-			}
-			.reviewArrayText {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-			.reviewArrayH3 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewArrayP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 622px;
-			}
-			.readMoreButton {
-				color: #459bff;
-				text-decoration: underline;
-			}
-		}
-	}
+      .reviewYouH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewYouText {
+        border: 1px solid black;
+        width: 100%;
+        height: 185px;
+      }
+      .reviewYouDiv {
+        display: flex;
+        margin-top: 1pc;
+        margin-left: -4pc;
+        align-items: center;
+        justify-content: end;
+      }
+      .reviewYouButton {
+        width: 218px;
+        height: 38px;
+        border-radius: 6px;
+        background: #ff6200;
+        color: white;
+      }
+      .reviewArray {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 2pc;
+      }
+      .reviewArrayDev {
+        display: flex;
+        padding-right: 1pc;
+        padding-bottom: 2pc;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-left: 1pc;
+        padding-top: 1pc;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        border: 1.5px solid #efefef;
+      }
+      .reviewArrayImg {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .reviewArrayText {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .reviewArrayH3 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewArrayP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 622px;
+      }
+      .readMoreButton {
+        color: #459bff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 @media (max-width: 727px) {
-	#specializations {
-		padding: 0px 20px;
-		.specializations {
-			.specialMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+  #specializations {
+    padding: 0px 20px;
+    .specializations {
+      .specialMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.special {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 500px;
-				gap: 20px;
-			}
-			.specialH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
+      .special {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 500px;
+        gap: 20px;
+      }
+      .specialH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
 
-			.servicesMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+      .servicesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.services {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 500px;
-				gap: 20px;
-			}
-			.servicesH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
-			.servicesMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				margin-top: 3pc;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.specialMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.servicesDescrP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 515px;
-			}
-			.reviewReiting {
-				margin-top: 2pc;
-				margin-bottom: 2pc;
-			}
-			.reviewReitingH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewReitingSpan {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
+      .services {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 500px;
+        gap: 20px;
+      }
+      .servicesH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
+      .servicesMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 3pc;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .specialMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .servicesDescrP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 515px;
+      }
+      .reviewReiting {
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+      }
+      .reviewReitingH4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewReitingSpan {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
 
-			.reviewYouH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewYouText {
-				border: 1px solid black;
-				width: 100%;
-				height: 185px;
-			}
-			.reviewYouDiv {
-				display: flex;
-				margin-top: 1pc;
-				margin-left: -4pc;
-				align-items: center;
-				justify-content: end;
-			}
-			.reviewYouButton {
-				width: 218px;
-				height: 38px;
-				border-radius: 6px;
-				background: #ff6200;
-				color: white;
-			}
-			.reviewArray {
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-				margin-top: 2pc;
-			}
-			.reviewArrayDev {
-				display: flex;
-				padding-right: 1pc;
-				padding-bottom: 2pc;
-				gap: 20px;
-				flex-wrap: wrap;
-				padding-left: 1pc;
-				padding-top: 1pc;
-				align-items: flex-start;
-				width: 100%;
-				justify-content: space-between;
-				border: 1.5px solid #efefef;
-			}
-			.reviewArrayImg {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-			}
-			.reviewArrayText {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-			.reviewArrayH3 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewArrayP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 422px;
-			}
-			.readMoreButton {
-				color: #459bff;
-				text-decoration: underline;
-			}
-		}
-	}
+      .reviewYouH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewYouText {
+        border: 1px solid black;
+        width: 100%;
+        height: 185px;
+      }
+      .reviewYouDiv {
+        display: flex;
+        margin-top: 1pc;
+        margin-left: -4pc;
+        align-items: center;
+        justify-content: end;
+      }
+      .reviewYouButton {
+        width: 218px;
+        height: 38px;
+        border-radius: 6px;
+        background: #ff6200;
+        color: white;
+      }
+      .reviewArray {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 2pc;
+      }
+      .reviewArrayDev {
+        display: flex;
+        padding-right: 1pc;
+        padding-bottom: 2pc;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-left: 1pc;
+        padding-top: 1pc;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        border: 1.5px solid #efefef;
+      }
+      .reviewArrayImg {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .reviewArrayText {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .reviewArrayH3 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewArrayP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 422px;
+      }
+      .readMoreButton {
+        color: #459bff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 @media (max-width: 538px) {
-	#specializations {
-		padding: 0px 20px;
-		.specializations {
-			.specialMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+  #specializations {
+    padding: 0px 20px;
+    .specializations {
+      .specialMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.special {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 300px;
-				gap: 20px;
-			}
-			.specialH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-			}
+      .special {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 300px;
+        gap: 20px;
+      }
+      .specialH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+      }
 
-			.servicesMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+      .servicesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.services {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 300px;
-				gap: 20px;
-			}
-			.servicesH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				font-size: 12px;
-				padding: 5px 20px;
-				color: white;
-			}
-			.servicesMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				margin-top: 3pc;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.specialMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.servicesDescrP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 315px;
-			}
-			.reviewReiting {
-				margin-top: 2pc;
-				margin-bottom: 2pc;
-			}
-			.reviewReitingH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewReitingSpan {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
+      .services {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 300px;
+        gap: 20px;
+      }
+      .servicesH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        font-size: 12px;
+        padding: 5px 20px;
+        color: white;
+      }
+      .servicesMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 3pc;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .specialMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .servicesDescrP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 315px;
+      }
+      .reviewReiting {
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+      }
+      .reviewReitingH4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewReitingSpan {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
 
-			.reviewYouH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewYouText {
-				border: 1px solid black;
-				width: 100%;
-				height: 185px;
-			}
-			.reviewYouDiv {
-				display: flex;
-				margin-top: 1pc;
-				margin-left: -4pc;
-				align-items: center;
-				justify-content: end;
-			}
-			.reviewYouButton {
-				width: 218px;
-				height: 38px;
-				border-radius: 6px;
-				background: #ff6200;
-				color: white;
-			}
-			.reviewArray {
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-				margin-top: 2pc;
-			}
-			.reviewArrayDev {
-				display: flex;
-				padding-right: 1pc;
-				padding-bottom: 2pc;
-				gap: 20px;
-				flex-wrap: wrap;
-				padding-left: 1pc;
-				padding-top: 1pc;
-				align-items: flex-start;
-				width: 100%;
-				justify-content: space-between;
-				border: 1.5px solid #efefef;
-			}
-			.reviewArrayImg {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-			}
-			.reviewArrayText {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-			.reviewArrayH3 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewArrayP {
-				font-family: Inter;
-				font-size: 20px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 322px;
-			}
-			.readMoreButton {
-				color: #459bff;
-				text-decoration: underline;
-			}
-		}
-	}
+      .reviewYouH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewYouText {
+        border: 1px solid black;
+        width: 100%;
+        height: 185px;
+      }
+      .reviewYouDiv {
+        display: flex;
+        margin-top: 1pc;
+        margin-left: -4pc;
+        align-items: center;
+        justify-content: end;
+      }
+      .reviewYouButton {
+        width: 218px;
+        height: 38px;
+        border-radius: 6px;
+        background: #ff6200;
+        color: white;
+      }
+      .reviewArray {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 2pc;
+      }
+      .reviewArrayDev {
+        display: flex;
+        padding-right: 1pc;
+        padding-bottom: 2pc;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-left: 1pc;
+        padding-top: 1pc;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        border: 1.5px solid #efefef;
+      }
+      .reviewArrayImg {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .reviewArrayText {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .reviewArrayH3 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewArrayP {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 322px;
+      }
+      .readMoreButton {
+        color: #459bff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
 @media (max-width: 390px) {
-	#specializations {
-		padding: 0px 20px;
-		.specializations {
-			.specialMain {
-				display: flex;
-				flex-direction: column;
-				gap: 15px;
-			}
+  #specializations {
+    padding: 0px 20px;
+    .specializations {
+      .specialMain {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-			.special {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 200px;
-				gap: 20px;
-			}
-			.specialH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				padding: 5px 20px;
-				color: white;
-				font-size: 12px;
-			}
+      .special {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 200px;
+        gap: 20px;
+      }
+      .specialH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        padding: 5px 20px;
+        color: white;
+        font-size: 12px;
+      }
 
-			.servicesMain {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
+      .servicesMain {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
 
-			.services {
-				display: flex;
-				align-items: center;
-				flex-wrap: wrap;
-				width: 300px;
-				gap: 20px;
-			}
-			.servicesH3 {
-				background: #ff6200;
-				border-radius: 15px;
-				font-size: 10px;
-				padding: 5px 20px;
-				color: white;
-			}
-			.servicesMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				margin-top: 3pc;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.specialMainH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.servicesDescrP {
-				font-family: Inter;
-				font-size: 17px;
-				font-weight: 400;
-				line-height: 24.2px;
-				text-align: left;
-				width: 280px;
-			}
-			.reviewReiting {
-				margin-top: 2pc;
-				margin-bottom: 2pc;
-			}
-			.reviewReitingH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewReitingSpan {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 400;
-				line-height: 36.31px;
-				text-align: left;
-			}
+      .services {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 300px;
+        gap: 20px;
+      }
+      .servicesH3 {
+        background: #ff6200;
+        border-radius: 15px;
+        font-size: 10px;
+        padding: 5px 20px;
+        color: white;
+      }
+      .servicesMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 3pc;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .specialMainH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .servicesDescrP {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+        width: 280px;
+      }
+      .reviewReiting {
+        margin-top: 2pc;
+        margin-bottom: 2pc;
+      }
+      .reviewReitingH4 {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewReitingSpan {
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 36.31px;
+        text-align: left;
+      }
 
-			.reviewYouH4 {
-				font-family: Inter;
-				font-size: 30px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewYouText {
-				border: 1px solid black;
-				width: 100%;
-				height: 185px;
-			}
-			.reviewYouDiv {
-				display: flex;
-				margin-top: 1pc;
-				margin-left: 9pc;
-				align-items: center;
-				justify-content: center;
-			}
-			.reviewYouButton {
-				width: 218px;
-				height: 38px;
-				border-radius: 6px;
-				background: #ff6200;
-				color: white;
-			}
-			.reviewArray {
-				display: flex;
-				flex-direction: column;
-				gap: 40px;
-				margin-top: 2pc;
-			}
-			.reviewArrayDev {
-				display: flex;
-				padding-bottom: 2pc;
-				gap: 20px;
-				flex-wrap: wrap;
-				padding-top: 1pc;
-				align-items: flex-start;
-				width: 100%;
-				justify-content: space-between;
-				border: 1.5px solid #efefef;
-			}
-			.reviewArrayImg {
-				width: 80px;
-				height: 80px;
-				border-radius: 50%;
-			}
-			.reviewArrayText {
-				display: flex;
-				flex-direction: column;
-				gap: 10px;
-			}
-			.reviewArrayH3 {
-				font-family: Inter;
-				font-size: 25px;
-				font-weight: 600;
-				line-height: 36.31px;
-				text-align: left;
-			}
-			.reviewArrayP {
-				font-family: Inter;
-				font-size: 14px;
-				font-weight: 400;
-				line-height: 21.2px;
-				text-align: left;
-				width: 239px;
-			}
-			.readMoreButton {
-				font-size: 14px;
-				margin-left: -4pc;
-				color: #459bff;
-				text-decoration: underline;
-			}
-		}
-	}
+      .reviewYouH4 {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewYouText {
+        border: 1px solid black;
+        width: 100%;
+        height: 185px;
+      }
+      .reviewYouDiv {
+        display: flex;
+        margin-top: 1pc;
+        margin-left: 9pc;
+        align-items: center;
+        justify-content: center;
+      }
+      .reviewYouButton {
+        width: 218px;
+        height: 38px;
+        border-radius: 6px;
+        background: #ff6200;
+        color: white;
+      }
+      .reviewArray {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 2pc;
+      }
+      .reviewArrayDev {
+        display: flex;
+        padding-bottom: 2pc;
+        gap: 20px;
+        flex-wrap: wrap;
+        padding-top: 1pc;
+        align-items: flex-start;
+        width: 100%;
+        justify-content: space-between;
+        border: 1.5px solid #efefef;
+      }
+      .reviewArrayImg {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+      .reviewArrayText {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .reviewArrayH3 {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .reviewArrayP {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 21.2px;
+        text-align: left;
+        width: 239px;
+      }
+      .readMoreButton {
+        font-size: 14px;
+        margin-left: -4pc;
+        color: #459bff;
+        text-decoration: underline;
+      }
+    }
+  }
 }
