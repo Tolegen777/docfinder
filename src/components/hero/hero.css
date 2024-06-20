@@ -36,3 +36,45 @@
 	font-size: 21px;
 	font-weight: 900;
 }
+
+@media (max-width: 700px) {
+	.swiper-button-next:after,
+	.swiper-rtl .swiper-button-prev:after {
+		margin-top: -15pc;
+	}
+
+	.swiper-button-prev:after,
+	.swiper-rtl .swiper-button-next:after {
+		margin-top: -15pc;
+	}
+}
+
+@media (max-width: 378px) {
+	body {
+		overflow-x: hidden;
+	}
+	.swiper-button-next:after,
+	.swiper-rtl .swiper-button-prev:after {
+		margin-top: -15pc;
+		margin-left: -1pc;
+	}
+
+	.swiper-button-prev:after,
+	.swiper-rtl .swiper-button-next:after {
+		margin-top: -15pc;
+	}
+}
+
+@media (max-width: 340px) {
+	.swiper-button-next:after,
+	.swiper-rtl .swiper-button-prev:after {
+		margin-top: -15pc;
+		margin-left: -1px;
+	}
+
+	.swiper-button-prev:after,
+	.swiper-rtl .swiper-button-next:after {
+		margin-top: -15pc;
+		margin-left: 2.4pc;
+	}
+}

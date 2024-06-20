@@ -267,3 +267,58 @@
 		}
 	}
 }
+
+@media (max-width: 380px) {
+	#doctorNavs {
+		margin-top: 1.5pc;
+		margin-bottom: 1.5pc;
+		.doctorNavs {
+			display: flex;
+			align-items: flex-start;
+			gap: 20px;
+			justify-content: space-between;
+			flex-direction: column;
+			.doctorMainNavs {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				button {
+					border: 1.5px solid #ff6200;
+					width: 50px;
+					height: 30px;
+					border-radius: 7px;
+					color: #ff6200;
+					font-family: Inter;
+					font-size: 11px;
+					font-weight: 400;
+					line-height: 20.57px;
+				}
+			}
+			.reset {
+				font-family: Inter;
+				font-size: 15px;
+				font-weight: 400;
+				line-height: 20.57px;
+				color: #459bff;
+				text-decoration: underline;
+			}
+			.doctorMainSort {
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				select {
+					border: 1.5px solid #ff6200;
+					width: 139px;
+					height: 30px;
+					border-radius: 7px;
+					color: #ff6200;
+					font-family: Inter;
+					font-size: 10px;
+					background: none;
+					font-weight: 400;
+					line-height: 20.57px;
+				}
+			}
+		}
+	}
+}
