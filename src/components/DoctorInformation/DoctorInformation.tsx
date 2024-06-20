@@ -9,6 +9,7 @@ import Image from "next/image";
 type DoctorInformationProps = Partial<{
   modalFunction: () => void;
 }>;
+
 const DoctorInformation: React.FC<DoctorInformationProps> = ({
   modalFunction,
 }: any) => {
@@ -19,7 +20,6 @@ const DoctorInformation: React.FC<DoctorInformationProps> = ({
     { number: 13, ned: "чт" },
     { number: 14, ned: "пт" },
   ];
-  const currentDate = new Date();
   const dataClock = [
     { clock: "11:30" },
     { clock: "12:30" },
@@ -74,6 +74,7 @@ const DoctorInformation: React.FC<DoctorInformationProps> = ({
   const toggleShowAll = () => {
     setShowAll(!showAll);
   };
+
   return (
     <div>
       <section id={styles.doctorInformation}>
@@ -82,9 +83,9 @@ const DoctorInformation: React.FC<DoctorInformationProps> = ({
             <div className={styles.doctorInformationBlock}>
               <div className={styles.doctorInformationImg}>
                 <Image
+                  width={100}
                   height={100}
                   onClick={modalFunction}
-                  width={100}
                   className={styles.doctorInformationPhoto}
                   src="https://s3-alpha-sig.figma.com/img/71c5/f5cf/fcf47990608a7c3d3922eeee844bd872?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZoT6yrjy~zJ5jgyIN0IPrfnMwYPUDZfwuH~p-kGoQnbhpWoq0FM6Zjp10hCRsKRCKT06KnPCrj-jHobyYBvytew9cQM-NV9ZyTAuT6IzzNTjl1g8BcvQCf-XF3u15xqE8CrkgM46lSjIddivx8~wWpbUHOGBilCreqajyaNC6IKy10cA7LXfBzDSOiOhR~Sc3z~~HAbbxnvCx4DeASuLefEVxZOGdiCGU-mcRpNcDTI1mI6erlE3kJCBua4540fW9B~bPmeKGXwrAxSH-sJZrw6mqGPgq2tfzYYAUcROpml1H4Hk1lmWGUKbIf6lCDrXMlYmhjJ2DVTGUhp5yUpmFw__"
                   alt="doctor"
