@@ -1,4 +1,4 @@
-import Procedures from '@/components/Procedueres/Procedures'
+import Procedures from '@/components/Procedures/Procedures'
 import Hero from '@/components/hero/Hero'
 
 function Procedurespage() {

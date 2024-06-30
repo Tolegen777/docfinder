@@ -9,7 +9,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      button {
+      .children {
         border: 1.5px solid #ff6200;
         width: 101px;
         height: 37px;
@@ -19,6 +19,10 @@
         font-size: 17px;
         font-weight: 400;
         line-height: 20.57px;
+        &_active {
+          background: #ff6200;
+          color: white;
+        }
       }
     }
     .reset {
@@ -32,7 +36,7 @@
       display: flex;
       align-items: center;
       gap: 20px;
-      select {
+      .select {
         border: 1.5px solid #ff6200;
         width: 239px;
         height: 37px;
@@ -88,7 +92,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        select {
+        .select {
           border: 1.5px solid #ff6200;
           width: 209px;
           height: 37px;
@@ -140,7 +144,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        select {
+        .select {
           border: 1.5px solid #ff6200;
           width: 179px;
           height: 30px;
@@ -193,7 +197,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        select {
+        .select {
           border: 1.5px solid #ff6200;
           width: 179px;
           height: 30px;
@@ -246,7 +250,7 @@
         display: flex;
         align-items: center;
         gap: 20px;
-        select {
+        .select {
           border: 1.5px solid #ff6200;
           width: 149px;
           height: 30px;
@@ -301,7 +305,7 @@
 				display: flex;
 				align-items: center;
 				gap: 20px;
-				select {
+				.select {
 					border: 1.5px solid #ff6200;
 					width: 139px;
 					height: 30px;
@@ -317,3 +321,27 @@
 		}
 	}
 }
+
+//.customSelect {
+//  border: 1.5px solid #ff6200;
+//  border-radius: 7px;
+//  color: #ff6200;
+//  font-family: Inter, serif;
+//  font-size: 10px;
+//  background: none;
+//  font-weight: 400;
+//  line-height: 20.57px;
+//  .ant-select-selection-item {
+//    color: red !important;
+//  }
+//  .ant-select-selector {
+//    color: red !important;
+//    .ant-select-selection-item {
+//      color: green !important;
+//    }
+//  }
+//
+//  .ant-select-dropdown {
+//    color: red;
+//  }
+//}

@@ -1,0 +1,45 @@
+.container {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-height: 150px;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  max-width: 370px;
+  border-radius: 10px;
+  background: #ffff;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30.26px;
+  padding: 10px 16px;
+  height: 100%;
+  cursor: pointer;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  &_item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+.image {
+  height: 40px;
+}
+
+.text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  white-space: break-spaces;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

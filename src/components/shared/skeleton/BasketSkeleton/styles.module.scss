@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px;
+  &_card {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #F6F7F9;
+    border-radius: 8px;
+    justify-content: space-between;
+    &_img {
+      padding: 30px;
+    }
+    &_content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 20px;
+      &_info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        &_main {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

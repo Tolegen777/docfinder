@@ -1,45 +1,45 @@
 .reception {
   .content {
-    .dostors {
-      width: 100%;
-      background: #fff;
-      padding: 10px;
-      height: auto;
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        padding: 10px;
-        gap: 10px;
-
-        .specialties {
-          display: flex;
-          flex-direction: column;
-          padding-bottom: 15px;
-          height: 0 auto;
-
-          .letter {
-            font-size: 20px;
-            font-weight: 800;
-          }
-
-          .speciality {
-            color: #ff6200;
-            font-size: 18px;
-            font-weight: 500;
-
-            .quantity {
-              color: #d9d9d9;
-              padding-left: 5px;
-            }
-          }
-        }
-
-        .info {
-          border: 1px solid red;
-        }
-      }
-    }
+    //.dostors {
+    //  width: 100%;
+    //  background: #fff;
+    //  padding: 10px;
+    //  height: auto;
+    //
+    //  .cards {
+    //    display: grid;
+    //    grid-template-columns: repeat(5, 1fr);
+    //    padding: 10px;
+    //    gap: 10px;
+    //
+    //    .specialties {
+    //      display: flex;
+    //      flex-direction: column;
+    //      padding-bottom: 15px;
+    //      height: 0 auto;
+    //
+    //      .letter {
+    //        font-size: 20px;
+    //        font-weight: 800;
+    //      }
+    //
+    //      .speciality {
+    //        color: #ff6200;
+    //        font-size: 18px;
+    //        font-weight: 500;
+    //
+    //        .quantity {
+    //          color: #d9d9d9;
+    //          padding-left: 5px;
+    //        }
+    //      }
+    //    }
+    //
+    //    .info {
+    //      border: 1px solid red;
+    //    }
+    //  }
+    //}
 
     .navs {
       .title {

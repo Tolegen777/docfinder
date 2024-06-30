@@ -1,122 +1,94 @@
 "use client";
 
-import React, { useState } from "react";
+import React, {useMemo, useState} from "react";
 import styles from "./reception.module.scss";
-import Procedures from "../Procedueres/Procedures";
+import Procedures from "@/components/Procedures/Procedures";
 import Clinics from "../Clinics/Clinics";
+import {useQuery} from "@tanstack/react-query";
+import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
+import {ISpeciality} from "@/types/specialityTypes";
+import {transformSpecData} from "@/utils/transformSpecData";
+import SpecsLinkLists from "@/components/SpecsLinkLists/SpecsLinkLists";
+import {IGet} from "@/types/common";
+import {IClinics} from "@/types/clinicsTypes";
+
 function Reception() {
-  const [activeLink, setActiveLink] = useState("Врачи");
+    const [activeLink, setActiveLink] = useState("Врачи");
 
-  const specialists = [
-    {
-      letter: "А",
-      items: [
-        { name: "Акушер", count: 3695 },
-        { name: "Аллерголог", count: 553 },
-        { name: "Ангихирург", count: 359 },
-        { name: "Аллерголог", count: 553 },
-        { name: "Ангихирург", count: 359 },
-        { name: "Аллерголог", count: 553 },
-        { name: "Ангихирург", count: 359 },
-      ],
-    },
-    {
-      letter: "Б",
-      items: [
-        { name: "Бактериолог", count: 199 },
-        { name: "Биолог", count: 121 },
-        { name: "Бактериолог", count: 199 },
-      ],
-    },
+    const apiInstance = useCreateAxiosInstance();
 
-    {
-      letter: "Y",
-      items: [
-        { name: "Бактериолог", count: 199 },
-        { name: "Биолог", count: 121 },
-        { name: "Бактериолог", count: 199 },
-        { name: "Биолог", count: 121 },
-        { name: "Бактериолог", count: 199 },
-        { name: "Биолог", count: 121 },
-      ],
-    },
-    {
-      letter: "S",
-      items: [
-        { name: "Бактериолог", count: 199 },
-        { name: "Биолог", count: 121 },
-        { name: "Бактериолог", count: 199 },
-        { name: "Биолог", count: 121 },
-        { name: "Бактериолог", count: 199 },
-        { name: "Биолог", count: 121 },
-      ],
-    },
-  ];
+    const {data, isLoading} = useQuery({
+        queryKey: ['specialistsDataList'],
+        queryFn: () =>
+            apiInstance
+                .get<ISpeciality[]>('patients/specialists-in-city/1/')
+                .then((response) => response.data),
+        refetchOnMount: false,
+    });
 
-  return (
-    <>
-      <section className={styles.reception}>
-        <div className="container">
-          <div className={styles.content}>
-            <div className="container">
-              <div className={styles.navs}>
-                <h1 className={styles.title}>Круглосуточная запись на прием</h1>
-                <nav className={styles.nav}>
-                  <div
-                    className={`${styles.link} ${
-                      activeLink === "Врачи" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveLink("Врачи")}
-                  >
-                    Врачи
-                  </div>
-                  <div
-                    className={`${styles.link} ${
-                      activeLink === "процедуры" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveLink("процедуры")}
-                  >
-                    процедуры
-                  </div>
-                  <div
-                    className={`${styles.link} ${
-                      activeLink === "Клиники" ? styles.active : ""
-                    }`}
-                    onClick={() => setActiveLink("Клиники")}
-                  >
-                    Клиники
-                  </div>
-                </nav>
-              </div>
-            </div>
-            {activeLink === "Врачи" ? (
-              <div className={styles.dostors}>
-                <div className={styles.cards}>
-                  {specialists.map((item) => (
-                    <div key={item.letter} className={styles.specialties}>
-                      <h2 className={styles.letter}>{item.letter}</h2>
-                      <ul>
-                        {item.items.map((el) => (
-                          <li key={el.name} className={styles.speciality}>
-                            {el.name}
-                            <span className={styles.quantity}>{el.count}</span>
-                          </li>
-                        ))}
-                      </ul>
+    const {data: clinics, isLoading: clinicsLoading} = useQuery({
+        queryKey: ['clinicsDataList'],
+        queryFn: () =>
+            apiInstance
+                .get<IGet<IClinics>>('patients/clinic-branches-in-city/1/')
+                .then((response) => response.data),
+        refetchOnMount: false,
+    });
+
+    console.log(transformSpecData(data ?? []), 'DAAT')
+
+    const formattedData = useMemo(() => transformSpecData(data ?? []), [data])
+
+    return (
+        <>
+            <section className={styles.reception}>
+                <div className="container">
+                    <div className={styles.content}>
+                        <div className="container">
+                            <div className={styles.navs}>
+                                <h1 className={styles.title}>Круглосуточная запись на прием</h1>
+                                <nav className={styles.nav}>
+                                    <div
+                                        className={`${styles.link} ${
+                                            activeLink === "Врачи" ? styles.active : ""
+                                        }`}
+                                        onClick={() => setActiveLink("Врачи")}
+                                    >
+                                        Врачи
+                                    </div>
+                                    <div
+                                        className={`${styles.link} ${
+                                            activeLink === "Процедуры" ? styles.active : ""
+                                        }`}
+                                        onClick={() => setActiveLink("Процедуры")}
+                                    >
+                                        Процедуры
+                                    </div>
+                                    <div
+                                        className={`${styles.link} ${
+                                            activeLink === "Клиники" ? styles.active : ""
+                                        }`}
+                                        onClick={() => setActiveLink("Клиники")}
+                                    >
+                                        Клиники
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                        {activeLink === "Врачи" ? (
+                            <SpecsLinkLists formattedData={formattedData}
+                                            isLoading={isLoading}
+                            />
+                        ) : activeLink === "Процедуры" ? (
+                            <Procedures />
+                        ) : (
+                            <Clinics data={clinics?.results ?? []} isLoading={clinicsLoading} />
+                        )}
                     </div>
-                  ))}
                 </div>
-              </div>
-            ) : activeLink === "процедуры" ? (
-              <Procedures />
-            ) : (
-              <Clinics />
-            )}
-          </div>
-        </div>
-      </section>
-    </>
-  );
+            </section>
+        </>
+    );
 }
 
 export default Reception;

@@ -9,6 +9,11 @@
       padding-left: 2pc;
       padding-right: 2pc;
     }
+
+    .doctorInformationBlockMain {
+      display: flex;
+      gap: 20px;
+    }
     .doctorInformationImg {
       display: flex;
       padding-top: 2pc;
@@ -102,6 +107,7 @@
       font-weight: 600;
       line-height: 30.26px;
       text-align: left;
+      text-transform: uppercase;
     }
     .doctorInformationMap {
       font-size: 20px;
@@ -128,9 +134,9 @@
     .doctorInformationMonths {
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       h4 {
-        
+
         font-size: 13px;
         font-weight: 400;
         line-height: 15.73px;
@@ -153,12 +159,17 @@
       flex-direction: column;
       justify-content: center;
       border-radius: 33px;
+      cursor: pointer;
       h5 {
-        
         font-size: 15px;
         font-weight: 500;
         line-height: 18.15px;
         text-align: center;
+      }
+
+      &_active {
+        background: #ff6200;
+        color: white;
       }
     }
     .doctorInformationClock {
@@ -176,6 +187,7 @@
         #ff6200 0%,
         rgba(255, 98, 0, 0) 92.07%
       );
+      border-radius: 20px;
     }
     .doctorInformationClockH4 {
       background: #ffffff;
@@ -185,6 +197,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #ff6200;
     }
   }
 }
@@ -218,7 +231,7 @@
         border-radius: 50%;
       }
       .doctorInformationReiting {
-        
+
         font-size: 20px;
         font-weight: 400;
         line-height: 24.2px;
@@ -226,7 +239,7 @@
         color: #000000;
       }
       .doctorInformationh5 {
-        
+
         font-size: 17px;
         font-weight: 400;
         line-height: 20.57px;
@@ -352,6 +365,10 @@
           font-weight: 500;
           line-height: 18.15px;
           text-align: center;
+        }
+        &_active {
+          background: #ff6200;
+          color: white;
         }
       }
       .doctorInformationClock {
@@ -544,6 +561,10 @@
           line-height: 18.15px;
           text-align: center;
         }
+        &_active {
+          background: #ff6200;
+          color: white;
+        }
       }
       .doctorInformationClock {
         display: flex;
@@ -734,6 +755,10 @@
           line-height: 18.15px;
           text-align: center;
         }
+        &_active {
+          background: #ff6200;
+          color: white;
+        }
       }
       .doctorInformationClock {
         display: flex;
@@ -776,6 +801,10 @@
         justify-content: center;
         padding-left: 2pc;
         padding-right: 2pc;
+      }
+      .doctorInformationBlockMain {
+        display: block;
+        //gap: 10px;
       }
       .doctorInformationImg {
         display: flex;
@@ -937,6 +966,10 @@
           font-weight: 500;
           line-height: 18.15px;
           text-align: center;
+        }
+        &_active {
+          background: #ff6200;
+          color: white;
         }
       }
       .doctorInformationClock {
@@ -1144,6 +1177,10 @@
           font-weight: 500;
           line-height: 18.15px;
           text-align: center;
+        }
+        &_active {
+          background: #ff6200;
+          color: white;
         }
       }
       .doctorInformationClock {
@@ -1353,6 +1390,10 @@
           font-weight: 500;
           line-height: 18.15px;
           text-align: center;
+        }
+        &_active {
+          background: #ff6200;
+          color: white;
         }
       }
       .doctorInformationClock {
@@ -1573,6 +1614,10 @@
 					line-height: 18.15px;
 					text-align: center;
 				}
+              &_active {
+                background: #ff6200;
+                color: white;
+              }
 			}
 			.doctorInformationClock {
 				display: flex;
