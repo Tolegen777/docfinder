@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from './styles.module.scss';
 import icon from "@/components/svg/procedures.svg";
 import {MedicalProceduresList} from "@/types/procedureTypes";
+import Link from "next/link";
 
 export interface DropdownProps {
     title: string;
@@ -14,9 +15,9 @@ const ProcsDropdown = ({title, procs }: DropdownProps) => {
     const items = procs?.map(item => ({
         key: item?.medical_procedure_id,
         label: (
-            <a target="_blank" rel="noopener noreferrer" href="https://www.antgroup.com">
+            <Link href={`procedures/${item?.medical_procedure_id}`}>
                 {item?.medical_procedure_title}
-            </a>
+            </Link>
         ),
     }));
 

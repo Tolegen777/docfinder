@@ -11,17 +11,21 @@ import {transformSpecData} from "@/utils/transformSpecData";
 import SpecsLinkLists from "@/components/SpecsLinkLists/SpecsLinkLists";
 import {IGet} from "@/types/common";
 import {IClinics} from "@/types/clinicsTypes";
+import {IProcedure} from "@/types/procedureTypes";
+import {cityService} from "@/utils/services/cityService";
 
 function Reception() {
     const [activeLink, setActiveLink] = useState("Врачи");
 
     const apiInstance = useCreateAxiosInstance();
 
+    const cityId = cityService.getCityId()
+
     const {data, isLoading} = useQuery({
         queryKey: ['specialistsDataList'],
         queryFn: () =>
             apiInstance
-                .get<ISpeciality[]>('patients/specialists-in-city/1/')
+                .get<ISpeciality[]>(`patients/specialists-in-city/${cityId}/`)
                 .then((response) => response.data),
         refetchOnMount: false,
     });
@@ -30,12 +34,19 @@ function Reception() {
         queryKey: ['clinicsDataList'],
         queryFn: () =>
             apiInstance
-                .get<IGet<IClinics>>('patients/clinic-branches-in-city/1/')
+                .get<IGet<IClinics>>(`patients/clinic-branches-in-city/${cityId}/`)
                 .then((response) => response.data),
         refetchOnMount: false,
     });
 
-    console.log(transformSpecData(data ?? []), 'DAAT')
+    const {data: procs, isLoading: procsLoading} = useQuery({
+        queryKey: ['proceduresDataList'],
+        queryFn: () =>
+            apiInstance
+                .get<IProcedure[]>(`patients/procedures-in-city/${cityId}/`)
+                .then((response) => response.data),
+        refetchOnMount: false,
+    });
 
     const formattedData = useMemo(() => transformSpecData(data ?? []), [data])
 
@@ -80,7 +91,7 @@ function Reception() {
                                             isLoading={isLoading}
                             />
                         ) : activeLink === "Процедуры" ? (
-                            <Procedures />
+                            <Procedures data={procs ?? []} isLoading={procsLoading} />
                         ) : (
                             <Clinics data={clinics?.results ?? []} isLoading={clinicsLoading} />
                         )}

@@ -3,7 +3,7 @@
 import React, {useState} from "react";
 import styles from "./DoctorInformation.module.scss";
 import "./CalendarInput.css";
-import {ISpecDoctor} from "@/types/specialityDoctorTypes";
+import {ISpecProcDoctor} from "@/types/specProcDoctorsTypes";
 import Image from "next/image";
 import docImg from '../../public/icons/doctor.svg'
 import {getCurrentMonthName} from "@/utils/date/getCurrentMonthName";
@@ -12,13 +12,19 @@ import {getWeekDay} from "@/utils/date/getWeekDay";
 import {formatTime} from "@/utils/date/formatTime";
 import clsx from "clsx";
 import {getDayOfMonth} from "@/utils/date/getDayOfMonth";
+import {useRouter} from "next/navigation";
 
 type DoctorInformationProps = {
     modalFunction: () => void;
-    doctor: ISpecDoctor
+    doctor: ISpecProcDoctor | undefined;
+    specId: string;
+    type: 'spec' | 'proc',
+    isPreventRedirect?: boolean
 };
 
-const DoctorInformation = ({modalFunction, doctor}: DoctorInformationProps) => {
+const DoctorInformation = ({modalFunction, doctor, specId, type, isPreventRedirect = false}: DoctorInformationProps) => {
+
+    const router = useRouter()
 
     const currentDate = getCurrentDate()
 
@@ -30,13 +36,28 @@ const DoctorInformation = ({modalFunction, doctor}: DoctorInformationProps) => {
     const toggleShowAll = () => {
         setShowAll(!showAll);
     };
+
+    const handleGoToDoctorsPage = () => {
+        if (!isPreventRedirect) {
+            if (type === 'spec') {
+                router.push(`/specialities/${specId}/doctor/${doctor?.doctor_speciality_id}`)
+            } else {
+                router.push(`/procedures/${specId}/doctor/${doctor?.doctor_procedure_id}`)
+            }
+        }
+
+    }
+
     return (
         <div>
             <section id={styles.doctorInformation}>
                 <div className="container">
                     <div className={styles.doctorInformation}>
                         <div className={styles.doctorInformationBlock}>
-                            <div className={styles.doctorInformationBlockMain}>
+                            <div
+                                className={styles.doctorInformationBlockMain}
+                                onClick={handleGoToDoctorsPage}
+                            >
                                 <div className={styles.doctorInformationImg}>
                                     <Image
                                         onClick={modalFunction}
@@ -53,10 +74,10 @@ const DoctorInformation = ({modalFunction, doctor}: DoctorInformationProps) => {
                                     <h3 className={styles.doctorInformationName}>
                                         {doctor?.doctor_full_name}
                                     </h3>
-                                    <h4 className={styles.doctorInformationUrl}>{doctor?.medical_speciality_title}</h4>
+                                    <h4 className={styles.doctorInformationUrl}>{type === 'spec' ? doctor?.medical_speciality_title : doctor?.medical_procedure_title}</h4>
                                     <h4 className={styles.doctorInformationOpt}>Стаж {doctor?.experience_years} лет</h4>
                                     <h5 className={styles.doctorInformationClin}>
-                                        Прием в клинике
+                                        {doctor?.doctor_category}
                                     </h5>
                                     <div className={styles.doctorInformationSale}>
                                         <h4 className={styles.doctorInformationPrice}>
@@ -73,6 +94,7 @@ const DoctorInformation = ({modalFunction, doctor}: DoctorInformationProps) => {
                                     <p className={styles.doctorInformationMap}>
                                         {doctor?.current_clinic_branch_address}
                                     </p>
+                                    <h6 className={styles.doctorInformationMapH6}>{doctor?.current_clinic_branch_title}</h6>
                                     {/*<h6 className={styles.doctorInformationMapH6}>На карте</h6>*/}
                                 </div>
                             </div>
