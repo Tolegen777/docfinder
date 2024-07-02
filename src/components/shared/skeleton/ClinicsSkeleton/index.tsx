@@ -2,9 +2,9 @@ import styles from './styles.module.scss';
 import React from 'react';
 import Image from 'next/image';
 import {CustomSkeleton} from "@/components/shared/skeleton/CustomSkeleton";
-import userIcon from '../../../../public/icons/user.svg'
+import clinicIcon from '../../../../public/icons//clinic.svg'
 
-export const BasketSkeleton = () => {
+export const ClinicsSkeleton = () => {
     const items = [
         {
             width: 100,
@@ -30,10 +30,10 @@ export const BasketSkeleton = () => {
                 <div className={styles.container_card} key={item}>
                     <div className={styles.container_card_img}>
                         <Image
-                            src={userIcon}
+                            src={clinicIcon}
                             alt={''}
-                            height={60}
-                            width={60}
+                            height={100}
+                            width={100}
                         />
                     </div>
                     <div className={styles.container_card_content}>

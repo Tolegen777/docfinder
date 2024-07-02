@@ -6,6 +6,7 @@ import {IProcedure} from "@/types/procedureTypes";
 import {cityService} from "@/utils/services/cityService";
 import styles from './styles.module.scss'
 import {selectOptionsParser} from "@/utils/selectOptionsParser";
+import {ICity} from "@/types/cityTypes";
 
 type Props = {
     open: boolean,
@@ -18,20 +19,24 @@ export const CityModal = ({onClose, open}: Props) => {
 
     const [selectedId, setSelectedId] = useState<number | null>(null)
 
+    const cityId = cityService.getCityId()
+
     const {data, isLoading} = useQuery({
         queryKey: ['citiesList'],
         queryFn: () =>
             apiInstance
-                .get<IProcedure[]>('patients/cities/')
+                .get<ICity[]>('patients/cities/')
                 .then((response) => response.data),
         refetchOnMount: false,
+        enabled: !cityId?.length
     });
 
-    const options = selectOptionsParser(data, '', '')
+    const options = selectOptionsParser(data ?? [], 'title', 'id')
 
     const onConfirm = () => {
         if (selectedId) {
             cityService.setCityId(selectedId?.toString())
+            onClose()
         }
     }
 
@@ -42,11 +47,12 @@ export const CityModal = ({onClose, open}: Props) => {
                 loading={isLoading}
                 open={open}
                 onCancel={onClose}
-                width={600}
                 centered
+                onOk={onConfirm}
+                okText={'Сохранить'}
+                cancelText={'Закрыть'}
             >
                 <div className={styles.container}>
-                    <div>
                         <Select
                             showSearch
                             placeholder={`Выберите город`}
@@ -55,18 +61,14 @@ export const CityModal = ({onClose, open}: Props) => {
                                 (optionA?.label ?? '').toLowerCase().localeCompare((optionB?.label ?? '').toLowerCase())
                             }
                             options={options}
-                            popupMatchSelectWidth={false}
+                            // popupMatchSelectWidth={false}
                             onChange={(value: number) => {
                                 setSelectedId(value)
                             }}
+                            style={{
+                                minWidth: 300,
+                            }}
                         />
-                    </div>
-                    <Button
-                        onClick={() => onConfirm()}
-                        disabled={!selectedId}
-                    >
-                        Сохранить
-                    </Button>
                 </div>
             </Modal>
         </>

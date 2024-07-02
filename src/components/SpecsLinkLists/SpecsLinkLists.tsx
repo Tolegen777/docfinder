@@ -15,7 +15,7 @@ const SpecsLinkLists = ({formattedData, isLoading}: Props) => {
     const router = useRouter()
 
     const handleClickSpec = (id: number) => {
-        router.push(`/specialities/${id}`)
+        router.push(`/specialities/${id}/`)
     }
 
     if (isLoading) {

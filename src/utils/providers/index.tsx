@@ -4,6 +4,7 @@ import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import 'dayjs/locale/ru';
 import 'dayjs/locale/kk';
 import {StateContextProvider} from "@/contexts";
+import {ConfigProvider} from "antd";
 
 function Providers({children}: { children: ReactNode }) {
     const [client] = useState(
@@ -19,7 +20,16 @@ function Providers({children}: { children: ReactNode }) {
     return (
         <QueryClientProvider client={client}>
             <StateContextProvider>
+                <ConfigProvider
+                    theme={{
+                        token: {
+                            fontFamily: 'Inter, sans-serif',
+                            colorPrimary: '#FF6200',
+                        },
+                    }}
+                >
                 {children}
+            </ConfigProvider>
             </StateContextProvider>
         </QueryClientProvider>
     );

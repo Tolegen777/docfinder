@@ -7,18 +7,12 @@ import {IProcedure} from "@/types/procedureTypes";
 import ProcsDropdown from "../shared/ProcsDropdown";
 import {SpecProcsSkeleton} from "@/components/shared/skeleton/SpecProcsSkeleton";
 
-function Procedures() {
+type Props = {
+    data: IProcedure[],
+    isLoading: boolean
+}
 
-    const apiInstance = useCreateAxiosInstance();
-
-    const {data, isLoading} = useQuery({
-        queryKey: ['proceduresDataList'],
-        queryFn: () =>
-            apiInstance
-                .get<IProcedure[]>('patients/procedures-in-city/1/')
-                .then((response) => response.data),
-        refetchOnMount: false,
-    });
+function Procedures({data, isLoading}: Props) {
 
     if (isLoading) {
         return <SpecProcsSkeleton/>
