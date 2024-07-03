@@ -48,7 +48,7 @@ function Doctor() {
                 }}
             >
                 <div>
-                    <DoctorInformation modalFunction={toggleModal} doctor={data} isPreventRedirect={true} />
+                    <DoctorInformation modalFunction={toggleModal} doctor={data} isPreventRedirect={true} type={'spec'} specId={''} />
                 </div>
                 <Specializations data={data} />
             </div>

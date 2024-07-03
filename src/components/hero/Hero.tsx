@@ -8,7 +8,6 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import styles from "./Hero.module.scss";
 import "./hero.css";
 import {useEffect, useState} from "react";
-import {localStorageConstants} from "@/const/localStorageConstants";
 import {cityService} from "@/utils/services/cityService";
 import {CityModal} from "@/components/CityModal/CityModal";
 

@@ -1,11 +1,16 @@
-import {localStorageConstants} from "@/const/localStorageConstants";
+import { localStorageConstants } from "@/const/localStorageConstants";
 
 export const cityService = {
   getCityId: (): string => {
-    return localStorage.getItem(localStorageConstants.cityId) ?? '';
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem(localStorageConstants.cityId) ?? '';
+    }
+    return '';
   },
 
   setCityId: (id: string): void => {
-    localStorage.setItem(localStorageConstants.cityId, id);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(localStorageConstants.cityId, id);
+    }
   },
 };

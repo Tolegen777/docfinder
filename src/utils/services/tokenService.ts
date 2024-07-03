@@ -1,16 +1,24 @@
-import {tokenConstants} from "@/const/tokenConstants";
+import { tokenConstants } from "@/const/tokenConstants";
 
 export const tokenService = {
   getLocalRefreshToken: (): string => {
-    return localStorage.getItem(tokenConstants.refresh) ?? '';
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem(tokenConstants.refresh) ?? '';
+    }
+    return '';
   },
 
   getLocalAccessToken: (): string => {
-    return localStorage.getItem(tokenConstants.access) ?? '';
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem(tokenConstants.access) ?? '';
+    }
+    return '';
   },
 
   updateLocalTokenData: (token: string, tokenType: 'access' | 'refresh'): void => {
-    const key = tokenType === 'access' ? tokenConstants.access : tokenConstants.refresh
-    localStorage.setItem(key, token);
+    if (typeof window !== 'undefined') {
+      const key = tokenType === 'access' ? tokenConstants.access : tokenConstants.refresh;
+      localStorage.setItem(key, token);
+    }
   },
 };
