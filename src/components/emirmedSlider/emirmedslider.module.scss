@@ -1,0 +1,231 @@
+.emirmed {
+  background: #ffffff;
+  padding-bottom: 30px;
+  &__content {
+    .slide {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    &__sliders {
+      &__box {
+        margin-left: 50px;
+        .title {
+          font-size: 22px;
+          font-weight: 600;
+          line-height: 36.31px;
+          margin: 8px 0 0 0;
+        }
+
+        .pretitle {
+          font-size: 17px;
+          font-weight: 400;
+          line-height: 30.26px;
+        }
+
+        .info {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin: 10px 0 10px 0;
+
+          &__from {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20.57px;
+            color: #459bff;
+          }
+        }
+        .filialbox {
+          margin: 10px 0 10px 0;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .btn {
+          background: #efefef;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 24.2px;
+          color: #a1a1a1;
+        }
+
+        .maps {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          margin: 14px 0 12px 0;
+        }
+        .times {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+
+        .onlinebtn {
+          margin-top: 30px;
+          height: 38px;
+          font-size: 18px;
+          font-weight: 400;
+          padding: 7px 87px;
+          line-height: 21.78px;
+          color: #ffffff;
+          border-radius: 6px;
+          opacity: 0px;
+          background: #ff6200;
+        }
+      }
+    }
+    .slider {
+      margin-right: 50px;
+      display: flex;
+      flex-direction: column;
+      padding-left: 20px;
+      align-items: center;
+
+      .mainImage {
+        img {
+          border-radius: 10px;
+          width: 500px;
+          height: 300px;
+          object-fit: cover;
+          margin-bottom: 20px;
+        }
+      }
+
+      .thumbnailContainer {
+        display: flex;
+        .thumbnail {
+          width: 150px;
+          height: 150px;
+          border-radius: 10px;
+          object-fit: cover;
+          margin-right: 10px;
+          cursor: pointer;
+          border: 2px solid transparent;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 843px) {
+  .emirmed {
+    &__content {
+      .slide {
+        .thumbnailContainer {
+          .thumbnail {
+            width: 110px;
+            height: 110px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 787px) {
+  .emirmed {
+    &__content {
+      .slide {
+        flex-direction: column-reverse;
+        .thumbnailContainer {
+          .thumbnail {
+            width: 160px;
+            height: 160px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 540px) {
+  .emirmed {
+    &__content {
+      .slide {
+        flex-direction: column-reverse;
+        .thumbnailContainer {
+          .thumbnail {
+            width: 130px;
+            height: 130px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 456px) {
+  .emirmed {
+    &__content {
+      .slider {
+        margin-right: 14px;
+      }
+      .slide {
+        flex-direction: column-reverse;
+        .thumbnailContainer {
+          .thumbnail {
+            width: 110px;
+            height: 110px;
+          }
+        }
+      }
+
+      &__sliders {
+        &__box {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 395px) {
+  .emirmed {
+    &__content {
+      .slide {
+        flex-direction: column-reverse;
+        .thumbnailContainer {
+          .thumbnail {
+            width: 90px;
+            height: 90px;
+          }
+        }
+      }
+      &__sliders {
+        &__box {
+          margin-left: 20px;
+
+          .title {
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 354px) {
+  .emirmed {
+    &__content {
+      .slide {
+        flex-direction: column-reverse;
+        .thumbnailContainer {
+          .thumbnail {
+            width: 80px;
+            height: 80px;
+          }
+        }
+      }
+      &__sliders {
+        &__box {
+          margin-left: 20px;
+          .title {
+            font-size: 18px;
+          }
+        }
+      }
+      .btn {
+        font-size: 12px;
+      }
+    }
+  }
+}

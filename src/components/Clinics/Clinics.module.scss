@@ -93,7 +93,6 @@
       text-align: left;
     }
     p {
-
       font-size: 15px;
       font-weight: 400;
       line-height: 18.15px;
@@ -188,7 +187,6 @@
     }
 
     .clinicsImgH3 {
-
       font-size: 23px;
       font-weight: 600;
       line-height: 36.31px;
@@ -196,7 +194,6 @@
     }
 
     .clinicsImgH4 {
-
       font-size: 20px;
       font-weight: 400;
       line-height: 24.2px;
@@ -221,7 +218,6 @@
     }
 
     .clicicsTextP {
-
       font-size: 15px;
       width: 400px;
       font-weight: 400;
@@ -237,14 +233,12 @@
       padding: 10px;
       width: 400px;
       h4 {
-
         font-size: 15px;
         font-weight: 600;
         line-height: 18.15px;
         text-align: left;
       }
       p {
-
         font-size: 15px;
         font-weight: 400;
         line-height: 18.15px;
@@ -339,7 +333,6 @@
     }
 
     .clinicsImgH3 {
-
       font-size: 23px;
       font-weight: 600;
       line-height: 36.31px;
@@ -347,7 +340,6 @@
     }
 
     .clinicsImgH4 {
-
       font-size: 20px;
       font-weight: 400;
       line-height: 24.2px;
@@ -372,7 +364,6 @@
     }
 
     .clicicsTextP {
-
       font-size: 15px;
       width: 400px;
       font-weight: 400;
@@ -388,14 +379,12 @@
       padding: 10px;
       width: 340px;
       h4 {
-
         font-size: 15px;
         font-weight: 600;
         line-height: 18.15px;
         text-align: left;
       }
       p {
-
         font-size: 15px;
         font-weight: 400;
         line-height: 18.15px;
@@ -490,7 +479,6 @@
     }
 
     .clinicsImgH3 {
-
       font-size: 23px;
       font-weight: 600;
       line-height: 36.31px;
@@ -498,7 +486,6 @@
     }
 
     .clinicsImgH4 {
-
       font-size: 20px;
       font-weight: 400;
       line-height: 24.2px;
@@ -523,7 +510,6 @@
     }
 
     .clicicsTextP {
-
       font-size: 15px;
       width: 400px;
       font-weight: 400;
@@ -539,14 +525,12 @@
       padding: 10px;
       width: 340px;
       h4 {
-
         font-size: 15px;
         font-weight: 600;
         line-height: 18.15px;
         text-align: left;
       }
       p {
-
         font-size: 15px;
         font-weight: 400;
         line-height: 18.15px;
@@ -641,7 +625,6 @@
     }
 
     .clinicsImgH3 {
-
       font-size: 20px;
       font-weight: 600;
       line-height: 36.31px;
@@ -649,7 +632,6 @@
     }
 
     .clinicsImgH4 {
-
       font-size: 17px;
       font-weight: 400;
       line-height: 24.2px;
@@ -673,7 +655,6 @@
     }
 
     .clicicsTextP {
-
       font-size: 15px;
       width: 400px;
       font-weight: 400;
@@ -690,14 +671,12 @@
       margin-top: 2pc;
       width: 340px;
       h4 {
-
         font-size: 15px;
         font-weight: 600;
         line-height: 18.15px;
         text-align: left;
       }
       p {
-
         font-size: 15px;
         font-weight: 400;
         line-height: 18.15px;
@@ -793,7 +772,6 @@
     }
 
     .clinicsImgH3 {
-
       font-size: 20px;
       font-weight: 600;
       line-height: 36.31px;
@@ -801,7 +779,6 @@
     }
 
     .clinicsImgH4 {
-
       font-size: 17px;
       font-weight: 400;
       line-height: 24.2px;
@@ -1048,6 +1025,176 @@
     .clinicsButton {
       background: #ff6200;
       width: 250px;
+      height: 38px;
+      border-radius: 6px;
+
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21.78px;
+      text-align: center;
+      color: white;
+    }
+  }
+}
+@media (max-width: 350px) {
+  #Clinics_clinics__yeerK {
+    .Clinics_clinicsEnd__k3uqu p {
+      font-size: 12px;
+      font-weight: 400;
+      width: 190px;
+      line-height: 18.15px;
+      text-align: left;
+    }
+  }
+
+  #clinics {
+    padding: 20px;
+    background-color: #f9f9f9;
+    .clinics {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .clinicsBlock {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px 10px;
+      width: 260px;
+      border: 1px solid #eaeaea;
+    }
+
+    .clinicsImg img {
+      border-radius: 8px;
+      width: 160px;
+      margin-left: -3pc;
+    }
+
+    .clinicsImgH3 {
+      color: #ff6200;
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+    .clinicsImgH4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: -2pc;
+    }
+
+    .clinicsImgH3 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 36.31px;
+      text-align: left;
+      margin-left: -6pc;
+    }
+
+    .clinicsImgH4 {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+      margin-left: -5pc;
+    }
+
+    .clinicsText {
+      margin-left: -2pc;
+      text-align: center;
+    }
+
+    .clicicsTextH3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      width: 200px;
+      margin-left: 1.5pc;
+      text-transform: uppercase;
+    }
+
+    .clicicsTextH5 {
+      font-size: 1em;
+      margin-bottom: 15px;
+      color: #666;
+      width: 200px;
+      margin-left: 1.5pc;
+    }
+
+    .clicicsTextP {
+      font-size: 15px;
+      max-width: 300px;
+      font-weight: 400;
+      line-height: 18.15px;
+      text-align: center;
+      color: #a1a1a1;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      white-space: pre-wrap;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    .clinicsEnd {
+      padding: 10px;
+      margin-top: 2pc;
+      width: 340px;
+      h4 {
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 18.15px;
+        text-align: left;
+      }
+      p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18.15px;
+        text-align: left;
+      }
+    }
+
+    .clinicsEnd h4 {
+      font-size: 0.9em;
+      margin-bottom: 10px;
+    }
+
+    .clincsEndP {
+      font-size: 32px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .clinicsEndFlexMain {
+      display: flex;
+      margin-bottom: 10px;
+      flex-direction: column;
+    }
+
+    .clinicsEndFlex {
+      display: flex;
+      width: 250px;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .clinicsEndFlex h5 {
+      font-size: 0.7em;
+      width: 100px;
+      color: #555;
+    }
+
+    .clinicsButton {
+      background: #ff6200;
+      width: 220px;
       height: 38px;
       border-radius: 6px;
 

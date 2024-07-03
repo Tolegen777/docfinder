@@ -1,417 +1,417 @@
 #hero {
-	background: linear-gradient(180deg, #d05509 0%, #ff6200 100%);
-	color: white;
-	padding: 30px 0;
-	.hero {
-		display: flex;
-		padding-top: 1pc;
-		align-items: center;
-		justify-content: space-between;
-		.heroTexth2 {
-			font-family: Inter;
-			font-size: 35px;
-			font-weight: 800;
-			line-height: 42.36px;
-			text-align: left;
-		}
-		.heroTexth4 {
-			font-family: Inter;
-			font-size: 25px;
-			font-weight: 600;
-			margin: 1pc 0;
-			line-height: 30.26px;
-			text-align: left;
-		}
-		.heroTextP {
-			font-family: Inter;
-			font-size: 20px;
-			font-weight: 400;
-			line-height: 24.2px;
-			text-align: left;
-			width: 510px;
-		}
-		.heroImgs {
-			height: 100%;
-			position: relative;
-		}
+  background: linear-gradient(180deg, #d05509 0%, #ff6200 100%);
+  color: white;
+  padding: 30px 0;
+  .hero {
+    display: flex;
+    padding-top: 1pc;
+    align-items: center;
+    justify-content: space-between;
+    .heroTexth2 {
+      font-family: Inter;
+      font-size: 35px;
+      font-weight: 800;
+      line-height: 42.36px;
+      text-align: left;
+    }
+    .heroTexth4 {
+      font-family: Inter;
+      font-size: 25px;
+      font-weight: 600;
+      margin: 1pc 0;
+      line-height: 30.26px;
+      text-align: left;
+    }
+    .heroTextP {
+      font-family: Inter;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+      width: 510px;
+    }
+    .heroImgs {
+      height: 100%;
+      position: relative;
+    }
 
-		.heroImg1 {
-			width: 406px;
-			margin-left: 2pc;
-			box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
-			height: 335px;
-			margin-top: 1pc;
-			border-radius: 10px 10px 0 0;
-		}
+    .heroImg1 {
+      width: 406px;
+      margin-left: 2pc;
+      box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+      height: 335px;
+      margin-top: 1pc;
+      border-radius: 10px 10px 0 0;
+    }
 
-		.heroImg2 {
-			position: absolute;
-			z-index: 20;
-			box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
-			left: -2pc;
-			top: -0.7pc;
-			width: 406px;
-			height: 362px;
-			border-radius: 10px 10px 0 0;
-		}
-		.heroImg3 {
-			position: absolute;
-			z-index: 20;
-			height: 350px;
-			box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
-			left: 2pc;
-			width: 376px;
-			border-radius: 10px 10px 0 0;
-		}
+    .heroImg2 {
+      position: absolute;
+      z-index: 20;
+      box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+      left: -2pc;
+      top: -0.7pc;
+      width: 406px;
+      height: 362px;
+      border-radius: 10px 10px 0 0;
+    }
+    .heroImg3 {
+      position: absolute;
+      z-index: 20;
+      height: 350px;
+      box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.1);
+      left: 2pc;
+      width: 376px;
+      border-radius: 10px 10px 0 0;
+    }
 
-		.heroTextInput {
-			display: flex;
-			margin-top: 3pc;
-			align-items: center;
-			gap: 20px;
-		}
-		.heroTextInputMain {
-			width: 305px;
-			height: 32px;
-			padding-left: 1pc;
-			border-radius: 7px;
-		}
-		.heroTextButton {
-			background: #754a00;
-			width: 100px;
-			height: 32px;
-			border-radius: 7px;
-		}
-	}
+    .heroTextInput {
+      display: flex;
+      margin-top: 3pc;
+      align-items: center;
+      gap: 20px;
+    }
+    .heroTextInputMain {
+      width: 205px;
+      height: 32px;
+      padding-left: 1pc;
+      border-radius: 7px;
+    }
+    .heroTextButton {
+      background: #754a00;
+      width: 100px;
+      height: 32px;
+      border-radius: 7px;
+    }
+  }
 }
 @media (max-width: 1200px) {
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		.hero {
-			width: 100%;
-		}
-	}
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    .hero {
+      width: 100%;
+    }
+  }
 }
 @media (max-width: 1014px) {
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		.hero {
-			width: 100%;
-		}
-	}
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    .hero {
+      width: 100%;
+    }
+  }
 }
 @media (max-width: 960px) {
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		.hero {
-			width: 100%;
-			.heroTextP {
-				width: 445px;
-			}
-			.heroTextInput {
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 339px;
-			}
-		}
-	}
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    .hero {
+      width: 100%;
+      .heroTextP {
+        width: 445px;
+      }
+      .heroTextInput {
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 339px;
+      }
+    }
+  }
 }
 @media (max-width: 860px) {
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		.hero {
-			width: 100%;
-			.heroTextP {
-				width: 445px;
-			}
-			.heroTextInput {
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 310px;
-			}
-			.heroTexth2 {
-				font-size: 30px;
-			}
-			.heroTexth4 {
-				font-size: 21px;
-			}
-			.heroTextP {
-				font-size: 18px;
-			}
-		}
-	}
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    .hero {
+      width: 100%;
+      .heroTextP {
+        width: 445px;
+      }
+      .heroTextInput {
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 310px;
+      }
+      .heroTexth2 {
+        font-size: 30px;
+      }
+      .heroTexth4 {
+        font-size: 21px;
+      }
+      .heroTextP {
+        font-size: 18px;
+      }
+    }
+  }
 }
 @media (max-width: 812px) {
-	#hero {
-		width: 100%;
+  #hero {
+    width: 100%;
 
-		padding: 0 20px;
-		.hero {
-			display: flex;
-			align-items: center;
-			flex-direction: column-reverse;
-			width: 100%;
-			padding-bottom: 1pc;
-			.heroTextP {
-				width: 445px;
-				text-align: center;
-			}
-			.heroTextInput {
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 310px;
-			}
-			.heroTexth2 {
-				text-align: center;
+    padding: 0 20px;
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      width: 100%;
+      padding-bottom: 1pc;
+      .heroTextP {
+        width: 445px;
+        text-align: center;
+      }
+      .heroTextInput {
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 310px;
+      }
+      .heroTexth2 {
+        text-align: center;
 
-				font-size: 30px;
-			}
-			.heroTexth4 {
-				text-align: center;
+        font-size: 30px;
+      }
+      .heroTexth4 {
+        text-align: center;
 
-				font-size: 21px;
-			}
-			.heroTextP {
-				font-size: 18px;
-			}
-		}
-	}
+        font-size: 21px;
+      }
+      .heroTextP {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 @media (max-width: 700px) {
-	#hero {
-		width: 100%;
+  #hero {
+    width: 100%;
 
-		padding: 0 20px;
-		.hero {
-			display: flex;
-			align-items: center;
-			flex-direction: column-reverse;
-			width: 100%;
-			padding-bottom: 1pc;
-			.heroTextP {
-				width: 445px;
-				text-align: center;
-			}
-			.heroTextInput {
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 310px;
-			}
-			.heroTexth2 {
-				text-align: center;
+    padding: 0 20px;
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      width: 100%;
+      padding-bottom: 1pc;
+      .heroTextP {
+        width: 445px;
+        text-align: center;
+      }
+      .heroTextInput {
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 310px;
+      }
+      .heroTexth2 {
+        text-align: center;
 
-				font-size: 30px;
-			}
-			.heroTexth4 {
-				text-align: center;
+        font-size: 30px;
+      }
+      .heroTexth4 {
+        text-align: center;
 
-				font-size: 21px;
-			}
-			.heroTextP {
-				font-size: 18px;
-			}
-			.heroImg2 {
-				display: none;
-			}
-			.heroImg3 {
-				display: none;
-			}
-			.heroImg1 {
-				width: 300px;
-			}
-		}
-	}
+        font-size: 21px;
+      }
+      .heroTextP {
+        font-size: 18px;
+      }
+      .heroImg2 {
+        display: none;
+      }
+      .heroImg3 {
+        display: none;
+      }
+      .heroImg1 {
+        width: 300px;
+      }
+    }
+  }
 }
 
 @media (max-width: 484px) {
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		.hero {
-			display: flex;
-			align-items: center;
-			flex-direction: column-reverse;
-			justify-content: center;
-			width: 100%;
-			padding-bottom: 1pc;
-			.heroTextP {
-				width: 445px;
-				text-align: center;
-			}
-			.heroTextInput {
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 290px;
-			}
-			.heroTexth2 {
-				text-align: center;
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 1pc;
+      .heroTextP {
+        width: 445px;
+        text-align: center;
+      }
+      .heroTextInput {
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 290px;
+      }
+      .heroTexth2 {
+        text-align: center;
 
-				font-size: 26px;
-			}
-			.heroTexth4 {
-				text-align: center;
+        font-size: 26px;
+      }
+      .heroTexth4 {
+        text-align: center;
 
-				font-size: 18px;
-			}
-			.heroTextP {
-				font-size: 16px;
-				width: 100%;
-			}
-			.heroImg1 {
-				width: 250px;
-			}
-		}
-	}
+        font-size: 18px;
+      }
+      .heroTextP {
+        font-size: 16px;
+        width: 100%;
+      }
+      .heroImg1 {
+        width: 250px;
+      }
+    }
+  }
 }
 
 @media (max-width: 445px) {
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		.hero {
-			display: flex;
-			align-items: center;
-			flex-direction: column-reverse;
-			justify-content: center;
-			width: 100%;
-			padding-bottom: 1pc;
-			.heroTextP {
-				text-align: center;
-			}
-			.heroTextInput {
-				width: 350px;
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 290px;
-			}
-			.heroTexth2 {
-				text-align: center;
-				font-size: 26px;
-			}
-			.heroTexth4 {
-				text-align: center;
-				font-size: 18px;
-			}
-			.heroTextP {
-				font-size: 16px;
-				width: 420px;
-			}
-			.heroImg1 {
-				width: 240px;
-			}
-		}
-	}
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 1pc;
+      .heroTextP {
+        text-align: center;
+      }
+      .heroTextInput {
+        width: 350px;
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 290px;
+      }
+      .heroTexth2 {
+        text-align: center;
+        font-size: 26px;
+      }
+      .heroTexth4 {
+        text-align: center;
+        font-size: 18px;
+      }
+      .heroTextP {
+        font-size: 16px;
+        width: 420px;
+      }
+      .heroImg1 {
+        width: 240px;
+      }
+    }
+  }
 }
 @media (max-width: 424px) {
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		.hero {
-			display: flex;
-			align-items: center;
-			flex-direction: column-reverse;
-			justify-content: center;
-			width: 100%;
-			padding-bottom: 1pc;
-			.heroTextP {
-				text-align: center;
-			}
-			.heroTextInput {
-				width: 350px;
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 290px;
-			}
-			.heroTexth2 {
-				text-align: center;
-				font-size: 26px;
-			}
-			.heroTexth4 {
-				text-align: center;
-				font-size: 18px;
-			}
-			.heroTextP {
-				font-size: 13px;
-				width: 370px;
-			}
-			.heroImg1 {
-				width: 220px;
-			}
-		}
-	}
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 1pc;
+      .heroTextP {
+        text-align: center;
+      }
+      .heroTextInput {
+        width: 350px;
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 290px;
+      }
+      .heroTexth2 {
+        text-align: center;
+        font-size: 26px;
+      }
+      .heroTexth4 {
+        text-align: center;
+        font-size: 18px;
+      }
+      .heroTextP {
+        font-size: 13px;
+        width: 370px;
+      }
+      .heroImg1 {
+        width: 220px;
+      }
+    }
+  }
 }
 @media (max-width: 371px) {
-	.body {
-		overflow: hidden;
-	}
-	#hero {
-		width: 100%;
-		padding: 0 20px;
-		overflow: hidden;
-		.hero {
-			display: flex;
-			align-items: center;
-			flex-direction: column-reverse;
-			justify-content: center;
-			width: 100%;
-			padding-bottom: 1pc;
-			.heroTextP {
-				text-align: center;
-			}
-			.heroTextInput {
-				width: 160px;
-				margin-left: 2pc;
-				margin-top: 2pc;
-			}
-			.heroImg {
-				width: 270px;
-			}
-			.heroTexth2 {
-				text-align: center;
-				font-size: 23px;
-			}
-			.heroTexth4 {
-				text-align: center;
-				font-size: 16px;
-			}
-			.heroTextP {
-				font-size: 11px;
-				margin-left: 3pc;
-				width: 257px;
-			}
-			.heroImg1 {
-				width: 200px;
-			}
-		}
-	}
+  .body {
+    overflow: hidden;
+  }
+  #hero {
+    width: 100%;
+    padding: 0 20px;
+    overflow: hidden;
+    .hero {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 1pc;
+      .heroTextP {
+        text-align: center;
+      }
+      .heroTextInput {
+        width: 160px;
+        margin-left: 2pc;
+        margin-top: 2pc;
+      }
+      .heroImg {
+        width: 270px;
+      }
+      .heroTexth2 {
+        text-align: center;
+        font-size: 23px;
+      }
+      .heroTexth4 {
+        text-align: center;
+        font-size: 16px;
+      }
+      .heroTextP {
+        font-size: 11px;
+        margin-left: 3pc;
+        width: 257px;
+      }
+      .heroImg1 {
+        width: 200px;
+      }
+    }
+  }
 }
 
 /* Custom styles for Swiper navigation buttons */
 .swiper-button-next,
 .swiper-button-prev {
-	color: #fff; /* Change the color of the buttons */
-	background-color: rgba(0, 0, 0, 0.5); /* Add a background color */
-	border-radius: 50%; /* Make the buttons circular */
-	width: 40px; /* Set the width of the buttons */
-	height: 40px; /* Set the height of the buttons */
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  color: #fff; /* Change the color of the buttons */
+  background-color: rgba(0, 0, 0, 0.5); /* Add a background color */
+  border-radius: 50%; /* Make the buttons circular */
+  width: 40px; /* Set the width of the buttons */
+  height: 40px; /* Set the height of the buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-	background-color: rgba(0, 0, 0, 0.7); /* Change background color on hover */
+  background-color: rgba(0, 0, 0, 0.7); /* Change background color on hover */
 }
