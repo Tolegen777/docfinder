@@ -1,14 +1,12 @@
 'use client'
-import DoctorInformation from '@/components/DoctorInformation/DoctorInformation'
 import DoctorModal from '@/components/DoctorModal/DoctorModal'
-import Specializations from '@/components/Specializations/Specializations'
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 
-function Page() { 
+function Page() {
 	const [modal, setModal] = useState<boolean>(false)
 
-	function toggleModal() {  
-		setModal(prevModal => !prevModal);  
+	function toggleModal() {
+		setModal(prevModal => !prevModal);
 	}
 
 	return (
@@ -20,9 +18,9 @@ function Page() {
 				}}
 			>
 				<div>
-					<DoctorInformation modalFunction={toggleModal} />
+					{/*<DoctorInformation modalFunction={toggleModal} />*/}
 				</div>
-				<Specializations />
+				{/*<Specializations />*/}
 			</div>
 			<div
 				style={{
