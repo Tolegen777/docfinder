@@ -1,6 +1,5 @@
 .footer {
   margin-top: 5pc;
-  
 
   padding: 0 15px;
   background-color: #593c02;
@@ -21,7 +20,6 @@
       }
       h2 {
         margin-top: 15px;
-
         font-weight: 500;
         font-size: 25px;
         color: white;
@@ -52,7 +50,8 @@
           background-color: #ffffff;
           border: none;
           border-radius: 7px;
-          padding: 7px 35px 7px 10px;
+          padding: 7px 20px 7px 10px;
+          width: 200px;
         }
         button {
           border-radius: 7px;
@@ -67,43 +66,42 @@
     }
   }
 }
-@media (max-width:790px) {
-  .footer__content{
+@media (max-width: 790px) {
+  .footer__content {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 3pc;
     padding-top: 5pc;
   }
-  .footer{
+  .footer {
     height: auto;
     padding-bottom: 15px;
   }
 }
-@media (max-width:450px) {
-  .footer__content__left{
-    h1{
-
+@media (max-width: 450px) {
+  .footer__content__left {
+    h1 {
       font-size: 24px;
     }
-    h2{
+    h2 {
       font-size: 17px;
     }
-    p{
+    p {
       font-size: 15px;
     }
   }
 }
-@media (max-width:380px) {  
- .footer__content__left{
-  img{
-    width: 90%;
+@media (max-width: 380px) {
+  .footer__content__left {
+    img {
+      width: 90%;
+    }
   }
- } 
- .footer__content__right div{
-  gap: 10px;
- }
- .footer__content__right div input{
-  padding: 7px 6px 7px 6px;
- }
+  .footer__content__right div {
+    gap: 10px;
+  }
+  .footer__content__right div input {
+    padding: 7px 6px 7px 6px;
+  }
 }
