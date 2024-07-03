@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import DoctorInformation from "@/components/DoctorInformation/DoctorInformation";
+import React, {useState} from "react";
 import DoctorsNavs from "@/components/DoctorNavs/DoctorsNavs";
 import Quality from "@/components/Quality/Quality";
 import Hero from "@/components/hero/Hero";
@@ -17,7 +16,7 @@ function Doctor() {
     <div>
       <Hero />
       <DoctorsNavs />
-      <DoctorInformation modalFunction={toggleModal} />
+      {/*<DoctorInformation modalFunction={toggleModal} />*/}
       <Quality />
     </div>
   );
