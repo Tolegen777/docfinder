@@ -29,7 +29,7 @@ function InfoClinics() {
       <div className="container">
         <div className="info__content flex flex-wrap gap-[25px] justify-center ">
           {data.map((el) => (
-            <div className="info__content__block max-w-[350px] flex gap-[20px] items-center mb-[20px]">
+            <div key={el?.text} className="info__content__block max-w-[350px] flex gap-[20px] items-center mb-[20px]">
               <div className="w-[48px] h-[44px]">
                 <Image
                   src={el.icon}

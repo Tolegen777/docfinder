@@ -20,9 +20,9 @@ function Page() {
         }}
       >
         <div>
-          <DoctorInformation modalFunction={toggleModal} />
+          {/*<DoctorInformation modalFunction={toggleModal} />*/}
         </div>
-        <Specializations />
+        {/*<Specializations />*/}
       </div>
       <div
         style={{
