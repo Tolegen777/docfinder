@@ -5,6 +5,7 @@ import "./globals.scss";
 
 import Footer from "@/components/footer/Footer";
 import Providers from "@/utils/providers";
+import EmirmedSlider from "@/components/emirmedSlider/EmirmedSlider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -24,7 +25,8 @@ export default function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <Providers>
-          <Header />
+          <EmirmedSlider />
+          {/* <Header /> */}
           {children}
           <Footer />
         </Providers>
