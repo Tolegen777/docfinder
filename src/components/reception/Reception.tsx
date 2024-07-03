@@ -42,7 +42,7 @@ function Reception() {
   const { data: procs, isLoading: procsLoading } = useQuery({
     queryKey: ["proceduresDataList"],
     queryFn: () =>
-      apiInstances
+      apiInstance
         .get<IProcedure[]>(`patients/procedures-in-city/${cityId}/`)
         .then((response) => response.data),
     refetchOnMount: false,
