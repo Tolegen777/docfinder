@@ -6,7 +6,6 @@ import {usePathname} from "next/navigation";
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
 import {useQuery} from "@tanstack/react-query";
 import Specializations from "@/components/Specializations/Specializations";
-import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import {ISpecDoctorById} from "@/types/specDoctorById";
 import {useStateContext} from "@/contexts";
 import {DoctorDetailsSkeleton} from "@/components/shared/skeleton/DoctorDetailsSkeleton";
@@ -44,6 +43,7 @@ function Doctor() {
         return <DoctorDetailsSkeleton/>
     }
 
+
     return (
         <div>
             <div
@@ -53,7 +53,14 @@ function Doctor() {
                 }}
             >
                 <div>
-                    <DoctorInformation modalFunction={toggleModal} doctor={data} isPreventRedirect={true} type={'spec'} specId={''} />
+                    <DoctorInformation
+                        modalFunction={toggleModal}
+                        // @ts-ignore
+                        doctor={data}
+                        isPreventRedirect={true}
+                        type={'spec'}
+                        specId={''}
+                    />
                 </div>
                 <Specializations data={data} />
             </div>

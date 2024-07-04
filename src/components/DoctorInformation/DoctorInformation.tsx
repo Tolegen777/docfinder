@@ -23,6 +23,7 @@ type DoctorInformationProps = {
     isPreventRedirect?: boolean;
 };
 
+// @ts-ignore
 const DoctorInformation = ({
                                modalFunction,
                                doctor,
@@ -35,6 +36,8 @@ const DoctorInformation = ({
     const currentDate = getCurrentDate();
 
     const [activeDate, setActiveDate] = useState(currentDate);
+
+    const [activeBranchId, setActiveBranchId] = useState<number | null>(null);
 
     const [activeTime, setActiveTime] = useState<{
         id: number | null,
@@ -83,6 +86,7 @@ const DoctorInformation = ({
     return (
         <div>
             {isOpenVisitModal && <DoctorModal
+                // @ts-ignore
                 doctorData={doctor}
                 onClose={onClose}
                 type={type}
@@ -98,6 +102,7 @@ const DoctorInformation = ({
                     // @ts-ignore
                     price: doctor?.doctor_procedure_price
                 }}
+                branchId={activeBranchId}
             />
             }
             <section id={styles.doctorInformation}>
@@ -182,21 +187,24 @@ const DoctorInformation = ({
                                 </div>
                                 {" "}
                                 <div className={styles.doctorInformationWeeks}>
-                                    {doctor?.nearest_week_work_schedule?.map((el, key) => (
+                                    {doctor?.nearest_week_work_schedule?.map((item, key) => (
                                         <div
                                             className={clsx({
                                                 [styles.doctorInformationWeeksMonth]: true,
                                                 [styles.doctorInformationWeeksMonth_active]:
-                                                el?.work_date === activeDate,
+                                                item?.work_date === activeDate,
                                             })}
                                             key={key}
-                                            onClick={() => setActiveDate(el?.work_date)}
+                                            onClick={() => {
+                                                setActiveDate(item?.work_date)
+                                                console.log(item, 'd')
+                                            }}
                                         >
                                             <h3 className={styles.doctorInformationWeeksElH3}>
-                                                {getWeekDay(el?.work_date)}
+                                                {getWeekDay(item?.work_date)}
                                             </h3>
                                             <h5 className={styles.doctorInformationWeeksElH5}>
-                                                {getDayOfMonth(el?.work_date)}
+                                                {getDayOfMonth(item?.work_date)}
                                             </h5>
                                         </div>
                                     ))}
@@ -210,10 +218,17 @@ const DoctorInformation = ({
                                             <h4
                                                 className={styles.doctorInformationClockH4}
                                                 key={key}
-                                                onClick={() => handleOpenVisits({
-                                                    id: el?.start_time_id,
-                                                    time: el?.start_time
-                                                })}
+                                                onClick={() => {
+                                                    handleOpenVisits({
+                                                        id: el?.start_time_id,
+                                                        time: el?.start_time
+                                                    })
+
+                                                    // @ts-ignore
+                                                    const item = doctor?.nearest_week_work_schedule?.find(item => item)?.clinic_branch_id
+
+                                                    setActiveBranchId(item)
+                                                }}
                                             >
                                                 {formatTime(el?.start_time)}
                                             </h4>

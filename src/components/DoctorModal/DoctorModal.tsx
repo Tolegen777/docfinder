@@ -26,7 +26,8 @@ type DoctorInformationProps = {
         id: number | null,
         time: string
     },
-    doctorProcData: DoctorSpecialityDoctorProcedure | null
+    doctorProcData: DoctorSpecialityDoctorProcedure | null,
+    branchId: number | null
 
 }
 
@@ -39,7 +40,8 @@ const DoctorModal = ({
                          procs,
                          date,
                          visitTime,
-                         doctorProcData
+                         doctorProcData,
+                         branchId
                      }: DoctorInformationProps) => {
     const {state} = useStateContext()
 
@@ -118,7 +120,7 @@ const DoctorModal = ({
             doctor_id: doctorData?.doctor_profile_id as number,
             date: date,
             visit_time_id: visitTime?.id as number,
-            // clinic_branch_id: 1,
+            clinic_branch_id: branchId as number,
             procedure_id: activeProcId as number,
             visit_price: price?.toString() ?? '',
             is_child: isChild,

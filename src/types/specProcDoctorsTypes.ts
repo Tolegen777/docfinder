@@ -36,6 +36,7 @@ export interface TodaysWorkSchedule {
 export interface WorkingHour {
     start_time: string
     start_time_id: number
+    clinic_branch_id: number
 }
 
 export interface NearestWeekWorkSchedule {
