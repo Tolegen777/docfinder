@@ -2,10 +2,8 @@ import type React from 'react';
 
 export type State = {
     query: string,
-    forChild: boolean,
-    ordering: string,
     authUser: boolean,
-    cityId: string
+    cityId: string,
 };
 
 type AuthUserActionType = {
@@ -18,16 +16,6 @@ type SetQueryActionType = {
     payload: string;
 };
 
-type SetForChildActionType = {
-    type: 'SET_FOR_CHILD';
-    payload: boolean;
-};
-
-type SetOrderingType = {
-    type: 'SET_ORDERING';
-    payload: string;
-};
-
 type SetCityIdActionType = {
     type: 'SET_CITY_ID';
     payload: string;
@@ -35,8 +23,6 @@ type SetCityIdActionType = {
 
 export type Action =
     | SetQueryActionType
-    | SetForChildActionType
-    | SetOrderingType
     | AuthUserActionType
     | SetCityIdActionType
 

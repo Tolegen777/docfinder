@@ -8,9 +8,10 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import styles from "./Hero.module.scss";
 import "./hero.css";
 import {useEffect, useState} from "react";
-import {cityService} from "@/utils/services/cityService";
 import {CityModal} from "@/components/CityModal/CityModal";
 import {useStateContext} from "@/contexts";
+import doctorPng from '../../public/posters/doctor.png'
+import Image from "next/image";
 
 const HeroContent = () => (
     <div className="container">
@@ -34,11 +35,13 @@ const HeroContent = () => (
             </div>
             <div className={styles.heroImgs}>
                 {["heroImg3", "heroImg1", "heroImg2"].map((imgClass, index) => (
-                    <img
+                    <Image
                         key={index}
                         className={styles[imgClass]}
-                        src="https://s3-alpha-sig.figma.com/img/e1cd/5cc4/a83bcfbfa93ea89b4a00a7e8f31faa86?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Umg28d-Aodjez3L84iiik-ssX-grqkeclkIbzLHvaHbxImPZC7X0XEdRIHQmX3ffMkW8RX0fLasYT7n03EfvgmBQutnSau1GQCW9ZsLdysi1mwUPpL59ytV62CdjaFlyr47RWohqTgmnbVAX13UrLdMW5OoKlPJu4KvH1oH9IXzcmVCdy0nWcUzXrzhIjfa-2AgZG7Qy8vN-rpWZfX5cuycMd~hetlDi91JsIc7RCL3A~kdWj7RMMTsSgQOWI4ceIopvfx3xa6K6bfC17Ax6ixiq0fQEDTMvvmuqpq0Y4WOQwMqSI~9ZZPBaeJlpKaYCtBX5FkWkkDh7wCxPb6hmAA__"
+                        src={doctorPng}
                         alt=""
+                        width={406}
+                        quality={100}
                     />
                 ))}
             </div>

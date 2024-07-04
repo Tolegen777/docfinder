@@ -26,7 +26,7 @@ function ClinicById() {
     const clinicId = pathname?.split('/')?.[2]
 
     const {data, isLoading} = useQuery({
-        queryKey: ['clinicById', clinicId],
+        queryKey: ['clinicById', clinicId, cityId],
         queryFn: () =>
             apiInstance
                 .get<IClinicById>(

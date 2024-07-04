@@ -7,11 +7,17 @@ export interface IClinics {
     longitude: number
     city_id: number
     city_title: string
+    list_of_amenities: ListOfAmenity[]
     rating: number
     reviews_count: number
     photo_url: string
     franchise_title: string
+    list_of_photos: ListOfPhoto[]
+    franchise_photos: FranchisePhoto[]
+    working_hours: WorkingHour[]
+    franchise_branches_in_the_city: FranchiseBranchesInTheCity[]
 }
+
 
 
 

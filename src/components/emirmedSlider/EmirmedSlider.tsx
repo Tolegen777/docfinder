@@ -3,25 +3,20 @@ import styles from "./emirmedslider.module.scss";
 import "./emirmed.css";
 import "swiper/css";
 import Image from "next/image";
-import emirmedimage from "@/components/svg/emirmed.svg";
-import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import {Swiper, SwiperSlide} from "swiper/react";
+import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
 import filialimage from "@/components/svg/filial.svg";
-import type { MenuProps } from "antd";
-import { Button, Dropdown } from "antd";
+import {Button, Dropdown} from "antd";
 import arrow from "@/components/svg/arrowemimed.svg";
 import Link from "next/link";
-import abstract01 from "@/assets/Rectangle 129.png";
-import abstract02 from "@/assets/Rectangle 130.png";
-import abstract03 from "@/assets/Rectangle 131.png";
-import { useState } from "react";
+import {useState} from "react";
 import mapsvg from "@/components/svg/svgMap.svg";
 import timesvg from "@/components/svg/times.svg";
 import {IClinicById} from "@/types/clinicsTypes";
+
 const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
   const items = data?.franchise_branches_in_the_city?.map(item => ({
     key: item?.id,

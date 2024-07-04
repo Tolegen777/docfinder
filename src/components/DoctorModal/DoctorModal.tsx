@@ -10,8 +10,6 @@ import Image from "next/image";
 import {Checkbox, Select} from "antd";
 import {ICreateVisit} from "@/types/visitTypes";
 import {customNotification} from "@/utils/customNotification";
-import {selectOptionsParser} from "@/utils/selectOptionsParser";
-import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
 import {DoctorSpecialityDoctorProcedure} from "@/types/specProcDoctorsTypes";
 
 type DoctorInformationProps = {

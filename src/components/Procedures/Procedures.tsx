@@ -1,11 +1,9 @@
 "use client";
 import React from "react";
 import styles from "./styles.module.scss";
-import { useQuery } from "@tanstack/react-query";
-import { useCreateAxiosInstance } from "@/hooks/useCreateAxiosInstance";
-import { IProcedure } from "@/types/procedureTypes";
+import {IProcedure} from "@/types/procedureTypes";
 import ProcsDropdown from "../shared/ProcsDropdown";
-import { SpecProcsSkeleton } from "@/components/shared/skeleton/SpecProcsSkeleton";
+import {SpecProcsSkeleton} from "@/components/shared/skeleton/SpecProcsSkeleton";
 
 type Props = {
   data: IProcedure[];

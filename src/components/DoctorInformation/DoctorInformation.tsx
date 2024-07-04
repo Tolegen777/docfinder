@@ -3,7 +3,7 @@
 import React, {useState} from "react";
 import styles from "./DoctorInformation.module.scss";
 import "./CalendarInput.css";
-import {ISpecProcDoctor, MedProcInfo, Price} from "@/types/specProcDoctorsTypes";
+import {ISpecProcDoctor} from "@/types/specProcDoctorsTypes";
 import Image from "next/image";
 import docImg from "../../public/icons/doctor.svg";
 import {getCurrentMonthName} from "@/utils/date/getCurrentMonthName";
@@ -14,6 +14,8 @@ import clsx from "clsx";
 import {getDayOfMonth} from "@/utils/date/getDayOfMonth";
 import {useRouter} from "next/navigation";
 import DoctorModal from "@/components/DoctorModal/DoctorModal";
+import HeaderModal from "@/components/HeaderModal/HeaderModal";
+import {useStateContext} from "@/contexts";
 
 type DoctorInformationProps = {
     modalFunction: () => void;
@@ -35,6 +37,10 @@ const DoctorInformation = ({
 
     const currentDate = getCurrentDate();
 
+    const currentMonth = getCurrentMonthName();
+
+    const {state} = useStateContext()
+
     const [activeDate, setActiveDate] = useState(currentDate);
 
     const [activeBranchId, setActiveBranchId] = useState<number | null>(null);
@@ -47,11 +53,11 @@ const DoctorInformation = ({
         time: ''
     });
 
-    const currentMonth = getCurrentMonthName();
-
     const [isOpenVisitModal, setIsOpenVisitModal] = useState(false)
 
     const [showAll, setShowAll] = useState(false);
+
+    const [modal, setModal] = useState(false)
     const toggleShowAll = () => {
         setShowAll(!showAll);
     };
@@ -74,8 +80,13 @@ const DoctorInformation = ({
         id: number | null,
         time: string
     }) => {
-        setIsOpenVisitModal(true)
-        setActiveTime(time)
+        if (!state.authUser) {
+            setModal(true)
+        } else {
+            setIsOpenVisitModal(true)
+            setActiveTime(time)
+        }
+
     }
 
     const onClose = () => {
@@ -85,6 +96,7 @@ const DoctorInformation = ({
 
     return (
         <div>
+            <HeaderModal setModal={() => setModal(false)} open={modal}/>
             {isOpenVisitModal && <DoctorModal
                 // @ts-ignore
                 doctorData={doctor}
@@ -112,6 +124,7 @@ const DoctorInformation = ({
                             <div
                                 className={styles.doctorInformationBlockMain}
                                 onClick={handleGoToDoctorsPage}
+                                style={{cursor: !isPreventRedirect ? 'pointer' : undefined}}
                             >
                                 <div className={styles.doctorInformationImg}>
                                     <Image

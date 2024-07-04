@@ -5,8 +5,6 @@ import {cityService} from "@/utils/services/cityService";
 
 const initialState: State = {
     query: '',
-    forChild: false,
-    ordering: 'rating_asc',
     authUser: tokenService.getLocalAccessToken()?.length > 0,
     cityId: cityService.getCityId() ?? ''
 };
@@ -29,20 +27,6 @@ const stateReducer = (state: State, action: Action) => {
             return {
                 ...state,
                 query: action.payload,
-            };
-        }
-
-        case 'SET_FOR_CHILD': {
-            return {
-                ...state,
-                forChild: action.payload,
-            };
-        }
-
-        case 'SET_ORDERING': {
-            return {
-                ...state,
-                ordering: action.payload,
             };
         }
 

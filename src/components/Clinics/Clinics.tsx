@@ -3,6 +3,8 @@ import styles from "./Clinics.module.scss";
 import Image from "next/image";
 import { IClinics } from "@/types/clinicsTypes";
 import { ClinicsSkeleton } from "@/components/shared/skeleton/ClinicsSkeleton";
+import {getRussianShortDayOfWeek} from "@/utils/date/getRussianDayOfWeek";
+import {formatTime} from "@/utils/date/formatTime";
 
 type Props = {
   data: IClinics[];
@@ -47,22 +49,14 @@ const Clinics = ({ data, isLoading }: Props) => {
                   {/*  Тастак-3 м-н, Алмалинский район, Алматы, 050009/A05G6F2*/}
                   {/*</p>*/}
                   <div className={styles.clinicsEndFlexMain}>
-                    <div className={styles.clinicsEndFlex}>
-                      <h5>пн-пт</h5>
-                      <h5>0:00 - 24:00</h5>
-                    </div>
-                    <div className={styles.clinicsEndFlex}>
-                      <h5>сб</h5>
-                      <h5>0:00 - 24:00</h5>
-                    </div>
-                    <div className={styles.clinicsEndFlex}>
-                      <h5>вс</h5>
-                      <h5>0:00 - 24:00</h5>
-                    </div>
+                    {item?.working_hours?.map((hour, index) => <div key={hour?.day_of_week + index} className={styles.clinicsEndFlex}>
+                      <h5>{getRussianShortDayOfWeek(hour?.day_of_week)}</h5>
+                      <h5>{formatTime(hour?.open_time)} - {formatTime(hour?.close_time)}</h5>
+                    </div>)}
                   </div>
-                  <button className={styles.clinicsButton}>
-                    Записаться в клинику
-                  </button>
+                  {/*<button className={styles.clinicsButton}>*/}
+                  {/*  Записаться в клинику*/}
+                  {/*</button>*/}
                 </div>
               </div>
             </div>

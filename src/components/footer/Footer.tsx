@@ -28,7 +28,7 @@ function Footer() {
           </div>
           <div className="footer__content__right">
             <nav>
-              <Link href={"/doctors"}>Врачи</Link>
+              <Link href={"/"}>Врачи</Link>
               <Link href={"/"}>Процедуры</Link>
               <Link href={"/"}>Клиники</Link>
             </nav>

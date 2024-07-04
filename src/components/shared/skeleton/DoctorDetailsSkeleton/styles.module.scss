@@ -39,12 +39,10 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background: #0056b3;
     &_item {
       display: flex;
       align-items: center;
       gap: 10px;
-      background: #4CAF50;
       flex-direction: row;
     }
   }

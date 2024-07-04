@@ -27,7 +27,7 @@ function Doctor() {
     const docId = pathname?.split('/')?.[4]
 
     const {data, isLoading} = useQuery({
-        queryKey: ['specDoctorById', specId, docId],
+        queryKey: ['specDoctorById', specId, docId, cityId],
         queryFn: () =>
             apiInstance
                 .get<ISpecDoctorById>(

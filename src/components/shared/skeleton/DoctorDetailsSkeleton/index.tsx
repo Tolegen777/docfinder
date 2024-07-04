@@ -82,14 +82,14 @@ export const DoctorDetailsSkeleton = () => {
                     height={30}
                     borderRadius={5}
                 />
-                <div className={styles.container_specs_item}>
-                    {[1,2,3,4,5,6].map(item => <CustomSkeleton
+                {[1,2,3,4].map(item => <div key={item} className={styles.container_specs_item}>
+                    {[1, 2, 3].map(item => <CustomSkeleton
                         key={item}
-                        width={'150px%'}
-                        height={30}
+                        width={'100%'}
+                        height={40}
                         borderRadius={5}
                     />)}
-                </div>
+                </div>)}
             </div>
         </div>
     );

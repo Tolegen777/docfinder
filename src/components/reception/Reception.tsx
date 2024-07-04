@@ -24,7 +24,7 @@ function Reception() {
   const {cityId} = state
 
   const { data, isLoading } = useQuery({
-    queryKey: ["specialistsDataList"],
+    queryKey: ["specialistsDataList", cityId],
     queryFn: () =>
       apiInstance
         .get<ISpeciality[]>(`patients/specialists-in-city/${cityId}/`)
@@ -33,7 +33,7 @@ function Reception() {
   });
 
   const { data: clinics, isLoading: clinicsLoading } = useQuery({
-    queryKey: ["clinicsDataList"],
+    queryKey: ["clinicsDataList", cityId],
     queryFn: () =>
       apiInstance
         .get<IGet<IClinics>>(`patients/clinic-branches-in-city/${cityId}/`)
@@ -42,7 +42,7 @@ function Reception() {
   });
 
   const { data: procs, isLoading: procsLoading } = useQuery({
-    queryKey: ["proceduresDataList"],
+    queryKey: ["proceduresDataList", cityId],
     queryFn: () =>
       apiInstance
         .get<IProcedure[]>(`patients/procedures-in-city/${cityId}/`)
