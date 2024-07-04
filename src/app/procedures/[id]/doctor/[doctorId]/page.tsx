@@ -8,16 +8,17 @@ import {useQuery} from "@tanstack/react-query";
 import Specializations from "@/components/Specializations/Specializations";
 import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import {ISpecDoctorById} from "@/types/specDoctorById";
-import {cityService} from "@/utils/services/cityService";
+import {useStateContext} from "@/contexts";
+import {DoctorDetailsSkeleton} from "@/components/shared/skeleton/DoctorDetailsSkeleton";
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);
 
     const pathname = usePathname()
 
-    const cityId = cityService.getCityId()
+    const {state} = useStateContext()
 
-    console.log(pathname, 'PAT')
+    const {cityId} = state
 
     const apiInstance = useCreateAxiosInstance();
 
@@ -39,6 +40,10 @@ function Doctor() {
         setModal((prevModal) => !prevModal);
     }
 
+    if (isLoading) {
+        return <DoctorDetailsSkeleton/>
+    }
+
     return (
         <div>
             <div
@@ -57,7 +62,7 @@ function Doctor() {
                     display: modal ? 'block' : 'none'
                 }}
             >
-                <DoctorModal setModal={toggleModal} />
+                {/*<DoctorModal setModal={toggleModal} type={} />*/}
             </div>
         </div>
     );

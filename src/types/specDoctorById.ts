@@ -32,6 +32,7 @@ export interface Review {
 
 export interface CurrentClinicBranchWorkingHour {
     start_time: string
+    start_time_id: number
 }
 
 export interface TodaysWorkSchedule {
@@ -42,6 +43,7 @@ export interface TodaysWorkSchedule {
 
 export interface WorkingHour {
     start_time: string
+    start_time_id: number
 }
 
 export interface NearestWeekWorkSchedule {

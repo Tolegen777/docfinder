@@ -9,14 +9,16 @@ import Specializations from "@/components/Specializations/Specializations";
 import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import {ISpecDoctorById} from "@/types/specDoctorById";
 import {DoctorDetailsSkeleton} from "@/components/shared/skeleton/DoctorDetailsSkeleton";
-import {cityService} from "@/utils/services/cityService";
+import {useStateContext} from "@/contexts";
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);
 
     const pathname = usePathname()
 
-    const cityId = cityService.getCityId()
+    const {state} = useStateContext()
+
+    const {cityId} = state
 
     console.log(pathname, 'PAT')
 
@@ -53,16 +55,17 @@ function Doctor() {
                 }}
             >
                 <div>
-                    <DoctorInformation modalFunction={toggleModal} doctor={data} isPreventRedirect={true} specId={''} type={'spec'}  />
+                    <DoctorInformation modalFunction={toggleModal} doctor={data} isPreventRedirect={true} specId={''}
+                                       type={'spec'}/>
                 </div>
-                <Specializations data={data} />
+                <Specializations data={data}/>
             </div>
             <div
                 style={{
                     display: modal ? 'block' : 'none'
                 }}
             >
-                <DoctorModal setModal={toggleModal} />
+                <DoctorModal setModal={toggleModal}/>
             </div>
         </div>
     );

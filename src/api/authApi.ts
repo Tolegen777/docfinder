@@ -6,19 +6,24 @@ import {customConfirmAction} from "@/utils/customConfirmAction";
 
 export const authApi = {
   signInUser: async (user: ILoginInput) => {
-    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('partners/auth/partner-employee-login/', user);
+    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-login/', user);
+    return response.data
+  },
+
+  registerUser: async (user: ILoginInput) => {
+    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-register/', user);
     return response.data
   },
 
   signOutUser: async () => {
-    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('partners/auth/partner-employee-logout/');
+    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-logout/');
     return response.data
   },
 
   refreshAccessToken: async (refresh_token: string): Promise<IAuthResponse | null> => {
     try {
       const BASE_URL = 'https://sandbox.nemerea.com/api/v1/';
-      const response = await axios.post<IAuthResponse>(BASE_URL + 'partners/auth/refresh-token/', { refresh: refresh_token });
+      const response = await axios.post<IAuthResponse>(BASE_URL + 'patients/auth/refresh-token/', { refresh: refresh_token });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {

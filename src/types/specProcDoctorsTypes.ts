@@ -14,6 +14,8 @@ export interface ISpecProcDoctor {
     nearest_week_work_schedule: NearestWeekWorkSchedule[]
     doctor_procedure_consultation_price?: DoctorProcedureConsultationPrice
 
+    doctor_speciality_doctor_procedures?: DoctorSpecialityDoctorProcedure[]
+
     doctor_procedure_id?: number
     medical_procedure_title?: string
     doctor_procedure_price?: DoctorProcedurePrice
@@ -22,6 +24,7 @@ export interface ISpecProcDoctor {
 
 export interface CurrentClinicBranchWorkingHour {
     start_time: string
+    start_time_id: number
 }
 
 export interface TodaysWorkSchedule {
@@ -32,6 +35,7 @@ export interface TodaysWorkSchedule {
 
 export interface WorkingHour {
     start_time: string
+    start_time_id: number
 }
 
 export interface NearestWeekWorkSchedule {
@@ -55,6 +59,37 @@ export interface DoctorProcedureConsultationPrice {
 }
 
 export interface DoctorProcedurePrice {
+    id: number
+    is_active: boolean
+    price_date: string
+    default_price: number
+    discount: number
+    final_price: number
+    is_for_children: boolean
+    child_age_from?: string
+    child_age_to?: string
+    created_at: string
+    updated_at: string
+}
+
+export interface DoctorSpecialityDoctorProcedure {
+    id: number
+    med_proc_info: MedProcInfo
+    is_active: boolean
+    comission_amount: number
+    price: Price
+}
+
+export interface MedProcInfo {
+    id: number
+    title: string
+    slug: string
+    description: string
+    created_at: string
+    updated_at: string
+}
+
+export interface Price {
     id: number
     is_active: boolean
     price_date: string

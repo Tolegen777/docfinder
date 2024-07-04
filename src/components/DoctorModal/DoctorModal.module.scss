@@ -96,11 +96,10 @@
 
 .doctorMi {
   background: #e2e2e2;
+  box-sizing: border-box;
   width: 100%;
   margin: 10px 0;
-  height: 55px;
-  padding-left: 0.5pc;
-  padding-top: 0.3pc;
+  padding: 2px 5px;
   border-radius: 5px;
   div {
     display: flex;

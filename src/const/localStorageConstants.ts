@@ -1,3 +1,3 @@
 export const localStorageConstants = {
-    cityId: 'DOC_CITY_ID'
+    cityId: 'DOC_CLIENT_CITY_ID'
 };

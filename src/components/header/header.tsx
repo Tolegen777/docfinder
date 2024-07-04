@@ -1,7 +1,7 @@
 'use client'
 import arrowdrop from '@/components/svg/dropdownarrow.svg'
 import logo from '@/components/svg/logo.svg'
-import {Button, Dropdown, Spin} from 'antd'
+import {Button, Dropdown, MenuProps, Spin} from 'antd'
 import Image from 'next/image'
 import Link from 'next/link'
 import {useState} from 'react'
@@ -12,16 +12,29 @@ import styles from './header.module.scss'
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
 import {cityService} from "@/utils/services/cityService";
 import {ICity} from "@/types/cityTypes";
-import {useQuery} from "@tanstack/react-query";
+import {useMutation, useQuery} from "@tanstack/react-query";
+import {axiosInstanceWithTokenLogic} from "@/api/axiosInstanceWithTokenLogic";
+import {useStateContext} from "@/contexts";
+import {IPatient} from "@/types/patient";
+import {resetService} from "@/utils/services/resetService";
+import {authApi} from "@/api/authApi";
 
 function Header() {
     const apiInstance = useCreateAxiosInstance();
-    const cityId = cityService.getCityId()
+
+    const {state, dispatch} = useStateContext()
+
+    const {authUser, cityId} = state
 
     const [isopen, setisopen] = useState(false)
     const [modal, setModal] = useState(false)
 
-    const [activeCityId, setActiveCityId] = useState(cityId)
+    const {
+        mutate: onLogout,
+    } = useMutation({
+        mutationKey: ['signout'],
+        mutationFn: authApi.signOutUser,
+    });
 
     const {data, isLoading} = useQuery({
         queryKey: ['citiesList'],
@@ -32,22 +45,67 @@ function Header() {
         refetchOnMount: false,
     });
 
-    function modalFunction() {
-        if (modal) {
-            setModal(false)
-        } else {
-            setModal(true)
+    const {data: patientData, isLoading: patientLoading} = useQuery({
+        queryKey: ['patientDetails', authUser],
+        queryFn: () =>
+            axiosInstanceWithTokenLogic
+                .get<IPatient>(`patients/auth/patient-detail/`)
+                .then((response) => response?.data),
+        enabled: authUser,
+        refetchOnMount: false
+    });
+
+    const userDropDownItems: MenuProps['items'] = [
+        {
+            key: '1',
+            label: `Почта: ${patientData?.email ?? '-'}`,
+        },
+        {
+            key: '2',
+            label: `Имя: ${patientData?.first_name ?? '-'}`,
+        },
+        {
+            key: '3',
+            label: `Фамилия: ${patientData?.last_name ?? '-'}`,
+        },
+        {
+            key: '4',
+            label: `Отчество: ${patientData?.patronymic_name ?? '-'}`,
+        },
+        {
+            key: '5',
+            label: `Дата рождения: ${patientData?.birth_date ?? '-'}`,
+        },
+        {
+            key: '6',
+            label: `ИИН: ${patientData?.iin_number ?? '-'}`,
+        },
+        {
+            key: '7',
+            label: `Телефон: ${patientData?.phone_number ?? '-' }`,
+        },
+        {
+            key: '8',
+            danger: true,
+            label: 'Выйти',
+            onClick: () => {
+                resetService();
+                onLogout();
+            }
         }
-    }
+    ];
+
+    const cityTitle = data?.find(item => item?.id?.toString() === cityId)?.title
 
     const handleSetId = (id: number) => {
         if (id) {
             cityService.setCityId(id?.toString())
-            setActiveCityId(id?.toString())
+            dispatch({
+                type: 'SET_CITY_ID',
+                payload: id?.toString()
+            })
         }
     }
-
-    const cityTitle = data?.find(item => item?.id?.toString() === activeCityId)?.title
 
 
     const items = data?.map((item: ICity) => ({
@@ -90,21 +148,31 @@ function Header() {
                             </div>
                         </div>
                         <div className={styles.leftside}>
-                            {isLoading ? <Spin/> : <Dropdown menu={{items}} placement='bottomLeft' arrow>
+                            {isLoading ? <Spin/> : <Dropdown
+                                menu={{items}}
+                                placement='bottomLeft'
+                                arrow
+                                trigger={['click']}
+                            >
                                 <Button className={styles.leftsidedrop}>
                                     {cityTitle ?? 'Выберите город'} <Image src={arrowdrop} alt=''/>
                                 </Button>
                             </Dropdown>}
-                            <button onClick={modalFunction} className={styles.leftsidebtn}>
-                                Войти
-                            </button>
-                            <div
-                                style={{
-                                    display: modal ? 'block' : 'none'
-                                }}
+                            {!authUser ? <button
+                                onClick={() => setModal(true)}
+                                className={styles.leftsidebtn}
                             >
-                                <HeaderModal setModal={modalFunction}/>
-                            </div>
+                                Войти
+                            </button> : patientLoading ? <Spin/> : <Dropdown
+                                menu={{items: userDropDownItems}}
+                                arrow
+                                trigger={['click']}
+                            >
+                                <Button className={styles.leftsidedrop} style={{color: '#ff6200', fontSize: '16px'}}>
+                                    {patientData?.first_name ?? patientData?.email}
+                                </Button>
+                            </Dropdown>}
+                            <HeaderModal setModal={() => setModal(false)} open={modal}/>
                         </div>
                     </div>
                 </div>

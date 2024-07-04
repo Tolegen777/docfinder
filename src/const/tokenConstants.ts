@@ -1,4 +1,4 @@
 export const tokenConstants = {
-    access: 'DOC_ACCESS',
-    refresh: 'DOC_REFRESH'
+    access: 'DOC_CLIENT_ACCESS',
+    refresh: 'DOC_CLIENT_REFRESH'
 }

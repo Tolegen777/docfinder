@@ -1,25 +1,27 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, {useMemo, useState} from "react";
 import styles from "./reception.module.scss";
 import Procedures from "@/components/Procedures/Procedures";
 import Clinics from "../Clinics/Clinics";
-import { useQuery } from "@tanstack/react-query";
-import { useCreateAxiosInstance } from "@/hooks/useCreateAxiosInstance";
-import { ISpeciality } from "@/types/specialityTypes";
-import { transformSpecData } from "@/utils/transformSpecData";
+import {useQuery} from "@tanstack/react-query";
+import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
+import {ISpeciality} from "@/types/specialityTypes";
+import {transformSpecData} from "@/utils/transformSpecData";
 import SpecsLinkLists from "@/components/SpecsLinkLists/SpecsLinkLists";
-import { IGet } from "@/types/common";
-import { IClinics } from "@/types/clinicsTypes";
-import { IProcedure } from "@/types/procedureTypes";
-import { cityService } from "@/utils/services/cityService";
+import {IGet} from "@/types/common";
+import {IClinics} from "@/types/clinicsTypes";
+import {IProcedure} from "@/types/procedureTypes";
+import {useStateContext} from "@/contexts";
 
 function Reception() {
   const [activeLink, setActiveLink] = useState("Врачи");
 
   const apiInstance = useCreateAxiosInstance();
 
-  const cityId = cityService.getCityId();
+  const {state} = useStateContext()
+
+  const {cityId} = state
 
   const { data, isLoading } = useQuery({
     queryKey: ["specialistsDataList"],

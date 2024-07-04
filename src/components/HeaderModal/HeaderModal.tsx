@@ -1,55 +1,62 @@
-"use client";
-import React, { useState } from "react";
+'use client'
+import React, {useState} from "react";
 import styles from "./HeaderModal.module.scss";
-
-import headericon1 from "../svg/headericon1.svg";
-import headericon2 from "../svg/headericon2.svg";
-import Image from "next/image";
+import {Button, Form, Modal} from "antd";
+import LoginForm from "@/components/Authorization/LoginForm/LoginForm";
+import RegisterForm from "@/components/Authorization/RegisterForm/RegisterForm";
 
 type DoctorModalProps = {
-  setModal: () => void;
+    open: boolean;
+    setModal: () => void;
 };
 
-const HeaderModal = ({ setModal }: DoctorModalProps) => {
-  const [patientName, setPatientName] = useState("");
-  const [phone, setPhone] = useState("");
 
-  const handleBooking = () => {
-    alert(`Запись успешно отправлена. Имя: ${patientName}, Телефон: ${phone}`);
-  };
+const HeaderModal = ({setModal, open}: DoctorModalProps) => {
 
-  return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
-        <button className={styles.closeButton} onClick={setModal}>
-          ×
-        </button>
-        <h4>Modal Title</h4>
-        <h2 className={styles.doctorName}>Войти в профиль пользователя</h2>
-        <input
-          type="text"
-          className={styles.input}
-          placeholder="Ваш телефон"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <h6 className={styles.doctorP}>
-          На указанный вами номер будет отправлено SMS с кодом подтверждения
-        </h6>
-        <button className={styles.closeButton1}>
-          <Image src={headericon1} width={20} height={20} alt="" />
-          Войти по DocFinderID
-        </button>
-        <button className={styles.closeButton2}>
-          <Image src={headericon2} width={20} height={20} alt="" />
-          Войти через EgovKz
-        </button>
-        <button className={styles.bookButton} onClick={handleBooking}>
-          Войти
-        </button>
-      </div>
-    </div>
-  );
+    const [formType, setFormType] = useState<'login' | 'register'>('login')
+
+    const [form] = Form.useForm();
+
+    const onClose = () => {
+        form.resetFields()
+        setModal()
+    }
+
+    return (
+        <Modal
+            open={open}
+            footer={null}
+            onCancel={onClose}
+            centered
+        >
+            {formType === 'login' ? <LoginForm form={form} onClose={onClose}/> :
+                <RegisterForm
+                    form={form}
+                    setFormType={() => setFormType('login')}
+                />}
+            <div className={styles.register}>
+                {formType === 'login' ? <>
+                    <div>У вас нет аккаунта</div>
+                    <Button
+                        type={'text'}
+                        style={{color: '#FF6200'}}
+                        onClick={() => setFormType('register')}
+                    >
+                        Зарегистрироваться
+                    </Button>
+                </> : <>
+                    <div>У меня уже есть аккаунт</div>
+                    <Button
+                        type={'text'}
+                        style={{color: '#FF6200'}}
+                        onClick={() => setFormType('login')}
+                    >
+                        Войти
+                    </Button>
+                </>}
+            </div>
+        </Modal>
+    );
 };
 
 export default HeaderModal;

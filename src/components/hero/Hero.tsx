@@ -10,6 +10,7 @@ import "./hero.css";
 import {useEffect, useState} from "react";
 import {cityService} from "@/utils/services/cityService";
 import {CityModal} from "@/components/CityModal/CityModal";
+import {useStateContext} from "@/contexts";
 
 const HeroContent = () => (
     <div className="container">
@@ -49,8 +50,12 @@ function Hero() {
 
     const [open, setOpen] = useState(false)
 
+    const {state} = useStateContext()
+
+    const {cityId} = state
+
     useEffect(() => {
-        if (!cityService.getCityId().length) {
+        if (!cityId.length) {
             setOpen(true)
         }
     }, [])

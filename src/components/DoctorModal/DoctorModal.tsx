@@ -1,119 +1,244 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import styles from './DoctorModal.module.scss'
-
-interface DoctorModalProps {
-	img: string
-	name: string
-	description: string
-	setModal: () => void
-}
+import {useMutation, useQuery} from "@tanstack/react-query";
+import {axiosInstanceWithTokenLogic} from "@/api/axiosInstanceWithTokenLogic";
+import {IPatient} from "@/types/patient";
+import {useStateContext} from "@/contexts";
+import {ISpecDoctorById} from "@/types/specDoctorById";
+import doctorIcon from '../../public/icons/doctor.svg'
+import Image from "next/image";
+import {Checkbox, Select} from "antd";
+import {ICreateVisit} from "@/types/visitTypes";
+import {customNotification} from "@/utils/customNotification";
+import {selectOptionsParser} from "@/utils/selectOptionsParser";
+import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
+import {DoctorSpecialityDoctorProcedure} from "@/types/specProcDoctorsTypes";
 
 type DoctorInformationProps = {
-	setModal: () => void
+    onClose: () => void,
+    doctorData: Partial<ISpecDoctorById> | undefined,
+    type: 'proc' | 'spec',
+    procId: number | null,
+    procLabel?: string,
+    procs: DoctorSpecialityDoctorProcedure[]
+    date: string,
+    visitTime: {
+        id: number | null,
+        time: string
+    },
+    doctorProcData: DoctorSpecialityDoctorProcedure | null
+
 }
 
-const DoctorModal = ({ setModal }: DoctorInformationProps) => {
-	const [patientName, setPatientName] = useState('')
-	const [phone, setPhone] = useState('')
+const DoctorModal = ({
+                         onClose,
+                         doctorData,
+                         type,
+                         procId,
+                         procLabel,
+                         procs,
+                         date,
+                         visitTime,
+                         doctorProcData
+                     }: DoctorInformationProps) => {
+    const {state} = useStateContext()
 
-	const handleBooking = () => {
-		alert(`Запись успешно отправлена. Имя: ${patientName}, Телефон: ${phone}`)
-	}
+    const {authUser} = state
 
-	return (
-		<div className={styles.modalOverlay}>
-			<div className={styles.modalContent}>
-				<button className={styles.closeButton} onClick={setModal}>
-					×
-				</button>
-				<div className={styles.DoctorModalImg}>
-					<img
-						style={{
-							width: '100px',
-							height: '100px',
-							borderRadius: '50%'
-						}}
-						src='https://s3-alpha-sig.figma.com/img/71c5/f5cf/fcf47990608a7c3d3922eeee844bd872?Expires=1719187200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZoT6yrjy~zJ5jgyIN0IPrfnMwYPUDZfwuH~p-kGoQnbhpWoq0FM6Zjp10hCRsKRCKT06KnPCrj-jHobyYBvytew9cQM-NV9ZyTAuT6IzzNTjl1g8BcvQCf-XF3u15xqE8CrkgM46lSjIddivx8~wWpbUHOGBilCreqajyaNC6IKy10cA7LXfBzDSOiOhR~Sc3z~~HAbbxnvCx4DeASuLefEVxZOGdiCGU-mcRpNcDTI1mI6erlE3kJCBua4540fW9B~bPmeKGXwrAxSH-sJZrw6mqGPgq2tfzYYAUcROpml1H4Hk1lmWGUKbIf6lCDrXMlYmhjJ2DVTGUhp5yUpmFw__'
-						alt='kajsdn'
-						className={styles.doctorImage}
-					/>
-					<div className={styles.DoctorModalText}>
-						<h3 className={styles.doctorName}>
-							Уралбаев Данияр Оразбекович <br />
-							<span>Уролог</span>
-						</h3>
-						<p className={styles.doctorDescription}>
-							Улица Розыбакиева, 37в Тастак-3 м-н, Алмалинский район, Алматы
-						</p>
-					</div>
-				</div>
+    const [isChild, setIsChild] = useState(false)
+    const [patientName, setPatientName] = useState('')
+    const [phone, setPhone] = useState('')
+    const [activeProcId, setActiveProcId] = useState<number | null>(procId)
+    const [price, setPrice] = useState<number | null>(null)
+    const [activeProc, setActiveProc] = useState<DoctorSpecialityDoctorProcedure | null>(doctorProcData)
 
-				<div className={styles.doctorMi}>
-					<div>
-						<input type='checkbox' name='' id='' />
-						<h3>Взрослые пациенты</h3>
-					</div>
-					<div>
-						<input type='radio' />
-						<h3>Дети</h3>
-					</div>
-				</div>
-				<h4 className={styles.successfullyComFlexH4}>
-					Прием
-					<span className={styles.successfullyComFlexSpanMinus}>
-						10 000
+    let options = []
+
+    if (procId) {
+        options = [{
+            label: procLabel,
+            value: procId
+        }]
+    } else {
+        options = procs?.map(item => ({
+            value: item?.id,
+            label: item?.med_proc_info?.title
+        }))
+    }
+
+    console.log(doctorData, 'DOCTORDATA')
+
+    const {data: patientData, isLoading: patientLoading} = useQuery({
+        queryKey: ['patientDetails', authUser],
+        queryFn: () =>
+            axiosInstanceWithTokenLogic
+                .get<IPatient>(`patients/auth/patient-detail/`)
+                .then((response) => response?.data),
+        enabled: authUser,
+        refetchOnMount: false
+    });
+
+    const {
+        mutate: onCreate,
+        isPending: isLoading,
+    } = useMutation({
+        mutationKey: ['createVisit'],
+        mutationFn: (body: ICreateVisit) =>
+            axiosInstanceWithTokenLogic.post(`patients/create_patient_clinic_visit/`, body),
+        onSuccess: () => {
+            customNotification({
+                type: 'success',
+                message: 'Запись успешно создана!'
+            })
+            onClose()
+        }
+    });
+
+    useEffect(() => {
+        if (patientData) {
+            setPatientName(patientData?.first_name ?? '')
+            setPatientName(patientData?.phone_number ?? '')
+
+        }
+    }, [patientData])
+
+    const handleChangeSelect = (id: number) => {
+        const activeProcedure = procs?.find(item => item?.id === id)
+        setActiveProcId(id)
+        if (activeProcedure) {
+            setPrice(activeProcedure?.price?.final_price ?? null)
+            setIsChild(!!activeProcedure?.price?.is_for_children)
+            setActiveProc(activeProcedure)
+        }
+    }
+
+    const handleBooking = () => {
+        const payload: ICreateVisit = {
+            patient_id: patientData?.id as number,
+            doctor_id: doctorData?.doctor_profile_id as number,
+            date: date,
+            visit_time_id: visitTime?.id as number,
+            // clinic_branch_id: 1,
+            procedure_id: activeProcId as number,
+            visit_price: price?.toString() ?? '',
+            is_child: isChild,
+        }
+        onCreate(payload)
+    }
+
+
+    return (
+        <div className={styles.modalOverlay}>
+            <div className={styles.modalContent}>
+                <button className={styles.closeButton} onClick={onClose}>
+                    ×
+                </button>
+                <div className={styles.DoctorModalImg}>
+                    <Image
+                        style={{
+                            borderRadius: '50%'
+                        }}
+                        width={100}
+                        height={100}
+                        src={doctorIcon}
+                        alt=''
+                    />
+                    <div className={styles.DoctorModalText}>
+                        <h3 className={styles.doctorName}>
+                            {doctorData?.doctor_full_name}
+                        </h3>
+                        <p className={styles.doctorDescription}>
+                            {doctorData?.current_clinic_branch_address}
+                        </p>
+                    </div>
+                </div>
+
+                <div className={styles.doctorMi}>
+                    {/*<div>*/}
+                    {/*    <Checkbox checked={isOld} onClick={() => setIsOld(!isOld)}/>*/}
+                    {/*    <h3>Взрослые пациенты</h3>*/}
+                    {/*</div>*/}
+                    <div>
+                        <Checkbox
+                            checked={isChild}
+                            onClick={() => setIsChild(!isChild)}
+                        />
+                        <h3>Дети</h3>
+                    </div>
+                </div>
+                <h4 className={styles.successfullyComFlexH4}>
+                    Прием
+                    <span className={styles.successfullyComFlexSpanMinus}>
+						{activeProc?.price?.discount && activeProc?.price?.default_price}
 					</span>{' '}
-					<span
-						style={{
-							color: '#ff6200'
-						}}
-					>
-						7 000 тг.
+                    <span
+                        style={{
+                            color: '#ff6200'
+                        }}
+                    >
+						{activeProc?.price?.final_price && `${activeProc?.price?.final_price} тг.`}
 					</span>
-					<span className={styles.successfullyComFlexSpanSale}>-30%</span>
-				</h4>
-				<div className={styles.doctorDivTo}>
-					<h4>Специальность/процедура</h4>
-					<h5>Уролог</h5>
-				</div>
-				<div className={styles.doctorDivTo}>
-					<h4>Специальность/процедура</h4>
-					<h5>10 мая 2024, 11:30</h5>
-				</div>
-				<input
-					type='text'
-					placeholder='Ваше имя'
-					value={patientName}
-					onChange={e => setPatientName(e.target.value)}
-					className={styles.input}
-				/>
-				<input
-					type='text'
-					placeholder='Ваш телефон'
-					value={phone}
-					onChange={e => setPhone(e.target.value)}
-					className={styles.input}
-				/>
-				<h5 className={styles.doctorH5In}>
-					На указанный вами номер будет отправлено SMS с кодом подтверждения
-				</h5>
+                    {activeProc?.price?.discount &&
+                        <span className={styles.successfullyComFlexSpanSale}>-{activeProc?.price?.discount}%</span>}
+                </h4>
+                <div className={styles.doctorDivTo}>
+                    <h4>Специальность/процедура</h4>
+                    <Select
+                        onChange={(value: number) => {
+                            handleChangeSelect(value)
+                        }}
+                        style={{minWidth: 100}}
+                        // @ts-ignore
+                        options={options ?? []}
+                        value={activeProcId}
+                        showSearch
+                        popupMatchSelectWidth={false}
+                        placeholder={'Выберите процеруру'}
+                        disabled={type === 'proc' && !!procId}
 
-				<hr />
-				<button className={styles.bookButton} onClick={handleBooking}>
-					Записаться
-				</button>
+                    />
+                </div>
+                <div className={styles.doctorDivTo}>
+                    <h4>Дата и время</h4>
+                    <h5>{date}, {visitTime?.time}</h5>
+                </div>
+                <input
+                    type='text'
+                    placeholder='Ваше имя'
+                    value={patientName}
+                    onChange={e => setPatientName(e.target.value)}
+                    className={styles.input}
+                />
+                <input
+                    type='text'
+                    placeholder='Ваш телефон'
+                    value={phone}
+                    onChange={e => setPhone(e.target.value)}
+                    className={styles.input}
+                />
+                {/*<h5 className={styles.doctorH5In}>*/}
+                {/*	На указанный вами номер будет отправлено SMS с кодом подтверждения*/}
+                {/*</h5>*/}
 
-				<p className={styles.bookP}>
-					Нажимая Записаться, я принимаю{' '}
-					<span className={styles.bookPSpan}>
+                <hr/>
+                <button
+                    className={styles.bookButton}
+                    onClick={handleBooking}
+                >
+                    Записаться
+                </button>
+
+                <p className={styles.bookP}>
+                    Нажимая Записаться, я принимаю{' '}
+                    <span className={styles.bookPSpan}>
 						условия пользовательского соглашения, положения о защите
 						персональных данных и даю свое согласие на обработку персональных
 						данных.
 					</span>
-				</p>
-			</div>
-		</div>
-	)
+                </p>
+            </div>
+        </div>
+    )
 }
 
 export default DoctorModal

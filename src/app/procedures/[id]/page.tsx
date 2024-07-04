@@ -12,14 +12,11 @@ import {IGet} from "@/types/common";
 import {useStateContext} from "@/contexts";
 import {SpecProcDoctorsSkeleton} from "../../../components/shared/skeleton/SpecProcDoctorsSkeleton";
 import {ISpecProcDoctor} from "@/types/specProcDoctorsTypes";
-import {cityService} from "@/utils/services/cityService";
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);
 
     const pathname = usePathname()
-
-    const cityId = cityService.getCityId()
 
     const apiInstance = useCreateAxiosInstance();
 
@@ -27,7 +24,7 @@ function Doctor() {
 
     const {state} = useStateContext()
 
-    const {query, ordering, forChild} = state
+    const {query, ordering, forChild, cityId} = state
 
     const {data, isLoading} = useQuery({
         queryKey: ['specDoctorsDataList', procId, query, forChild, ordering],

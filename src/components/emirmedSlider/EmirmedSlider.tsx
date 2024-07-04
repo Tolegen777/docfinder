@@ -21,145 +21,88 @@ import abstract03 from "@/assets/Rectangle 131.png";
 import { useState } from "react";
 import mapsvg from "@/components/svg/svgMap.svg";
 import timesvg from "@/components/svg/times.svg";
-const EmirmedSlider = () => {
-  const items: MenuProps["items"] = [
-    {
-      key: "1",
-      label: "1st menu item",
-    },
-    {
-      key: "2",
-      label: "2nd menu item",
-    },
-    {
-      key: "3",
-      label: "3rd menu item",
-    },
-  ];
+import {IClinicById} from "@/types/clinicsTypes";
+const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
+  const items = data?.franchise_branches_in_the_city?.map(item => ({
+    key: item?.id,
+    label: item?.title
+  }))
 
-  const images = [abstract01, abstract02, abstract03];
+  const images = data?.franchise_photos?.filter((_, index) => index < 3)?.map(item => item?.photo);
 
-  const [selectedImage, setSelectedImage] = useState(images[0]);
+  const [selectedImage, setSelectedImage] = useState(images?.[0]);
 
   return (
-    <div className={styles.emirmed}>
-      <div className="container">
-        <div className={styles.emirmed__content}>
-          <div className={styles.emirmed__content__sliders}>
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={10}
-              slidesPerView={1}
-              loop={true}
-              navigation
-              onSwiper={(swiper: any) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
-            >
-              <SwiperSlide>
-                <div className={styles.slide}>
-                  <div className={styles.emirmed__content__sliders__box}>
-                    <Image src={emirmedimage} alt="" width={300} />
-                    <h1 className={styles.title}>Медицинский центр ЭМИРМЕД</h1>
-                    <span className={styles.pretitle}>Алматы</span>
-                    <div className={styles.info}>
-                      <span className={styles.info__grade}>9.1</span>
-                      <Link href="" className={styles.info__from}>
-                        5800 отзывов
-                      </Link>
+      <div className={styles.emirmed}>
+        <div className="container">
+          <div className={styles.emirmed__content}>
+            <div className={styles.emirmed__content__sliders}>
+              <Swiper
+                  modules={[Navigation, Pagination, Scrollbar, A11y]}
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  loop={true}
+                  navigation
+                  onSwiper={(swiper: any) => console.log(swiper)}
+                  onSlideChange={() => console.log("slide change")}
+              >
+                <SwiperSlide>
+                  <div className={styles.slide}>
+                    <div className={styles.emirmed__content__sliders__box}>
+                      <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} />
+                      <h1 className={styles.title}>{data?.title}</h1>
+                      <span className={styles.pretitle}>{data?.address}</span>
+                      <div className={styles.info}>
+                        <span className={styles.info__grade}>{data?.rating?.toFixed(2)}</span>
+                        <Link href="" className={styles.info__from}>
+                          {data?.reviews_count} отзывов
+                        </Link>
+                      </div>
+                      <div className={styles.filialbox}>
+                        <Image src={filialimage} alt="" />
+                        <span className={styles.filial}>Филиалов: {data?.franchise_branches_in_the_city?.length}</span>
+                      </div>
+                      <Dropdown menu={{ items }} placement="bottom" arrow>
+                        <Button className={styles.btn}>
+                          {data?.address}
+                          <Image src={arrow} alt="" width={15} />
+                        </Button>
+                      </Dropdown>
+                      <div className={styles.maps}>
+                        <Image src={mapsvg} alt="" />
+                        <span>На карте</span>
+                      </div>
+                      <div className={styles.times}>
+                        <Image src={timesvg} alt="" />
+                        <span>На карте</span>
+                      </div>
+                      {/*<button className={styles.onlinebtn}>Онлайн запись</button>*/}
                     </div>
-                    <div className={styles.filialbox}>
-                      <Image src={filialimage} alt="" />
-                      <span className={styles.filial}>Филиалов: 7</span>
-                    </div>
-                    <Dropdown menu={{ items }} placement="bottom" arrow>
-                      <Button className={styles.btn}>
-                        ул. Розыбакиева, 37В (выше Райымбека)
-                        <Image src={arrow} alt="" width={15} />
-                      </Button>
-                    </Dropdown>
-                    <div className={styles.maps}>
-                      <Image src={mapsvg} alt="" />
-                      <span>На карте</span>
-                    </div>
-                    <div className={styles.times}>
-                      <Image src={timesvg} alt="" />
-                      <span>На карте</span>
-                    </div>
-                    <button className={styles.onlinebtn}>Онлайн запись</button>
-                  </div>
-                  <div className={styles.slider}>
-                    <div className={styles.mainImage}>
-                      <Image src={selectedImage} alt="Selected" />
-                    </div>
-                    <div className={styles.thumbnailContainer}>
-                      {images.map((image, index) => (
-                        <Image
-                          key={index}
-                          src={image}
-                          alt={`Thumbnail ${index}`}
-                          className={styles.thumbnail}
-                          onClick={() => setSelectedImage(image)}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={styles.slide}>
-                  <div className={styles.emirmed__content__sliders__box}>
-                    <Image src={emirmedimage} alt="" width={300} />
-                    <h1 className={styles.title}>Медицинский центр ЭМИРМЕД</h1>
-                    <span className={styles.pretitle}>Алматы</span>
-                    <div className={styles.info}>
-                      <span className={styles.info__grade}>9.1</span>
-                      <Link href="" className={styles.info__from}>
-                        5800 отзывов
-                      </Link>
-                    </div>
-                    <div className={styles.filialbox}>
-                      <Image src={filialimage} alt="" />
-                      <span className={styles.filial}>Филиалов: 7</span>
-                    </div>
-                    <Dropdown menu={{ items }} placement="bottom" arrow>
-                      <Button className={styles.btn}>
-                        ул. Розыбакиева, 37В (выше Райымбека)
-                        <Image src={arrow} alt="" width={15} />
-                      </Button>
-                    </Dropdown>
-                    <div className={styles.maps}>
-                      <Image src={mapsvg} alt="" />
-                      <span>На карте</span>
-                    </div>
-                    <div className={styles.times}>
-                      <Image src={timesvg} alt="" />
-                      <span>На карте</span>
-                    </div>
-                    <button className={styles.onlinebtn}>Онлайн запись</button>
-                  </div>
-                  <div className={styles.slider}>
-                    <div className={styles.mainImage}>
-                      <Image src={selectedImage} alt="Selected" />
-                    </div>
-                    <div className={styles.thumbnailContainer}>
-                      {images.map((image, index) => (
-                        <Image
-                          key={index}
-                          src={image}
-                          alt={`Thumbnail ${index}`}
-                          className={styles.thumbnail}
-                          onClick={() => setSelectedImage(image)}
-                        />
-                      ))}
+                    <div className={styles.slider}>
+                      <div className={styles.mainImage}>
+                        <Image src={selectedImage ?? ''} alt="" width={450} height={300}  />
+                      </div>
+                      <div className={styles.thumbnailContainer}>
+                        {images?.map((image, index) => (
+                            <Image
+                                key={index}
+                                src={image}
+                                alt={``}
+                                className={styles.thumbnail}
+                                onClick={() => setSelectedImage(image)}
+                                width={150}
+                                height={150}
+                            />
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

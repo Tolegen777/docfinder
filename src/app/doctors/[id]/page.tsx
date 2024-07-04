@@ -19,6 +19,7 @@ function Page() {
           width: "100%",
         }}
       >
+          <button onClick={toggleModal}>kkk</button>
         <div>
           {/*<DoctorInformation modalFunction={toggleModal} />*/}
         </div>

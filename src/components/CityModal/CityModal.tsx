@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
-import {Button, Modal, Select} from 'antd';
+import {Modal, Select} from 'antd';
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
 import {useQuery} from "@tanstack/react-query";
-import {IProcedure} from "@/types/procedureTypes";
 import {cityService} from "@/utils/services/cityService";
 import styles from './styles.module.scss'
 import {selectOptionsParser} from "@/utils/selectOptionsParser";
 import {ICity} from "@/types/cityTypes";
+import {useStateContext} from "@/contexts";
 
 type Props = {
     open: boolean,
@@ -19,7 +19,9 @@ export const CityModal = ({onClose, open}: Props) => {
 
     const [selectedId, setSelectedId] = useState<number | null>(null)
 
-    const cityId = cityService.getCityId()
+    const {state} = useStateContext()
+
+    const {cityId} = state
 
     const {data, isLoading} = useQuery({
         queryKey: ['citiesList'],

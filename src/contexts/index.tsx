@@ -1,10 +1,14 @@
 import React, {createContext, useContext, useReducer} from 'react';
 import type {Action, Dispatch, State, StateContextProviderProps,} from './types';
+import {tokenService} from "@/utils/services/tokenService";
+import {cityService} from "@/utils/services/cityService";
 
 const initialState: State = {
     query: '',
     forChild: false,
-    ordering: 'rating_asc'
+    ordering: 'rating_asc',
+    authUser: tokenService.getLocalAccessToken()?.length > 0,
+    cityId: cityService.getCityId() ?? ''
 };
 
 const StateContext = createContext<
@@ -13,6 +17,13 @@ const StateContext = createContext<
 
 const stateReducer = (state: State, action: Action) => {
     switch (action.type) {
+
+        case 'SET_AUTH_STATUS': {
+            return {
+                ...state,
+                authUser: action.payload,
+            }
+        }
 
         case 'SET_QUERY': {
             return {
@@ -32,6 +43,13 @@ const stateReducer = (state: State, action: Action) => {
             return {
                 ...state,
                 ordering: action.payload,
+            };
+        }
+
+        case 'SET_CITY_ID': {
+            return {
+                ...state,
+                cityId: action.payload,
             };
         }
 

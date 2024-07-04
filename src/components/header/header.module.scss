@@ -116,6 +116,21 @@
         font-weight: 400;
         line-height: 18.15px;
         color: #ffffff;
+        box-sizing: border-box;
+      }
+
+      .username {
+        background: #ff6200;
+        border-radius: 4px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 18.15px;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 5px;
       }
     }
   }
