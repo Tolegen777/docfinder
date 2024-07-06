@@ -1,13 +1,14 @@
 export interface ISpecDoctorById {
-    doctor_speciality_id: number
-    doctor_profile_id: number
-    doctor_full_name: string
-    medical_speciality_id: number
-    experience_years: number
-    franchise_employee: string
-    current_clinic_branch_title: string
-    current_clinic_branch_address: string
-    rating: number
+    doctor_speciality_id: number;
+    doctor_profile_id: number;
+    doctor_full_name: string;
+    medical_speciality_id: number;
+    medical_speciality_title: string;
+    experience_years: number;
+    franchise_employee: string;
+    current_clinic_branch_title: string;
+    current_clinic_branch_address: string;
+    rating: number;
     reviews: Review[]
     reviews_count: number
     current_clinic_branch_working_hours: CurrentClinicBranchWorkingHour[]
@@ -19,6 +20,22 @@ export interface ISpecDoctorById {
     specialities_and_procedures: SpecialitiesAndProcedure[]
     doctor_category: string
     doctor_description: string
+    doctor_procedures_data: DoctorProceduresData[];
+}
+
+export interface DoctorProceduresData {
+    id: number;
+    med_proc_info: MedProcInfo;
+    is_active: boolean;
+    comission_amount: number;
+    price: DoctorProcedureConsultationPrice;
+}
+
+export interface MedProcInfo {
+    title: string;
+    id: number;
+    description: string;
+    slug: string;
 }
 
 export interface Review {
@@ -39,6 +56,7 @@ export interface TodaysWorkSchedule {
     work_date: string
     clinic_branch: string
     working_hours: WorkingHour[]
+    clinic_branch_id: number;
 }
 
 export interface WorkingHour {
@@ -68,6 +86,7 @@ export interface DoctorProcedureConsultationPrice {
     child_age_to: string
     created_at: string
     updated_at: string
+    doctor_procedure_title: string;
 }
 
 export interface ListOfSpeciality {
