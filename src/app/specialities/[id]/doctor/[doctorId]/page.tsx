@@ -57,7 +57,11 @@ function Doctor() {
                     <DoctorInformation
                         modalFunction={toggleModal}
                         // @ts-ignore
-                        doctor={data}
+                        doctor={{
+                            ...data,
+                            // @ts-ignore
+                            doctor_speciality_doctor_procedures: data?.doctor_procedures_data
+                        }}
                         isPreventRedirect={true}
                         specId={''}
                         type={'spec'}

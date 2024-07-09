@@ -202,20 +202,20 @@ const DoctorModal = ({
                     <h4>Дата и время</h4>
                     <h5>{date}, {visitTime?.time}</h5>
                 </div>
-                <input
-                    type='text'
-                    placeholder='Ваше имя'
-                    value={patientName}
-                    onChange={e => setPatientName(e.target.value)}
-                    className={styles.input}
-                />
-                <input
-                    type='text'
-                    placeholder='Ваш телефон'
-                    value={phone}
-                    onChange={e => setPhone(e.target.value)}
-                    className={styles.input}
-                />
+                {/*<input*/}
+                {/*    type='text'*/}
+                {/*    placeholder='Ваше имя'*/}
+                {/*    value={patientName}*/}
+                {/*    onChange={e => setPatientName(e.target.value)}*/}
+                {/*    className={styles.input}*/}
+                {/*/>*/}
+                {/*<input*/}
+                {/*    type='text'*/}
+                {/*    placeholder='Ваш телефон'*/}
+                {/*    value={phone}*/}
+                {/*    onChange={e => setPhone(e.target.value)}*/}
+                {/*    className={styles.input}*/}
+                {/*/>*/}
                 {/*<h5 className={styles.doctorH5In}>*/}
                 {/*	На указанный вами номер будет отправлено SMS с кодом подтверждения*/}
                 {/*</h5>*/}
