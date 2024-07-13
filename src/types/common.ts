@@ -4,3 +4,8 @@ export interface IGet<T> {
     previous: any
     results: T[]
 }
+
+export type FormInitialFieldsParamsType = {
+    name: string;
+    value: string | number | boolean | [] | object | null | undefined;
+}

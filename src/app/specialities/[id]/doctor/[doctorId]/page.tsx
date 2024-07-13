@@ -50,7 +50,8 @@ function Doctor() {
             <div
                 style={{
                     background: 'white',
-                    width: '100%'
+                    width: '100%',
+                    marginBottom: '5pc'
                 }}
             >
                 <div>

@@ -18,9 +18,13 @@ import {useStateContext} from "@/contexts";
 import {IPatient} from "@/types/patient";
 import {resetService} from "@/utils/services/resetService";
 import {authApi} from "@/api/authApi";
+import {useRouter} from "next/navigation";
+import {EditOutlined} from "@ant-design/icons";
 
 function Header() {
     const apiInstance = useCreateAxiosInstance();
+
+    const router = useRouter()
 
     const {state, dispatch} = useStateContext()
 
@@ -45,7 +49,7 @@ function Header() {
         refetchOnMount: false,
     });
 
-    const {data: patientData, isLoading: patientLoading} = useQuery({
+    const {data: patientData, isFetching: patientLoading} = useQuery({
         queryKey: ['patientDetails', authUser],
         queryFn: () =>
             axiosInstanceWithTokenLogic
@@ -86,6 +90,14 @@ function Header() {
         },
         {
             key: '8',
+            label: 'Редактировать',
+            onClick: () => {
+                router.push('/profile')
+            },
+            icon: <EditOutlined />
+        },
+        {
+            key: '9',
             danger: true,
             label: 'Выйти',
             onClick: () => {

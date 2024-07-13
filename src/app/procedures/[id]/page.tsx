@@ -54,7 +54,7 @@ function Doctor() {
     }
 
     return (
-        <div>
+        <div style={{marginBottom: '5pc'}}>
             <Hero/>
             <DoctorsNavs
                 setOrdering={setOrdering}

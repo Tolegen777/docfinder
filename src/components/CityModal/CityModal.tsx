@@ -19,7 +19,7 @@ export const CityModal = ({onClose, open}: Props) => {
 
     const [selectedId, setSelectedId] = useState<number | null>(null)
 
-    const {state} = useStateContext()
+    const {state, dispatch} = useStateContext()
 
     const {cityId} = state
 
@@ -37,7 +37,12 @@ export const CityModal = ({onClose, open}: Props) => {
 
     const onConfirm = () => {
         if (selectedId) {
+            console.log('bro')
             cityService.setCityId(selectedId?.toString())
+            dispatch({
+                type: 'SET_CITY_ID',
+                payload: selectedId?.toString()
+            })
             onClose()
         }
     }
@@ -53,6 +58,7 @@ export const CityModal = ({onClose, open}: Props) => {
                 onOk={onConfirm}
                 okText={'Сохранить'}
                 cancelText={'Закрыть'}
+                closable={false}
             >
                 <div className={styles.container}>
                         <Select

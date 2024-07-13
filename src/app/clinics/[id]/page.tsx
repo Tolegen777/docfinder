@@ -42,7 +42,7 @@ function ClinicById() {
 
 
     return (
-        <div>
+        <div style={{marginBottom: '5pc'}}>
             <EmirmedSlider data={data}/>
             {/*<div style={{display: 'flex', alignItems: 'center', gap: 10}}>*/}
             {/*    {['Врачи', 'О клинике'].map((item, index) => <div*/}

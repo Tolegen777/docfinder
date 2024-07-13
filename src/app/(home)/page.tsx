@@ -4,7 +4,7 @@ import Reception from "@/components/reception/Reception";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{marginBottom: '5pc'}}>
       <Hero />
       <Reception />
     </main>
