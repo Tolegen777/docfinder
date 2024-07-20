@@ -74,7 +74,7 @@ function ClinicById() {
                         type={'proc'}
                     />
                 ) : <>
-                    <InfoClinics/>
+                    <InfoClinics data={data?.list_of_amenities ?? []}/>
                     <AboutClinics description={data?.description ?? ''}/>
                 </>}
             </>

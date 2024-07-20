@@ -30,6 +30,7 @@ function Reception() {
         .get<ISpeciality[]>(`patients/specialists-in-city/${cityId}/`)
         .then((response) => response.data),
     refetchOnMount: false,
+    enabled: cityId?.length > 0
   });
 
   const { data: clinics, isLoading: clinicsLoading } = useQuery({
@@ -39,6 +40,7 @@ function Reception() {
         .get<IGet<IClinics>>(`patients/clinic-branches-in-city/${cityId}/`)
         .then((response) => response.data),
     refetchOnMount: false,
+    enabled: cityId?.length > 0
   });
 
   const { data: procs, isLoading: procsLoading } = useQuery({
@@ -48,6 +50,7 @@ function Reception() {
         .get<IProcedure[]>(`patients/procedures-in-city/${cityId}/`)
         .then((response) => response.data),
     refetchOnMount: false,
+    enabled: cityId?.length > 0
   });
 
   const formattedData = useMemo(() => transformSpecData(data ?? []), [data]);

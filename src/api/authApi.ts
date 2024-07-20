@@ -6,7 +6,7 @@ import {customConfirmAction} from "@/utils/customConfirmAction";
 
 export const authApi = {
   signInUser: async (user: ILoginInput) => {
-    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-login/', user);
+    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-login-with-email/', user);
     return response.data
   },
 
