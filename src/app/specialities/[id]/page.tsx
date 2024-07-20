@@ -14,6 +14,7 @@ import {useStateContext} from "@/contexts";
 import {SpecProcDoctorsSkeleton} from "@/components/shared/skeleton/SpecProcDoctorsSkeleton";
 import {objectToQueryParams} from "@/utils/objectToQueryParams";
 import CustomPagination from "@/components/shared/CustomPagination";
+import {SkeletonWrapper} from "@/components/shared/skeleton/SkeletonWrapper";
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);
@@ -61,9 +62,9 @@ function Doctor() {
                 forChild={forChild}
                 ordering={ordering}
             />
-            {isLoading && <div>
+            {isLoading && <SkeletonWrapper>
                 <SpecProcDoctorsSkeleton/>
-            </div>}
+            </SkeletonWrapper>}
             {data?.results?.map(item => <DoctorInformation
                     key={item?.doctor_profile_id}
                     modalFunction={toggleModal}

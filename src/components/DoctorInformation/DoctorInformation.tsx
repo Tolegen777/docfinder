@@ -1,6 +1,6 @@
 "use client";
 
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./DoctorInformation.module.scss";
 import "./CalendarInput.css";
 import {ISpecProcDoctor} from "@/types/specProcDoctorsTypes";
@@ -93,6 +93,16 @@ const DoctorInformation = ({
         setIsOpenVisitModal(false)
     }
 
+    useEffect(() => {
+        if (doctor?.nearest_week_work_schedule) {
+            const firstDate = doctor?.nearest_week_work_schedule?.find(item => item)
+            if (firstDate?.work_date && firstDate?.work_date !== currentDate) {
+                setActiveDate(firstDate?.work_date)
+            }
+        }
+
+    }, [doctor?.nearest_week_work_schedule])
+
 
     return (
         <div>
@@ -130,10 +140,10 @@ const DoctorInformation = ({
                                     <Image
                                         onClick={modalFunction}
                                         className={styles.doctorInformationPhoto}
-                                        src={docImg}
+                                        src={doctor?.doctor_photos?.find(item => item)?.photo || docImg}
                                         alt={""}
-                                        width={50}
-                                        height={50}
+                                        width={100}
+                                        height={100}
                                     />
                                     <h4 className={styles.doctorInformationReiting}>
                                         {doctor?.rating?.toFixed(1)}
@@ -210,7 +220,6 @@ const DoctorInformation = ({
                                             key={key}
                                             onClick={() => {
                                                 setActiveDate(item?.work_date)
-                                                console.log(item, 'd')
                                             }}
                                         >
                                             <h3 className={styles.doctorInformationWeeksElH3}>

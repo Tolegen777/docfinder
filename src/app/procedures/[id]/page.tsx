@@ -14,6 +14,7 @@ import {SpecProcDoctorsSkeleton} from "@/components/shared/skeleton/SpecProcDoct
 import {ISpecProcDoctor} from "@/types/specProcDoctorsTypes";
 import CustomPagination from "@/components/shared/CustomPagination";
 import {objectToQueryParams} from "@/utils/objectToQueryParams";
+import {SkeletonWrapper} from "@/components/shared/skeleton/SkeletonWrapper";
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);
@@ -62,9 +63,9 @@ function Doctor() {
                 forChild={forChild}
                 ordering={ordering}
             />
-            {isLoading && <div style={{padding: '20px 150px'}}>
+            {isLoading && <SkeletonWrapper>
                 <SpecProcDoctorsSkeleton/>
-            </div>}
+            </SkeletonWrapper>}
             {data?.results?.map(item => <DoctorInformation
                     key={item?.doctor_profile_id}
                     modalFunction={toggleModal}

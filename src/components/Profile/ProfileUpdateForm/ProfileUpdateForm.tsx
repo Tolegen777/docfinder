@@ -75,7 +75,7 @@ export const PartnerSegmentsCreateUpdaterForm = (props: Props) => {
         if (patientData) {
             setInitialFields(changeFormFieldsData<object>(initialValues, {
                 ...patientData,
-                birth_date: datePickerFormatter(patientData?.birth_date)
+                birth_date: patientData?.birth_date ? datePickerFormatter(patientData?.birth_date) : ''
             }))
         }
     }, [patientData])

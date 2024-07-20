@@ -81,7 +81,7 @@ const Specializations = ({data}: Props) => {
 					{/*	</div>*/}
 					{/*</div>*/}
 					<div className={styles.reviewArray}>
-						{data?.reviews.map((el, key) => (
+						{data?.reviews?.map((el, key) => (
 							<div className={styles.reviewArrayDev} key={key}>
 								<Image
 									width={100}

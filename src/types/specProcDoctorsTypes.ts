@@ -16,6 +16,8 @@ export interface ISpecProcDoctor {
 
     doctor_speciality_doctor_procedures?: DoctorSpecialityDoctorProcedure[]
 
+    doctor_photos: DoctorPhoto[]
+
     doctor_procedure_id?: number
     medical_procedure_title?: string
     doctor_procedure_price?: DoctorProcedurePrice
@@ -102,4 +104,13 @@ export interface Price {
     child_age_to?: string
     created_at: string
     updated_at: string
+}
+
+export interface DoctorPhoto {
+    id: number
+    photo: string
+    title_code: string
+    created_at: string
+    updated_at: string
+    doctor_profile: number
 }
