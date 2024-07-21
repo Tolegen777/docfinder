@@ -10,13 +10,15 @@ export const createApiInstance = () => {
 
 
     axiosInstance.interceptors.response.use(
-        ( response ) =>
-            response, async ( error ) => {
+        (response) =>
+            response, async (error) => {
 
             const errorStatus = error.response.status;
 
             if (errorStatus !== 401) {
-                const errorMessage = error.response?.data?.detail
+                const errorMessage = error.response?.data?.detail ||
+                    error?.response?.data?.non_field_errors?.find((item: string) => item) ||
+                    error?.response?.data?.errors?.non_field_errors?.find((item: string) => item)
                 customNotification({
                     type: 'error',
                     message: errorMessage.length ? errorMessage : 'Ошибка сервера'

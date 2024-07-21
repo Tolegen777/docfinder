@@ -117,7 +117,9 @@ axiosInstanceWithTokenLogic.interceptors.response.use(
         console.log(error, 'EEEE')
 
         if (errorStatus !== 401) {
-            const errorMessage = error?.response?.data?.errors?.non_field_errors?.find((item: string) => item)
+            const errorMessage = error?.response?.data?.non_field_errors?.find((item: string) => item) ||
+                error?.response?.data?.errors?.non_field_errors?.find((item: string) => item) ||
+                error?.response?.data?.detail
             customNotification({
                 type: 'error',
                 message: errorMessage?.length ? errorMessage : 'Ошибка сервера'
