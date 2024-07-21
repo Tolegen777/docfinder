@@ -54,7 +54,7 @@ const ClinicBookingForm = ({ form, onClose }: Props) => {
 
 	return (
 		<div className={styles.container}>
-			<div className={styles.header}>Войти в профиль пользователя</div>
+			<div className={styles.header}>Записаться в клинику</div>
 			<Divider />
 			<Form
 				onFinish={onFinish}
@@ -65,7 +65,7 @@ const ClinicBookingForm = ({ form, onClose }: Props) => {
 			>
 				<Form.Item<FieldType>
 					// @ts-ignore
-					label={<span style={labelStyle}>Номер телефона пациента</span>}
+					label={<span style={labelStyle}>Номер телефона</span>}
 					name="patient_phone_number"
 					rules={[{ required: true, message: 'Пожалуйста, введите ваш номер телефона!' }]}
 				>
@@ -78,7 +78,7 @@ const ClinicBookingForm = ({ form, onClose }: Props) => {
 						size={'large'}
 						disabled={isLoading}
 					>
-						Войти
+						Записаться
 					</Button>
 				</div>
 			</Form>

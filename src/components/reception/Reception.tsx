@@ -3,7 +3,7 @@
 import React, {useMemo, useState} from "react";
 import styles from "./reception.module.scss";
 import Procedures from "@/components/Procedures/Procedures";
-import Clinics from "../Clinics/Clinics";
+import Clinics from "@/components/Clinics/Clinics";
 import {useQuery} from "@tanstack/react-query";
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
 import {ISpeciality} from "@/types/specialityTypes";
@@ -13,15 +13,19 @@ import {IGet} from "@/types/common";
 import {IClinics} from "@/types/clinicsTypes";
 import {IProcedure} from "@/types/procedureTypes";
 import {useStateContext} from "@/contexts";
+import CustomPagination from "@/components/shared/CustomPagination";
 
 function Reception() {
-  const [activeLink, setActiveLink] = useState("Врачи");
 
   const apiInstance = useCreateAxiosInstance();
 
   const {state} = useStateContext()
 
   const {cityId} = state
+
+  const [page, setPage] = useState(1)
+
+  const [activeLink, setActiveLink] = useState("Врачи");
 
   const { data, isLoading } = useQuery({
     queryKey: ["specialistsDataList", cityId],
@@ -34,10 +38,10 @@ function Reception() {
   });
 
   const { data: clinics, isLoading: clinicsLoading } = useQuery({
-    queryKey: ["clinicsDataList", cityId],
+    queryKey: ["clinicsDataList", cityId, page],
     queryFn: () =>
       apiInstance
-        .get<IGet<IClinics>>(`patients/clinic-branches-in-city/${cityId}/`)
+        .get<IGet<IClinics>>(`patients/clinic-branches-in-city/${cityId}/?page=${page}`)
         .then((response) => response.data),
     refetchOnMount: false,
     enabled: cityId?.length > 0
@@ -99,10 +103,13 @@ function Reception() {
             ) : activeLink === "Процедуры" ? (
               <Procedures data={procs ?? []} isLoading={procsLoading} />
             ) : (
-              <Clinics
-                data={clinics?.results ?? []}
-                isLoading={clinicsLoading}
-              />
+                <>
+                  <Clinics
+                      data={clinics?.results ?? []}
+                      isLoading={clinicsLoading}
+                  />
+                  <CustomPagination setPage={setPage} totalCount={clinics?.count ?? 0}/>
+                </>
             )}
           </div>
         </div>

@@ -4,6 +4,7 @@ import styles from "./styles.module.scss";
 import { TransformedData } from "@/utils/transformSpecData";
 import { SpecProcsSkeleton } from "../shared/skeleton/SpecProcsSkeleton";
 import { useRouter } from "next/navigation";
+import {Empty} from "antd";
 
 type Props = {
   formattedData: TransformedData[];
@@ -19,6 +20,10 @@ const SpecsLinkLists = ({ formattedData, isLoading }: Props) => {
 
   if (isLoading) {
     return <SpecProcsSkeleton />;
+  }
+
+  if (formattedData?.length === 0) {
+    return <Empty description={<>Данных нет...</>}/>
   }
 
   return (

@@ -15,6 +15,7 @@ import {SpecProcDoctorsSkeleton} from "@/components/shared/skeleton/SpecProcDoct
 import {objectToQueryParams} from "@/utils/objectToQueryParams";
 import CustomPagination from "@/components/shared/CustomPagination";
 import {SkeletonWrapper} from "@/components/shared/skeleton/SkeletonWrapper";
+import {Empty} from "antd";
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);
@@ -65,7 +66,8 @@ function Doctor() {
             {isLoading && <SkeletonWrapper>
                 <SpecProcDoctorsSkeleton/>
             </SkeletonWrapper>}
-            {data?.results?.map(item => <DoctorInformation
+            {data?.results?.length === 0 ? <Empty description={'Данных нет...'}/> : data?.results?.map(item =>
+                <DoctorInformation
                     key={item?.doctor_profile_id}
                     modalFunction={toggleModal}
                     doctor={item}

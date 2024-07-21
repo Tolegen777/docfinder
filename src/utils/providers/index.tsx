@@ -26,6 +26,11 @@ function Providers({children}: { children: ReactNode }) {
                             fontFamily: 'Inter, sans-serif',
                             colorPrimary: '#FF6200',
                         },
+                        components: {
+                            Pagination: {
+                                itemSize: 50
+                            }
+                        }
                     }}
                 >
                 {children}
