@@ -20,9 +20,6 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Собрать проект Next.js
-RUN npm run build
-
 # Production image, copy all the files and run next
 FROM base AS runner
 WORKDIR /app
@@ -51,4 +48,4 @@ ENV PORT 3000
 
 # server.js is created by next build from the standalone output
 # https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD ["node", "server.js"]
+CMD HOSTNAME="0.0.0.0" node server.js
