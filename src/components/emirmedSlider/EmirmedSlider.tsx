@@ -24,7 +24,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
     label: item?.title
   }))
 
-  const images = data?.franchise_photos?.filter((_, index) => index < 3)?.map(item => item?.photo);
+  const images = data?.list_of_photos?.filter((_, index) => index < 3)?.map(item => item?.photo);
 
   const [selectedImage, setSelectedImage] = useState(images?.[0]);
 
