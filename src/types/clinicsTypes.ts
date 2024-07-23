@@ -40,6 +40,7 @@ export interface IClinicById {
     working_hours: WorkingHour[]
     franchise_branches_in_the_city: FranchiseBranchesInTheCity[]
     clinic_branch_doctors_list: ClinicBranchDoctorsList
+    doctors_list: DoctorsList[]
 }
 
 export interface ListOfAmenity {
@@ -169,4 +170,43 @@ export interface WorkingHoursList2 {
     reserved: boolean
     patient_clinic_visit_id?: number
     panel_colour: string
+}
+
+
+export interface DoctorsList {
+    id: number
+    rating: number
+    full_name: string
+    photos_list: PhotosList2[]
+    experience_years: number
+    reviews: Review2[]
+    reviews_count: number
+    todays_work_schedule: TodaysWorkSchedule2[]
+    nearest_week_work_schedule: NearestWeekWorkSchedule2[]
+}
+
+export interface PhotosList2 {
+    id: number
+    photo: string
+    title_code: string
+    created_at: string
+    updated_at: string
+    doctor_profile: number
+}
+
+export interface Review2 {
+    reviews__id: number
+    reviews__author__first_name: string
+    reviews__author__last_name: string
+    reviews__text: string
+    reviews__rating: number
+    reviews__created_at: string
+}
+
+export interface TodaysWorkSchedule2 {
+    doctor_work_schedule_detailed_api_view: DoctorWorkScheduleDetailedApiView
+}
+
+export interface NearestWeekWorkSchedule2 {
+    doctor_work_schedule_detailed_api_view: DoctorWorkScheduleDetailedApiView2
 }

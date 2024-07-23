@@ -15,7 +15,7 @@ import {DoctorSpecialityDoctorProcedure} from "@/types/specProcDoctorsTypes";
 type DoctorInformationProps = {
     onClose: () => void,
     doctorData: Partial<ISpecDoctorById> | undefined,
-    type: 'proc' | 'spec',
+    type: 'proc' | 'spec' | 'clinic',
     procId: number | null,
     procLabel?: string,
     procs: DoctorSpecialityDoctorProcedure[]

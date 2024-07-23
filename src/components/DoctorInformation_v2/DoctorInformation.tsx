@@ -17,10 +17,11 @@ import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import HeaderModal from "@/components/HeaderModal/HeaderModal";
 import {useStateContext} from "@/contexts";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
+import {DoctorsList} from "@/types/clinicsTypes";
 
 type DoctorInformationProps = {
     modalFunction: () => void;
-    doctor: ISpecProcDoctor | undefined;
+    doctor: DoctorsList | undefined;
     specId: string;
     type: "spec" | "proc" | "clinic";
     isPreventRedirect?: boolean;
@@ -66,20 +67,6 @@ const DoctorInformation = ({
         setShowAll(!showAll);
     };
 
-    const handleGoToDoctorsPage = () => {
-        if (!isPreventRedirect) {
-            if (type === "spec") {
-                router.push(
-                    `/specialities/${specId}/doctor/${doctor?.doctor_speciality_id}`
-                );
-            } else if(type === "proc") {
-                router.push(
-                    `/procedures/${specId}/doctor/${doctor?.doctor_procedure_id}`
-                );
-            }
-        }
-    };
-
     const handleOpenVisits = (time: {
         id: number | null,
         time: string
@@ -104,7 +91,7 @@ const DoctorInformation = ({
 
     useEffect(() => {
         if (doctor?.nearest_week_work_schedule) {
-            const firstDate = doctor?.nearest_week_work_schedule?.find(item => item)
+            const firstDate = doctor?.nearest_week_work_schedule?.find(item => item)?.doctor_work_schedule_detailed_api_view
             if (firstDate?.work_date && firstDate?.work_date !== currentDate) {
                 setActiveDate(firstDate?.work_date)
             }
@@ -120,40 +107,19 @@ const DoctorInformation = ({
                 closeModal={() => setOpenBookingModal(false)}
             />
             <HeaderModal setModal={() => setModal(false)} open={modal}/>
-            {isOpenVisitModal && <DoctorModal
-                // @ts-ignore
-                doctorData={doctor}
-                onClose={onClose}
-                type={type}
-                procs={doctor?.doctor_speciality_doctor_procedures ?? []}
-                date={activeDate}
-                visitTime={activeTime}
-                procId={doctor?.doctor_procedure_id ?? null}
-                procLabel={doctor?.medical_procedure_title}
-                doctorProcData={{
-                    id: doctor?.doctor_procedure_id as number,
-                    comission_amount: doctor?.doctor_procedure_price?.default_price as number,
-                    is_active: !!doctor?.doctor_procedure_price?.is_active,
-                    // @ts-ignore
-                    price: doctor?.doctor_procedure_price
-                }}
-                branchId={activeBranchId}
-            />
-            }
             <section id={styles.doctorInformation}>
                 <div className="container">
                     <div className={styles.doctorInformation}>
                         <div className={styles.doctorInformationBlock}>
                             <div
                                 className={styles.doctorInformationBlockMain}
-                                onClick={handleGoToDoctorsPage}
                                 style={{cursor: !isPreventRedirect ? 'pointer' : undefined}}
                             >
                                 <div className={styles.doctorInformationImg}>
                                     <Image
                                         onClick={modalFunction}
                                         className={styles.doctorInformationPhoto}
-                                        src={doctor?.doctor_photos?.find(item => item)?.photo || docImg}
+                                        src={doctor?.photos_list?.find(item => item)?.photo || docImg}
                                         alt={""}
                                         width={100}
                                         height={100}
@@ -167,45 +133,45 @@ const DoctorInformation = ({
                                 </div>
                                 <div className={styles.doctorInformationDecr}>
                                     <h3 className={styles.doctorInformationName}>
-                                        {doctor?.doctor_full_name}
+                                        {doctor?.full_name}
                                     </h3>
-                                    <h4 className={styles.doctorInformationUrl}>
-                                        {type === "spec" && doctor?.medical_speciality_title}
-                                        {type === "proc" && doctor?.medical_procedure_title}
-                                    </h4>
+                                    {/*<h4 className={styles.doctorInformationUrl}>*/}
+                                    {/*    {type === "spec" && doctor?.medical_speciality_title}*/}
+                                    {/*    {type === "proc" && doctor?.medical_procedure_title}*/}
+                                    {/*</h4>*/}
                                     <h4 className={styles.doctorInformationOpt}>
                                         Стаж {doctor?.experience_years} лет
                                     </h4>
-                                    <h5 className={styles.doctorInformationClin}>
-                                        {doctor?.doctor_category}
-                                    </h5>
+                                    {/*<h5 className={styles.doctorInformationClin}>*/}
+                                    {/*    {doctor?.doctor_category}*/}
+                                    {/*</h5>*/}
                                     <div className={styles.doctorInformationSale}>
                                         <h4 className={styles.doctorInformationPrice}>
                       <span className={styles.doctorInformationPriceMinus}>
-                        {doctor?.doctor_procedure_consultation_price
-                                ?.default_price &&
-                            doctor?.doctor_procedure_consultation_price
-                                ?.default_price}{" "}
+                        {/*{doctor?.doctor_procedure_consultation_price*/}
+                        {/*        ?.default_price &&*/}
+                        {/*    doctor?.doctor_procedure_consultation_price*/}
+                        {/*        ?.default_price}{" "}*/}
                       </span>
-                                            {doctor?.doctor_procedure_consultation_price
-                                                    ?.final_price &&
-                                                `${doctor?.doctor_procedure_consultation_price?.final_price} тг.`}
+                                            {/*{doctor?.doctor_procedure_consultation_price*/}
+                                            {/*        ?.final_price &&*/}
+                                            {/*    `${doctor?.doctor_procedure_consultation_price?.final_price} тг.`}*/}
                                         </h4>
-                                        {doctor?.doctor_procedure_consultation_price?.discount && (
-                                            <h4
-                                                className={styles.doctorInformationMinusPro}
-                                            >{`-${doctor?.doctor_procedure_consultation_price?.discount}%`}</h4>
-                                        )}
+                                        {/*{doctor?.doctor_procedure_consultation_price?.discount && (*/}
+                                        {/*    <h4*/}
+                                        {/*        className={styles.doctorInformationMinusPro}*/}
+                                        {/*    >{`-${doctor?.doctor_procedure_consultation_price?.discount}%`}</h4>*/}
+                                        {/*)}*/}
                                     </div>
-                                    <h3 className={styles.doctorInformationEm}>
-                                        {doctor?.franchise_employee}
-                                    </h3>
-                                    <p className={styles.doctorInformationMap}>
-                                        {doctor?.current_clinic_branch_address}
-                                    </p>
-                                    <h6 className={styles.doctorInformationMapH6}>
-                                        {doctor?.current_clinic_branch_title}
-                                    </h6>
+                                    {/*<h3 className={styles.doctorInformationEm}>*/}
+                                    {/*    {doctor?.franchise_employee}*/}
+                                    {/*</h3>*/}
+                                    {/*<p className={styles.doctorInformationMap}>*/}
+                                    {/*    {doctor?.current_clinic_branch_address}*/}
+                                    {/*</p>*/}
+                                    {/*<h6 className={styles.doctorInformationMapH6}>*/}
+                                    {/*    {doctor?.current_clinic_branch_title}*/}
+                                    {/*</h6>*/}
                                     {/*<h6 className={styles.doctorInformationMapH6}>На карте</h6>*/}
                                 </div>
                             </div>
@@ -227,26 +193,25 @@ const DoctorInformation = ({
                                             className={clsx({
                                                 [styles.doctorInformationWeeksMonth]: true,
                                                 [styles.doctorInformationWeeksMonth_active]:
-                                                item?.work_date === activeDate,
+                                                item?.doctor_work_schedule_detailed_api_view?.work_date === activeDate,
                                             })}
                                             key={key}
                                             onClick={() => {
-                                                setActiveDate(item?.work_date)
+                                                setActiveDate(item?.doctor_work_schedule_detailed_api_view?.work_date)
                                             }}
                                         >
                                             <h3 className={styles.doctorInformationWeeksElH3}>
-                                                {getWeekDay(item?.work_date)}
+                                                {getWeekDay(item?.doctor_work_schedule_detailed_api_view?.work_date)}
                                             </h3>
                                             <h5 className={styles.doctorInformationWeeksElH5}>
-                                                {getDayOfMonth(item?.work_date)}
+                                                {getDayOfMonth(item?.doctor_work_schedule_detailed_api_view?.work_date)}
                                             </h5>
                                         </div>
                                     ))}
                                 </div>
                                 <div className={styles.doctorInformationClock}>
                                     {doctor?.nearest_week_work_schedule
-                                        ?.find((item) => item?.work_date === activeDate)
-                                        ?.working_hours
+                                        ?.find((item) => item?.doctor_work_schedule_detailed_api_view?.work_date === activeDate)?.doctor_work_schedule_detailed_api_view?.working_hours_list
                                         ?.slice(0, showAll ? doctor?.nearest_week_work_schedule?.length : 15)
                                         ?.map((el, key) => (
                                             <h4
@@ -254,7 +219,7 @@ const DoctorInformation = ({
                                                 key={key}
                                                 onClick={() => {
                                                     handleOpenVisits({
-                                                        id: el?.start_time_id,
+                                                        id: el?.time_slot_id,
                                                         time: el?.start_time
                                                     })
 
