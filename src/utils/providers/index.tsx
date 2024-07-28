@@ -29,7 +29,16 @@ function Providers({children}: { children: ReactNode }) {
                         components: {
                             Pagination: {
                                 itemSize: 50
-                            }
+                            },
+                            Table: {
+                                headerBg: '#FF6200',
+                                headerColor: '#FFFFFF',
+                                colorBgContainer: '#EFEFEF'
+                            },
+                            Descriptions: {
+                                labelBg: '#FF6200',
+                                titleColor: '#FF6200',
+                            },
                         }
                     }}
                 >

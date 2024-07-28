@@ -1,0 +1,84 @@
+/* styles.module.scss */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 300px;
+  background: #ffffff;
+  font-family: Inter, serif;
+}
+
+.tableWrapper {
+  display: none;
+}
+
+.mobileWrapper {
+  display: block;
+}
+
+.description {
+  margin-bottom: 24px;
+}
+
+/* Десктопная адаптация */
+@media (min-width: 769px) {
+  .container {
+    padding: 10px 300px;
+  }
+  .tableWrapper {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .desktopTable {
+    width: 100%;
+  }
+
+  .mobileWrapper {
+    display: none;
+  }
+}
+
+/* Адаптация для трех колонок */
+@media (max-width: 1150px) and (min-width: 769px) {
+  .container {
+    padding: 10px 300px;
+  }
+  .mobileWrapper {
+    display: block;
+  }
+
+  .tableWrapper {
+    display: none;
+  }
+
+  .description .ant-descriptions-item-label,
+  .description .ant-descriptions-item-content {
+    flex: 1;
+  }
+}
+
+
+@media (max-width: 1500px) {
+  .container {
+    padding: 10px 100px;
+  }
+}
+
+@media (max-width: 769px) {
+  .container {
+    padding: 10px 30px;
+  }
+}
+
+.descLabel {
+  color: #ffffff;
+  text-align: center;
+}
+
+.loader {
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
