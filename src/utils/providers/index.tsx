@@ -23,7 +23,7 @@ function Providers({children}: { children: ReactNode }) {
                 <ConfigProvider
                     theme={{
                         token: {
-                            fontFamily: 'Inter, sans-serif',
+                            fontFamily: 'Lato, sans-serif',
                             colorPrimary: '#FF6200',
                         },
                         components: {

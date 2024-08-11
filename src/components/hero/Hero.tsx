@@ -17,7 +17,7 @@ const HeroContent = () => (
     <div className="container">
         <div className={styles.hero}>
             <div className={styles.heroText}>
-                <h2 className={styles.heroTexth2}>Врачи которым вы доверяете</h2>
+                <h2 className={styles.heroTexth2}>Врачи которым вы доверяете </h2>
                 <h4 className={styles.heroTexth4}>Средний стаж от 7 лет</h4>
                 <p className={styles.heroTextP}>
                     Наша команда – это высококвалифицированные специалисты с проверенным опытом. Мы гордимся тем, что

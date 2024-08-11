@@ -1,0 +1,33 @@
+.container {
+  margin-bottom: 5pc
+}
+
+.tabs_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 20px 70px;
+
+  &_item {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30.26px;
+    color: #000000;
+
+    &_active {
+      color: #FF6200;
+      border-bottom: 3px solid #FF6200;
+    }
+  }
+}
+
+.doctors {
+  padding-top: 20px;
+}
+
+@media (max-width: 700px) {
+  .tabs_wrapper {
+    justify-content: center;
+  }
+}

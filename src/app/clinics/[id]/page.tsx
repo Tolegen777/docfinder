@@ -12,6 +12,9 @@ import AboutClinics from "@/components/aboutClinics/AboutClinics";
 import InfoClinics from "@/components/infoClinics/InfoClinics";
 import DoctorInformation from "@/components/DoctorInformation_v2/DoctorInformation";
 import CustomPagination from "@/components/shared/CustomPagination";
+import styles from './styles.module.scss'
+import clsx from "clsx";
+import {Empty} from "antd";
 
 function ClinicById() {
     const [activeItem, setActiveItem] = useState(1);
@@ -39,7 +42,7 @@ function ClinicById() {
         refetchOnMount: false,
     });
 
-    const currentDoctors = data?.doctors_list.slice((page - 1) * 10, page * 10);
+    const currentDoctors = data?.doctors_list?.slice((page - 1) * 10, page * 10);
 
     if (isLoading) {
         return <DoctorDetailsSkeleton/>
@@ -47,38 +50,36 @@ function ClinicById() {
 
 
     return (
-        <div style={{marginBottom: '5pc'}}>
+        <div className={styles.container}>
             <EmirmedSlider data={data}/>
-            <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
+            <div
+                className={styles.tabs_wrapper}
+            >
                 {['Врачи', 'О клинике'].map((item, index) => <div
-                key={item}
-                style={
-                    {
-                        fontFamily: 'Inter',
-                        fontSize: '25px',
-                        fontWeight: 600,
-                        lineHeight: '30.26px',
-                        textAlign: 'left',
-                        color: activeItem === index ? '#FF6200' : '#000000'
-                    }
-                }
-                onClick={() => setActiveItem(index)}
+                    key={item}
+                    className={clsx({
+                        [styles.tabs_wrapper_item]: true,
+                        [styles.tabs_wrapper_item_active]: activeItem === index,
+
+                    })}
+                    onClick={() => setActiveItem(index)}
 
                 >
                     {item}
                 </div>)}
             </div>
             <>
-                {activeItem === 0 ? currentDoctors?.map(item => <DoctorInformation
-                        key={item?.id}
-                        modalFunction={() => {
-                        }}
-                        // @ts-ignore
-                        doctor={item}
-                        specId={''}
-                        type={'clinic'}
-                    />
-                ) : <>
+                {activeItem === 0 ? currentDoctors?.length === 0 ?
+                    <Empty description={<>Данных нет...</>}/> : <div className={styles.doctors}>
+                        {currentDoctors?.map(item => <DoctorInformation
+                                key={item?.id}
+                                modalFunction={() => {
+                                }}
+                                // @ts-ignore
+                                doctor={item}
+                            />
+                        )}
+                    </div> : <>
                     <InfoClinics data={data?.list_of_amenities ?? []}/>
                     <AboutClinics description={data?.description ?? ''}/>
                 </>}

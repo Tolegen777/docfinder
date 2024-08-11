@@ -41,7 +41,6 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
             closeModal={() => setOpenBookingModal(false)}
         />
         <div className={styles.emirmed}>
-          <div className="container">
             <div className={styles.emirmed__content}>
               <div className={styles.emirmed__content__sliders}>
                 <Swiper
@@ -113,7 +112,6 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                 </Swiper>
               </div>
             </div>
-          </div>
         </div>
       </>
   );

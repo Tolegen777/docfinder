@@ -8,15 +8,11 @@ import Image from "next/image";
 import docImg from "../../public/icons/doctor.svg";
 import {getCurrentMonthName} from "@/utils/date/getCurrentMonthName";
 import {getCurrentDate} from "@/utils/date/getCurrentDate";
-import {getWeekDay} from "@/utils/date/getWeekDay";
-import {formatTime} from "@/utils/date/formatTime";
-import clsx from "clsx";
-import {getDayOfMonth} from "@/utils/date/getDayOfMonth";
 import {useRouter} from "next/navigation";
 import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import HeaderModal from "@/components/HeaderModal/HeaderModal";
-import {useStateContext} from "@/contexts";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
+import DoctorSchedule from "@/components/DcotorSchedule/DoctorSchedule";
 
 type DoctorInformationProps = {
     modalFunction: () => void;
@@ -26,7 +22,7 @@ type DoctorInformationProps = {
     isPreventRedirect?: boolean;
 };
 
-// @ts-ignore
+
 const DoctorInformation = ({
                                modalFunction,
                                doctor,
@@ -39,8 +35,6 @@ const DoctorInformation = ({
     const currentDate = getCurrentDate();
 
     const currentMonth = getCurrentMonthName();
-
-    const {state} = useStateContext()
 
     const [activeDate, setActiveDate] = useState(currentDate);
 
@@ -56,15 +50,9 @@ const DoctorInformation = ({
 
     const [isOpenVisitModal, setIsOpenVisitModal] = useState(false)
 
-    const [showAll, setShowAll] = useState(false);
-
     const [modal, setModal] = useState(false)
 
     const [openBookingModal, setOpenBookingModal] = useState(false)
-
-    const toggleShowAll = () => {
-        setShowAll(!showAll);
-    };
 
     const handleGoToDoctorsPage = () => {
         if (!isPreventRedirect) {
@@ -72,31 +60,13 @@ const DoctorInformation = ({
                 router.push(
                     `/specialities/${specId}/doctor/${doctor?.doctor_speciality_id}`
                 );
-            } else if(type === "proc") {
+            } else if (type === "proc") {
                 router.push(
                     `/procedures/${specId}/doctor/${doctor?.doctor_procedure_id}`
                 );
             }
         }
     };
-
-    const handleOpenVisits = (time: {
-        id: number | null,
-        time: string
-    }) => {
-        if (!state.authUser) {
-            // setModal(true)
-            setOpenBookingModal(true)
-        } else {
-            if (type === 'clinic') {
-                setOpenBookingModal(true)
-            } else {
-                setIsOpenVisitModal(true)
-                setActiveTime(time)
-            }
-        }
-
-    }
 
     const onClose = () => {
         setIsOpenVisitModal(false)
@@ -211,81 +181,20 @@ const DoctorInformation = ({
                             </div>
 
                             <div className={styles.doctorInformationDate}>
-                                <div className={styles.doctorInformationMonths}>
-                                    {/*<h4 className={styles.doctorInformationMonthAp}>Апрель</h4>*/}
-                                    <div className="mianClock">
-                                        {/*<MonthCalendar date={currentDate}/>*/}
-                                    </div>
-                                    <h4 className={styles.doctorInformationMonthsIn}>
-                                        {currentMonth}
-                                    </h4>
-                                </div>
-                                {" "}
-                                <div className={styles.doctorInformationWeeks}>
-                                    {doctor?.nearest_week_work_schedule?.map((item, key) => (
-                                        <div
-                                            className={clsx({
-                                                [styles.doctorInformationWeeksMonth]: true,
-                                                [styles.doctorInformationWeeksMonth_active]:
-                                                item?.work_date === activeDate,
-                                            })}
-                                            key={key}
-                                            onClick={() => {
-                                                setActiveDate(item?.work_date)
-                                            }}
-                                        >
-                                            <h3 className={styles.doctorInformationWeeksElH3}>
-                                                {getWeekDay(item?.work_date)}
-                                            </h3>
-                                            <h5 className={styles.doctorInformationWeeksElH5}>
-                                                {getDayOfMonth(item?.work_date)}
-                                            </h5>
-                                        </div>
-                                    ))}
-                                </div>
-                                <div className={styles.doctorInformationClock}>
-                                    {doctor?.nearest_week_work_schedule
+                                <DoctorSchedule
+                                    type={type}
+                                    setOpenBookingModal={setOpenBookingModal}
+                                    activeDate={activeDate}
+                                    weeks={doctor?.nearest_week_work_schedule ?? []}
+                                    setActiveBranchId={setActiveBranchId}
+                                    setActiveDate={setActiveDate}
+                                    setIsOpenVisitModal={setIsOpenVisitModal}
+                                    setActiveTime={setActiveTime}
+                                    month={currentMonth}
+                                    workingHours={doctor?.nearest_week_work_schedule
                                         ?.find((item) => item?.work_date === activeDate)
-                                        ?.working_hours
-                                        ?.slice(0, showAll ? doctor?.nearest_week_work_schedule?.length : 15)
-                                        ?.map((el, key) => (
-                                            <h4
-                                                className={styles.doctorInformationClockH4}
-                                                key={key}
-                                                onClick={() => {
-                                                    handleOpenVisits({
-                                                        id: el?.start_time_id,
-                                                        time: el?.start_time
-                                                    })
-
-                                                    // @ts-ignore
-                                                    const item = doctor?.nearest_week_work_schedule?.find(item => item)?.clinic_branch_id
-
-                                                    setActiveBranchId(item)
-                                                }}
-                                            >
-                                                {formatTime(el?.start_time)}
-                                            </h4>
-                                        ))}
-                                </div>
-                                {doctor?.nearest_week_work_schedule && doctor?.nearest_week_work_schedule?.length > 15 ? (
-                                    <div
-                                        style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            justifyContent: "center",
-                                        }}
-                                    >
-                                        <button
-                                            onClick={toggleShowAll}
-                                            className={styles.showAllButton}
-                                        >
-                                            {showAll ? "Скрыть" : "Показать еще"}
-                                        </button>
-                                    </div>
-                                ) : (
-                                    ""
-                                )}
+                                        ?.working_hours ?? []}
+                                />
                             </div>
                         </div>
                     </div>
