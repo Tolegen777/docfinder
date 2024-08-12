@@ -33,6 +33,7 @@ export const DoctorDetailsSkeleton = () => {
                             alt={''}
                             height={60}
                             width={60}
+                            unoptimized={true}
                         />
                     </div>
                     <div className={styles.container_card_content}>

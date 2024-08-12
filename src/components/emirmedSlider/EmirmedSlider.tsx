@@ -55,7 +55,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                   <SwiperSlide>
                     <div className={styles.slide}>
                       <div className={styles.emirmed__content__sliders__box}>
-                        <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} />
+                        <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} unoptimized={true}/>
                         <h1 className={styles.title}>{data?.title}</h1>
                         <span className={styles.pretitle}>{data?.address}</span>
                         <div className={styles.info}>
@@ -65,21 +65,21 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                           </Link>
                         </div>
                         <div className={styles.filialbox}>
-                          <Image src={filialimage} alt="" />
+                          <Image src={filialimage} alt="" unoptimized={true} />
                           <span className={styles.filial}>Филиалов: {data?.franchise_branches_in_the_city?.length}</span>
                         </div>
                         <Dropdown menu={{ items }} placement="bottom" arrow>
                           <Button className={styles.btn}>
                             {data?.address}
-                            <Image src={arrow} alt="" width={15} />
+                            <Image src={arrow} alt="" width={15} unoptimized={true} />
                           </Button>
                         </Dropdown>
                         <div className={styles.maps}>
-                          <Image src={mapsvg} alt="" />
+                          <Image src={mapsvg} alt="" unoptimized={true} />
                           <span>На карте</span>
                         </div>
                         <div className={styles.times}>
-                          <Image src={timesvg} alt="" />
+                          <Image src={timesvg} alt="" unoptimized={true} />
                           <span>На карте</span>
                         </div>
                         <button
@@ -91,7 +91,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                       </div>
                       <div className={styles.slider}>
                         <div className={styles.mainImage}>
-                          <Image src={selectedImage ?? ''} alt="" width={450} height={300}  />
+                          <Image src={selectedImage ?? ''} alt="" width={450} height={300} unoptimized={true} />
                         </div>
                         <div className={styles.thumbnailContainer}>
                           {images?.map((image, index) => (
@@ -103,6 +103,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                                   onClick={() => setSelectedImage(image)}
                                   width={150}
                                   height={150}
+                                  unoptimized={true}
                               />
                           ))}
                         </div>

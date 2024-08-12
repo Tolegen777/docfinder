@@ -14,6 +14,7 @@ function Footer() {
               width={336}
               height={70}
               alt="footer logo docFinger doc finger"
+              unoptimized={true}
             />
             <div>
               <h1>Врачи которым вы доверяете</h1>

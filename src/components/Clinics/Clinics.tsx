@@ -50,6 +50,7 @@ const Clinics = ({ data, isLoading }: Props) => {
                                     layout="fill"
                                     objectFit="cover"
                                     sizes="100%"
+                                    unoptimized={true}
                                 />
                             </div>
                             <Rate

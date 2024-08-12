@@ -171,6 +171,7 @@ export const PartnerSegmentsCreateUpdaterForm = (props: Props) => {
                         width={200}
                         height={230}
                         quality={100}
+                        unoptimized={true}
                     />
                 </div>
                 <div className={styles.form}>

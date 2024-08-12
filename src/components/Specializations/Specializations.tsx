@@ -89,6 +89,7 @@ const Specializations = ({data}: Props) => {
 									className={styles.reviewArrayImg}
 									src={docImg}
 									alt=''
+									unoptimized={true}
 								/>
 								<div className={styles.reviewArrayText}>
 									<h3 className={styles.reviewArrayH3}>

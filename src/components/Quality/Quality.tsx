@@ -16,7 +16,7 @@ const Quality = () => {
               </p>
               <button className={styles.button}>Подробнее</button>
             </div>
-            <Image className={styles.img} src={img} alt="img forl" />
+            <Image className={styles.img} src={img} alt="img forl" unoptimized={true} />
           </div>
         </div>
       </section>

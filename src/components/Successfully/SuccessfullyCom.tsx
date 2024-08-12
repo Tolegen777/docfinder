@@ -17,6 +17,7 @@ const SuccessfullyCom: React.FC = () => {
 							}}
 							src={vector}
 							alt=''
+							unoptimized={true}
 						/>
 
 						<h3 className={styles.successfullyComH3}>
