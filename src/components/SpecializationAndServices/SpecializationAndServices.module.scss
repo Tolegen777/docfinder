@@ -1,0 +1,42 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 3pc;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.item {
+  background: white;
+  border: 2px solid #ff6200;
+  border-radius: 15px;
+  padding: 5px 20px;
+  color: #ff6200;
+  cursor: pointer;
+  &.activeItem {
+    background: #ff6200;
+    color: white;
+  }
+}
+
+.procedureItem {
+  &.activeItem {
+    background: #ff6200;
+    color: white;
+  }
+  &:not(.activeItem) {
+    background: white;
+    color: #ff6200;
+    &.disabled {
+      background: #e0e0e0;
+      color: #b0b0b0;
+      cursor: not-allowed;
+    }
+  }
+}
