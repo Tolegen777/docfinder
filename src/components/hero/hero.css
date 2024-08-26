@@ -41,6 +41,7 @@
 	.swiper-button-next:after,
 	.swiper-rtl .swiper-button-prev:after {
 		margin-top: -15pc;
+		margin-left: -25px;
 	}
 
 	.swiper-button-prev:after,
