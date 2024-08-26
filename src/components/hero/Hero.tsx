@@ -1,4 +1,5 @@
 "use client";
+import "./hero.scss";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -6,7 +7,6 @@ import "swiper/css/scrollbar";
 import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import styles from "./Hero.module.scss";
-import "./hero.css";
 import {useEffect, useState} from "react";
 import {CityModal} from "@/components/CityModal/CityModal";
 import {useStateContext} from "@/contexts";

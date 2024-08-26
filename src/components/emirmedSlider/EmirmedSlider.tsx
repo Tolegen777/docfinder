@@ -1,6 +1,5 @@
 "use client";
 import styles from "./emirmedslider.module.scss";
-import "./emirmed.css";
 import "swiper/css";
 import Image from "next/image";
 import "swiper/css/navigation";

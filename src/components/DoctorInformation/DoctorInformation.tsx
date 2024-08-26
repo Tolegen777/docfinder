@@ -120,15 +120,17 @@ const DoctorInformation = ({
                                 style={{cursor: !isPreventRedirect ? 'pointer' : undefined}}
                             >
                                 <div className={styles.doctorInformationImg}>
-                                    <Image
-                                        onClick={modalFunction}
-                                        className={styles.doctorInformationPhoto}
-                                        src={doctor?.doctor_photos?.find(item => item)?.photo || docImg}
-                                        alt={""}
-                                        width={100}
-                                        height={100}
-                                        unoptimized={true}
-                                    />
+                                    <div className={styles.doctorInformationPhoto}>
+                                        <Image
+                                            onClick={modalFunction}
+                                            src={doctor?.doctor_photos?.find(item => item)?.photo || docImg}
+                                            alt={""}
+                                            fill={true}
+                                            unoptimized={true}
+                                            objectFit={'cover'}
+                                            objectPosition="center"
+                                        />
+                                    </div>
                                     <h4 className={styles.doctorInformationReiting}>
                                         {doctor?.rating?.toFixed(1)}
                                     </h4>
