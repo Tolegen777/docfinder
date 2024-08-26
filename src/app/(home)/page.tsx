@@ -1,6 +1,5 @@
-import Hero from "@/components/hero/Hero";
-
 import Reception from "@/components/reception/Reception";
+import Hero from "@/components/hero_v2/Hero";
 
 export default function Home() {
   return (

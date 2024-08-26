@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  background: linear-gradient(180deg, #D05509 0%, #FF6200 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 10px 20px 10px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+   .container {
+     padding: 10px 20px;
+   }
+}

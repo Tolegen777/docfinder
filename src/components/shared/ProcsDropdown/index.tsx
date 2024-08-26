@@ -12,7 +12,7 @@ export interface DropdownProps {
 }
 
 const ProcsDropdown = ({title, procs }: DropdownProps) => {
-    const items = procs?.map(item => ({
+    const items = procs?.filter(item => item?.doctor_profiles_count > 0)?.map(item => ({
         key: item?.medical_procedure_id,
         label: (
             <Link href={`procedures/${item?.medical_procedure_id}`}>
