@@ -134,30 +134,30 @@ function Header() {
                             <Link href='/' className={styles.logo}>
                                 <Image src={logo} alt=''/>
                             </Link>
-                            <RxHamburgerMenu
-                                size={25}
-                                className={styles.burgermenu}
-                                onClick={() => setisopen(true)}
-                            />
-                            <input
-                                className={styles.headerInut}
-                                placeholder='Врачи, Услуги, Клиники'
-                            />
-                            <button className={styles.btn}>найти</button>
-                            <div
-                                className={
-                                    isopen
-                                        ? styles.headerBurgermenu
-                                        : styles.headerBurgermenuclose
-                                }
-                            >
-                                <input
-                                    className={styles.BurgermenuInut}
-                                    placeholder='Врачи, Услуги, Клиники'
-                                />
-                                <button className={styles.Burgermenubtn}>найти</button>
-                                <MdClose size={28} onClick={() => setisopen(false)}/>
-                            </div>
+                            {/*<RxHamburgerMenu*/}
+                            {/*    size={25}*/}
+                            {/*    className={styles.burgermenu}*/}
+                            {/*    onClick={() => setisopen(true)}*/}
+                            {/*/>*/}
+                            {/*<input*/}
+                            {/*    className={styles.headerInut}*/}
+                            {/*    placeholder='Врачи, Услуги, Клиники'*/}
+                            {/*/>*/}
+                            {/*<button className={styles.btn}>найти</button>*/}
+                            {/*<div*/}
+                            {/*    className={*/}
+                            {/*        isopen*/}
+                            {/*            ? styles.headerBurgermenu*/}
+                            {/*            : styles.headerBurgermenuclose*/}
+                            {/*    }*/}
+                            {/*>*/}
+                            {/*    <input*/}
+                            {/*        className={styles.BurgermenuInut}*/}
+                            {/*        placeholder='Врачи, Услуги, Клиники'*/}
+                            {/*    />*/}
+                            {/*    <button className={styles.Burgermenubtn}>найти</button>*/}
+                            {/*    <MdClose size={28} onClick={() => setisopen(false)}/>*/}
+                            {/*</div>*/}
                         </div>
                         <div className={styles.leftside}>
                             {isLoading ? <Spin/> : <Dropdown
