@@ -71,6 +71,7 @@ export interface FranchisePhoto {
 }
 
 export interface WorkingHour {
+    is_24_hours?: boolean;
     id: number
     day_of_week: string
     open_time: string

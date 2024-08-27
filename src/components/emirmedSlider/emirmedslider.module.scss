@@ -254,3 +254,17 @@
      padding: 0 10px;
    }
 }
+
+
+.phone_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  .phone_wrapper {
+    flex-direction: column;
+  }
+}

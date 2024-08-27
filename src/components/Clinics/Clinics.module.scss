@@ -67,6 +67,10 @@
         line-height: 24.2px;
       }
 
+      .phone {
+
+      }
+
       .desc {
         margin-top: 5px;
         font-size: 15px;
@@ -175,5 +179,18 @@
         width: 300px;
       }
     }
+  }
+}
+
+.phone_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  .phone_wrapper {
+    flex-direction: column;
   }
 }

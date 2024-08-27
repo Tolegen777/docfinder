@@ -64,23 +64,29 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                           </Link>
                         </div>
                         <div className={styles.filialbox}>
-                          <Image src={filialimage} alt="" unoptimized={true} />
-                          <span className={styles.filial}>Филиалов: {data?.franchise_branches_in_the_city?.length}</span>
+                          <Image src={filialimage} alt="" unoptimized={true}/>
+                          <span
+                              className={styles.filial}>Филиалов: {data?.franchise_branches_in_the_city?.length}</span>
                         </div>
-                        <Dropdown menu={{ items }} placement="bottom" arrow>
+                        <Dropdown menu={{items}} placement="bottom" arrow>
                           <Button className={styles.btn}>
                             {data?.address}
-                            <Image src={arrow} alt="" width={15} unoptimized={true} />
+                            <Image src={arrow} alt="" width={15} unoptimized={true}/>
                           </Button>
                         </Dropdown>
                         <div className={styles.maps}>
-                          <Image src={mapsvg} alt="" unoptimized={true} />
+                          <Image src={mapsvg} alt="" unoptimized={true}/>
                           <span>На карте</span>
                         </div>
-                        <div className={styles.times}>
-                          <Image src={timesvg} alt="" unoptimized={true} />
-                          <span>На карте</span>
-                        </div>
+                        {data?.working_hours?.some(item => item?.is_24_hours) && <div className={styles.times}>
+                          <Image src={timesvg} alt="" unoptimized={true}/>
+                          <span>{'Круглосуточно'}</span>
+                        </div>}
+                        {data?.franchise_title === 'Эмирмед' && <div className={styles.phone_wrapper}>
+                          <div className={styles.phone}>{'+7 (707) 000-01-03'}</div>
+                          <div className={styles.phone}>{'+7 (727) 355-11-11'}</div>
+                          <div className={styles.phone}>{'+7 (747) 000-01-03'}</div>
+                        </div>}
                         <button
                             className={styles.onlinebtn}
                             onClick={handleBookClinic}
@@ -90,10 +96,10 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                       </div>
                       <div className={styles.slider}>
                         <div className={styles.mainImage}>
-                          <Image src={selectedImage ?? ''} alt="" width={450} height={300} unoptimized={true} />
+                          <Image src={selectedImage ?? ''} alt="" width={450} height={300} unoptimized={true}/>
                         </div>
                         <div className={styles.thumbnailContainer}>
-                          {images?.map((image, index) => (
+                        {images?.map((image, index) => (
                               <Image
                                   key={index}
                                   src={image}
