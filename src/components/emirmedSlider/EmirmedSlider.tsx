@@ -16,6 +16,8 @@ import mapsvg from "@/components/svg/svgMap.svg";
 import timesvg from "@/components/svg/times.svg";
 import {IClinicById} from "@/types/clinicsTypes";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
+import AppBanner from "@/components/Clinic/AppBanner";
+import clsx from "clsx";
 
 const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
   const items = data?.franchise_branches_in_the_city?.map(item => ({
@@ -53,7 +55,10 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                 >
                   <SwiperSlide>
                     <div className={styles.slide}>
-                      <div className={styles.emirmed__content__sliders__box}>
+                      <div className={clsx({
+                        [styles.emirmed__content__sliders__box]: true,
+                        [styles.hide]: !!images?.length
+                      })}>
                         <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} unoptimized={true}/>
                         <h1 className={styles.title}>{data?.title}</h1>
                         <span className={styles.pretitle}>{data?.address}</span>
@@ -94,24 +99,27 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                           Онлайн запись
                         </button>
                       </div>
-                      <div className={styles.slider}>
-                        <div className={styles.mainImage}>
-                          <Image src={selectedImage ?? ''} alt="" width={450} height={300} unoptimized={true}/>
-                        </div>
-                        <div className={styles.thumbnailContainer}>
-                        {images?.map((image, index) => (
-                              <Image
-                                  key={index}
-                                  src={image}
-                                  alt={``}
-                                  className={styles.thumbnail}
-                                  onClick={() => setSelectedImage(image)}
-                                  width={150}
-                                  height={150}
-                                  unoptimized={true}
-                              />
-                          ))}
-                        </div>
+                      {/*<div className={styles.slider}>*/}
+                      {/*  <div className={styles.mainImage}>*/}
+                      {/*    <Image src={selectedImage ?? ''} alt="" width={450} height={300} unoptimized={true}/>*/}
+                      {/*  </div>*/}
+                      {/*  <div className={styles.thumbnailContainer}>*/}
+                      {/*  {images?.map((image, index) => (*/}
+                      {/*        <Image*/}
+                      {/*            key={index}*/}
+                      {/*            src={image}*/}
+                      {/*            alt={``}*/}
+                      {/*            className={styles.thumbnail}*/}
+                      {/*            onClick={() => setSelectedImage(image)}*/}
+                      {/*            width={150}*/}
+                      {/*            height={150}*/}
+                      {/*            unoptimized={true}*/}
+                      {/*        />*/}
+                      {/*    ))}*/}
+                      {/*  </div>*/}
+                      {/*</div>*/}
+                      <div className={styles.banner_wrapper}>
+                          <AppBanner data={images}/>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -119,6 +127,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
               </div>
             </div>
         </div>
+        {/*<AppBanner data={images}/>*/}
       </div>
   );
 };

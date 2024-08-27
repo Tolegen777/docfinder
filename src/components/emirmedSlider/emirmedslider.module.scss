@@ -263,8 +263,30 @@
   flex-wrap: wrap;
 }
 
+.banner_wrapper {
+  width: 400px;
+  box-sizing: border-box;
+}
+
 @media (max-width: 500px) {
   .phone_wrapper {
     flex-direction: column;
+  }
+  .hide {
+    img {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .banner_wrapper {
+    width: 100%;
+  }
+
+  .hide {
+    img {
+      display: none;
+    }
   }
 }

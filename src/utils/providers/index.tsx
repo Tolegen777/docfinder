@@ -39,6 +39,12 @@ function Providers({children}: { children: ReactNode }) {
                                 labelBg: '#FF6200',
                                 titleColor: '#FF6200',
                             },
+                            Carousel: {
+                                dotHeight: 12,
+                                arrowSize: 24,
+                                dotWidth: 20,
+                                dotActiveWidth: 40
+                            }
                         }
                     }}
                 >

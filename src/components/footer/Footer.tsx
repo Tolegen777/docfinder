@@ -33,15 +33,19 @@ function Footer() {
               <Link href={"/"}>Процедуры</Link>
               <Link href={"/"}>Клиники</Link>
             </nav>
-            <div>
-              <input
-                type="text"
-                placeholder="Врачи, Услуги, Клиники"
-                name=""
-                id=""
-              />
-              <button>Найти</button>
+            <div className={'footer__phone'}>
+              <p>Контакты:</p>
+              <p style={{marginLeft: '-10px'}}>8700 999 0103</p>
             </div>
+            {/*<div>*/}
+            {/*  <input*/}
+            {/*    type="text"*/}
+            {/*    placeholder="Врачи, Услуги, Клиники"*/}
+            {/*    name=""*/}
+            {/*    id=""*/}
+            {/*  />*/}
+            {/*  <button>Найти</button>*/}
+            {/*</div>*/}
           </div>
         </div>
       </div>
