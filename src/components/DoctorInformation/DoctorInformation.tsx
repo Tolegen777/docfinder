@@ -128,7 +128,7 @@ const DoctorInformation = ({
                                             fill={true}
                                             unoptimized={true}
                                             objectFit={'cover'}
-                                            objectPosition="center"
+                                            objectPosition="top"
                                         />
                                     </div>
                                     <h4 className={styles.doctorInformationReiting}>
