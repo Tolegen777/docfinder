@@ -1,12 +1,16 @@
+# Устанавливаем базовый образ с Node.js
 FROM node:18-alpine AS base
 
-# Install dependencies only when needed
-FROM base AS deps
+# Устанавливаем необходимые системные зависимости
 RUN apk add --no-cache libc6-compat
+
+# Создаем рабочую директорию
 WORKDIR /app
 
-# Install dependencies based on the preferred package manager
+# Копируем package.json и lock файлы
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
+
+# Устанавливаем зависимости
 RUN \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
@@ -14,38 +18,17 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
-# Rebuild the source code only when needed
-FROM base AS builder
-WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
+# Копируем весь проект в рабочую директорию
 COPY . .
 
-# Production image, copy all the files and run next
-FROM base AS runner
-WORKDIR /app
-
+# Устанавливаем переменную окружения для продакшн-окружения
 ENV NODE_ENV production
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nextjs
+# Собираем проект
+RUN npm run build
 
-COPY --from=builder /app/public ./public
-
-# Set the correct permission for prerender cache
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
-
-# Automatically leverage output traces to reduce image size
-# https://nextjs.org/docs/advanced-features/output-file-tracing
-COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
-COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-USER nextjs
-
+# Экспонируем порт 3000 для доступа к приложению
 EXPOSE 3000
 
-ENV PORT 3000
-
-# server.js is created by next build from the standalone output
-# https://nextjs.org/docs/pages/api-reference/next-config-js/output
-CMD HOSTNAME="0.0.0.0" node server.js
+# Запускаем приложение
+CMD ["npm", "start"]
