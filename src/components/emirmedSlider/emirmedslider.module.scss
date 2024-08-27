@@ -1,6 +1,7 @@
 .emirmed {
   background: #ffffff;
   padding-bottom: 30px;
+  max-width: 1180px;
   &__content {
     .slide {
       display: flex;
@@ -9,7 +10,6 @@
     }
     &__sliders {
       &__box {
-        margin-left: 50px;
         .title {
           font-size: 22px;
           font-weight: 600;
@@ -72,13 +72,12 @@
           line-height: 21.78px;
           color: #ffffff;
           border-radius: 6px;
-          opacity: 0px;
+          opacity: 0;
           background: #ff6200;
         }
       }
     }
     .slider {
-      margin-right: 50px;
       display: flex;
       flex-direction: column;
       padding-left: 20px;
@@ -127,7 +126,9 @@
 
 @media (max-width: 787px) {
   .emirmed {
+    text-align: center;
     &__content {
+      text-align: center;
       .slide {
         flex-direction: column-reverse;
         .thumbnailContainer {
@@ -135,6 +136,12 @@
             width: 160px;
             height: 160px;
           }
+        }
+        .emirmed__content__sliders__box {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
@@ -228,4 +235,22 @@
       }
     }
   }
+}
+
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1200px) {
+   .container {
+     display: block;
+     padding: 0 10px;
+   }
 }

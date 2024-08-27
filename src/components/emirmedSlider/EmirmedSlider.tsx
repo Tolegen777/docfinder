@@ -34,7 +34,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
   }
 
   return (
-      <>
+      <div  className={styles.container}>
         <ClinicBookingModal
             open={openBookingModal}
             closeModal={() => setOpenBookingModal(false)}
@@ -113,7 +113,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
               </div>
             </div>
         </div>
-      </>
+      </div>
   );
 };
 

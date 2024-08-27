@@ -1,5 +1,5 @@
 .container {
-  margin-bottom: 5pc
+  margin-bottom: 5pc;
 }
 
 .tabs_wrapper {
@@ -7,7 +7,9 @@
   align-items: center;
   gap: 20px;
   background: #fff;
-  padding: 20px 70px;
+  padding: 20px 0;
+  width: 1180px;
+  box-sizing: border-box;
 
   &_item {
     font-size: 25px;
@@ -29,5 +31,25 @@
 @media (max-width: 700px) {
   .tabs_wrapper {
     justify-content: center;
+  }
+}
+
+.tabs_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #FFFFFF;
+}
+
+@media (max-width: 1180px) {
+  .tabs_wrapper {
+    padding-left: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tabs_wrapper {
+    padding-left: 0;
   }
 }

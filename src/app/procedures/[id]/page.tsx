@@ -4,7 +4,6 @@ import React, {useState} from "react";
 import DoctorInformation from "@/components/DoctorInformation/DoctorInformation";
 import DoctorsNavs from "@/components/DoctorNavs/DoctorsNavs";
 import Quality from "@/components/Quality/Quality";
-import Hero from "@/components/hero/Hero";
 import {usePathname} from "next/navigation";
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
 import {useQuery} from "@tanstack/react-query";
@@ -16,6 +15,7 @@ import CustomPagination from "@/components/shared/CustomPagination";
 import {objectToQueryParams} from "@/utils/objectToQueryParams";
 import {SkeletonWrapper} from "@/components/shared/skeleton/SkeletonWrapper";
 import {Empty} from "antd";
+import Hero from "@/components/hero_v2/Hero";
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);

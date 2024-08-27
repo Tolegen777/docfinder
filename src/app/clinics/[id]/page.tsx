@@ -52,21 +52,23 @@ function ClinicById() {
     return (
         <div className={styles.container}>
             <EmirmedSlider data={data}/>
-            <div
-                className={styles.tabs_wrapper}
-            >
-                {['Врачи', 'О клинике'].map((item, index) => <div
-                    key={item}
-                    className={clsx({
-                        [styles.tabs_wrapper_item]: true,
-                        [styles.tabs_wrapper_item_active]: activeItem === index,
-
-                    })}
-                    onClick={() => setActiveItem(index)}
-
+            <div className={styles.tabs_container}>
+                <div
+                    className={styles.tabs_wrapper}
                 >
-                    {item}
-                </div>)}
+                    {['Врачи', 'О клинике'].map((item, index) => <div
+                        key={item}
+                        className={clsx({
+                            [styles.tabs_wrapper_item]: true,
+                            [styles.tabs_wrapper_item_active]: activeItem === index,
+
+                        })}
+                        onClick={() => setActiveItem(index)}
+
+                    >
+                        {item}
+                    </div>)}
+                </div>
             </div>
             <>
                 {activeItem === 0 ? currentDoctors?.length === 0 ?
