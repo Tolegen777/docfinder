@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {CustomSkeleton} from "@/components/shared/skeleton/CustomSkeleton";
 import userIcon from '../../../../public/icons/user.svg'
 
-export const DoctorDetailsSkeleton = () => {
+const DoctorDetailsSkeleton = () => {
     const items = [
         {
             width: 100,
@@ -33,7 +33,6 @@ export const DoctorDetailsSkeleton = () => {
                             alt={''}
                             height={60}
                             width={60}
-                            unoptimized={true}
                         />
                     </div>
                     <div className={styles.container_card_content}>
@@ -95,3 +94,5 @@ export const DoctorDetailsSkeleton = () => {
         </div>
     );
 };
+
+export default DoctorDetailsSkeleton

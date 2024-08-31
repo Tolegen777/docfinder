@@ -19,7 +19,6 @@ export default function BannerItem({
                     objectFit={'cover'}
                     alt=""
                     quality={100}
-                    unoptimized={true}
                     objectPosition={'center'}
                 />
             </div>

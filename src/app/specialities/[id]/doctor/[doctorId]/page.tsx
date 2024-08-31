@@ -1,32 +1,27 @@
 "use client";
 
-import React, {useState} from "react";
-import DoctorInformation from "@/components/DoctorInformation/DoctorInformation";
-import {usePathname} from "next/navigation";
-import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
-import {useQuery} from "@tanstack/react-query";
-import Specializations from "@/components/Specializations/Specializations";
-import {ISpecDoctorById} from "@/types/specDoctorById";
-import {DoctorDetailsSkeleton} from "@/components/shared/skeleton/DoctorDetailsSkeleton";
-import {useStateContext} from "@/contexts";
+import dynamic from 'next/dynamic';
+import React from "react";
+import { usePathname } from "next/navigation";
+import { useCreateAxiosInstance } from "@/hooks/useCreateAxiosInstance";
+import { useQuery } from "@tanstack/react-query";
+import { ISpecDoctorById } from "@/types/specDoctorById";
+import { useStateContext } from "@/contexts";
+
+// Динамический импорт компонентов с отключением SSR
+const DoctorInformation = dynamic(() => import('@/components/DoctorInformation/DoctorInformation'), { ssr: false });
+const Specializations = dynamic(() => import('@/components/Specializations/Specializations'), { ssr: false });
+const DoctorDetailsSkeleton = dynamic(() => import('@/components/shared/skeleton/DoctorDetailsSkeleton'));
 
 function Doctor() {
-    const [modal, setModal] = useState<boolean>(false);
-
-    const pathname = usePathname()
-
-    const {state} = useStateContext()
-
-    const {cityId} = state
-
-    console.log(pathname, 'PAT')
-
+    const pathname = usePathname();
+    const { state } = useStateContext();
+    const { cityId } = state;
     const apiInstance = useCreateAxiosInstance();
+    const specId = pathname?.split('/')?.[2];
+    const docId = pathname?.split('/')?.[4];
 
-    const specId = pathname?.split('/')?.[2]
-    const docId = pathname?.split('/')?.[4]
-
-    const {data, isLoading} = useQuery({
+    const { data, isLoading, error } = useQuery({
         queryKey: ['specDoctorById', specId, docId, cityId],
         queryFn: () =>
             apiInstance
@@ -37,12 +32,14 @@ function Doctor() {
         refetchOnMount: false,
     });
 
-    function toggleModal() {
-        setModal((prevModal) => !prevModal);
-    }
+    function toggleModal() {}
 
     if (isLoading) {
-        return <DoctorDetailsSkeleton/>
+        return <DoctorDetailsSkeleton />;
+    }
+
+    if (error) {
+        return <div>Ошибка загрузки данных. Попробуйте обновить страницу.</div>;
     }
 
     return (
@@ -51,24 +48,23 @@ function Doctor() {
                 style={{
                     background: 'white',
                     width: '100%',
-                    marginBottom: '5pc'
+                    marginBottom: '5pc',
                 }}
             >
                 <div>
                     <DoctorInformation
                         modalFunction={toggleModal}
-                        // @ts-ignore
                         doctor={{
                             ...data,
                             // @ts-ignore
-                            doctor_speciality_doctor_procedures: data?.doctor_procedures_data
+                            doctor_speciality_doctor_procedures: data?.doctor_procedures_data,
                         }}
                         isPreventRedirect={true}
                         specId={''}
                         type={'spec'}
                     />
                 </div>
-                <Specializations data={data}/>
+                <Specializations data={data} />
             </div>
         </div>
     );

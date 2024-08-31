@@ -34,7 +34,6 @@ export const ClinicsSkeleton = () => {
                             alt={''}
                             height={100}
                             width={100}
-                            unoptimized={true}
                         />
                     </div>
                     <div className={styles.container_card_content}>

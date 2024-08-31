@@ -1,3 +1,4 @@
+'use client'
 import React, {useState} from 'react';
 import {Modal, Select} from 'antd';
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
@@ -13,7 +14,7 @@ type Props = {
     onClose: () => void,
 }
 
-export const CityModal = ({onClose, open}: Props) => {
+const CityModal = ({onClose, open}: Props) => {
 
     const apiInstance = useCreateAxiosInstance();
 
@@ -82,3 +83,5 @@ export const CityModal = ({onClose, open}: Props) => {
         </>
     );
 };
+
+export default CityModal

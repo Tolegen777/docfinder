@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 import styles from "./Clinics.module.scss";
 import Image from "next/image";
@@ -50,7 +51,6 @@ const Clinics = ({ data, isLoading }: Props) => {
                                     layout="fill"
                                     objectFit="cover"
                                     sizes="100%"
-                                    unoptimized={true}
                                 />
                             </div>
                             <Rate

@@ -29,6 +29,7 @@ function Header() {
     const {state, dispatch} = useStateContext()
 
     const {authUser, cityId} = state
+    console.log(state, 'FF')
 
     const [isopen, setisopen] = useState(false)
     const [modal, setModal] = useState(false)

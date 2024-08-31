@@ -1,37 +1,34 @@
 "use client";
 
-import React, {useState} from "react";
-import {usePathname} from "next/navigation";
-import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
-import {useQuery} from "@tanstack/react-query";
-import {useStateContext} from "@/contexts";
-import {IClinicById} from "@/types/clinicsTypes";
-import {DoctorDetailsSkeleton} from "@/components/shared/skeleton/DoctorDetailsSkeleton";
-import EmirmedSlider from "@/components/emirmedSlider/EmirmedSlider";
-import AboutClinics from "@/components/aboutClinics/AboutClinics";
-import InfoClinics from "@/components/infoClinics/InfoClinics";
-import DoctorInformation from "@/components/DoctorInformation_v2/DoctorInformation";
-import CustomPagination from "@/components/shared/CustomPagination";
-import styles from './styles.module.scss'
+import dynamic from 'next/dynamic';
+import React, { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useCreateAxiosInstance } from "@/hooks/useCreateAxiosInstance";
+import { useQuery } from "@tanstack/react-query";
+import { useStateContext } from "@/contexts";
+import { IClinicById } from "@/types/clinicsTypes";
+import DoctorDetailsSkeleton from "@/components/shared/skeleton/DoctorDetailsSkeleton";
+import styles from './styles.module.scss';
 import clsx from "clsx";
-import {Empty} from "antd";
+import { Empty } from "antd";
+
+// Динамический импорт компонентов с отключением SSR
+const EmirmedSlider = dynamic(() => import('@/components/emirmedSlider/EmirmedSlider'), { ssr: false });
+const AboutClinics = dynamic(() => import('@/components/aboutClinics/AboutClinics'), { ssr: false });
+const InfoClinics = dynamic(() => import('@/components/infoClinics/InfoClinics'), { ssr: false });
+const DoctorInformation = dynamic(() => import('@/components/DoctorInformation_v2/DoctorInformation'), { ssr: false });
+const CustomPagination = dynamic(() => import('@/components/shared/CustomPagination'), { ssr: false });
 
 function ClinicById() {
-    const [activeItem, setActiveItem] = useState(1);
-
-    const pathname = usePathname()
-
-    const {state} = useStateContext()
-
-    const {cityId} = state
-
+    const [activeItem, setActiveItem] = useState(0);
+    const pathname = usePathname();
+    const { state } = useStateContext();
+    const { cityId } = state;
     const apiInstance = useCreateAxiosInstance();
+    const clinicId = pathname?.split('/')?.[2];
+    const [page, setPage] = useState(1);
 
-    const clinicId = pathname?.split('/')?.[2]
-
-    const [page, setPage] = useState(1)
-
-    const {data, isLoading} = useQuery({
+    const { data, isLoading } = useQuery({
         queryKey: ['clinicById', clinicId, cityId],
         queryFn: () =>
             apiInstance
@@ -45,47 +42,51 @@ function ClinicById() {
     const currentDoctors = data?.doctors_list?.slice((page - 1) * 10, page * 10);
 
     if (isLoading) {
-        return <DoctorDetailsSkeleton/>
+        return <DoctorDetailsSkeleton />;
     }
-
 
     return (
         <div className={styles.container}>
-            <EmirmedSlider data={data}/>
+            <EmirmedSlider data={data} />
             <div className={styles.tabs_container}>
-                <div
-                    className={styles.tabs_wrapper}
-                >
-                    {['Врачи', 'О клинике'].map((item, index) => <div
-                        key={item}
-                        className={clsx({
-                            [styles.tabs_wrapper_item]: true,
-                            [styles.tabs_wrapper_item_active]: activeItem === index,
-
-                        })}
-                        onClick={() => setActiveItem(index)}
-
-                    >
-                        {item}
-                    </div>)}
+                <div className={styles.tabs_wrapper}>
+                    {['Врачи', 'О клинике'].map((item, index) => (
+                        <div
+                            key={item}
+                            className={clsx(styles.tabs_wrapper_item, {
+                                [styles.tabs_wrapper_item_active]: activeItem === index,
+                            })}
+                            onClick={() => setActiveItem(index)}
+                        >
+                            {item}
+                        </div>
+                    ))}
                 </div>
             </div>
             <>
-                {activeItem === 0 ? currentDoctors?.length === 0 ?
-                    <Empty description={<>Данных нет...</>}/> : <div className={styles.doctors}>
-                        {currentDoctors?.map(item => <DoctorInformation
-                                key={item?.id}
-                                modalFunction={() => {
-                                }}
-                                // @ts-ignore
-                                doctor={item}
-                            />
-                        )}
-                    </div> : <>
-                    <InfoClinics data={data?.list_of_amenities ?? []}/>
-                    <AboutClinics description={data?.description ?? ''}/>
-                </>}
-                {activeItem == 0 && <CustomPagination setPage={setPage} totalCount={data?.doctors_list?.length ?? 0}/>}
+                {activeItem === 0 ? (
+                    currentDoctors?.length === 0 ? (
+                        <Empty description={<>Данных нет...</>} />
+                    ) : (
+                        <div className={styles.doctors}>
+                            {currentDoctors?.map((item) => (
+                                <DoctorInformation
+                                    key={item?.id}
+                                    modalFunction={() => {}}
+                                    doctor={item} // @ts-ignore
+                                />
+                            ))}
+                        </div>
+                    )
+                ) : (
+                    <>
+                        <InfoClinics data={data?.list_of_amenities ?? []} />
+                        <AboutClinics description={data?.description ?? ''} />
+                    </>
+                )}
+                {activeItem === 0 && (
+                    <CustomPagination setPage={setPage} totalCount={data?.doctors_list?.length ?? 0} />
+                )}
             </>
         </div>
     );

@@ -1,19 +1,22 @@
 "use client";
 
-import React, {useEffect, useMemo, useState} from "react";
+import dynamic from 'next/dynamic';
+import React, { useEffect, useMemo, useState } from "react";
 import styles from "./reception.module.scss";
-import Procedures from "@/components/Procedures/Procedures";
-import Clinics from "@/components/Clinics/Clinics";
-import {useQuery} from "@tanstack/react-query";
-import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
-import {ISpeciality} from "@/types/specialityTypes";
-import {transformSpecData} from "@/utils/transformSpecData";
-import SpecsLinkLists from "@/components/SpecsLinkLists/SpecsLinkLists";
-import {IGet} from "@/types/common";
-import {IClinics} from "@/types/clinicsTypes";
-import {IProcedure} from "@/types/procedureTypes";
-import {useStateContext} from "@/contexts";
-import CustomPagination from "@/components/shared/CustomPagination";
+import { useQuery } from "@tanstack/react-query";
+import { useCreateAxiosInstance } from "@/hooks/useCreateAxiosInstance";
+import { ISpeciality } from "@/types/specialityTypes";
+import { transformSpecData } from "@/utils/transformSpecData";
+import { IGet } from "@/types/common";
+import { IClinics } from "@/types/clinicsTypes";
+import { IProcedure } from "@/types/procedureTypes";
+import { useStateContext } from "@/contexts";
+
+// Динамический импорт компонентов с отключением SSR
+const Procedures = dynamic(() => import('@/components/Procedures/Procedures'), { ssr: false });
+const Clinics = dynamic(() => import('@/components/Clinics/Clinics'), { ssr: false });
+const SpecsLinkLists = dynamic(() => import('@/components/SpecsLinkLists/SpecsLinkLists'), { ssr: false });
+const CustomPagination = dynamic(() => import('@/components/shared/CustomPagination'), { ssr: false });
 
 const linkOptions = [
   { title: "Врачи", code: "doctors" },
@@ -77,48 +80,46 @@ function Reception() {
   const formattedData = useMemo(() => transformSpecData(data ?? []), [data]);
 
   return (
-      <>
-        <section className={styles.reception}>
-          <div className="container">
-            <div className={styles.content}>
-              <div className="container">
-                <div className={styles.navs}>
-                  <h1 className={styles.title}>Круглосуточная запись на прием</h1>
-                  <nav className={styles.nav}>
-                    {linkOptions.map((link) => (
-                        <div
-                            key={link.code}
-                            className={`${styles.link} ${
-                                activeLink === link.title ? styles.active : ""
-                            }`}
-                            onClick={() => handleLinkClick(link.title)}
-                        >
-                          {link.title}
-                        </div>
-                    ))}
-                  </nav>
-                </div>
+      <section className={styles.reception}>
+        <div className="container">
+          <div className={styles.content}>
+            <div className="container">
+              <div className={styles.navs}>
+                <h1 className={styles.title}>Круглосуточная запись на прием</h1>
+                <nav className={styles.nav}>
+                  {linkOptions.map((link) => (
+                      <div
+                          key={link.code}
+                          className={`${styles.link} ${
+                              activeLink === link.title ? styles.active : ""
+                          }`}
+                          onClick={() => handleLinkClick(link.title)}
+                      >
+                        {link.title}
+                      </div>
+                  ))}
+                </nav>
               </div>
-              {activeLink === "Врачи" ? (
-                  <SpecsLinkLists
-                      formattedData={formattedData}
-                      isLoading={isLoading}
-                  />
-              ) : activeLink === "Процедуры" ? (
-                  <Procedures data={procs ?? []} isLoading={procsLoading} />
-              ) : (
-                  <>
-                    <Clinics
-                        data={clinics?.results ?? []}
-                        isLoading={clinicsLoading}
-                    />
-                    <CustomPagination setPage={setPage} totalCount={clinics?.count ?? 0} />
-                  </>
-              )}
             </div>
+            {activeLink === "Врачи" ? (
+                <SpecsLinkLists
+                    formattedData={formattedData}
+                    isLoading={isLoading}
+                />
+            ) : activeLink === "Процедуры" ? (
+                <Procedures data={procs ?? []} isLoading={procsLoading} />
+            ) : (
+                <>
+                  <Clinics
+                      data={clinics?.results ?? []}
+                      isLoading={clinicsLoading}
+                  />
+                  <CustomPagination setPage={setPage} totalCount={clinics?.count ?? 0} />
+                </>
+            )}
           </div>
-        </section>
-      </>
+        </div>
+      </section>
   );
 }
 
