@@ -17,7 +17,6 @@ const CanceledCom: React.FC = () => {
 							}}
 							src={vector}
 							alt=''
-							unoptimized={true}
 						/>
 
 						<h3 className={styles.successfullyComH3}>Ваша запись отменена</h3>

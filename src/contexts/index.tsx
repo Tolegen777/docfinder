@@ -5,7 +5,7 @@ import {cityService} from "@/utils/services/cityService";
 
 const initialState: State = {
     query: '',
-    authUser: tokenService.getLocalAccessToken()?.length > 0,
+    authUser: (tokenService.getLocalAccessToken()?.length > 0 && tokenService.getLocalAccessToken() !== 'undefined'),
     cityId: cityService.getCityId() ?? ''
 };
 

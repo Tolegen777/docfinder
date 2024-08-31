@@ -68,7 +68,6 @@ const DoctorInformation = ({
                                         alt={""}
                                         width={100}
                                         height={100}
-                                        unoptimized={true}
                                     />
                                     <h4 className={styles.doctorInformationReiting}>
                                         {doctor?.rating?.toFixed(1)}

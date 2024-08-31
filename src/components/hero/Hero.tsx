@@ -8,7 +8,7 @@ import {A11y, Navigation, Pagination, Scrollbar} from "swiper/modules";
 import {Swiper, SwiperSlide} from "swiper/react";
 import styles from "./Hero.module.scss";
 import {useEffect, useState} from "react";
-import {CityModal} from "@/components/CityModal/CityModal";
+import CityModal from "@/components/CityModal/CityModal";
 import {useStateContext} from "@/contexts";
 import doctorPng from '../../public/posters/doctor.png'
 import Image from "next/image";
@@ -42,7 +42,6 @@ const HeroContent = () => (
                         alt=""
                         width={406}
                         quality={100}
-                        unoptimized={true}
                     />
                 ))}
             </div>

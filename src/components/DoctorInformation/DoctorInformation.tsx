@@ -126,7 +126,6 @@ const DoctorInformation = ({
                                             src={doctor?.doctor_photos?.find(item => item)?.photo || docImg}
                                             alt={""}
                                             fill={true}
-                                            unoptimized={true}
                                             objectFit={'cover'}
                                             objectPosition="top"
                                         />

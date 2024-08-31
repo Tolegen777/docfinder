@@ -18,6 +18,9 @@ RUN \
   else echo "Lockfile not found." && exit 1; \
   fi
 
+# Устанавливаем sharp для оптимизации изображений
+RUN npm install sharp
+
 # Копируем весь проект в рабочую директорию
 COPY . .
 

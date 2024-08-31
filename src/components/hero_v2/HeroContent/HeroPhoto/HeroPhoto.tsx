@@ -14,7 +14,6 @@ export const HeroPhoto = () => {
                     alt=""
                     width={406}
                     quality={100}
-                    unoptimized={true}
                 />
             ))}
         </div>

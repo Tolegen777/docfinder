@@ -59,7 +59,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                         [styles.emirmed__content__sliders__box]: true,
                         [styles.hide]: !!images?.length
                       })}>
-                        <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} unoptimized={true}/>
+                        <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} />
                         <h1 className={styles.title}>{data?.title}</h1>
                         <span className={styles.pretitle}>{data?.address}</span>
                         <div className={styles.info}>
@@ -69,22 +69,22 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                           </Link>
                         </div>
                         <div className={styles.filialbox}>
-                          <Image src={filialimage} alt="" unoptimized={true}/>
+                          <Image src={filialimage} alt="" />
                           <span
                               className={styles.filial}>Филиалов: {data?.franchise_branches_in_the_city?.length}</span>
                         </div>
                         <Dropdown menu={{items}} placement="bottom" arrow>
                           <Button className={styles.btn}>
                             {data?.address}
-                            <Image src={arrow} alt="" width={15} unoptimized={true}/>
+                            <Image src={arrow} alt="" width={15} />
                           </Button>
                         </Dropdown>
                         <div className={styles.maps}>
-                          <Image src={mapsvg} alt="" unoptimized={true}/>
+                          <Image src={mapsvg} alt="" />
                           <span>На карте</span>
                         </div>
                         {data?.working_hours?.some(item => item?.is_24_hours) && <div className={styles.times}>
-                          <Image src={timesvg} alt="" unoptimized={true}/>
+                          <Image src={timesvg} alt="" />
                           <span>{'Круглосуточно'}</span>
                         </div>}
                         {data?.franchise_title === 'Эмирмед' && <div className={styles.phone_wrapper}>

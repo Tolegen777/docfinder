@@ -1,4 +1,5 @@
-import SuccessfullyCom from '@/components/Successfully/SuccessfullyCom'
+import dynamic from "next/dynamic";
+const SuccessfullyCom = dynamic(() => import('@/components/Successfully/SuccessfullyCom'));
 
 const Successfully = () => {
 	return (

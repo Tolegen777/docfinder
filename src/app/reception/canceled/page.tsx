@@ -1,4 +1,5 @@
-import CanceledCom from '@/components/Canceled/CanceledCom'
+import dynamic from "next/dynamic";
+const CanceledCom = dynamic(() => import('@/components/Canceled/CanceledCom'));
 
 const Canceled = () => {
 	return (

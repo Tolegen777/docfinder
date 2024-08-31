@@ -4,7 +4,7 @@ import React, {ReactNode} from 'react';
 type Props = {
     children: ReactNode
 }
-export const SkeletonWrapper = ({children}: Props) => {
+const SkeletonWrapper = ({children}: Props) => {
 
     return (
         <div className={styles.container}>
@@ -12,3 +12,5 @@ export const SkeletonWrapper = ({children}: Props) => {
         </div>
     );
 };
+
+export default SkeletonWrapper

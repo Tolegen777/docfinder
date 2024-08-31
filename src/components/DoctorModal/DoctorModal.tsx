@@ -142,7 +142,6 @@ const DoctorModal = ({
                         height={100}
                         src={doctorIcon}
                         alt=''
-                        unoptimized={true}
                     />
                     <div className={styles.DoctorModalText}>
                         <h3 className={styles.doctorName}>
