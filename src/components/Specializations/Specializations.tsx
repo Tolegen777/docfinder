@@ -6,6 +6,7 @@ import StarRating from './StarRating'
 import {ISpecDoctorById} from "@/types/specDoctorById";
 
 import docImg from '../../public/icons/doctor.svg'
+import SpecializationAndServices from "@/components/SpecializationAndServices/SpecializationAndServices";
 
 type Props = {
 	data: ISpecDoctorById | undefined
@@ -36,27 +37,11 @@ const Specializations = ({data}: Props) => {
 		<section id={styles.specializations}>
 			<div className='container'>
 				<div className={styles.specializations}>
-					<div className={styles.specialMain}>
-						<h4 className={styles.specialMainH4}>Специализации</h4>
-						<div className={styles.special}>
-							{data?.list_of_specialities?.map((el, key) => (
-								<h3 className={styles.specialH3} key={key}>
-									{el?.medical_speciality_title}
-								</h3>
-							))}
-						</div>
-					</div>
-
-					<div className={styles.servicesMain}>
-						<h4 className={styles.servicesMainH4}>Услуги</h4>
-						<div className={styles.services}>
-							{data?.list_of_procedures?.map((el, key) => (
-								<h3 className={styles.servicesH3} key={key}>
-									{el?.medical_procedure_title}
-								</h3>
-							))}
-						</div>
-					</div>
+					<SpecializationAndServices
+						specialitiesAndProcedures={data?.specialities_and_procedures ?? []}
+						doctorProcsData={data?.doctor_procedures_data ?? []}
+						doctorData={data}
+					/>
 					<div className='information'>
 						<h4 className={styles.servicesMainH4}>Информация о враче</h4>
 						<p className={styles.servicesDescrP}>
