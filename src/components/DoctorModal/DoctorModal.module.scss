@@ -67,10 +67,9 @@
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s;
-}
-
-.bookButton:hover {
-  background: #0056b3;
+  &_disabled {
+    background: lightgray;
+  }
 }
 
 .DoctorModalImg {

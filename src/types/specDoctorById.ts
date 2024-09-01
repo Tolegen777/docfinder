@@ -67,6 +67,7 @@ export interface WorkingHour {
 export interface NearestWeekWorkSchedule {
     work_date: string
     clinic_branch: string
+    clinic_branch_id?: number
     working_hours: WorkingHour2[]
 }
 

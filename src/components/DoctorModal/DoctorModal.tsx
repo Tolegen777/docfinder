@@ -7,10 +7,12 @@ import {useStateContext} from "@/contexts";
 import {ISpecDoctorById} from "@/types/specDoctorById";
 import doctorIcon from '../../public/icons/doctor.svg'
 import Image from "next/image";
-import {Checkbox, Select} from "antd";
+import {Button, Checkbox, Select} from "antd";
 import {ICreateVisit} from "@/types/visitTypes";
 import {customNotification} from "@/utils/customNotification";
 import {DoctorSpecialityDoctorProcedure} from "@/types/specProcDoctorsTypes";
+import {selectOptionsParser} from "@/utils/selectOptionsParser";
+import clsx from "clsx";
 
 type DoctorInformationProps = {
     onClose: () => void,
@@ -19,11 +21,11 @@ type DoctorInformationProps = {
     procId: number | null,
     procLabel?: string,
     procs: DoctorSpecialityDoctorProcedure[]
-    date: string,
+    date: string | null,
     visitTime: {
         id: number | null,
         time: string
-    },
+    } | null,
     doctorProcData: DoctorSpecialityDoctorProcedure | null,
     branchId: number | null
 
@@ -52,6 +54,19 @@ const DoctorModal = ({
     const [price, setPrice] = useState<number | null>(null)
     const [activeProc, setActiveProc] = useState<DoctorSpecialityDoctorProcedure | null>(doctorProcData)
 
+    const [localDate, setLocalDate] = useState<string>('')
+    const [localTime, setLocalTime] = useState<number | null>(null)
+
+    const dateOptions = doctorData?.nearest_week_work_schedule?.map(
+        item => ({
+            label: item?.work_date,
+            value: item?.work_date,
+        })
+    )
+
+    const activeTimes = doctorData?.nearest_week_work_schedule?.find(item => item?.work_date === localDate)?.working_hours ?? []
+    const timeOptions = selectOptionsParser(activeTimes, 'start_time', 'start_time_id')
+
     let options = []
 
     if (procId) {
@@ -65,8 +80,6 @@ const DoctorModal = ({
             label: item?.med_proc_info?.title
         }))
     }
-
-    console.log(doctorData, 'DOCTORDATA')
 
     const {data: patientData, isLoading: patientLoading} = useQuery({
         queryKey: ['patientDetails', authUser],
@@ -116,8 +129,8 @@ const DoctorModal = ({
         const payload: ICreateVisit = {
             patient_id: patientData?.id as number,
             doctor_id: doctorData?.doctor_profile_id as number,
-            date: date,
-            visit_time_id: visitTime?.id as number,
+            date: date ? date : localDate,
+            visit_time_id: (visitTime?.id ? visitTime?.id : localTime as number),
             clinic_branch_id: branchId as number,
             procedure_id: activeProcId as number,
             visit_price: price?.toString() ?? '',
@@ -126,6 +139,7 @@ const DoctorModal = ({
         onCreate(payload)
     }
 
+    const isBookingDisabled = localDate?.length ? !localTime : !visitTime?.id
 
     return (
         <div className={styles.modalOverlay}>
@@ -195,13 +209,43 @@ const DoctorModal = ({
                         popupMatchSelectWidth={false}
                         placeholder={'Выберите процеруру'}
                         disabled={type === 'proc' && !!procId}
-
                     />
                 </div>
-                <div className={styles.doctorDivTo}>
+                {(date && visitTime) ? <div className={styles.doctorDivTo}>
                     <h4>Дата и время</h4>
                     <h5>{date}, {visitTime?.time}</h5>
-                </div>
+                </div> : <div>
+                    <div className={styles.doctorDivTo}>
+                        <h4>Дата</h4>
+                        <Select
+                            onChange={(value: string) => {
+                                setLocalDate(value)
+                            }}
+                            style={{minWidth: 100}}
+                            // @ts-ignore
+                            options={dateOptions ?? []}
+                            value={localDate}
+                            showSearch
+                            popupMatchSelectWidth={false}
+                            placeholder={'Выберите дату'}
+                        />
+                    </div>
+                    {localDate?.length > 0 && <div className={styles.doctorDivTo}>
+                        <h4>Время</h4>
+                        <Select
+                            onChange={(value: number) => {
+                                setLocalTime(value)
+                            }}
+                            style={{minWidth: 100}}
+                            // @ts-ignore
+                            options={timeOptions ?? []}
+                            value={localTime}
+                            showSearch
+                            popupMatchSelectWidth={false}
+                            placeholder={'Выберите время'}
+                        />
+                    </div>}
+                </div>}
                 {/*<input*/}
                 {/*    type='text'*/}
                 {/*    placeholder='Ваше имя'*/}
@@ -221,12 +265,16 @@ const DoctorModal = ({
                 {/*</h5>*/}
 
                 <hr/>
-                <button
-                    className={styles.bookButton}
+                <Button
+                    className={clsx({
+                        [styles.bookButton]: true,
+                        [styles.bookButton_disabled]: isBookingDisabled
+                    })}
                     onClick={handleBooking}
+                    disabled={isBookingDisabled}
                 >
                     Записаться
-                </button>
+                </Button>
 
                 <p className={styles.bookP}>
                     Нажимая Записаться, я принимаю{' '}
