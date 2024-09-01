@@ -38,7 +38,6 @@ const CityModal = ({onClose, open}: Props) => {
 
     const onConfirm = () => {
         if (selectedId) {
-            console.log('bro')
             cityService.setCityId(selectedId?.toString())
             dispatch({
                 type: 'SET_CITY_ID',

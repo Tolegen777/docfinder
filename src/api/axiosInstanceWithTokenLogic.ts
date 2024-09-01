@@ -55,8 +55,8 @@ axiosInstanceWithTokenLogic.interceptors.request.use((config) => {
 
 
 axiosInstanceWithTokenLogic.interceptors.response.use(
-    ( response ) =>
-        response, async ( error ) => {
+    (response) =>
+        response, async (error) => {
 
         const originalRequest: AxiosRequestConfig<AxiosRequestHeaders> & {
             _retry: boolean
@@ -71,7 +71,7 @@ axiosInstanceWithTokenLogic.interceptors.response.use(
             if (isRefreshing) {
                 return new Promise((resolve, reject) => {
 
-                    failedQueue.push({ resolve, reject })
+                    failedQueue.push({resolve, reject})
 
 
                 }).then((token) => {
@@ -114,12 +114,11 @@ axiosInstanceWithTokenLogic.interceptors.response.use(
             })
         }
 
-        console.log(error, 'EEEE')
-
         if (errorStatus !== 401) {
             const errorMessage = error?.response?.data?.non_field_errors?.find((item: string) => item) ||
                 error?.response?.data?.errors?.non_field_errors?.find((item: string) => item) ||
-                error?.response?.data?.detail
+                error?.response?.data?.detail ||
+                JSON.stringify(error?.response?.data, null, 2)
             customNotification({
                 type: 'error',
                 message: errorMessage?.length ? errorMessage : 'Ошибка сервера'

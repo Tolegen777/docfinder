@@ -46,7 +46,6 @@ const LoginForm = ({form, onClose}: Props) => {
 	});
 
 	const onFinish = (values: ILoginInput) => {
-		console.log('Success:', values);
 		onLogin(values)
 	};
 

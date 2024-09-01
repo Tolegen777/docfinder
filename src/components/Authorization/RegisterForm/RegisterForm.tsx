@@ -43,7 +43,6 @@ const RegisterForm = ({form, setFormType}: Props) => {
 	});
 
 	const onFinish = (values: ILoginInput) => {
-		console.log('Success:', values);
 		onRegister(values)
 	};
 
