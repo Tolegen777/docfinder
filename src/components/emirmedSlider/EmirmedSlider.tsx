@@ -60,7 +60,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                         [styles.hide]: !!images?.length
                       })}>
                         <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} />
-                        <h1 className={styles.title}>{data?.title}</h1>
+                        {/*<h1 className={styles.title}>{data?.title}</h1>*/}
                         <span className={styles.pretitle}>{data?.address}</span>
                         <div className={styles.info}>
                           <span className={styles.info__grade}>{data?.rating?.toFixed(2)}</span>
