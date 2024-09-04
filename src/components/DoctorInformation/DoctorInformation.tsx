@@ -175,9 +175,9 @@ const DoctorInformation = ({
                                     <p className={styles.doctorInformationMap}>
                                         {doctor?.current_clinic_branch_address}
                                     </p>
-                                    <h6 className={styles.doctorInformationMapH6}>
-                                        {doctor?.current_clinic_branch_title}
-                                    </h6>
+                                    {/*<h6 className={styles.doctorInformationMapH6}>*/}
+                                    {/*    {doctor?.current_clinic_branch_title}*/}
+                                    {/*</h6>*/}
                                     {/*<h6 className={styles.doctorInformationMapH6}>На карте</h6>*/}
                                 </div>
                             </div>
