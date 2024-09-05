@@ -21,6 +21,7 @@ export interface ISpecDoctorById {
     doctor_category: string
     doctor_description: string
     doctor_procedures_data: DoctorProceduresData[];
+    doctor_full_description?: IDoctorFullDescription
 }
 
 export interface DoctorProceduresData {
@@ -116,4 +117,11 @@ export interface Procedure {
     doctor_procedure_id: number
     medical_procedure_id: number
     medical_procedure_title: string
+}
+
+export interface IDoctorFullDescription {
+    [key: string]: {
+    title: string;
+    content: string;
+}
 }

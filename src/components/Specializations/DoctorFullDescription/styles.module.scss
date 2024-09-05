@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  max-width: 1180px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1C202C;
+}
+
+.content {
+  color: #4A4A4A;
+  line-height: 1.6;
+  word-wrap: break-word;
+
+  p {
+    margin: 0 0 10px;
+  }
+}

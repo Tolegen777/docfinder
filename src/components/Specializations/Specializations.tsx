@@ -7,6 +7,7 @@ import {ISpecDoctorById} from "@/types/specDoctorById";
 
 import docImg from '../../public/icons/doctor.svg'
 import SpecializationAndServices from "@/components/SpecializationAndServices/SpecializationAndServices";
+import DoctorFullDescription from "@/components/Specializations/DoctorFullDescription";
 
 type Props = {
 	data: ISpecDoctorById | undefined
@@ -44,9 +45,13 @@ const Specializations = ({data}: Props) => {
 					/>
 					<div className='information'>
 						<h4 className={styles.servicesMainH4}>Информация о враче</h4>
-						<p className={styles.servicesDescrP}>
-							<div dangerouslySetInnerHTML={{ __html: data?.doctor_description ?? '' }} />
-						</p>
+						{
+							data?.doctor_full_description ?
+								<DoctorFullDescription doctorFullDescription={data?.doctor_full_description}/> :
+								<p className={styles.servicesDescrP}>
+									<div dangerouslySetInnerHTML={{__html: data?.doctor_description ?? ''}}/>
+								</p>
+						}
 					</div>
 
 					<div className={styles.reviewReiting}>
