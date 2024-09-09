@@ -59,6 +59,7 @@ export interface ListOfPhoto {
     created_at: string
     updated_at: string
     branch: number
+    is_main?: boolean
 }
 
 export interface FranchisePhoto {

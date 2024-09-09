@@ -27,6 +27,8 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
 
   const images = data?.list_of_photos?.filter((_, index) => index < 3)?.map(item => item?.photo);
 
+  const mainImage = data?.list_of_photos?.find(item => item?.is_main)?.photo
+
   const [selectedImage, setSelectedImage] = useState(images?.[0]);
 
   const [openBookingModal, setOpenBookingModal] = useState(false)
@@ -59,7 +61,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                         [styles.emirmed__content__sliders__box]: true,
                         [styles.hide]: !!images?.length
                       })}>
-                        <Image src={data?.photo_url ?? ''} alt="" width={300} height={40} />
+                        <Image src={mainImage ?? ''} alt="" width={300} height={40} unoptimized />
                         {/*<h1 className={styles.title}>{data?.title}</h1>*/}
                         <span className={styles.pretitle}>{data?.address}</span>
                         <div className={styles.info}>
