@@ -10,7 +10,8 @@ export const tokenService = {
 
   getLocalAccessToken: (): string => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem(tokenConstants.access) ?? '';
+      const token  = localStorage.getItem(tokenConstants.access)
+      return token === 'undefined' ? '' : (token ?? '');
     }
     return '';
   },

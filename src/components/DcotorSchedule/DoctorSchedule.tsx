@@ -21,6 +21,7 @@ type Props = {
     setIsOpenVisitModal: (flag: boolean) => void
     setActiveBranchId: (flag: number | null) => void
     type: "spec" | "proc" | "clinic";
+    isClinic?: boolean
 
 }
 
@@ -34,7 +35,8 @@ const DoctorSchedule = ({
                             setActiveTime,
                             setIsOpenVisitModal,
                             setActiveBranchId,
-                            type
+                            type,
+                            isClinic
                         }: Props) => {
 
     const {state} = useStateContext()
@@ -45,6 +47,11 @@ const DoctorSchedule = ({
         id: number | null,
         time: string
     }) => {
+        if (isClinic) {
+            setOpenBookingModal(true)
+            return
+        }
+
         if (!state.authUser) {
             setOpenBookingModal(true)
         } else {

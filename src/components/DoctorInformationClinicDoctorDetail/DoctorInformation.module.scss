@@ -1,0 +1,1101 @@
+#doctorInformation {
+  margin-bottom: 2pc;
+  .doctorInformation {
+    .doctorInformationBlock {
+      background: #ffffff;
+
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding-left: 2pc;
+      padding-right: 5pc;
+    }
+
+    .doctorInformationBlockMain {
+      display: flex;
+      gap: 20px;
+    }
+    .doctorInformationImg {
+      display: flex;
+      padding-top: 2pc;
+      padding-bottom: 1pc;
+
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .doctorInformationPhoto {
+      width: 163px;
+      height: 163px;
+      border-radius: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+    .doctorInformationReiting {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: center;
+      color: #000000;
+    }
+    .doctorInformationh5 {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 20.57px;
+      text-align: center;
+      color: #459bff;
+    }
+    .doctorInformationDecr {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      padding-top: 2pc;
+      padding-bottom: 2pc;
+
+      gap: 10px;
+    }
+    .doctorInformationName {
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 36.31px;
+      text-align: left;
+    }
+    .doctorInformationUrl {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 30.26px;
+      text-align: left;
+    }
+    .doctorInformationOpt {
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 30.26px;
+      text-align: left;
+    }
+    .doctorInformationClin {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+    }
+    .doctorInformationSale {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .doctorInformationPrice {
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 27.84px;
+      text-align: left;
+    }
+    .doctorInformationPriceMinus {
+      text-decoration: line-through;
+      margin-right: 1pc;
+    }
+    .doctorInformationMinusPro {
+      background: #ff6200;
+      width: 56px;
+      border-radius: 20px;
+      height: 33px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .doctorInformationEm {
+      font-size: 25px;
+      font-weight: 600;
+      line-height: 30.26px;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .doctorInformationMap {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24.2px;
+      text-align: left;
+    }
+    .doctorInformationMapH6 {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 20.57px;
+      text-align: left;
+      color: #a1a1a1;
+    }
+    .doctorInformationDate {
+      width: 380px;
+      border-left: 1px solid black;
+      padding-top: 2pc;
+      height: 100%;
+      padding-bottom: 2pc;
+
+      padding-left: 2pc;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  #doctorInformation {
+    padding: 0px 20px;
+    margin-bottom: 2pc;
+    .doctorInformation {
+      .doctorInformationBlock {
+        background: #ffffff;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-left: 2pc;
+        padding-right: 2pc;
+      }
+      .doctorInformationImg {
+        display: flex;
+        padding-top: 2pc;
+        padding-bottom: 1pc;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .doctorInformationReiting {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        color: #000000;
+      }
+      .doctorInformationh5 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: center;
+        color: #459bff;
+      }
+      .doctorInformationDecr {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-top: 2pc;
+        padding-bottom: 2pc;
+
+        gap: 10px;
+      }
+      .doctorInformationName {
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .doctorInformationUrl {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationOpt {
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationClin {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+      }
+      .doctorInformationSale {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .doctorInformationPrice {
+        font-size: 23px;
+        font-weight: 400;
+        line-height: 27.84px;
+        text-align: left;
+      }
+      .doctorInformationPriceMinus {
+        text-decoration: line-through;
+        margin-right: 1pc;
+      }
+      .doctorInformationMinusPro {
+        background: #ff6200;
+        width: 56px;
+        border-radius: 20px;
+        height: 33px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .doctorInformationEm {
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationMap {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+      }
+      .doctorInformationMapH6 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: left;
+        color: #a1a1a1;
+      }
+      .doctorInformationDate {
+        width: 380px;
+        border-left: 1px solid black;
+        padding-top: 2pc;
+        height: 100%;
+        padding-bottom: 2pc;
+
+        padding-left: 2pc;
+      }
+    }
+  }
+}
+@media (max-width: 1057px) {
+  #doctorInformation {
+    padding: 0px 20px;
+    margin-bottom: 2pc;
+    .doctorInformation {
+      .doctorInformationBlock {
+        background: #ffffff;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-left: 2pc;
+        padding-right: 2pc;
+      }
+      .doctorInformationImg {
+        display: flex;
+        padding-top: 2pc;
+        padding-bottom: 1pc;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .doctorInformationPhoto {
+        width: 153px;
+        height: 153px;
+        border-radius: 100%;
+        position: relative;
+        overflow: hidden;
+      }
+      .doctorInformationReiting {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        color: #000000;
+      }
+      .doctorInformationh5 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: center;
+        color: #459bff;
+      }
+      .doctorInformationDecr {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-top: 2pc;
+        padding-bottom: 2pc;
+
+        gap: 10px;
+      }
+      .doctorInformationName {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .doctorInformationUrl {
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationOpt {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationClin {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+      }
+      .doctorInformationSale {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .doctorInformationPrice {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27.84px;
+        text-align: left;
+      }
+      .doctorInformationPriceMinus {
+        text-decoration: line-through;
+        margin-right: 0.5pc;
+      }
+      .doctorInformationMinusPro {
+        background: #ff6200;
+        width: 50px;
+        border-radius: 20px;
+        height: 33px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .doctorInformationEm {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationMap {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+      }
+      .doctorInformationMapH6 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: left;
+        color: #a1a1a1;
+      }
+      .doctorInformationDate {
+        width: 360px;
+        border-left: 1px solid black;
+        padding-top: 2pc;
+        height: 100%;
+        padding-bottom: 2pc;
+
+        padding-left: 2pc;
+      }
+    }
+  }
+}
+@media (max-width: 954px) {
+  #doctorInformation {
+    padding: 0px 20px;
+    margin-bottom: 2pc;
+    .doctorInformation {
+      .doctorInformationBlock {
+        background: #ffffff;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-left: 2pc;
+        padding-right: 2pc;
+      }
+      .doctorInformationImg {
+        display: flex;
+        padding-top: 2pc;
+        padding-bottom: 1pc;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .doctorInformationReiting {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        color: #000000;
+      }
+      .doctorInformationh5 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: center;
+        color: #459bff;
+      }
+      .doctorInformationDecr {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 1pc;
+        padding-top: 2pc;
+        padding-bottom: 2pc;
+
+        gap: 10px;
+      }
+      .doctorInformationName {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36.31px;
+        text-align: left;
+      }
+      .doctorInformationUrl {
+        font-size: 21px;
+        font-weight: 400;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationOpt {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationClin {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+      }
+      .doctorInformationSale {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .doctorInformationPrice {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27.84px;
+        text-align: left;
+      }
+      .doctorInformationPriceMinus {
+        text-decoration: line-through;
+        margin-right: 0.5pc;
+      }
+      .doctorInformationMinusPro {
+        background: #ff6200;
+        width: 50px;
+        border-radius: 20px;
+        height: 33px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .doctorInformationEm {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 30.26px;
+        text-align: left;
+      }
+      .doctorInformationMap {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: left;
+      }
+      .doctorInformationMapH6 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: left;
+        color: #a1a1a1;
+      }
+      .doctorInformationDate {
+        width: 360px;
+        border-left: 1px solid black;
+        padding-top: 2pc;
+        height: 100%;
+        padding-bottom: 2pc;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  #doctorInformation {
+    padding: 0px 20px;
+    margin-bottom: 2pc;
+    .doctorInformation {
+      .doctorInformationBlock {
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 2pc;
+        padding-right: 2pc;
+      }
+      .doctorInformationBlockMain {
+        display: block;
+        //gap: 10px;
+      }
+      .doctorInformationImg {
+        display: flex;
+        padding-top: 2pc;
+        padding-bottom: 1pc;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .doctorInformationReiting {
+        text-align: center;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        color: #000000;
+      }
+      .doctorInformationh5 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: center;
+        color: #459bff;
+      }
+      .doctorInformationDecr {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 0pc;
+        padding-top: 2pc;
+        padding-bottom: 2pc;
+
+        gap: 10px;
+      }
+      .doctorInformationName {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        width: 100%;
+        line-height: 36.31px;
+      }
+      .doctorInformationUrl {
+        text-align: center;
+
+        font-size: 21px;
+        font-weight: 400;
+        width: 100%;
+        line-height: 30.26px;
+      }
+      .doctorInformationOpt {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 30.26px;
+        width: 100%;
+
+        text-align: center;
+      }
+      .doctorInformationClin {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+      }
+      .doctorInformationSale {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .doctorInformationPrice {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27.84px;
+        text-align: left;
+      }
+      .doctorInformationPriceMinus {
+        text-decoration: line-through;
+        margin-right: 0.5pc;
+      }
+      .doctorInformationMinusPro {
+        background: #ff6200;
+        width: 50px;
+        border-radius: 20px;
+        height: 33px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .doctorInformationEm {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 30.26px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMap {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMapH6 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: left;
+        color: #a1a1a1;
+      }
+      .doctorInformationDate {
+        width: 360px;
+        border-left: 1px solid white;
+        padding-top: 2pc;
+        height: 100%;
+        padding-bottom: 2pc;
+        padding-left: 0px;
+      }
+    }
+  }
+}
+@media (max-width: 425px) {
+  #doctorInformation {
+    padding: 0px 20px;
+    margin-bottom: 2pc;
+    .doctorInformation {
+      .doctorInformationBlock {
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 3pc;
+        padding-right: 2pc;
+      }
+      .doctorInformationImg {
+        display: flex;
+        padding-top: 2pc;
+        padding-bottom: 1pc;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .doctorInformationReiting {
+        text-align: center;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        color: #000000;
+      }
+      .doctorInformationh5 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: center;
+        color: #459bff;
+      }
+      .doctorInformationDecr {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 1pc;
+        padding-top: 2pc;
+        padding-bottom: 2pc;
+
+        gap: 10px;
+      }
+      .doctorInformationName {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        width: 100%;
+        line-height: 36.31px;
+      }
+      .doctorInformationUrl {
+        text-align: center;
+
+        font-size: 21px;
+        font-weight: 400;
+        width: 100%;
+        line-height: 30.26px;
+      }
+      .doctorInformationOpt {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 30.26px;
+        width: 100%;
+
+        text-align: center;
+      }
+      .doctorInformationClin {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+      }
+      .doctorInformationSale {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .doctorInformationPrice {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27.84px;
+        text-align: left;
+      }
+      .doctorInformationPriceMinus {
+        text-decoration: line-through;
+        margin-right: 0.5pc;
+      }
+      .doctorInformationMinusPro {
+        background: #ff6200;
+        width: 50px;
+        border-radius: 20px;
+        height: 33px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .doctorInformationEm {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 30.26px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMap {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMapH6 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: left;
+        color: #a1a1a1;
+      }
+      .doctorInformationDate {
+        width: 360px;
+        padding-top: 2pc;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 2pc;
+      }
+    }
+  }
+}
+@media (max-width: 370px) {
+  #doctorInformation {
+    padding: 0px 20px;
+    margin-bottom: 2pc;
+    .doctorInformation {
+      .doctorInformationBlock {
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 3pc;
+        padding-right: 2pc;
+      }
+      .doctorInformationImg {
+        display: flex;
+        padding-top: 2pc;
+        padding-bottom: 1pc;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .doctorInformationReiting {
+        text-align: center;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        color: #000000;
+      }
+      .doctorInformationh5 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: center;
+        color: #459bff;
+      }
+      .doctorInformationDecr {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 1pc;
+        padding-top: 2pc;
+        padding-bottom: 2pc;
+
+        gap: 10px;
+      }
+      .doctorInformationName {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        width: 100%;
+        line-height: 36.31px;
+      }
+      .doctorInformationUrl {
+        text-align: center;
+
+        font-size: 21px;
+        font-weight: 400;
+        width: 100%;
+        line-height: 30.26px;
+      }
+      .doctorInformationOpt {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 30.26px;
+        width: 100%;
+
+        text-align: center;
+      }
+      .doctorInformationClin {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+      }
+      .doctorInformationSale {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .doctorInformationPrice {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27.84px;
+        text-align: left;
+      }
+      .doctorInformationPriceMinus {
+        text-decoration: line-through;
+        margin-right: 0.5pc;
+      }
+      .doctorInformationMinusPro {
+        background: #ff6200;
+        width: 50px;
+        border-radius: 20px;
+        height: 33px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .doctorInformationEm {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 30.26px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMap {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMapH6 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: left;
+        color: #a1a1a1;
+      }
+      .doctorInformationDate {
+        width: 360px;
+        padding-top: 2pc;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 2pc;
+      }
+    }
+  }
+}
+@media (max-width: 380px) {
+  #doctorInformation {
+    padding: 0px 20px;
+    margin-bottom: 2pc;
+    .doctorInformation {
+      .doctorInformationBlock {
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 2pc;
+        padding-right: 2pc;
+      }
+      .doctorInformationImg {
+        display: flex;
+        padding-top: 2pc;
+        padding-bottom: 1pc;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .doctorInformationPhoto {
+        width: 153px;
+        height: 153px;
+        border-radius: 50%;
+      }
+      .doctorInformationReiting {
+        text-align: center;
+
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        color: #000000;
+      }
+      .doctorInformationh5 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: center;
+        color: #459bff;
+      }
+      .doctorInformationDecr {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: 1pc;
+        padding-top: 2pc;
+        padding-bottom: 2pc;
+
+        gap: 10px;
+      }
+      .doctorInformationName {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        width: 100%;
+        line-height: 36.31px;
+      }
+      .doctorInformationUrl {
+        text-align: center;
+
+        font-size: 21px;
+        font-weight: 400;
+        width: 100%;
+        line-height: 30.26px;
+      }
+      .doctorInformationOpt {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 30.26px;
+        width: 100%;
+
+        text-align: center;
+      }
+      .doctorInformationClin {
+        width: 100%;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+      }
+      .doctorInformationSale {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+
+      .doctorInformationPrice {
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27.84px;
+        text-align: left;
+      }
+      .doctorInformationPriceMinus {
+        text-decoration: line-through;
+        margin-right: 0.5pc;
+      }
+      .doctorInformationMinusPro {
+        background: #ff6200;
+        width: 50px;
+        border-radius: 20px;
+        height: 33px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .doctorInformationEm {
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 30.26px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMap {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 24.2px;
+        text-align: center;
+        width: 100%;
+      }
+      .doctorInformationMapH6 {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 20.57px;
+        text-align: left;
+        color: #a1a1a1;
+      }
+      .doctorInformationDate {
+        width: 360px;
+        padding-top: 2pc;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-bottom: 2pc;
+      }
+    }
+  }
+}

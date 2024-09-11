@@ -1,0 +1,42 @@
+.calendar-container {
+	position: relative;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.toggle-button {
+	margin-top: 10px;
+}
+
+.datepicker-wrapper {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 9999;
+}
+
+.react-datepicker {
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-datepicker__header {
+	background-color: #f3f3f3;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+	background-color: #f56b00;
+	color: white;
+}
+
+.mianClock {
+	position: relative;
+}
+
+.divClock {
+	position: absolute;
+	top: 2pc;
+	left: -6pc;
+}

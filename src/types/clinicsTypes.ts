@@ -185,6 +185,7 @@ export interface DoctorsList {
     reviews_count: number
     todays_work_schedule: TodaysWorkSchedule2[]
     nearest_week_work_schedule: NearestWeekWorkSchedule2[]
+    doctor_profile_id?: number
 }
 
 export interface PhotosList2 {

@@ -11,6 +11,7 @@ import HeaderModal from "@/components/HeaderModal/HeaderModal";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
 import {DoctorsList} from "@/types/clinicsTypes";
 import DoctorSchedule from "@/components/DcotorSchedule_v2/DoctorSchedule";
+import {usePathname, useRouter} from "next/navigation";
 
 type DoctorInformationProps = {
     modalFunction: () => void;
@@ -34,6 +35,12 @@ const DoctorInformation = ({
 
     const [openBookingModal, setOpenBookingModal] = useState(false)
 
+    const router = useRouter();
+
+    const pathname = usePathname()
+
+    const clinicId = pathname?.split('/')?.[2];
+
     useEffect(() => {
         if (doctor?.nearest_week_work_schedule) {
             const firstDate = doctor?.nearest_week_work_schedule?.find(item => item)?.doctor_work_schedule_detailed_api_view
@@ -43,6 +50,14 @@ const DoctorInformation = ({
         }
 
     }, [doctor?.nearest_week_work_schedule])
+
+    const handleGoToDoctorsPage = () => {
+        if (!isPreventRedirect) {
+                router.push(
+                    `/clinics/${clinicId}/doctor/${doctor?.id}`
+                );
+        }
+    };
 
 
     return (
@@ -55,7 +70,11 @@ const DoctorInformation = ({
             <section id={styles.doctorInformation}>
                 <div className="container">
                     <div className={styles.doctorInformation}>
-                        <div className={styles.doctorInformationBlock}>
+                        <div
+                            className={styles.doctorInformationBlock}
+                            onClick={handleGoToDoctorsPage}
+                            style={{cursor: !isPreventRedirect ? 'pointer' : undefined}}
+                        >
                             <div
                                 className={styles.doctorInformationBlockMain}
                                 style={{cursor: !isPreventRedirect ? 'pointer' : undefined}}

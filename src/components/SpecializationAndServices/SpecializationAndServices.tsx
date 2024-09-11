@@ -1,24 +1,34 @@
 import React, {useState} from 'react';
 import styles from './SpecializationAndServices.module.scss';
-import {DoctorProceduresData, ISpecDoctorById, SpecialitiesAndProcedure} from "@/types/specDoctorById";
+import {DoctorProceduresData, ISpecDoctorById, ListOfProcedure, SpecialitiesAndProcedure} from "@/types/specDoctorById";
 import DoctorModal from "@/components/DoctorModal/DoctorModal";
+import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
+import HeaderModal from "@/components/HeaderModal/HeaderModal";
+import {useStateContext} from "@/contexts";
 
 type Props = {
     specialitiesAndProcedures: SpecialitiesAndProcedure[];
-    doctorProcsData: DoctorProceduresData[];
+    doctorProcsData: ListOfProcedure[];
+    doctorProcFullData: DoctorProceduresData[];
     doctorData: ISpecDoctorById | undefined
 };
 
-const SpecializationAndServices = ({specialitiesAndProcedures, doctorProcsData, doctorData}: Props) => {
+const SpecializationAndServices = ({specialitiesAndProcedures, doctorProcsData, doctorData, doctorProcFullData}: Props) => {
     // const initialSpecialityId = specialitiesAndProcedures?.length > 0
     //     ? specialitiesAndProcedures[0].speciality.medical_speciality_id
     //     : null;
 
     const branchId = doctorData?.nearest_week_work_schedule?.find(item => item?.clinic_branch_id)?.clinic_branch_id
 
+    const {state} = useStateContext()
+
     const [activeSpeciality, setActiveSpeciality] = useState<number | null>(null);
     const [activeProcedure, setActiveProcedure] = useState<{ id: number, title: string } | null>(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const [modal, setModal] = useState(false)
+
+    const [openBookingModal, setOpenBookingModal] = useState(false)
 
     const handleSpecialityClick = (specialityId: number) => {
         if (specialityId !== activeSpeciality) {
@@ -31,7 +41,12 @@ const SpecializationAndServices = ({specialitiesAndProcedures, doctorProcsData, 
 
     const handleProcedureClick = (procedureId: number, procedureTitle: string) => {
         setActiveProcedure({id: procedureId, title: procedureTitle});
-        setIsModalOpen(true);
+        if (state?.authUser) {
+            setIsModalOpen(true);
+        } else {
+            setOpenBookingModal(true)
+        }
+
     };
 
     const handleModalCancel = () => {
@@ -40,6 +55,11 @@ const SpecializationAndServices = ({specialitiesAndProcedures, doctorProcsData, 
 
     return (
         <div>
+            <ClinicBookingModal
+                open={openBookingModal}
+                closeModal={() => setOpenBookingModal(false)}
+            />
+            <HeaderModal setModal={() => setModal(false)} open={modal}/>
             <div className={styles.section}>
                 <h4 className={styles.title}>Специализации</h4>
                 <div className={styles.items}>
@@ -79,9 +99,9 @@ const SpecializationAndServices = ({specialitiesAndProcedures, doctorProcsData, 
                         return <h3
                             key={key}
                             className={`${styles.item} ${styles.procedureItem}`}
-                            onClick={() => handleProcedureClick(procedure.id, procedure?.med_proc_info?.title)}
+                            onClick={() => handleProcedureClick(procedure.medical_procedure_id, procedure?.medical_procedure_title)}
                         >
-                            {procedure.med_proc_info?.title}
+                            {procedure.medical_procedure_title}
                         </h3>
                     })}
                 </div>
@@ -93,7 +113,7 @@ const SpecializationAndServices = ({specialitiesAndProcedures, doctorProcsData, 
                 onClose={handleModalCancel}
                 procLabel={activeProcedure?.title ?? ''}
                 // @ts-ignore
-                doctorProcData={doctorProcsData?.find(item => item?.id === activeProcedure?.id) ?? null}
+                doctorProcData={doctorProcFullData?.find(item => item?.id === activeProcedure?.id) ?? null}
                 doctorData={doctorData}
                 date={null}
                 visitTime={null}

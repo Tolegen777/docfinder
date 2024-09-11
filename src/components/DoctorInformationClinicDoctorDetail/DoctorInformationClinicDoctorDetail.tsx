@@ -23,7 +23,7 @@ type DoctorInformationProps = {
 };
 
 
-const DoctorInformation = ({
+const DoctorInformationClinicDoctorDetail = ({
                                modalFunction,
                                doctor,
                                specId,
@@ -54,20 +54,6 @@ const DoctorInformation = ({
 
     const [openBookingModal, setOpenBookingModal] = useState(false)
 
-    const handleGoToDoctorsPage = () => {
-        if (!isPreventRedirect) {
-            if (type === "spec") {
-                router.push(
-                    `/specialities/${specId}/doctor/${doctor?.doctor_profile_id}`
-                );
-            } else if (type === "proc") {
-                router.push(
-                    `/procedures/${specId}/doctor/${doctor?.doctor_profile_id}`
-                );
-            }
-        }
-    };
-
     const onClose = () => {
         setIsOpenVisitModal(false)
     }
@@ -90,34 +76,12 @@ const DoctorInformation = ({
                 closeModal={() => setOpenBookingModal(false)}
             />
             <HeaderModal setModal={() => setModal(false)} open={modal}/>
-            {isOpenVisitModal && <DoctorModal
-                // @ts-ignore
-                doctorData={doctor}
-                onClose={onClose}
-                type={type}
-                procs={doctor?.doctor_speciality_doctor_procedures ?? []}
-                date={activeDate}
-                visitTime={activeTime}
-                procId={doctor?.doctor_procedure_id ?? null}
-                procLabel={doctor?.medical_procedure_title}
-                doctorProcData={{
-                    id: doctor?.doctor_procedure_id as number,
-                    comission_amount: doctor?.doctor_procedure_price?.default_price as number,
-                    is_active: !!doctor?.doctor_procedure_price?.is_active,
-                    // @ts-ignore
-                    price: doctor?.doctor_procedure_price
-                }}
-                branchId={activeBranchId}
-            />
-            }
             <section id={styles.doctorInformation}>
                 <div className="container">
                     <div className={styles.doctorInformation}>
                         <div className={styles.doctorInformationBlock}>
                             <div
                                 className={styles.doctorInformationBlockMain}
-                                onClick={handleGoToDoctorsPage}
-                                style={{cursor: !isPreventRedirect ? 'pointer' : undefined}}
                             >
                                 <div className={styles.doctorInformationImg}>
                                     <div className={styles.doctorInformationPhoto}>
@@ -196,6 +160,7 @@ const DoctorInformation = ({
                                     workingHours={doctor?.nearest_week_work_schedule
                                         ?.find((item) => item?.work_date === activeDate)
                                         ?.working_hours ?? []}
+                                    isClinic={true}
                                 />
                             </div>
                         </div>
@@ -206,4 +171,4 @@ const DoctorInformation = ({
     );
 };
 
-export default DoctorInformation;
+export default DoctorInformationClinicDoctorDetail;

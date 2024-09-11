@@ -40,7 +40,8 @@ const Specializations = ({data}: Props) => {
 				<div className={styles.specializations}>
 					<SpecializationAndServices
 						specialitiesAndProcedures={data?.specialities_and_procedures ?? []}
-						doctorProcsData={data?.doctor_procedures_data ?? []}
+						doctorProcsData={data?.list_of_procedures ?? []}
+						doctorProcFullData={data?.doctor_procedures_data ?? []}
 						doctorData={data}
 					/>
 					<div className='information'>
