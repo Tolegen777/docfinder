@@ -70,7 +70,6 @@ const VisitList = ({doctorId, visits, isLoading}: Props) => {
                             <div className={styles.visitItem}>
                                 <div>
                                     <div>Дата посещения: {visit.date}</div>
-                                    <div>Статус: {visit.approved ? 'Одобрено' : 'Не одобрено'}</div>
                                 </div>
                                 <Button
                                     type="primary"
