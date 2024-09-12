@@ -8,7 +8,7 @@ import styles from "./styles.module.scss";
 import {formatDateTime} from "@/utils/date/formateDate";
 import clsx from "clsx";
 
-interface IVisit {
+export interface IVisit {
     id: number;
     date: string;
     visit_price?: string;

@@ -8,3 +8,9 @@ export interface ICreateVisit {
     visit_price: string
     is_child: boolean
 }
+
+export interface ICreateReview {
+    text: string,
+    rating: number
+}
+

@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React, {useMemo, useState} from 'react'
 import styles from './Specializations.module.scss'
 import StarRating from './StarRating'
 import {ISpecDoctorById} from "@/types/specDoctorById";
@@ -8,12 +8,28 @@ import {ISpecDoctorById} from "@/types/specDoctorById";
 import docImg from '../../public/icons/doctor.svg'
 import SpecializationAndServices from "@/components/SpecializationAndServices/SpecializationAndServices";
 import DoctorFullDescription from "@/components/Specializations/DoctorFullDescription";
+import VisitList from "@/components/VisitList/VisitList";
+import {useQuery} from "@tanstack/react-query";
+import {axiosInstanceWithTokenLogic} from "@/api/axiosInstanceWithTokenLogic";
+import {IVisit} from "@/components/Profile/PatientVisits/PatientVisits";
+import {useStateContext} from "@/contexts";
 
 type Props = {
 	data: ISpecDoctorById | undefined
 }
 
 const Specializations = ({data}: Props) => {
+
+	const {state} = useStateContext()
+
+	const { data: visits, isLoading } = useQuery({
+		queryKey: ["patientVisits"],
+		queryFn: () =>
+			axiosInstanceWithTokenLogic
+				.get<IVisit[]>(`patients/doctor-detail-view/${data?.doctor_profile_id}/my-visits/`)
+				.then((response) => response.data),
+		enabled: state?.authUser
+	});
 
 	const [expandedReviews, setExpandedReviews] = useState<{
 		[key: number]: boolean
@@ -54,6 +70,15 @@ const Specializations = ({data}: Props) => {
 								</p>
 						}
 					</div>
+
+					{visits && visits?.length > 0 && <div className='information'>
+						<h4 className={styles.servicesMainH4}>Мои посещения</h4>
+						<VisitList
+							doctorId={data?.doctor_profile_id ?? null}
+							visits={visits ?? []}
+							isLoading={isLoading}
+						/>
+					</div>}
 
 					<div className={styles.reviewReiting}>
 						<h4 className={styles.reviewReitingH4}>
@@ -98,7 +123,7 @@ const Specializations = ({data}: Props) => {
 										</button>
 									</div>}
 								</div>
-								<StarRating rating={el.reviews__rating} />{' '}
+								<StarRating rating={el.reviews__rating}/>{' '}
 							</div>
 						))}
 					</div>

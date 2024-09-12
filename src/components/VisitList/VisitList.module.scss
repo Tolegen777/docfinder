@@ -1,0 +1,30 @@
+.visitListContainer {
+  padding: 20px;
+  background-color: #f6f7f9;
+  border-radius: 8px;
+}
+
+.visitItem {
+  display: flex;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.ant-modal {
+  .ant-modal-content {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .visitItem {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
