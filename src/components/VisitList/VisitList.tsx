@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from 'react';
-import {useMutation} from '@tanstack/react-query';
+import {useMutation, useQueryClient} from '@tanstack/react-query';
 import {Button, Form, Input, List, Modal, Rate, Spin} from 'antd';
 import styles from './VisitList.module.scss';
 import {customNotification} from "@/utils/customNotification";
@@ -19,6 +19,8 @@ const VisitList = ({doctorId, visits, isLoading}: Props) => {
     const [selectedVisit, setSelectedVisit] = useState<IVisit | null>(null);
     const [form] = Form.useForm(); // Используем хук useForm для управления формой
 
+    const queryClient = useQueryClient();
+
     const { mutate: onCreateReview, isPending: isCreateLoading } = useMutation({
         mutationKey: ['createReview'],
         mutationFn: (body: ICreateReview) => {
@@ -34,6 +36,7 @@ const VisitList = ({doctorId, visits, isLoading}: Props) => {
             });
             setIsModalVisible(false);
             form.resetFields(); // Очистка полей формы при успешном создании отзыва
+            queryClient.invalidateQueries({ queryKey: ['patientReviews'] });
         },
     });
 

@@ -14,3 +14,14 @@ export interface ICreateReview {
     rating: number
 }
 
+export interface IReview {
+    id: number
+    author_name: string
+    text: string
+    rating: number
+    is_reply: boolean
+    parent_comment: any
+    visit_id: number
+    created_at: string
+    updated_at: string
+}

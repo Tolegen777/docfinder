@@ -13,6 +13,8 @@ import {useQuery} from "@tanstack/react-query";
 import {axiosInstanceWithTokenLogic} from "@/api/axiosInstanceWithTokenLogic";
 import {IVisit} from "@/components/Profile/PatientVisits/PatientVisits";
 import {useStateContext} from "@/contexts";
+import {IReview} from "@/types/visitTypes";
+import {Spin} from "antd";
 
 type Props = {
 	data: ISpecDoctorById | undefined
@@ -27,6 +29,15 @@ const Specializations = ({data}: Props) => {
 		queryFn: () =>
 			axiosInstanceWithTokenLogic
 				.get<IVisit[]>(`patients/doctor-detail-view/${data?.doctor_profile_id}/my-visits/`)
+				.then((response) => response.data),
+		enabled: state?.authUser
+	});
+
+	const { data: reviews, isLoading: reviewLoading } = useQuery({
+		queryKey: ["patientReviews"],
+		queryFn: () =>
+			axiosInstanceWithTokenLogic
+				.get<IReview[]>(`patients/doctor-detail-view/${data?.doctor_profile_id}/all-reviews/`)
 				.then((response) => response.data),
 		enabled: state?.authUser
 	});
@@ -97,7 +108,9 @@ const Specializations = ({data}: Props) => {
 					{/*	</div>*/}
 					{/*</div>*/}
 					<div className={styles.reviewArray}>
-						{data?.reviews?.map((el, key) => (
+						{reviewLoading ? <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+							<Spin/>
+						</div> : reviews?.map((el, key) => (
 							<div className={styles.reviewArrayDev} key={key}>
 								<Image
 									width={100}
@@ -108,13 +121,12 @@ const Specializations = ({data}: Props) => {
 								/>
 								<div className={styles.reviewArrayText}>
 									<h3 className={styles.reviewArrayH3}>
-										{el.reviews__author__last_name} {' '}
-										{el.reviews__author__first_name}
+										{el.author_name}
 									</h3>
 									<p className={styles.reviewArrayP}>
-										{expandedReviews[key] ? el.reviews__text : truncateText(el.reviews__text, 30)}
+										{expandedReviews[key] ? el.text : truncateText(el.text, 30)}
 									</p>
-									{el?.reviews__text?.length > 30 && <div className={styles.reviewYouDiv}>
+									{el?.text?.length > 30 && <div className={styles.reviewYouDiv}>
 										<button
 											onClick={() => toggleReadMore(key)}
 											className={styles.readMoreButton}
@@ -123,7 +135,7 @@ const Specializations = ({data}: Props) => {
 										</button>
 									</div>}
 								</div>
-								<StarRating rating={el.reviews__rating}/>{' '}
+								<StarRating rating={el.rating}/>{' '}
 							</div>
 						))}
 					</div>
