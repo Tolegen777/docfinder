@@ -54,6 +54,8 @@ const DoctorInformation = ({
 
     const [openBookingModal, setOpenBookingModal] = useState(false)
 
+    const priceObject = doctor?.doctor_procedure_price ? doctor?.doctor_procedure_price : doctor?.doctor_procedure_consultation_price
+
     const handleGoToDoctorsPage = () => {
         if (!isPreventRedirect) {
             if (type === "spec") {
@@ -154,19 +156,19 @@ const DoctorInformation = ({
                                     <div className={styles.doctorInformationSale}>
                                         <h4 className={styles.doctorInformationPrice}>
                       <span className={styles.doctorInformationPriceMinus}>
-                        {doctor?.doctor_procedure_consultation_price
-                                ?.default_price &&
-                            doctor?.doctor_procedure_consultation_price
+                        {(!!priceObject?.default_price &&
+                                !!priceObject?.discount) &&
+                            priceObject
                                 ?.default_price}{" "}
                       </span>
-                                            {doctor?.doctor_procedure_consultation_price
+                                            {!!priceObject
                                                     ?.final_price &&
-                                                `${doctor?.doctor_procedure_consultation_price?.final_price} тг.`}
+                                                `${priceObject?.final_price} тг.`}
                                         </h4>
-                                        {doctor?.doctor_procedure_consultation_price?.discount && (
+                                        {!!priceObject?.discount && (
                                             <h4
                                                 className={styles.doctorInformationMinusPro}
-                                            >{`-${doctor?.doctor_procedure_consultation_price?.discount}%`}</h4>
+                                            >{`-${priceObject?.discount}%`}</h4>
                                         )}
                                     </div>
                                     <h3 className={styles.doctorInformationEm}>

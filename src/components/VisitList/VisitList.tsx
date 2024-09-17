@@ -77,6 +77,7 @@ const VisitList = ({doctorId, visits, isLoading}: Props) => {
                                 <Button
                                     type="primary"
                                     onClick={() => handleLeaveReview(visit)}
+                                    size={"large"}
                                 >
                                     Оставить отзыв
                                 </Button>
@@ -94,21 +95,26 @@ const VisitList = ({doctorId, visits, isLoading}: Props) => {
             >
                 <Form form={form} onFinish={handleFinish} layout="vertical">
                     <Form.Item
-                        label="Текст отзыва"
+                        label={<div className={styles.formItem}>Текст отзыва</div>}
                         name="text"
                         rules={[{ required: true, message: 'Введите текст отзыва' }]}
+                        style={{
+                            fontSize: 18
+                        }}
                     >
-                        <Input.TextArea rows={4} />
+                        <Input.TextArea rows={4} style={{
+                            fontSize: 18
+                        }} autoFocus={false}/>
                     </Form.Item>
                     <Form.Item
-                        label="Рейтинг"
+                        label={<div className={styles.formItem}>Рейтинг</div>}
                         name="rating"
                         rules={[{ required: true, message: 'Выберите рейтинг' }]}
                     >
-                        <Rate />
+                        <Rate style={{fontSize: 30}} />
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit" loading={isCreateLoading}>
+                        <Button type="primary" htmlType="submit" loading={isCreateLoading} size={"large"}>
                             Отправить
                         </Button>
                     </Form.Item>

@@ -38,8 +38,7 @@ const Specializations = ({data}: Props) => {
 		queryFn: () =>
 			axiosInstanceWithTokenLogic
 				.get<IReview[]>(`patients/doctor-detail-view/${data?.doctor_profile_id}/all-reviews/`)
-				.then((response) => response.data),
-		enabled: state?.authUser
+				.then((response) => response.data)
 	});
 
 	const [expandedReviews, setExpandedReviews] = useState<{

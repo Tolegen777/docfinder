@@ -73,6 +73,7 @@ export interface DoctorProcedurePrice {
     child_age_to?: string
     created_at: string
     updated_at: string
+    doctor_procedure_title?: string
 }
 
 export interface DoctorSpecialityDoctorProcedure {
