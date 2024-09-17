@@ -16,14 +16,16 @@ type DoctorInformationProps = {
     modalFunction: () => void;
     doctor: ISpecProcDoctor | undefined;
     type: "spec" | "proc" | "clinic";
+    isCheapestPrice?: boolean
 };
 
 
 const DoctorInformationClinicDoctorDetail = ({
-                               modalFunction,
-                               doctor,
-                               type,
-                           }: DoctorInformationProps) => {
+                                                 modalFunction,
+                                                 doctor,
+                                                 type,
+                                                 isCheapestPrice
+                                             }: DoctorInformationProps) => {
 
     const currentDate = getCurrentDate();
 
@@ -106,20 +108,21 @@ const DoctorInformationClinicDoctorDetail = ({
                                     </h5>
                                     <div className={styles.doctorInformationSale}>
                                         <h4 className={styles.doctorInformationPrice}>
+                                            {'Цена от: '}
                       <span className={styles.doctorInformationPriceMinus}>
-                        {doctor?.doctor_procedure_consultation_price
+                        {doctor?.cheapest_procedure_data
                                 ?.default_price &&
-                            doctor?.doctor_procedure_consultation_price
+                            doctor?.cheapest_procedure_data
                                 ?.default_price}{" "}
                       </span>
-                                            {doctor?.doctor_procedure_consultation_price
+                                            {doctor?.cheapest_procedure_data
                                                     ?.final_price &&
-                                                `${doctor?.doctor_procedure_consultation_price?.final_price} тг.`}
+                                                `${doctor?.cheapest_procedure_data?.final_price} тг.`}
                                         </h4>
-                                        {doctor?.doctor_procedure_consultation_price?.discount && (
+                                        {doctor?.cheapest_procedure_data?.discount && (
                                             <h4
                                                 className={styles.doctorInformationMinusPro}
-                                            >{`-${doctor?.doctor_procedure_consultation_price?.discount}%`}</h4>
+                                            >{`-${doctor?.cheapest_procedure_data?.discount}%`}</h4>
                                         )}
                                     </div>
                                     <h3 className={styles.doctorInformationEm}>

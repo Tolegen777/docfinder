@@ -1,3 +1,5 @@
+import {Cheapestproceduredatum} from "@/types/clinicsTypes";
+
 export interface ISpecProcDoctor {
     doctor_speciality_id?: number
     doctor_profile_id: number
@@ -22,6 +24,7 @@ export interface ISpecProcDoctor {
     medical_procedure_title?: string
     doctor_procedure_price?: DoctorProcedurePrice
     doctor_category?: string
+    cheapest_procedure_data?: Cheapestproceduredatum;
 }
 
 export interface CurrentClinicBranchWorkingHour {

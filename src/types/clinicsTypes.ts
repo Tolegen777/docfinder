@@ -296,7 +296,7 @@ interface Currentclinicbranchworkinghour {
     start_time_id: number;
 }
 
-interface Cheapestproceduredatum {
+export interface Cheapestproceduredatum {
     id: number;
     is_active: boolean;
     price_date: string;

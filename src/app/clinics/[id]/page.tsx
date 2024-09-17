@@ -76,11 +76,7 @@ function ClinicById() {
                                     <DoctorInformationClinicDoctorDetail
                                         modalFunction={() => {}}
                                         // @ts-ignore
-                                        doctor={{
-                                            ...item,
-                                            // @ts-ignore
-                                            doctor_procedure_price: item?.cheapest_procedure_data,
-                                        }}
+                                        doctor={item}
                                         type={'proc'}
                                     />
                                 </a>

@@ -72,11 +72,7 @@ function Doctor() {
                     <DoctorInformationClinicDoctorDetail
                         modalFunction={toggleModal}
                         // @ts-ignore
-                        doctor={{
-                            ...data,
-                            // @ts-ignore
-                            doctor_procedure_price: data?.doctor_procedure_price_object,
-                        }}
+                        doctor={data}
                         type={'proc'}
                     />
                 </div>
