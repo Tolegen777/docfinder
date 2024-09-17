@@ -12,7 +12,6 @@ import DoctorInformationClinicDoctorDetail
     from "@/components/DoctorInformationClinicDoctorDetail/DoctorInformationClinicDoctorDetail";
 
 // Динамический импорт компонентов с отключением SSR
-const DoctorInformation = dynamic(() => import('@/components/DoctorInformation_v2/DoctorInformation'), { ssr: false });
 const Specializations = dynamic(() => import('@/components/Specializations/Specializations'), { ssr: false });
 const DoctorDetailsSkeleton = dynamic(() => import('@/components/shared/skeleton/DoctorDetailsSkeleton'), { ssr: false });
 
@@ -78,9 +77,7 @@ function Doctor() {
                             // @ts-ignore
                             doctor_procedure_price: data?.doctor_procedure_price_object,
                         }}
-                        isPreventRedirect={true}
                         type={'proc'}
-                        specId={''}
                     />
                 </div>
                 {/*// @ts-ignore*/}

@@ -11,12 +11,14 @@ import DoctorDetailsSkeleton from "@/components/shared/skeleton/DoctorDetailsSke
 import styles from './styles.module.scss';
 import clsx from "clsx";
 import { Empty } from "antd";
+import DoctorInformationClinicDoctorDetail
+    from "@/components/DoctorInformationClinicDoctorDetail/DoctorInformationClinicDoctorDetail";
+import Link from "next/link";
 
 // Динамический импорт компонентов с отключением SSR
 const EmirmedSlider = dynamic(() => import('@/components/emirmedSlider/EmirmedSlider'), { ssr: false });
 const AboutClinics = dynamic(() => import('@/components/aboutClinics/AboutClinics'), { ssr: false });
 const InfoClinics = dynamic(() => import('@/components/infoClinics/InfoClinics'), { ssr: false });
-const DoctorInformation = dynamic(() => import('@/components/DoctorInformation_v2/DoctorInformation'), { ssr: false });
 const CustomPagination = dynamic(() => import('@/components/shared/CustomPagination'), { ssr: false });
 
 function ClinicById() {
@@ -70,11 +72,18 @@ function ClinicById() {
                     ) : (
                         <div className={styles.doctors}>
                             {currentDoctors?.map((item) => (
-                                <DoctorInformation
-                                    key={item?.id}
-                                    modalFunction={() => {}}
-                                    doctor={item} // @ts-ignore
-                                />
+                                <a href={`/clinics/${clinicId}/doctor/${item.doctor_profile_id}`} key={item.doctor_profile_id}>
+                                    <DoctorInformationClinicDoctorDetail
+                                        modalFunction={() => {}}
+                                        // @ts-ignore
+                                        doctor={{
+                                            ...item,
+                                            // @ts-ignore
+                                            doctor_procedure_price: item?.cheapest_procedure_data,
+                                        }}
+                                        type={'proc'}
+                                    />
+                                </a>
                             ))}
                         </div>
                     )

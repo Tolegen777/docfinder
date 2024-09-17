@@ -69,7 +69,7 @@ const ClinicBookingForm = ({ form, onClose }: Props) => {
 					name="patient_phone_number"
 					rules={[{ required: true, message: 'Пожалуйста, введите ваш номер телефона!' }]}
 				>
-					<MaskedInput mask="+0 000 000 00 00" size={'large'} />
+					<MaskedInput mask="+00000000000" size={'large'} />
 				</Form.Item>
 				<div className={styles.container_form_action}>
 					<Button

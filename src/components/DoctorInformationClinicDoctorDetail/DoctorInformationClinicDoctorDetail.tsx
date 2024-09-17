@@ -8,8 +8,6 @@ import Image from "next/image";
 import docImg from "../../public/icons/doctor.svg";
 import {getCurrentMonthName} from "@/utils/date/getCurrentMonthName";
 import {getCurrentDate} from "@/utils/date/getCurrentDate";
-import {useRouter} from "next/navigation";
-import DoctorModal from "@/components/DoctorModal/DoctorModal";
 import HeaderModal from "@/components/HeaderModal/HeaderModal";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
 import DoctorSchedule from "@/components/DcotorSchedule/DoctorSchedule";
@@ -17,20 +15,15 @@ import DoctorSchedule from "@/components/DcotorSchedule/DoctorSchedule";
 type DoctorInformationProps = {
     modalFunction: () => void;
     doctor: ISpecProcDoctor | undefined;
-    specId: string;
     type: "spec" | "proc" | "clinic";
-    isPreventRedirect?: boolean;
 };
 
 
 const DoctorInformationClinicDoctorDetail = ({
                                modalFunction,
                                doctor,
-                               specId,
                                type,
-                               isPreventRedirect = false,
                            }: DoctorInformationProps) => {
-    const router = useRouter();
 
     const currentDate = getCurrentDate();
 
@@ -53,10 +46,6 @@ const DoctorInformationClinicDoctorDetail = ({
     const [modal, setModal] = useState(false)
 
     const [openBookingModal, setOpenBookingModal] = useState(false)
-
-    const onClose = () => {
-        setIsOpenVisitModal(false)
-    }
 
     useEffect(() => {
         if (doctor?.nearest_week_work_schedule) {

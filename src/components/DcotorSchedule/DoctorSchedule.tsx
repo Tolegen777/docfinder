@@ -66,7 +66,11 @@ const DoctorSchedule = ({
     }
 
     return (
-        <div className={styles.scheduleContainer}>
+        <div className={styles.scheduleContainer}
+        onClick={(event) => {
+            event?.stopPropagation()
+            event.preventDefault()
+        }}>
             <div className={styles.month}>{month}</div>
             <div className={styles.daysContainer}>
                 {weeks?.map(day => (
