@@ -181,7 +181,7 @@ function Header() {
                                 trigger={['click']}
                             >
                                 <Button className={styles.leftsidedrop} style={{color: '#ff6200', fontSize: '16px'}}>
-                                    {patientData?.first_name ?? patientData?.email}
+                                    {patientData?.first_name ?? patientData?.email ?? patientData?.phone_number}
                                 </Button>
                             </Dropdown>}
                             <HeaderModal setModal={() => setModal(false)} open={modal}/>

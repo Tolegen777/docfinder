@@ -2,8 +2,8 @@
 import React, {useState} from "react";
 import styles from "./HeaderModal.module.scss";
 import {Button, Form, Modal} from "antd";
-import LoginForm from "@/components/Authorization/LoginForm/LoginForm";
-import RegisterForm from "@/components/Authorization/RegisterForm/RegisterForm";
+import LoginForm from "@/components/Authorization/LoginFormPhone/LoginForm";
+import RegisterForm from "@/components/Authorization/RegisterFormPhone/RegisterForm";
 
 type DoctorModalProps = {
     open: boolean;

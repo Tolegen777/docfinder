@@ -6,12 +6,12 @@ import {customConfirmAction} from "@/utils/customConfirmAction";
 
 export const authApi = {
   signInUser: async (user: ILoginInput) => {
-    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-login-with-email/', user);
+    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-login-with-phone-number/', user);
     return response.data
   },
 
   registerUser: async (user: ILoginInput) => {
-    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-register/', user);
+    const response = await axiosInstanceWithTokenLogic.post<IAuthResponse>('patients/auth/patient-register-with-phone-number/', user);
     return response.data
   },
 

@@ -84,7 +84,7 @@ const PartnerSegmentsCreateUpdaterForm = (props: Props) => {
             label: 'Дата рождения',
         },
         { name: 'iin_number', element: <FormInputNumber placeholder="Введите ИИН" style={{ width: '100%' }} />, label: 'ИИН' },
-        { name: 'phone_number', element: <FormMaskedInput mask="+0 000 000 00 00" placeholder="Введите номер телефона" style={{ width: '100%' }} />, label: 'Номер телефона' },
+        { name: 'phone_number', element: <FormMaskedInput mask="+00000000000" placeholder="Введите номер телефона" style={{ width: '100%' }} />, label: 'Номер телефона' },
     ];
 
     const handleSubmit = (data: IPatientDefault) => {
