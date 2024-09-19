@@ -12,7 +12,7 @@ export const HeroPhoto = () => {
                     className={styles[imgClass]}
                     src={doctorPng}
                     alt=""
-                    width={406}
+                    width={350}
                     quality={100}
                 />
             ))}
