@@ -3,9 +3,8 @@ import dynamic from 'next/dynamic';
 import styles from "./Hero.module.scss";
 import { useEffect, useState } from "react";
 import { useStateContext } from "@/contexts";
+import HeroContent from "@/components/hero_v2/HeroContent/HeroContent";
 
-// Динамический импорт вложенных компонентов с отключением SSR
-const HeroContent = dynamic(() => import('@/components/hero_v2/HeroContent/HeroContent'));
 const CityModal = dynamic(() => import('@/components/CityModal/CityModal'), { ssr: false });
 
 function Hero() {

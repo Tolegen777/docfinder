@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss'
 import Image from "next/image";
-import doctorPng from "@/public/posters/doctor.png";
+import doctorPng from "@/public/posters/doctor2.jpg";
 
 export const HeroPhoto = () => {
     return (
