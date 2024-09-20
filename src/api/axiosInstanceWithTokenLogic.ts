@@ -9,7 +9,7 @@ type FailedQueue = {
     resolve: (token: string | null) => void;
 };
 
-const BASE_URL = 'https://sandbox.nemerea.com/api/v1/';
+const BASE_URL = 'https://backend.docfinder.kz/api/v1/';
 
 export const axiosInstanceWithTokenLogic = axios.create({
     baseURL: BASE_URL,

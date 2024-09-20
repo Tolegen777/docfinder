@@ -3,7 +3,7 @@ import {customNotification} from "@/utils/customNotification";
 
 export const createApiInstance = () => {
     const axiosInstance = axios.create({
-        baseURL: 'https://sandbox.nemerea.com/api/v1/',
+        baseURL: 'https://backend.docfinder.kz/api/v1/',
     });
 
     axiosInstance.defaults.headers.common['Content-Type'] = 'application/json';
