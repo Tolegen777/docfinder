@@ -46,7 +46,7 @@ const Clinics = ({ data, isLoading }: Props) => {
                         <div className={styles.avatar}>
                             <div className={styles.photo}>
                                 <Image
-                                    src={item?.photo_url}
+                                    src={item?.photo_url ?? ''}
                                     alt=""
                                     layout="fill"
                                     objectFit="cover"
