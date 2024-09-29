@@ -14,6 +14,7 @@ import patientIcon from './../../../public/posters/patient.png';
 import { formatDateToString } from "@/utils/date/formatDateToString";
 import { datePickerFormatter } from "@/utils/date/datePickerFormatter";
 import { customNotification } from "@/utils/customNotification";
+import {labelStyle} from "@/const/styles";
 
 // Динамический импорт компонентов
 const FormInput = dynamic(() => import('@/components/shared/FormInput'), { ssr: false });
@@ -84,7 +85,6 @@ const PartnerSegmentsCreateUpdaterForm = (props: Props) => {
             label: 'Дата рождения',
         },
         { name: 'iin_number', element: <FormInputNumber placeholder="Введите ИИН" style={{ width: '100%' }} />, label: 'ИИН' },
-        { name: 'phone_number', element: <FormMaskedInput mask="+00000000000" placeholder="Введите номер телефона" style={{ width: '100%' }} />, label: 'Номер телефона' },
     ];
 
     const handleSubmit = (data: IPatientDefault) => {
@@ -119,6 +119,22 @@ const PartnerSegmentsCreateUpdaterForm = (props: Props) => {
                                     {field.element}
                                 </Form.Item>
                             ))}
+                            <Form.Item
+                                // @ts-ignore
+                                label={<span style={labelStyle}>Номер телефона</span>}
+                                name="phone_number"
+                                rules={[
+                                    { required: true, message: 'Пожалуйста, введите ваш номер телефона!' },
+                                ]}
+                                initialValue="+7"
+                            >
+                                <FormMaskedInput
+                                    mask="+70000000000"
+                                    size={'large'}
+                                    defaultValue="+7"
+                                    placeholder="Введите номер телефона"
+                                />
+                            </Form.Item>
                         </div>
                         <div className={styles.form_action}>
                             <Button

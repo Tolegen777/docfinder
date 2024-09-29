@@ -68,8 +68,9 @@ const ClinicBookingForm = ({ form, onClose }: Props) => {
 					label={<span style={labelStyle}>Номер телефона</span>}
 					name="patient_phone_number"
 					rules={[{ required: true, message: 'Пожалуйста, введите ваш номер телефона!' }]}
+					initialValue="+7"
 				>
-					<MaskedInput mask="+00000000000" size={'large'} />
+					<MaskedInput mask="+70000000000" size={'large'} defaultValue="+7" />
 				</Form.Item>
 				<div className={styles.container_form_action}>
 					<Button

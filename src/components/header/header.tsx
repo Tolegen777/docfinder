@@ -63,30 +63,37 @@ function Header() {
         {
             key: '1',
             label: `Почта: ${patientData?.email ?? '-'}`,
+            disabled: true
         },
         {
             key: '2',
             label: `Имя: ${patientData?.first_name ?? '-'}`,
+            disabled: true
         },
         {
             key: '3',
             label: `Фамилия: ${patientData?.last_name ?? '-'}`,
+            disabled: true
         },
         {
             key: '4',
             label: `Отчество: ${patientData?.patronymic_name ?? '-'}`,
+            disabled: true
         },
         {
             key: '5',
             label: `Дата рождения: ${patientData?.birth_date ?? '-'}`,
+            disabled: true
         },
         {
             key: '6',
             label: `ИИН: ${patientData?.iin_number ?? '-'}`,
+            disabled: true
         },
         {
             key: '7',
             label: `Телефон: ${patientData?.phone_number ?? '-' }`,
+            disabled: true
         },
         {
             key: '8',

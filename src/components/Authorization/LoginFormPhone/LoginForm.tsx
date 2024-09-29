@@ -68,8 +68,9 @@ const LoginForm = ({form, onClose}: Props) => {
 					rules={[
 						{ required: true, message: 'Пожалуйста, введите ваш номер телефона!'},
 					]}
+					initialValue="+7"
 				>
-					<MaskedInput mask="+00000000000" size={'large'} />
+					<MaskedInput mask="+70000000000" size={'large'} defaultValue="+7" />
 				</Form.Item>
 
 				<Form.Item<FieldType>

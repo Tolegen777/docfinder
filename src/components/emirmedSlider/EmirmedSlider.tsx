@@ -22,14 +22,15 @@ import clsx from "clsx";
 const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
   const items = data?.franchise_branches_in_the_city?.map(item => ({
     key: item?.id,
-    label: item?.title
+    label: item?.title,
+    disabled: true,
   }))
 
   const images = data?.list_of_photos?.filter((_, index) => index < 3)?.map(item => item?.photo);
 
   const mainImage = data?.list_of_photos?.find(item => item?.is_main)?.photo
 
-  const [selectedImage, setSelectedImage] = useState(images?.[0]);
+  // const [selectedImage, setSelectedImage] = useState(images?.[0]);
 
   const [openBookingModal, setOpenBookingModal] = useState(false)
 
