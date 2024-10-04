@@ -24,4 +24,6 @@ export interface IReview {
     visit_id: number
     created_at: string
     updated_at: string
+    author__last_name: string
+    author__first_name: string
 }

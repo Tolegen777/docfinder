@@ -149,7 +149,7 @@ const Specializations = ({data}: Props) => {
 								/>
 								<div className={styles.reviewArrayText}>
 									<h3 className={styles.reviewArrayH3}>
-										{el.author_name}
+										{el.author__first_name} {el.author__last_name}
 									</h3>
 									<p className={styles.reviewArrayP}>
 										{expandedReviews[key] ? el.text : truncateText(el.text, 30)}
