@@ -74,13 +74,13 @@ const VisitList = ({doctorId, visits, isLoading}: Props) => {
                                 <div>
                                     <div>Дата посещения: {visit.date}</div>
                                 </div>
-                                <Button
-                                    type="primary"
-                                    onClick={() => handleLeaveReview(visit)}
-                                    size={"large"}
-                                >
-                                    Оставить отзыв
-                                </Button>
+                                {/*<Button*/}
+                                {/*    type="primary"*/}
+                                {/*    onClick={() => handleLeaveReview(visit)}*/}
+                                {/*    size={"large"}*/}
+                                {/*>*/}
+                                {/*    Оставить отзыв*/}
+                                {/*</Button>*/}
                             </div>
                         </List.Item>
                     )}

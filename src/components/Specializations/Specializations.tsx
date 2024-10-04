@@ -107,9 +107,38 @@ const Specializations = ({data}: Props) => {
 					{/*	</div>*/}
 					{/*</div>*/}
 					<div className={styles.reviewArray}>
-						{reviewLoading ? <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-							<Spin/>
-						</div> : reviews?.map((el, key) => (
+						{/*// FIXME закоментил так как реализация непоятна*/}
+						{/*{reviewLoading ? <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>*/}
+						{/*	<Spin/>*/}
+						{/*</div> : reviews?.map((el, key) => (*/}
+						{/*	<div className={styles.reviewArrayDev} key={key}>*/}
+						{/*		<Image*/}
+						{/*			width={100}*/}
+						{/*			height={100}*/}
+						{/*			className={styles.reviewArrayImg}*/}
+						{/*			src={docImg}*/}
+						{/*			alt=''*/}
+						{/*		/>*/}
+						{/*		<div className={styles.reviewArrayText}>*/}
+						{/*			<h3 className={styles.reviewArrayH3}>*/}
+						{/*				{el.author_name}*/}
+						{/*			</h3>*/}
+						{/*			<p className={styles.reviewArrayP}>*/}
+						{/*				{expandedReviews[key] ? el.text : truncateText(el.text, 30)}*/}
+						{/*			</p>*/}
+						{/*			{el?.text?.length > 30 && <div className={styles.reviewYouDiv}>*/}
+						{/*				<button*/}
+						{/*					onClick={() => toggleReadMore(key)}*/}
+						{/*					className={styles.readMoreButton}*/}
+						{/*				>*/}
+						{/*					{expandedReviews[key] ? 'Скрыть' : 'Читать дальше'}*/}
+						{/*				</button>*/}
+						{/*			</div>}*/}
+						{/*		</div>*/}
+						{/*		<StarRating rating={el.rating}/>{' '}*/}
+						{/*	</div>*/}
+						{/*))}*/}
+						{data?.reviews?.map((el, key) => (
 							<div className={styles.reviewArrayDev} key={key}>
 								<Image
 									width={100}
@@ -125,7 +154,7 @@ const Specializations = ({data}: Props) => {
 									<p className={styles.reviewArrayP}>
 										{expandedReviews[key] ? el.text : truncateText(el.text, 30)}
 									</p>
-									{el?.text?.length > 30 && <div className={styles.reviewYouDiv}>
+									{el?.text?.length > 300 && <div className={styles.reviewYouDiv}>
 										<button
 											onClick={() => toggleReadMore(key)}
 											className={styles.readMoreButton}

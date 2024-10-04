@@ -1,3 +1,5 @@
+import {IReview} from "@/types/visitTypes";
+
 export interface ISpecDoctorById {
     doctor_speciality_id: number;
     doctor_profile_id: number;
@@ -9,7 +11,7 @@ export interface ISpecDoctorById {
     current_clinic_branch_title: string;
     current_clinic_branch_address: string;
     rating: number;
-    reviews: Review[]
+    reviews: IReview[]
     reviews_count: number
     current_clinic_branch_working_hours: CurrentClinicBranchWorkingHour[]
     todays_work_schedule: TodaysWorkSchedule[]
