@@ -9,6 +9,7 @@ import {DownOutlined, UpOutlined} from "@ant-design/icons";
 import {NearestWeekWorkSchedule, WorkingHour} from "@/types/specProcDoctorsTypes";
 import {formatTime} from "@/utils/date/formatTime";
 import {useStateContext} from "@/contexts";
+import HeaderModal from "@/components/HeaderModal/HeaderModal";
 
 type Props = {
     month: string,
@@ -43,6 +44,8 @@ const DoctorSchedule = ({
 
     const [showAllTimeSlots, setShowAllTimeSlots] = useState(false);
 
+    const [modal, setModal] = useState(false)
+
     const handleOpenVisits = (time: {
         id: number | null,
         time: string
@@ -53,7 +56,8 @@ const DoctorSchedule = ({
         }
 
         if (!state.authUser) {
-            setOpenBookingModal(true)
+            // setOpenBookingModal(true)
+            setModal(true)
         } else {
             if (type === 'clinic') {
                 setOpenBookingModal(true)
@@ -66,69 +70,72 @@ const DoctorSchedule = ({
     }
 
     return (
-        <div className={styles.scheduleContainer}
-        onClick={(event) => {
-            event?.stopPropagation()
-            event.preventDefault()
-        }}>
-            <div className={styles.month}>{month}</div>
-            <div className={styles.daysContainer}>
-                {weeks?.map(day => (
-                    <div
-                        className={clsx({
-                            [styles.day]: true,
-                            [styles.day_active]:
-                            day?.work_date === activeDate,
-                        })}
-                        key={day?.work_date}
-                        onClick={() => {
-                            setActiveDate(day?.work_date)
-                        }}
-                    >
-                        <h3 className={styles.day_title}>
-                            {getDayOfMonth(day?.work_date)}
-                        </h3>
-                        <h5 className={styles.day_sub_title}>
-                            {getWeekDay(day?.work_date)}
-                        </h5>
-                    </div>
-                ))}
-            </div>
-            <div className={styles.timeSlotsContainer}>
-                <div className={`${styles.timeSlots} ${showAllTimeSlots ? styles.showAll : ''}`}>
-                    {workingHours?.map((el, index) => (
+        <>
+            <HeaderModal setModal={() => setModal(false)} open={modal}/>
+            <div className={styles.scheduleContainer}
+                 onClick={(event) => {
+                     event?.stopPropagation()
+                     event.preventDefault()
+                 }}>
+                <div className={styles.month}>{month}</div>
+                <div className={styles.daysContainer}>
+                    {weeks?.map(day => (
                         <div
-                            key={index}
-                            className={styles.timeSlot}
+                            className={clsx({
+                                [styles.day]: true,
+                                [styles.day_active]:
+                                day?.work_date === activeDate,
+                            })}
+                            key={day?.work_date}
                             onClick={() => {
-                                handleOpenVisits({
-                                    id: el?.start_time_id,
-                                    time: el?.start_time
-                                })
-
-
-                                // @ts-ignore
-                                const item = weeks?.find(item => item)?.clinic_branch_id
-
-                                setActiveBranchId(item ?? null)
+                                setActiveDate(day?.work_date)
                             }}
                         >
-                            {formatTime(el?.start_time)}
+                            <h3 className={styles.day_title}>
+                                {getDayOfMonth(day?.work_date)}
+                            </h3>
+                            <h5 className={styles.day_sub_title}>
+                                {getWeekDay(day?.work_date)}
+                            </h5>
                         </div>
                     ))}
                 </div>
-                <div className={styles.action}>
-                    <Button
-                        type={'text'}
-                        icon={showAllTimeSlots ? <UpOutlined/> : <DownOutlined/>}
-                        onClick={() => setShowAllTimeSlots(prevState => !prevState)}
-                        style={{color: '#459BFF'}}
-                    >
-                        {showAllTimeSlots ? 'Скрыть' : 'Показать еще'}
-                    </Button>
+                <div className={styles.timeSlotsContainer}>
+                    <div className={`${styles.timeSlots} ${showAllTimeSlots ? styles.showAll : ''}`}>
+                        {workingHours?.map((el, index) => (
+                            <div
+                                key={index}
+                                className={styles.timeSlot}
+                                onClick={() => {
+                                    handleOpenVisits({
+                                        id: el?.start_time_id,
+                                        time: el?.start_time
+                                    })
+
+
+                                    // @ts-ignore
+                                    const item = weeks?.find(item => item)?.clinic_branch_id
+
+                                    setActiveBranchId(item ?? null)
+                                }}
+                            >
+                                {formatTime(el?.start_time)}
+                            </div>
+                        ))}
+                    </div>
+                    <div className={styles.action}>
+                        <Button
+                            type={'text'}
+                            icon={showAllTimeSlots ? <UpOutlined/> : <DownOutlined/>}
+                            onClick={() => setShowAllTimeSlots(prevState => !prevState)}
+                            style={{color: '#459BFF'}}
+                        >
+                            {showAllTimeSlots ? 'Скрыть' : 'Показать еще'}
+                        </Button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
