@@ -182,9 +182,9 @@ const DoctorModal = ({
                 </div>
                 <h4 className={styles.successfullyComFlexH4}>
                     Прием
-                    <span className={styles.successfullyComFlexSpanMinus}>
-						{activeProc?.price?.discount && activeProc?.price?.default_price}
-					</span>{' '}
+                    {!!activeProc?.price?.discount && <span className={styles.successfullyComFlexSpanMinus}>
+						{activeProc?.price?.default_price}
+					</span>} {' '}
                     <span
                         style={{
                             color: '#ff6200'
@@ -192,7 +192,7 @@ const DoctorModal = ({
                     >
 						{activeProc?.price?.final_price && `${activeProc?.price?.final_price} тг.`}
 					</span>
-                    {activeProc?.price?.discount &&
+                    {!!activeProc?.price?.discount &&
                         <span className={styles.successfullyComFlexSpanSale}>-{activeProc?.price?.discount}%</span>}
                 </h4>
                 <div className={styles.doctorDivTo}>

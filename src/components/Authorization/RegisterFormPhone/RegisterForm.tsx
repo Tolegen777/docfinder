@@ -81,9 +81,11 @@ const RegisterForm = ({form, setFormType}: Props) => {
 				<div className={styles.container_form_action}>
 					<Button
 						type="primary"
-						htmlType="submit"
 						size={'large'}
 						disabled={isLoading}
+						onClick={() => {
+							form.submit()
+						}}
 					>
 						Зарегистрироваться
 					</Button>

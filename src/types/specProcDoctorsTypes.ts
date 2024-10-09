@@ -25,6 +25,7 @@ export interface ISpecProcDoctor {
     doctor_procedure_price?: DoctorProcedurePrice
     doctor_category?: string
     cheapest_procedure_data?: Cheapestproceduredatum;
+    doctor_procedures_data?: DoctorSpecialityDoctorProcedure[]
 }
 
 export interface CurrentClinicBranchWorkingHour {

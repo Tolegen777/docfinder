@@ -71,7 +71,9 @@ function ClinicById() {
                         <Empty description={<>Данных нет...</>}/>
                     ) : (
                         <div className={styles.doctors}>
-                            {currentDoctors?.map((item) => (
+                            {currentDoctors
+                                ?.filter(item => item?.nearest_week_work_schedule?.length > 0)
+                                ?.map((item) => (
                                 <DoctorInformationClinicDoctorDetail
                                     key={item.doctor_profile_id}
                                     modalFunction={() => {

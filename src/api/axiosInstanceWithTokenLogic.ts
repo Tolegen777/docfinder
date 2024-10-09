@@ -117,6 +117,7 @@ axiosInstanceWithTokenLogic.interceptors.response.use(
         if (errorStatus !== 401) {
             const errorMessage = error?.response?.data?.non_field_errors?.find((item: string) => item) ||
                 error?.response?.data?.errors?.non_field_errors?.find((item: string) => item) ||
+                error?.response?.data?.errors?.phone_number?.find((item: string) => item) ||
                 error?.response?.data?.detail ||
                 JSON.stringify(error?.response?.data, null, 2)
             customNotification({

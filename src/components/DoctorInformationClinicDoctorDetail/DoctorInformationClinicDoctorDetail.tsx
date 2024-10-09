@@ -11,6 +11,7 @@ import {getCurrentDate} from "@/utils/date/getCurrentDate";
 import HeaderModal from "@/components/HeaderModal/HeaderModal";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
 import DoctorSchedule from "@/components/DcotorSchedule/DoctorSchedule";
+import DoctorModal from "@/components/DoctorModal/DoctorModal";
 
 type DoctorInformationProps = {
     modalFunction: () => void;
@@ -61,14 +62,38 @@ const DoctorInformationClinicDoctorDetail = ({
 
     }, [doctor?.nearest_week_work_schedule])
 
+    const onClose = () => {
+        setIsOpenVisitModal(false)
+    }
+
 
     return (
         <div>
+            <HeaderModal setModal={() => setModal(false)} open={modal}/>
             <ClinicBookingModal
                 open={openBookingModal}
                 closeModal={() => setOpenBookingModal(false)}
             />
-            <HeaderModal setModal={() => setModal(false)} open={modal}/>
+            {isOpenVisitModal && <DoctorModal
+                // @ts-ignore
+                doctorData={doctor}
+                onClose={onClose}
+                type={type}
+                procs={doctor?.doctor_procedures_data ?? []}
+                date={activeDate}
+                visitTime={activeTime}
+                procId={doctor?.doctor_procedure_id ?? null}
+                procLabel={doctor?.medical_procedure_title}
+                doctorProcData={{
+                    id: doctor?.doctor_procedure_id as number,
+                    comission_amount: doctor?.doctor_procedure_price?.default_price as number,
+                    is_active: !!doctor?.doctor_procedure_price?.is_active,
+                    // @ts-ignore
+                    price: doctor?.doctor_procedure_price
+                }}
+                branchId={activeBranchId}
+            />
+            }
             <section id={styles.doctorInformation}>
                 <div className="container">
                     <div className={styles.doctorInformation}>
@@ -126,17 +151,16 @@ const DoctorInformationClinicDoctorDetail = ({
                                         <div className={styles.doctorInformationSale}>
                                             <h4 className={styles.doctorInformationPrice}>
                                                 {'Цена от: '}
-                                                <span className={styles.doctorInformationPriceMinus}>
+                                                {!!doctor?.cheapest_procedure_data
+                                                    ?.discount && <span className={styles.doctorInformationPriceMinus}>
                         {doctor?.cheapest_procedure_data
-                                ?.default_price &&
-                            doctor?.cheapest_procedure_data
-                                ?.default_price}{" "}
-                      </span>
+                            ?.default_price}{" "}
+                      </span>}
                                                 {doctor?.cheapest_procedure_data
                                                         ?.final_price &&
                                                     `${doctor?.cheapest_procedure_data?.final_price} тг.`}
                                             </h4>
-                                            {doctor?.cheapest_procedure_data?.discount && (
+                                            {!!doctor?.cheapest_procedure_data?.discount && (
                                                 <h4
                                                     className={styles.doctorInformationMinusPro}
                                                 >{`-${doctor?.cheapest_procedure_data?.discount}%`}</h4>
@@ -169,7 +193,6 @@ const DoctorInformationClinicDoctorDetail = ({
                                         workingHours={doctor?.nearest_week_work_schedule
                                             ?.find((item) => item?.work_date === activeDate)
                                             ?.working_hours ?? []}
-                                        isClinic={true}
                                     />
                                 </div>
                             </div>

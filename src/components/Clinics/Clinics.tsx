@@ -9,6 +9,8 @@ import { formatTime } from "@/utils/date/formatTime";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
 import { useRouter } from "next/navigation";
 import {Empty, Rate} from "antd";
+import HeaderModal from "@/components/HeaderModal/HeaderModal";
+import {useStateContext} from "@/contexts";
 
 type Props = {
     data: IClinics[];
@@ -16,13 +18,21 @@ type Props = {
 };
 
 const Clinics = ({ data, isLoading }: Props) => {
+    const {state} = useStateContext()
+
     const [openBookingModal, setOpenBookingModal] = useState(false);
+
+    const [modal, setModal] = useState(false)
 
     const router = useRouter();
 
     const handleBookClinic = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         event.stopPropagation();
-        setOpenBookingModal(true);
+        if (state?.authUser) {
+            setOpenBookingModal(true);
+        } else {
+            setModal(true)
+        }
     };
 
     if (isLoading) {
@@ -35,6 +45,7 @@ const Clinics = ({ data, isLoading }: Props) => {
 
     return (
         <div>
+            <HeaderModal setModal={() => setModal(false)} open={modal}/>
             <ClinicBookingModal open={openBookingModal} closeModal={() => setOpenBookingModal(false)} />
             {data?.map((item) => (
                 <div
