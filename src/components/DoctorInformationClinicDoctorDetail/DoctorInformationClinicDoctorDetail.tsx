@@ -18,7 +18,8 @@ type DoctorInformationProps = {
     doctor: ISpecProcDoctor | undefined;
     type: "spec" | "proc" | "clinic";
     isCheapestPrice?: boolean;
-    clinicId?: string
+    clinicId?: string;
+    isPreventDefault?: boolean
 };
 
 
@@ -27,7 +28,8 @@ const DoctorInformationClinicDoctorDetail = ({
                                                  doctor,
                                                  type,
                                                  isCheapestPrice,
-                                                 clinicId
+                                                 clinicId,
+                                                 isPreventDefault
                                              }: DoctorInformationProps) => {
 
     const currentDate = getCurrentDate();
@@ -97,22 +99,22 @@ const DoctorInformationClinicDoctorDetail = ({
             <section id={styles.doctorInformation}>
                 <div className="container">
                     <div className={styles.doctorInformation}>
-                        <a href={`/clinics/${clinicId}/doctor/${doctor?.doctor_profile_id}`}
-                           style={{
-                               textDecoration: 'none',
-                               color: 'inherit',
-                               background: 'none',
-                               border: 'none',
-                               outline: 'none',
-                               cursor: clinicId?.length ? 'cursor' : 'auto'
-                           }}
-                           onClick={(event) => {
-                               if (!clinicId?.length) {
-                                   event.preventDefault()
-                               }
-                           }}
-                        >
                             <div className={styles.doctorInformationBlock}>
+                                <a href={`/clinics/${clinicId}/doctor/${doctor?.doctor_profile_id}`}
+                                   style={{
+                                       textDecoration: 'none',
+                                       color: 'inherit',
+                                       background: 'none',
+                                       border: 'none',
+                                       outline: 'none',
+                                       cursor: clinicId?.length ? 'cursor' : 'auto'
+                                   }}
+                                   onClick={(event) => {
+                                       if (isPreventDefault) {
+                                           event.preventDefault()
+                                       }
+                                   }}
+                                >
                                 <div
                                     className={styles.doctorInformationBlockMain}
                                 >
@@ -178,25 +180,22 @@ const DoctorInformationClinicDoctorDetail = ({
                                         {/*<h6 className={styles.doctorInformationMapH6}>На карте</h6>*/}
                                     </div>
                                 </div>
+                        </a>
 
                                 <div className={styles.doctorInformationDate}>
                                     <DoctorSchedule
                                         type={type}
                                         setOpenBookingModal={setOpenBookingModal}
                                         activeDate={activeDate}
-                                        weeks={doctor?.nearest_week_work_schedule ?? []}
+                                        newNearestWeekWorkSchedule={doctor?.new_nearest_week_work_schedule ?? []}
                                         setActiveBranchId={setActiveBranchId}
                                         setActiveDate={setActiveDate}
                                         setIsOpenVisitModal={setIsOpenVisitModal}
                                         setActiveTime={setActiveTime}
                                         month={currentMonth}
-                                        workingHours={doctor?.nearest_week_work_schedule
-                                            ?.find((item) => item?.work_date === activeDate)
-                                            ?.working_hours ?? []}
                                     />
                                 </div>
                             </div>
-                        </a>
                     </div>
                 </div>
             </section>

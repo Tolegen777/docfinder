@@ -49,7 +49,6 @@ const DoctorModal = ({
 
     const [isChild, setIsChild] = useState(false)
     const [patientName, setPatientName] = useState('')
-    const [phone, setPhone] = useState('')
     const [activeProcId, setActiveProcId] = useState<number | null>(procId)
     const [price, setPrice] = useState<number | null>(null)
     const [activeProc, setActiveProc] = useState<DoctorSpecialityDoctorProcedure | null>(doctorProcData)
@@ -141,6 +140,8 @@ const DoctorModal = ({
 
     const isBookingDisabled = localDate?.length ? !localTime : !visitTime?.id
 
+    const currentBranch = doctorData?.new_nearest_week_work_schedule?.find(item => item?.clinic_branch_id === branchId)?.clinic_branch
+
     return (
         <div className={styles.modalOverlay}>
             <div className={styles.modalContent}>
@@ -162,7 +163,7 @@ const DoctorModal = ({
                             {doctorData?.doctor_full_name}
                         </h3>
                         <p className={styles.doctorDescription}>
-                            {doctorData?.current_clinic_branch_address}
+                            {currentBranch}
                         </p>
                     </div>
                 </div>

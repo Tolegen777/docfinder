@@ -74,6 +74,7 @@ function Doctor() {
                         // @ts-ignore
                         doctor={data}
                         type={'proc'}
+                        isPreventDefault
                     />
                 </div>
                 {/*// @ts-ignore*/}

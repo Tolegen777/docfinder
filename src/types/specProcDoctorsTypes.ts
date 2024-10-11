@@ -26,6 +26,8 @@ export interface ISpecProcDoctor {
     doctor_category?: string
     cheapest_procedure_data?: Cheapestproceduredatum;
     doctor_procedures_data?: DoctorSpecialityDoctorProcedure[]
+
+    new_nearest_week_work_schedule?: NewNearestWeekWorkSchedule[]
 }
 
 export interface CurrentClinicBranchWorkingHour {
@@ -118,4 +120,10 @@ export interface DoctorPhoto {
     created_at: string
     updated_at: string
     doctor_profile: number
+}
+
+export interface NewNearestWeekWorkSchedule {
+    clinic_branch_id: number
+    clinic_branch: string
+    schedules: NearestWeekWorkSchedule[]
 }

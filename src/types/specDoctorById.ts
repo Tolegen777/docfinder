@@ -1,4 +1,5 @@
 import {IReview} from "@/types/visitTypes";
+import {NewNearestWeekWorkSchedule} from "@/types/specProcDoctorsTypes";
 
 export interface ISpecDoctorById {
     doctor_speciality_id: number;
@@ -24,6 +25,8 @@ export interface ISpecDoctorById {
     doctor_description: string
     doctor_procedures_data: DoctorProceduresData[];
     doctor_full_description?: IDoctorFullDescription
+
+    new_nearest_week_work_schedule?: NewNearestWeekWorkSchedule[]
 }
 
 export interface DoctorProceduresData {

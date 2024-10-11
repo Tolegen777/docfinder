@@ -131,7 +131,7 @@
       padding-top: 2pc;
       height: 100%;
       padding-bottom: 2pc;
-
+      box-sizing: border-box;
       padding-left: 2pc;
     }
   }
@@ -798,7 +798,7 @@
         color: #a1a1a1;
       }
       .doctorInformationDate {
-        width: 360px;
+        width: 100%;
         padding-top: 2pc;
         height: 100%;
         display: flex;
@@ -939,16 +939,6 @@
         text-align: left;
         color: #a1a1a1;
       }
-      .doctorInformationDate {
-        width: 360px;
-        padding-top: 2pc;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding-bottom: 2pc;
-      }
     }
   }
 }
@@ -1085,16 +1075,6 @@
         line-height: 20.57px;
         text-align: left;
         color: #a1a1a1;
-      }
-      .doctorInformationDate {
-        width: 360px;
-        padding-top: 2pc;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding-bottom: 2pc;
       }
     }
   }

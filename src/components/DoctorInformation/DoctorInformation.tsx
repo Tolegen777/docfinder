@@ -189,15 +189,12 @@ const DoctorInformation = ({
                                     type={type}
                                     setOpenBookingModal={setOpenBookingModal}
                                     activeDate={activeDate}
-                                    weeks={doctor?.nearest_week_work_schedule ?? []}
+                                    newNearestWeekWorkSchedule={doctor?.new_nearest_week_work_schedule ?? []}
                                     setActiveBranchId={setActiveBranchId}
                                     setActiveDate={setActiveDate}
                                     setIsOpenVisitModal={setIsOpenVisitModal}
                                     setActiveTime={setActiveTime}
                                     month={currentMonth}
-                                    workingHours={doctor?.nearest_week_work_schedule
-                                        ?.find((item) => item?.work_date === activeDate)
-                                        ?.working_hours ?? []}
                                 />
                             </div>
                         </div>
