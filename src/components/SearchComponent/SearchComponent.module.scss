@@ -1,31 +1,42 @@
 .searchContainer {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10px;
   margin: 0 auto;
   padding: 10px;
+}
+
+.inputContainer {
+  display: flex;
   align-items: center;
-  box-sizing: border-box;
+  gap: 10px;
 }
 
 .input {
   width: 100%;
-  min-width: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30px;
+  min-width: 370px;
+}
+
+.searchButton {
 }
 
 .loadingSpinner {
-  display: block;
-  margin: 20px auto;
+  //display: block;
+  //margin: 20px auto;
 }
 
 .customDropdown {
+  background-color: white; /* Явно задаем белый фон */
   max-height: 400px;
   overflow-y: auto;
+  z-index: 1000; /* Устанавливаем высокий z-index для отображения поверх других элементов */
+  position: absolute; /* Меняем на абсолютное позиционирование, чтобы dropdown располагался под инпутом */
+  width: 100%; /* Занимает всю ширину инпута */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Добавляем тень для визуального эффекта */
+  margin-top: 40px;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .resultsContainer {
@@ -52,7 +63,7 @@
   display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .mobileSearch {
     display: flex;
     align-items: center;
@@ -73,5 +84,8 @@
 @media (max-width: 768px) {
   .desktopSearch {
     display: none;
+  }
+  .customDropdown {
+
   }
 }

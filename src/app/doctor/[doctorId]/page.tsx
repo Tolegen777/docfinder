@@ -10,17 +10,17 @@ import DoctorInformationClinicDoctorDetail
     from "@/components/DoctorInformationClinicDoctorDetail/DoctorInformationClinicDoctorDetail";
 
 // Динамический импорт компонентов с отключением SSR
-const Specializations = dynamic(() => import('@/components/Specializations/Specializations'), {ssr: false});
-const DoctorDetailsSkeleton = dynamic(() => import('@/components/shared/skeleton/DoctorDetailsSkeleton'), {ssr: false});
+const Specializations = dynamic(() => import('@/components/Specializations/Specializations'), { ssr: false });
+const DoctorDetailsSkeleton = dynamic(() => import('@/components/shared/skeleton/DoctorDetailsSkeleton'), { ssr: false });
 
 function Doctor() {
     const [modal, setModal] = useState<boolean>(false);
 
     const pathname = usePathname();
     const apiInstance = useCreateAxiosInstance();
-    const docId = pathname?.split('/')?.[4];
+    const docId = pathname?.split('/')?.[2];
 
-    const {data, isLoading, error} = useQuery({
+    const { data, isLoading, error } = useQuery({
         queryKey: ['specDoctorById', docId],
         queryFn: () =>
             apiInstance
@@ -36,7 +36,7 @@ function Doctor() {
     }
 
     if (isLoading) {
-        return <DoctorDetailsSkeleton/>;
+        return <DoctorDetailsSkeleton />;
     }
 
     if (error) {
@@ -62,7 +62,7 @@ function Doctor() {
                     />
                 </div>
                 {/*// @ts-ignore*/}
-                <Specializations data={data}/>
+                <Specializations data={data} />
             </div>
         </div>
     );
