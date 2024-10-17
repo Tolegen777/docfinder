@@ -1,0 +1,77 @@
+.searchContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 0 auto;
+  padding: 10px;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.input {
+  width: 100%;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+}
+
+.loadingSpinner {
+  display: block;
+  margin: 20px auto;
+}
+
+.customDropdown {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.resultsContainer {
+  padding: 10px;
+}
+
+.sectionTitle {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.resultItem {
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}
+
+/* Скрываем иконку на десктопе и показываем на мобильных устройствах */
+.mobileSearch {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .mobileSearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .desktopSearch {
+    display: none;
+  }
+}
+
+/* Скрываем обычный поиск на мобильных устройствах */
+.desktopSearch {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .desktopSearch {
+    display: none;
+  }
+}

@@ -5,8 +5,8 @@ import {Button, Dropdown, MenuProps, Spin} from 'antd'
 import Image from 'next/image'
 import Link from 'next/link'
 import {useState} from 'react'
-// import {MdClose} from 'react-icons/md'
-// import {RxHamburgerMenu} from 'react-icons/rx'
+import {MdClose} from 'react-icons/md'
+import {RxHamburgerMenu} from 'react-icons/rx'
 import HeaderModal from '../HeaderModal/HeaderModal'
 import styles from './header.module.scss'
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
@@ -20,6 +20,7 @@ import {resetService} from "@/utils/services/resetService";
 import {authApi} from "@/api/authApi";
 import {useRouter} from "next/navigation";
 import {EditOutlined} from "@ant-design/icons";
+import SearchComponent from "@/components/SearchComponent/SearchComponent";
 
 function Header() {
     const apiInstance = useCreateAxiosInstance();
@@ -165,6 +166,7 @@ function Header() {
                             {/*    <button className={styles.Burgermenubtn}>найти</button>*/}
                             {/*    <MdClose size={28} onClick={() => setisopen(false)}/>*/}
                             {/*</div>*/}
+                            <SearchComponent/>
                         </div>
                         <div className={styles.leftside}>
                             {isLoading ? <Spin/> : <Dropdown
