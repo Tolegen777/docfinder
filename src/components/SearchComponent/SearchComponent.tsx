@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect, ChangeEvent } from 'react';
-import { Input, Button, Spin, Empty, Drawer } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { Input, Empty, Drawer } from 'antd';
+import { CloseCircleOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import styles from './SearchComponent.module.scss';
@@ -96,9 +96,9 @@ const SearchComponent = () => {
         setDrawerVisible(false); // Закрываем drawer после выбора
     };
 
-    const handleFindClick = () => {
-        setQuery(''); // Очищаем инпут после нажатия на кнопку "Найти"
-        // Добавьте логику, если нужно выполнить какой-то запрос при нажатии на "Найти"
+    const handleClear = () => {
+        setQuery(''); // Очищаем инпут при клике на иконку очистки
+        // setDropdownVisible(false); // Закрываем дропдаун при очистке
     };
 
     const openDrawer = () => {
@@ -130,6 +130,7 @@ const SearchComponent = () => {
                         value={query}
                         onChange={handleSearch}
                         className={styles.input}
+                        suffix={query ? <CloseCircleOutlined onClick={handleClear} /> : null} // Иконка очистки
                     />
                     {data && !isError && debouncedQuery && (
                         <div className={styles.customDropdown}>
@@ -214,6 +215,7 @@ const SearchComponent = () => {
                             value={query}
                             onChange={handleSearch}
                             className={styles.input}
+                            suffix={query ? <CloseCircleOutlined onClick={handleClear} /> : null} // Иконка очистки
                         />
                         {/*<Button type="primary" className={styles.searchButton} onClick={handleFindClick}>Найти</Button>*/}
                     </div>
