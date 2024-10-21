@@ -215,7 +215,7 @@ const SearchComponent = () => {
                             value={query}
                             onChange={handleSearch}
                             className={styles.input}
-                            suffix={query ? <CloseCircleOutlined onClick={handleClear} /> : null} // Иконка очистки
+                            suffix={query?.length > 0 ? <CloseCircleOutlined onClick={handleClear} /> : <></>} // Иконка очистки
                         />
                         {/*<Button type="primary" className={styles.searchButton} onClick={handleFindClick}>Найти</Button>*/}
                     </div>
