@@ -6,7 +6,8 @@ import {cityService} from "@/utils/services/cityService";
 const initialState: State = {
     query: '',
     authUser: (tokenService.getLocalAccessToken()?.length > 0 && tokenService.getLocalAccessToken() !== 'undefined'),
-    cityId: cityService.getCityId() ?? ''
+    cityId: cityService.getCityId() ?? '',
+    clinicQuery: ''
 };
 
 const StateContext = createContext<
@@ -34,6 +35,13 @@ const stateReducer = (state: State, action: Action) => {
             return {
                 ...state,
                 cityId: action.payload,
+            };
+        }
+
+        case 'SET_CLINIC_QUERY': {
+            return {
+                ...state,
+                clinicQuery: action.payload,
             };
         }
 

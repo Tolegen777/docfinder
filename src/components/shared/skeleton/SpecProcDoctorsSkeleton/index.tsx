@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {CustomSkeleton} from "@/components/shared/skeleton/CustomSkeleton";
 import userIcon from '../../../../public/icons/user.svg'
 
-const SpecProcDoctorsSkeleton = () => {
+const SpecProcDoctorsSkeleton = ({isNoPadding = false}: {isNoPadding?: boolean}) => {
     const items = [
         {
             width: 100,
@@ -25,7 +25,9 @@ const SpecProcDoctorsSkeleton = () => {
     ];
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container}
+             style={{padding: isNoPadding ? 0 : 'auto'}}
+        >
             {[0, 1, 2, 3, 5, 6].map((item) => (
                 <div className={styles.container_card} key={item}>
                     <div className={styles.container_card_img}>

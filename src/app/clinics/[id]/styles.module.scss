@@ -42,14 +42,42 @@
   background: #FFFFFF;
 }
 
+.input_container {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.skeleton {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 1180px) {
   .tabs_wrapper {
     padding-left: 10px;
+  }
+  .input_container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .skeleton {
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 700px) {
   .tabs_wrapper {
     padding-left: 0;
+  }
+  .input_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

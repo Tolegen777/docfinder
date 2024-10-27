@@ -6,14 +6,16 @@ import {usePathname} from "next/navigation";
 import {useCreateAxiosInstance} from "@/hooks/useCreateAxiosInstance";
 import {useQuery} from "@tanstack/react-query";
 import {useStateContext} from "@/contexts";
-import {IClinicById} from "@/types/clinicsTypes";
+import {DoctorsList, IClinicById} from "@/types/clinicsTypes";
 import DoctorDetailsSkeleton from "@/components/shared/skeleton/DoctorDetailsSkeleton";
 import styles from './styles.module.scss';
 import clsx from "clsx";
 import {Empty} from "antd";
 import DoctorInformationClinicDoctorDetail
     from "@/components/DoctorInformationClinicDoctorDetail/DoctorInformationClinicDoctorDetail";
-import Link from "next/link";
+import CustomSearchInput from "@/components/CustomSearchInput";
+import {IGet} from "@/types/common";
+import SpecProcDoctorsSkeleton from "@/components/shared/skeleton/SpecProcDoctorsSkeleton";
 
 // Динамический импорт компонентов с отключением SSR
 const EmirmedSlider = dynamic(() => import('@/components/emirmedSlider/EmirmedSlider'), {ssr: false});
@@ -25,7 +27,7 @@ function ClinicById() {
     const [activeItem, setActiveItem] = useState(0);
     const pathname = usePathname();
     const {state} = useStateContext();
-    const {cityId} = state;
+    const {cityId, clinicQuery} = state;
     const apiInstance = useCreateAxiosInstance();
     const clinicId = pathname?.split('/')?.[2];
     const [page, setPage] = useState(1);
@@ -41,7 +43,17 @@ function ClinicById() {
         refetchOnMount: false,
     });
 
-    const currentDoctors = data?.doctors_list?.slice((page - 1) * 10, page * 10);
+    const {data: doctors, isLoading: doctorsLoading} = useQuery({
+        queryKey: ['clinicDoctors', clinicId, cityId, page, clinicQuery],
+        queryFn: () =>
+            apiInstance
+                .get<IGet<DoctorsList>>(
+                    `patients/clinic-branches-in-city/${cityId}/clinic-branch-id/${clinicId}/doctors/?page=${page}&keyword=${clinicQuery}`
+                )
+                .then((response) => response.data)
+    });
+
+    console.log(clinicQuery, 'HHH')
 
     if (isLoading) {
         return <DoctorDetailsSkeleton/>;
@@ -66,12 +78,17 @@ function ClinicById() {
                 </div>
             </div>
             <>
+                <div className={styles.input_container}>
+                    <CustomSearchInput/>
+                </div>
                 {activeItem === 0 ? (
-                    currentDoctors?.length === 0 ? (
+                    doctorsLoading ? <div className={styles.skeleton}>
+                        <SpecProcDoctorsSkeleton isNoPadding />
+                    </div> : doctors?.results?.length === 0 ? (
                         <Empty description={<>Данных нет...</>}/>
                     ) : (
                         <div className={styles.doctors}>
-                            {currentDoctors
+                            {doctors?.results
                                 ?.filter(item => item?.nearest_week_work_schedule?.length > 0)
                                 ?.map((item) => (
                                 <DoctorInformationClinicDoctorDetail
@@ -93,7 +110,7 @@ function ClinicById() {
                     </>
                 )}
                 {activeItem === 0 && (
-                    <CustomPagination setPage={setPage} totalCount={data?.doctors_list?.length ?? 0}/>
+                    <CustomPagination setPage={setPage} totalCount={doctors?.count ?? 0}/>
                 )}
             </>
         </div>
