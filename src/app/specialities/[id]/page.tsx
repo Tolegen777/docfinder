@@ -64,7 +64,7 @@ function Doctor() {
             {data?.results?.length === 0 ? (
                 <Empty description={'Данных нет...'} />
             ) : (
-                data?.results?.filter(item => item?.nearest_week_work_schedule?.length > 0)?.map((item) => (
+                data?.results?.map((item) => (
                     <DoctorInformation
                         key={item?.doctor_profile_id}
                         modalFunction={toggleModal}

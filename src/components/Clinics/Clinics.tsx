@@ -76,11 +76,11 @@ const Clinics = ({ data, isLoading }: Props) => {
                         <div className={styles.description}>
                             <div className={styles.title}>{item?.franchise_title}</div>
                             {/*<div className={styles.sub_title}>{item?.title}</div>*/}
-                            {item?.franchise_title === 'Эмирмед' && <div className={styles.phone_wrapper}>
-                                <div className={styles.phone}>{'+7 (707) 000-01-03'}</div>
-                                <div className={styles.phone}>{'+7 (727) 355-11-11'}</div>
-                                <div className={styles.phone}>{'+7 (747) 000-01-03'}</div>
-                            </div>}
+                            {/*{item?.franchise_title === 'Эмирмед' && <div className={styles.phone_wrapper}>*/}
+                            {/*    <div className={styles.phone}>{'+7 (707) 000-01-03'}</div>*/}
+                            {/*    <div className={styles.phone}>{'+7 (727) 355-11-11'}</div>*/}
+                            {/*    <div className={styles.phone}>{'+7 (747) 000-01-03'}</div>*/}
+                            {/*</div>}*/}
                             <div className={styles.desc} dangerouslySetInnerHTML={{__html: item?.description}}/>
                         </div>
                     </div>

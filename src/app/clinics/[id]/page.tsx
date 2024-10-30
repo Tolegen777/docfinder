@@ -89,7 +89,6 @@ function ClinicById() {
                     ) : (
                         <div className={styles.doctors}>
                             {doctors?.results
-                                ?.filter(item => item?.nearest_week_work_schedule?.length > 0)
                                 ?.map((item) => (
                                 <DoctorInformationClinicDoctorDetail
                                     key={item.doctor_profile_id}
