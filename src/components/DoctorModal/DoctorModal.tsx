@@ -273,6 +273,7 @@ const DoctorModal = ({
                     })}
                     onClick={handleBooking}
                     disabled={isBookingDisabled}
+                    id={'appointmentButton'}
                 >
                     Записаться
                 </Button>

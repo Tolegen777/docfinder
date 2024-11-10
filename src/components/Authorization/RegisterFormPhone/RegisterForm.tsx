@@ -80,6 +80,7 @@ const RegisterForm = ({form, setFormType}: Props) => {
 				</Form.Item>
 				<div className={styles.container_form_action}>
 					<Button
+						id={'registerButton'}
 						type="primary"
 						size={'large'}
 						disabled={isLoading}

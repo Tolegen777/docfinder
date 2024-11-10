@@ -34,7 +34,7 @@ function Footer() {
             </nav>
             <div className={'footer__phone'}>
               <p>Контакты:</p>
-              <p style={{marginLeft: '-10px'}}>8700 999 0103</p>
+              <p id={'footerPhone'} style={{marginLeft: '-10px'}}>8700 999 0103</p>
             </div>
             {/*<div>*/}
             {/*  <input*/}

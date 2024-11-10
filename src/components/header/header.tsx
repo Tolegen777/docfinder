@@ -182,6 +182,7 @@ function Header() {
                             {!authUser ? <button
                                 onClick={() => setModal(true)}
                                 className={styles.leftsidebtn}
+                                id={'headerLoginButton'}
                             >
                                 Войти
                             </button> : patientLoading ? <Spin/> : <Dropdown

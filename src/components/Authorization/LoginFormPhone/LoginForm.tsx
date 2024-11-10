@@ -83,6 +83,7 @@ const LoginForm = ({form, onClose}: Props) => {
 				</Form.Item>
 				<div className={styles.container_form_action}>
 					<Button
+						id={'loginButton'}
 						type="primary"
 						size={'large'}
 						disabled={isLoading}

@@ -54,7 +54,7 @@ const ClinicBookingForm = ({ form, onClose }: Props) => {
 
 	return (
 		<div className={styles.container}>
-			<div className={styles.header}>Записаться в клинику</div>
+			<div className={styles.header} id={'clinicAppointmentButton'}>Записаться в клинику</div>
 			<Divider />
 			<Form
 				onFinish={onFinish}
