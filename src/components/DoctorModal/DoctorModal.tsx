@@ -149,15 +149,15 @@ const DoctorModal = ({
                     ×
                 </button>
                 <div className={styles.DoctorModalImg}>
-                    <Image
-                        style={{
-                            borderRadius: '50%'
-                        }}
-                        width={100}
-                        height={100}
-                        src={doctorIcon}
-                        alt=''
-                    />
+                    {/*<Image*/}
+                    {/*    style={{*/}
+                    {/*        borderRadius: '50%'*/}
+                    {/*    }}*/}
+                    {/*    width={100}*/}
+                    {/*    height={100}*/}
+                    {/*    src={doctorIcon}*/}
+                    {/*    alt=''*/}
+                    {/*/>*/}
                     <div className={styles.DoctorModalText}>
                         <h3 className={styles.doctorName}>
                             {doctorData?.doctor_full_name}
