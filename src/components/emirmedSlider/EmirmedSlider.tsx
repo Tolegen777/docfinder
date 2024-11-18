@@ -16,8 +16,8 @@ import mapsvg from "@/components/svg/svgMap.svg";
 import timesvg from "@/components/svg/times.svg";
 import {IClinicById} from "@/types/clinicsTypes";
 import ClinicBookingModal from "@/components/Clinic/ClinicBookingModal/ClinicBookingModal";
-import AppBanner from "@/components/Clinic/AppBanner";
 import clsx from "clsx";
+import EnhancedCarousel from "@/components/EnhancedCarousel/EnhancedCarousel";
 
 const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
   const items = data?.franchise_branches_in_the_city?.map(item => ({
@@ -26,7 +26,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
     disabled: true,
   }))
 
-  const images = data?.list_of_photos?.filter((_, index) => index < 3)?.map(item => item?.photo);
+  const images = data?.list_of_photos?.map(item => item?.photo);
 
   const mainImage = data?.list_of_photos?.find(item => item?.is_main)?.photo
 
@@ -122,7 +122,7 @@ const EmirmedSlider = ({data}: {data: IClinicById | undefined}) => {
                       {/*  </div>*/}
                       {/*</div>*/}
                       <div className={styles.banner_wrapper}>
-                          <AppBanner data={images}/>
+                          <EnhancedCarousel images={images ?? []}/>
                       </div>
                     </div>
                   </SwiperSlide>
