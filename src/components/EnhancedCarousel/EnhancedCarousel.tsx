@@ -33,6 +33,7 @@ const EnhancedCarousel: React.FC<EnhancedCarouselProps> = ({ images = [] }) => {
                     ref={carouselRef}
                     effect="fade"
                     afterChange={handleSlideChange}
+                    autoplay
                 >
                     {images.map((image, index) => (
                         <div key={index} className="h-[600px] relative">
@@ -49,18 +50,29 @@ const EnhancedCarousel: React.FC<EnhancedCarouselProps> = ({ images = [] }) => {
             </div>
 
             <div className="p-4 bg-white shadow-sm rounded-xl">
-                <div className="flex justify-between gap-4 w-full overflow-x-auto p-3">
+                {/* Добавляем -webkit-overflow-scrolling: touch для поддержки Safari */}
+                <div
+                    className="flex justify-between gap-6 w-full overflow-x-auto p-2"
+                    style={{
+                        WebkitOverflowScrolling: 'touch',
+                        scrollbarWidth: 'none',  // Firefox
+                        msOverflowStyle: 'none',  // IE and Edge
+                    }}
+                >
                     {images.length > 0 ? (
                         images.map((image, index) => (
                             <div
                                 key={index}
-                                style={{ width: thumbnailWidth, minWidth: '150px' }}
+                                style={{
+                                    width: thumbnailWidth,
+                                    minWidth: '150px',
+                                }}
                                 className={clsx(
                                     'relative h-24 cursor-pointer transition-all duration-300',
                                     'hover:opacity-100',
                                     currentSlide === index
                                         ? 'ring-4 ring-orange-500 rounded-lg opacity-100 scale-105'
-                                        : 'opacity-60 hover:scale-102'
+                                        : 'ring-4 ring-gray-300 rounded-lg opacity-100 scale-105'
                                 )}
                                 onClick={() => handleThumbnailClick(index)}
                             >
@@ -76,7 +88,10 @@ const EnhancedCarousel: React.FC<EnhancedCarouselProps> = ({ images = [] }) => {
                         Array.from({ length: 5 }).map((_, index) => (
                             <div
                                 key={index}
-                                style={{ width: thumbnailWidth, minWidth: '150px' }}
+                                style={{
+                                    width: thumbnailWidth,
+                                    minWidth: '150px',
+                                }}
                             >
                                 <Skeleton.Image active className="!h-24 !w-full rounded-lg" />
                             </div>
