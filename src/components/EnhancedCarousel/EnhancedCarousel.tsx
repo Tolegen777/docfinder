@@ -4,6 +4,12 @@ import { CarouselRef } from 'antd/lib/carousel';
 import Image from 'next/image';
 import { Skeleton } from 'antd';
 import clsx from 'clsx';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode } from 'swiper/modules';
+
+// Импорт стилей Swiper
+import 'swiper/css';
+import 'swiper/css/free-mode';
 
 interface EnhancedCarouselProps {
     images: string[];
@@ -22,10 +28,6 @@ const EnhancedCarousel: React.FC<EnhancedCarouselProps> = ({ images = [] }) => {
         setCurrentSlide(current);
     };
 
-    const gapWidth = 16;
-    const totalGapWidth = (images.length - 1) * gapWidth;
-    const thumbnailWidth = `calc((100% - ${totalGapWidth}px) / ${images.length})`;
-
     return (
         <div className="w-full max-w-6xl mx-auto">
             <div className="relative rounded-xl overflow-hidden h-[600px] mb-8">
@@ -34,6 +36,7 @@ const EnhancedCarousel: React.FC<EnhancedCarouselProps> = ({ images = [] }) => {
                     effect="fade"
                     afterChange={handleSlideChange}
                     autoplay
+                    autoplaySpeed={5000}
                 >
                     {images.map((image, index) => (
                         <div key={index} className="h-[600px] relative">
@@ -50,54 +53,43 @@ const EnhancedCarousel: React.FC<EnhancedCarouselProps> = ({ images = [] }) => {
             </div>
 
             <div className="p-4 bg-white shadow-sm rounded-xl">
-                {/* Добавляем -webkit-overflow-scrolling: touch для поддержки Safari */}
-                <div
-                    className="flex justify-between gap-6 w-full overflow-x-auto p-2"
-                    style={{
-                        WebkitOverflowScrolling: 'touch',
-                        scrollbarWidth: 'none',  // Firefox
-                        msOverflowStyle: 'none',  // IE and Edge
-                    }}
+                <Swiper
+                    modules={[FreeMode]}
+                    spaceBetween={12}
+                    slidesPerView={'auto'}
+                    freeMode={true}
+                    className="w-full"
                 >
                     {images.length > 0 ? (
                         images.map((image, index) => (
-                            <div
-                                key={index}
-                                style={{
-                                    width: thumbnailWidth,
-                                    minWidth: '150px',
-                                }}
-                                className={clsx(
-                                    'relative h-24 cursor-pointer transition-all duration-300',
-                                    'hover:opacity-100',
-                                    currentSlide === index
-                                        ? 'ring-4 ring-orange-500 rounded-lg opacity-100 scale-105'
-                                        : 'ring-4 ring-gray-300 rounded-lg opacity-100 scale-105'
-                                )}
-                                onClick={() => handleThumbnailClick(index)}
-                            >
-                                <Image
-                                    src={image}
-                                    fill
-                                    className="object-cover rounded-lg"
-                                    alt={`Thumbnail ${index + 1}`}
-                                />
-                            </div>
+                            <SwiperSlide key={index} className="!w-[150px] p-2">
+                                <div
+                                    className={clsx(
+                                        'relative w-full h-24 cursor-pointer transition-all duration-300',
+                                        'hover:opacity-100',
+                                        currentSlide === index
+                                            ? 'ring-4 ring-orange-500 rounded-lg opacity-100 scale-105'
+                                            : 'ring-4 ring-gray-300 rounded-lg opacity-100 scale-105'
+                                    )}
+                                    onClick={() => handleThumbnailClick(index)}
+                                >
+                                    <Image
+                                        src={image}
+                                        fill
+                                        className="object-cover rounded-lg"
+                                        alt={`Thumbnail ${index + 1}`}
+                                    />
+                                </div>
+                            </SwiperSlide>
                         ))
                     ) : (
                         Array.from({ length: 5 }).map((_, index) => (
-                            <div
-                                key={index}
-                                style={{
-                                    width: thumbnailWidth,
-                                    minWidth: '150px',
-                                }}
-                            >
+                            <SwiperSlide key={index} className="!w-[150px]">
                                 <Skeleton.Image active className="!h-24 !w-full rounded-lg" />
-                            </div>
+                            </SwiperSlide>
                         ))
                     )}
-                </div>
+                </Swiper>
             </div>
         </div>
     );
